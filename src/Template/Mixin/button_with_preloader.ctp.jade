@@ -1,0 +1,8 @@
+mixin button_with_preloader(title)
+	button.btn-with-preloader._padding-small(class=$class id=$id)
+		.col.title= $title
+		.col.preloader-container
+			.preloader-wrapper.tiny.active: div.spinner-layer._no-padding
+				.circle-clipper.left: div.circle
+				.gap-patch: div.circle
+				.circle-clipper.right: div.circle

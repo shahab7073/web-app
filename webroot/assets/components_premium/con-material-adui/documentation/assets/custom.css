@@ -1,0 +1,109 @@
+body {
+  padding-top: 20px;
+  font-size: 16px;
+  color: rgba(0,0,0,.65);
+  background: #F9F9F9;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: rgba(0,0,0,.7);
+}
+a {
+  color: #2196f3;
+}
+.headerDoc {
+  color: #005580;
+}
+
+.plugins-description > div {
+  display: none;
+}
+.plugins-description > .active {
+  display: block;
+}
+
+
+/* btn's */
+.btn {
+  background-image: none;
+  border: none;
+  text-shadow: none;
+
+  text-decoration: none;
+  color: #FFF;
+  background-color: #42A5F5;
+  text-align: center;
+  letter-spacing: .5px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.26);
+  -webkit-transition: .2s ease-out;
+  transition: .2s ease-out;
+  cursor: pointer;
+
+  display: inline-block;
+  height: 36px;
+  padding: 0 2rem;
+  border-radius: 2px;
+  line-height: 36px;
+  outline: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn:hover {
+  color: #fff;
+  background-color: #5ab1f6;
+  box-shadow: 0 2px 5px rgba(0,0,0,.4);
+  -webkit-transition: .2s ease-out;
+  transition: .2s ease-out;
+}
+.btn-teal {
+  background-color: #009688;
+}
+.btn-teal:hover {
+  background-color: #26a69a;
+}
+.btn-orange {
+  background-color: #ff9800;
+}
+.btn-orange:hover {
+  background-color: #ffa726;
+}
+
+
+
+/* Left Menu */
+.tocify {
+  font-size: 12px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,.26);
+  border: none;
+  border-radius: 2px;
+}
+.tocify-subheader li {
+  font-size: 11px;
+}
+.tocify-subheader {
+  text-indent: 35px;
+}
+.nav-list > .active > a, .nav-list > .active > a:hover {
+  background-color: #2196f3;
+}
+
+
+/* Blocks */
+.well,
+.hero-unit {
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,.26);
+  border: none;
+  margin-bottom: 30px;
+  border-radius: 2px;
+}
+.well > h2 {
+  margin-top: 0;
+}
+
+@media (max-width: 767px) {
+  #toc {
+    position: relative;
+    width: 100%;
+    margin: 0px 0px 20px 0px;
+  }
+}

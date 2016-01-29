@@ -1,0 +1,34 @@
+//- 
+	Top Navbar
+	Options:
+		.navbar-dark - dark color scheme
+		.navbar-static - static navbar
+		.navbar-under - under sidebar
+nav.navbar-top
+	.nav-wrapper
+		//- Sidebar toggle
+		a.yay-toggle(href='#!')
+			.burg1
+			.burg2
+			.burg3
+		//- Logo
+		a.brand-logo(href='#!')
+			!= $view->Html->image('icon.png', ['alt' => 'Con'])
+
+		//- Menu
+		ul
+			li: a.search-bar-toggle(href='#!'): i.mdi-action-search
+			li.user
+				a.dropdown-button(href='#!' data-activates='user-dropdown')
+					!= $view->Html->image('user.jpg', ['class' => 'circle', 'alt' => 'John Doe'])
+					| John Doe
+					i.mdi-navigation-expand-more.right
+				ul.dropdown-content#user-dropdown
+					li: a(href='page-profile.html') #[i.fa.fa-user] Profile
+					li: a(href='mail-inbox.html')
+						i.fa.fa-envelope
+						| Messages
+						span.badge.new 2
+					li: a(href='#!') #[i.fa.fa-cogs] Settings
+					li.divider
+					li: a(href='page-sign-in.html') #[i.fa.fa-sign-out] Logout

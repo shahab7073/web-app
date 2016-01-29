@@ -1,0 +1,170 @@
+//-
+	Yay Sidebar
+	Options (you can use all of theme class names):
+		.yay-hide-to-small			- no hide menu, just set it small with big icons
+		.yay-static					- stop using fixed sidebar (will scroll with content)
+		.yay-gestures				- to show and hide menu using gesture swipes
+		.yay-light					- light color scheme
+		.yay-hide-on-content-click	- hide menu on content click
+
+	Effects (you can use one of these class names):
+		.yay-overlay		- overlay content
+		.yay-push			- push content to right
+		.yay-shrink			- shrink content width
+
+aside.yaybar.yay-shrink.yay-hide-to-small.yay-gestures
+	.top
+		div
+			//- Sidebar toggle
+			a.yay-toggle(href='#!')
+				.burg1
+				.burg2
+				.burg3
+			//- Logo
+			a.brand-logo(href='#!')
+				!= $view->Html->image('logo-white.png', ['alt' => 'Con'])
+	.nano
+		.nano-content
+			ul
+				li: a.waves-effect.waves-blue(href='angularjs/')
+					| #[i.ion.ion-social-angular] Open Angular Version
+					span.badge.new
+				li.label Menu
+				li
+					a.yay-sub-toggle.waves-effect.waves-blue
+						| #[i.fa.fa-dashboard] Dashboards
+						span.yay-collapse-icon.mdi-navigation-expand-more
+					ul
+						li: a.waves-effect.waves-blue(href='dashboard.html') Dashboard
+						li: a.waves-effect.waves-blue(href='dashboard-v1.html') Dashboard v1
+				li: a.waves-effect.waves-blue(href='widgets.html')
+					| #[i.fa.fa-magic] Widgets
+				li: a.waves-effect.waves-blue(href='layouts.html')
+					| #[i.mdi.mdi-av-web] Layouts
+				li.label Elements
+				li
+					a.yay-sub-toggle.waves-effect.waves-blue
+						| #[i.fa.fa-css3] CSS
+						span.yay-collapse-icon.mdi-navigation-expand-more
+					ul
+						li: a.waves-effect.waves-blue(href='css-alerts.html')
+							| #[i.mdi-alert-warning] Alerts
+						li: a.waves-effect.waves-blue(href='css-badges.html')
+							| #[i.mdi-action-stars] Badges
+						li: a.waves-effect.waves-blue(href='css-colors.html')
+							| #[i.mdi-image-palette] Colors
+						li: a.waves-effect.waves-blue(href='css-grid.html')
+							| #[i.mdi-action-dashboard] Grid
+						li: a.waves-effect.waves-blue(href='css-helpers.html')
+							| #[i.mdi-action-help] Helpers
+						li: a.waves-effect.waves-blue(href='css-icons.html')
+							| #[i.mdi-communication-invert-colors-on] Icons
+						li: a.waves-effect.waves-blue(href='css-shadow.html')
+							| #[i.mdi-maps-layers] Shadow
+						li: a.waves-effect.waves-blue(href='css-typography.html')
+							| #[i.fa.fa-font] Typography
+				li
+					a.yay-sub-toggle.waves-effect.waves-blue
+						| #[i.fa.fa-cubes] UI Elements
+						span.yay-collapse-icon.mdi-navigation-expand-more
+					ul
+						li: a.waves-effect.waves-blue(href='ui-buttons.html')
+							| #[i.fa.fa-square] Buttons
+						li: a.waves-effect.waves-blue(href='ui-cards.html')
+							| #[i.mdi-av-web] Cards
+						li: a.waves-effect.waves-blue(href='ui-collapsible.html')
+							| #[i.mdi-action-view-day] Collapsible
+						li: a.waves-effect.waves-blue(href='ui-collections.html')
+							| #[i.fa.fa-server] Collections
+						li: a.waves-effect.waves-blue(href='ui-dropdown.html')
+							| #[i.mdi-navigation-arrow-drop-down-circle] Dropdown
+						li: a.waves-effect.waves-blue(href='ui-modals.html')
+							| #[i.fa.fa-external-link] Modals
+						li: a.waves-effect.waves-blue(href='ui-pagination.html')
+							| #[i.mdi.mdi-navigation-more-horiz] Pagination
+						li: a.waves-effect.waves-blue(href='ui-progress-bars.html')
+							| #[i.fa.fa-tasks] Progress Bars
+						li: a.waves-effect.waves-blue(href='ui-tabs.html')
+							| #[i.mdi-action-tab-unselected] Tabs
+						li: a.waves-effect.waves-blue(href='ui-toasts.html')
+							| #[i.mdi-action-announcement] Toasts
+						li: a.waves-effect.waves-blue(href='ui-tooltips.html')
+							| #[i.fa.fa-comment-o] Tooltips
+						li: a.waves-effect.waves-blue(href='ui-waves.html')
+							| #[i.mdi-image-blur-on] Waves
+						li: a.waves-effect.waves-blue(href='ui-search-bar.html')
+							| #[i.mdi-action-search] Search Bar
+				li
+					a.yay-sub-toggle.waves-effect.waves-blue
+						| #[i.mdi.mdi-image-panorama] Media
+						span.yay-collapse-icon.mdi-navigation-expand-more
+					ul
+						li: a.waves-effect.waves-blue(href='media-hover-effects.html')
+							| #[i.mdi.mdi-image-style] Hover Effects
+						li: a.waves-effect.waves-blue(href='ui-cards.html')
+							| #[i.fa.fa-magic] Scroll Effects
+						li: a.waves-effect.waves-blue(href='ui-collapsible.html')
+							| #[i.mdi.mdi-image-collections] Gallery
+						li: a.waves-effect.waves-blue(href='ui-collections.html')
+							| #[i.mdi.mdi-image-collections] Material Box
+						li: a.waves-effect.waves-blue(href='ui-dropdown.html')
+							| #[i.mdi.mdi-image-panorama] Parallax
+						li: a.waves-effect.waves-blue(href='ui-modals.html')
+							| #[i.mdi.mdi-av-play-circle-outline] Player
+						li: a.waves-effect.waves-blue(href='ui-pagination.html')
+							| #[i.mdi.mdi-action-view-carousel] Slider
+				li.label Components
+				li
+					a.yay-sub-toggle.waves-effect.waves-blue
+						| #[i.fa.fa-check-square-o] Forms
+						span.yay-collapse-icon.mdi-navigation-expand-more
+					ul
+						li: a.waves-effect.waves-blue(href='media-hover-effects.html')
+							| #[i.fa.fa-cube] Base
+						li: a.waves-effect.waves-blue(href='ui-cards.html')
+							| #[i.fa.fa-cubes] Advanced
+						li: a.waves-effect.waves-blue(href='ui-collapsible.html')
+							| #[i.fa.fa-check-square-o] Validation
+						li: a.waves-effect.waves-blue(href='ui-collections.html')
+							| #[i.fa.fa-edit] Editors
+						li: a.waves-effect.waves-blue(href='ui-dropdown.html')
+							| Checkout
+						li: a.waves-effect.waves-blue(href='ui-modals.html')
+							| Contacts
+						li: a.waves-effect.waves-blue(href='ui-pagination.html')
+							| Login
+						li: a.waves-effect.waves-blue(href='ui-pagination.html')
+							| Register
+				li.open
+					a.yay-sub-toggle.waves-effect.waves-blue
+						| #[i.fa.fa-globe] Pages
+						span.yay-collapse-icon.mdi-navigation-expand-more
+					ul
+						li: a.waves-effect.waves-blue(href='media-hover-effects.html')
+							| Profile
+						li: a.waves-effect.waves-blue(href='ui-cards.html')
+							| Timeline
+						li: a.waves-effect.waves-blue(href='ui-collapsible.html')
+							| Calendar
+						li: a.waves-effect.waves-blue(href='ui-collections.html')
+							| Forgot Password
+						li: a.waves-effect.waves-blue(href='ui-dropdown.html')
+							| Screen Lock
+						li: a.waves-effect.waves-blue(href='ui-modals.html')
+							| Sign In
+						li: a.waves-effect.waves-blue(href='ui-pagination.html')
+							| Sign Up
+						li: a.waves-effect.waves-blue(href='ui-pagination.html')
+							| 404
+						li: a.waves-effect.waves-blue(href='ui-pagination.html')
+							| 500
+						li.active: a.waves-effect.waves-blue(href='ui-pagination.html')
+							| Blank
+
+				li.label Stats
+				li.content
+					span: #[i.fa.fa-spinner] Server Load
+					.progress.small.light-green.lighten-4
+						.light-green.accent-5(style='width: 37%')
+					span: #[i.fa.fa-thumbs-o-up] User Satisfaction
+					.progress.small: div(style='width: 91%')

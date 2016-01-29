@@ -1,0 +1,124 @@
+//- Chat
+	.chat-light		- light color scheme
+.chat
+	.layer-overlay
+	.layer-content
+		//- Contacts
+		.contacts
+			//- Top Bar
+			.topbar
+				a.text(href='#!') Chat
+				a.chat-toggle(href='#!'): i.mdi-navigation-close
+			.nano
+				.nano-content
+					span.label Online
+					.user
+						!= $view->Html->image('user2.jpg', ['class' => 'circle photo', 'alt' => 'Felecia Castro'])
+						.name Felecia Castro
+						.status Lorem status
+						.online: i.green-text.fa.fa-circle
+					.user
+						!= $view->Html->image('user3.jpg', ['class' => 'circle photo', 'alt' => 'Max Brooks'])
+						.name Max Brooks
+						.status Lorem status
+						.online: i.green-text.fa.fa-circle
+					.user
+						!= $view->Html->image('user4.jpg', ['class' => 'circle photo', 'alt' => 'Patsy Griffin'])
+						.name Patsy Griffin
+						.status Lorem status
+						.online: i.green-text.fa.fa-circle
+					.user
+						!= $view->Html->image('user5.jpg', ['class' => 'circle photo', 'alt' => 'Chloe Morgan'])
+						.name Chloe Morgan
+						.status Lorem status
+						.online: i.green-text.fa.fa-circle
+					.user
+						!= $view->Html->image('user6.jpg', ['class' => 'circle photo', 'alt' => 'Vernon Garrett'])
+						.name Vernon Garrett
+						.status Lorem status
+						.online: i.yellow-text.fa.fa-circle
+					.user
+						!= $view->Html->image('user7.jpg', ['class' => 'circle photo', 'alt' => 'Greg McDonald'])
+						.name Greg McDonald
+						.status Lorem status
+						.online: i.yellow-text.fa.fa-circle
+					.user
+						!= $view->Html->image('user8.jpg', ['class' => 'circle photo', 'alt' => 'Christian Jackson'])
+						.name Christian Jackson
+						.status Lorem status
+						.online: i.yellow-text.fa.fa-circle
+					span.label Offline
+					.user
+						!= $view->Html->image('user9.jpg', ['class' => 'circle photo', 'alt' => 'Willie Kelly'])
+						.name Willie Kelly
+						.status Lorem status
+					.user
+						!= $view->Html->image('user10.jpg', ['class' => 'circle photo', 'alt' => 'Jenny Phillips'])
+						.name Jenny Phillips
+						.status Lorem status
+					.user
+						!= $view->Html->image('user11.jpg', ['class' => 'circle photo', 'alt' => 'Darren Cunningham'])
+						.name Darren Cunningham
+						.status Lorem status
+					.user
+						!= $view->Html->image('user12.jpg', ['class' => 'circle photo', 'alt' => 'Sandra Cole'])
+						.name Sandra Cole
+						.status Lorem status
+		//- Messages
+		.messages
+			//- Top Bar with back link
+			.topbar
+				a.chat-toggle(href='#!'): i.mdi-navigation-close
+				a.chat-back(href='#!') #[i.mdi-hardware-keyboard-arrow-left] Back
+			//- All messages list
+			.list
+				.nano.scroll-bottom
+					.nano-content
+						.date Monday, Feb 23, 8:23 pm
+						.from-me
+							| Hi, Felicia. #[br]
+							| How are you?
+						.clear
+						.from-them
+							!= $view->Html->image('user2.jpg', ['class' => 'circle photo', 'alt' => 'John Doe'])
+							| Hi! I am good!
+						.clear
+						.from-me
+							| Glad to see you :) #[br]
+							| This long text is intended to show how the chat will display it.
+						.clear
+						.from-them
+							!= $view->Html->image('user2.jpg', ['class' => 'circle photo', 'alt' => 'John Doe'])
+							| Also, we will send the longest word to show how it will fit in the chat window: #[strong Pneumonoultramicroscopicsilicovolcanoconiosis]
+						.date Friday, Mar 10, 5:07 pm
+						.from-me
+							| Hi again!
+						.clear
+						.from-them
+							!= $view->Html->image('user2.jpg', ['class' => 'circle photo', 'alt' => 'John Doe'])
+							| Hi! Glad to see you.
+						.clear
+						.from-me
+							| I want to add you in my Facebook.
+						.clear
+						.from-me
+							| Can you give me your page?
+						.clear
+						.from-them
+							!= $view->Html->image('user2.jpg', ['class' => 'circle photo', 'alt' => 'John Doe'])
+							| I do not use Facebook. But you can follow me in Twitter.
+						.clear
+						.from-me
+							| It's a good idea!
+						.clear
+						.from-them
+							!= $view->Html->image('user2.jpg', ['class' => 'circle photo', 'alt' => 'John Doe'])
+							| You can find me here - #[a(href='http://twitter.com/clthck') http://twitter.com/clthck]
+			//- Send message
+			.send
+				form(action='#!')
+					.input-field
+						input#chat-message(type='text' name='chat-message')
+					button.btn.waves-effect.z-depth-0: i.mdi-content-send
+
+

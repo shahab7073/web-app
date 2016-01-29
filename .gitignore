@@ -1,4 +1,11 @@
 /vendor/*
 /config/app.php
+/config/asset_compress.local.ini
 /tmp/*
 /logs/*
+/node_modules/*
+/.sass-cache/*
+/mailoutput/*
+/webroot/assets/components/*
+/webroot/.sass-cache/*
+/composer.lock

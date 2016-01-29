@@ -99,6 +99,8 @@ mb_internal_encoding(Configure::read('App.encoding'));
  */
 ini_set('intl.default_locale', 'en_US');
 
+ini_set('max_execution_time', 3600);
+
 /**
  * Register application error and exception handlers.
  */
@@ -131,6 +133,15 @@ if (!Configure::read('App.fullBaseUrl')) {
         Configure::write('App.fullBaseUrl', 'http' . $s . '://' . $httpHost);
     }
     unset($httpHost, $s);
+}
+
+/**
+ * Use different database for dev mode and production mode.
+ */
+if (Configure::read('debug')) {
+    Configure::write('Datasources.default', Configure::read('Datasources.dev'));
+} else {
+    Configure::write('Datasources.default', Configure::read('Datasources.prod'));
 }
 
 Cache::config(Configure::consume('Cache'));
@@ -181,6 +192,8 @@ Request::addDetector('tablet', function ($request) {
  */
 
 Plugin::load('Migrations');
+Plugin::load('clthck/JadeView');
+Plugin::load('AssetCompress', ['bootstrap' => true]);
 
 // Only try to load DebugKit in development mode
 // Debug Kit should not be installed on a production system
@@ -201,3 +214,8 @@ DispatcherFactory::add('ControllerFactory');
  */
 Type::build('date')->useLocaleParser();
 Type::build('datetime')->useLocaleParser();
+
+/**
+ * Include custom constants and functions here.
+ */
+include 'custom_global.php';

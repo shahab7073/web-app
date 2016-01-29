@@ -1,0 +1,545 @@
+@@include('./parts/head.html', {
+  "plugin_fa_icons": true,
+  "plugin_mdi_icons": true,
+  "plugin_ion_icons": true,
+  "plugin_wi_icons": true,
+
+  "plugin_rickshaw": false,
+  "plugin_nvd3": false,
+  "plugin_flot": false,
+  "plugin_sparkline": false,
+
+  "plugin_markitup": false,
+  "plugin_ckeditor": false,
+
+  "plugin_select2": false,
+  "plugin_dropzone": false,
+  "plugin_tagsinput": false,
+  "plugin_clockpicker": false,
+  "plugin_pikaday": false,
+  "plugin_spectrum": false,
+  "plugin_inputmask": false,
+  "plugin_parsley": false,
+
+  "plugin_gmaps": false,
+  "plugin_jvectormap": false,
+
+  "plugin_datatables": false,
+  "plugin_fullcalendar": false,
+  "plugin_simpleweather": false,
+  "plugin_prettify": true,
+  "plugin_animatecss": false,
+  "plugin_wowjs": false,
+  "plugin_photoswipe": false,
+  "plugin_isotope": false,
+  "plugin_videojs": false
+})
+
+<body>
+
+@@include('./parts/top-navbar.html')
+
+@@include('./parts/sidebar.html', {
+  "page": "ui-tables",
+  "classes": "yay-shrink yay-hide-to-small yay-gestures"
+})
+
+<!-- Main Content -->
+<section class="content-wrap">
+
+  @@include('./parts/title.html', {
+    "title": "Base Tables",
+    "crumbs": "<li><a href='dashboard.html'>Dashboard</a> <i class='fa fa-angle-right'></i></li><li><a href='#'>Tables</a> <i class='fa fa-angle-right'></i></li><li><a href='ui-tables.html'>Base Tables</a></li>"
+  })
+
+  <div class="card-panel">
+    Con uses Bootstrap tables. See detailed documentation on <a href="http://getbootstrap.com/css/#tables">bootstrap site</a>
+  </div>
+
+  <!-- Basic -->
+  <div class="card-panel">
+    <h4>Basic</h4>
+    <div class="row">
+      <div class="col l6 m12">
+        
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Username</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th>2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th>3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <div class="col l6 m12">
+        
+        <pre class="prettyprint linenums no-margin">
+&lt;table class="table">
+  &lt;thead>
+    &lt;tr>
+      &lt;th>#&lt;/th>
+      &lt;th>First Name&lt;/th>
+      &lt;th>Last Name&lt;/th>
+      &lt;th>Username&lt;/th>
+    &lt;/tr>
+  &lt;/thead>
+  &lt;tbody>
+    &lt;tr>
+      &lt;th>1&lt;/th>
+      &lt;td>Mark&lt;/td>
+      &lt;td>Otto&lt;/td>
+      &lt;td>@mdo&lt;/td>
+    &lt;/tr>
+    ...
+  &lt;/tbody>
+&lt;/table></pre>
+
+      </div>
+    </div>
+  </div>
+  <!-- /Basic -->
+
+  <!-- Striped Rows -->
+  <div class="card-panel">
+    <h4>Striped Rows</h4>
+    <div class="row">
+      <div class="col l6 m12">
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Username</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th>2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th>3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <div class="col l6 m12">
+        
+        <pre class="prettyprint linenums no-margin">
+&lt;table class="table table-striped">
+  &lt;thead>
+    &lt;tr>
+      &lt;th>#&lt;/th>
+      &lt;th>First Name&lt;/th>
+      &lt;th>Last Name&lt;/th>
+      &lt;th>Username&lt;/th>
+    &lt;/tr>
+  &lt;/thead>
+  &lt;tbody>
+    &lt;tr>
+      &lt;th>1&lt;/th>
+      &lt;td>Mark&lt;/td>
+      &lt;td>Otto&lt;/td>
+      &lt;td>@mdo&lt;/td>
+    &lt;/tr>
+    ...
+  &lt;/tbody>
+&lt;/table></pre>
+
+      </div>
+    </div>
+  </div>
+  <!-- /Striped Rows -->
+
+  <!-- Bordered Table -->
+  <div class="card-panel">
+    <h4>Bordered Table</h4>
+    <div class="row">
+      <div class="col l6 m12">
+
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Username</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th>2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th>3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <div class="col l6 m12">
+        
+        <pre class="prettyprint linenums no-margin">
+&lt;table class="table table-bordered">
+  &lt;thead>
+    &lt;tr>
+      &lt;th>#&lt;/th>
+      &lt;th>First Name&lt;/th>
+      &lt;th>Last Name&lt;/th>
+      &lt;th>Username&lt;/th>
+    &lt;/tr>
+  &lt;/thead>
+  &lt;tbody>
+    &lt;tr>
+      &lt;th>1&lt;/th>
+      &lt;td>Mark&lt;/td>
+      &lt;td>Otto&lt;/td>
+      &lt;td>@mdo&lt;/td>
+    &lt;/tr>
+    ...
+  &lt;/tbody>
+&lt;/table></pre>
+
+      </div>
+    </div>
+  </div>
+  <!-- /Bordered Table -->
+
+  <!-- Hover Rows -->
+  <div class="card-panel">
+    <h4>Hover Rows</h4>
+    <div class="row">
+      <div class="col l6 m12">
+
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Username</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th>2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th>3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <div class="col l6 m12">
+        
+        <pre class="prettyprint linenums no-margin">
+&lt;table class="table table-hover">
+  &lt;thead>
+    &lt;tr>
+      &lt;th>#&lt;/th>
+      &lt;th>First Name&lt;/th>
+      &lt;th>Last Name&lt;/th>
+      &lt;th>Username&lt;/th>
+    &lt;/tr>
+  &lt;/thead>
+  &lt;tbody>
+    &lt;tr>
+      &lt;th>1&lt;/th>
+      &lt;td>Mark&lt;/td>
+      &lt;td>Otto&lt;/td>
+      &lt;td>@mdo&lt;/td>
+    &lt;/tr>
+    ...
+  &lt;/tbody>
+&lt;/table></pre>
+
+      </div>
+    </div>
+  </div>
+  <!-- /Hover Rows -->
+
+  <!-- Condensed Table -->
+  <div class="card-panel">
+    <h4>Condensed Table</h4>
+    <div class="row">
+      <div class="col l6 m12">
+
+        <table class="table table-condensed">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Username</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th>2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th>3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <div class="col l6 m12">
+        
+        <pre class="prettyprint linenums no-margin">
+&lt;table class="table table-condensed">
+  &lt;thead>
+    &lt;tr>
+      &lt;th>#&lt;/th>
+      &lt;th>First Name&lt;/th>
+      &lt;th>Last Name&lt;/th>
+      &lt;th>Username&lt;/th>
+    &lt;/tr>
+  &lt;/thead>
+  &lt;tbody>
+    &lt;tr>
+      &lt;th>1&lt;/th>
+      &lt;td>Mark&lt;/td>
+      &lt;td>Otto&lt;/td>
+      &lt;td>@mdo&lt;/td>
+    &lt;/tr>
+    ...
+  &lt;/tbody>
+&lt;/table></pre>
+
+      </div>
+    </div>
+  </div>
+  <!-- /Condensed Table -->
+
+  <!-- Colored Rows -->
+  <div class="card-panel">
+    <h4>Colored Rows</h4>
+    <div class="row">
+      <div class="col l6 m12">
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Username</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="blue lighten-5">
+              <th>1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr class="red lighten-5">
+              <th>2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr class="yellow lighten-5">
+              <th>3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      <div class="col l6 m12">
+        
+        <pre class="prettyprint linenums no-margin">
+&lt;table class="table">
+  &lt;thead>
+    &lt;tr>
+      &lt;th>#&lt;/th>
+      &lt;th>First Name&lt;/th>
+      &lt;th>Last Name&lt;/th>
+      &lt;th>Username&lt;/th>
+    &lt;/tr>
+  &lt;/thead>
+  &lt;tbody>
+    &lt;tr class="blue lighten-5">
+      &lt;th>1&lt;/th>
+      &lt;td>Mark&lt;/td>
+      &lt;td>Otto&lt;/td>
+      &lt;td>@mdo&lt;/td>
+    &lt;/tr>
+    &lt;tr class="red lighten-5">
+      &lt;th>2&lt;/th>
+      &lt;td>Jacob&lt;/td>
+      &lt;td>Thornton&lt;/td>
+      &lt;td>@fat&lt;/td>
+    &lt;/tr>
+    &lt;tr class="yellow lighten-5">
+      &lt;th>3&lt;/th>
+      &lt;td colspan="2">Larry the Bird&lt;/td>
+      &lt;td>@twitter&lt;/td>
+    &lt;/tr>
+  &lt;/tbody>
+&lt;/table></pre>
+
+      </div>
+    </div>
+  </div>
+  <!-- /Colored Rows -->
+
+  <!-- Responsive Tables -->
+  <div class="card-panel">
+    <h4>Responsive Tables</h4>
+    <div class="row">
+      <div class="col l6 m12">
+
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Table heading</th>
+                <th>Table heading</th>
+                <th>Table heading</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>1</th>
+                <td>Table cell</td>
+                <td>Table cell</td>
+                <td>Table cell</td>
+              </tr>
+              <tr>
+                <th>2</th>
+                <td>Table cell</td>
+                <td>Table cell</td>
+                <td>Table cell</td>
+              </tr>
+              <tr>
+                <th>3</th>
+                <td>Table cell</td>
+                <td>Table cell</td>
+                <td>Table cell</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+      <div class="col l6 m12">
+        
+        <pre class="prettyprint linenums no-margin">
+&lt;div class="table-responsive">
+  &lt;table class="table table-bordered">
+    &lt;thead>
+      &lt;tr>
+        &lt;th>#&lt;/th>
+        &lt;th>Table heading&lt;/th>
+        &lt;th>Table heading&lt;/th>
+        &lt;th>Table heading&lt;/th>
+      &lt;/tr>
+    &lt;/thead>
+    &lt;tbody>
+      &lt;tr>
+        &lt;th>1&lt;/th>
+        &lt;td>Table cell&lt;/td>
+        &lt;td>Table cell&lt;/td>
+        &lt;td>Table cell&lt;/td>
+      &lt;/tr>
+      ...
+    &lt;/tbody>
+  &lt;/table>
+&lt;/div></pre>
+    
+      </div>
+    </div>
+  </div>
+  <!-- /Responsive Tables -->
+
+</section>
+<!-- /Main Content -->
+
+@@include('./parts/search-bar.html')
+
+@@include('./parts/chat.html')
+
+@@include('./parts/foot.html', {
+  "copyright": true
+})
+
+</body>
+</html>

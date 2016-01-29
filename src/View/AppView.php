@@ -14,6 +14,7 @@
 namespace App\View;
 
 use Cake\View\View;
+use clthck\JadeView\View\JadeView;
 
 /**
  * Application View
@@ -22,7 +23,7 @@ use Cake\View\View;
  *
  * @link http://book.cakephp.org/3.0/en/views.html#the-app-view
  */
-class AppView extends View
+class AppView extends JadeView
 {
 
     /**
@@ -36,5 +37,15 @@ class AppView extends View
      */
     public function initialize()
     {
+        $this->viewOptions([
+            'pretty' => true
+        ]);
+
+        parent::initialize();
+        
+        $this->loadHelper('Form', [
+            'templates' => 'form_template'
+        ]);
+        $this->loadHelper('AssetCompress.AssetCompress');
     }
 }

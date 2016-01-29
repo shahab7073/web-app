@@ -41,6 +41,11 @@ use Cake\Routing\Router;
  */
 Router::defaultRouteClass('DashedRoute');
 
+Router::scope('/ajax', function ($routes) {
+
+    $routes->connect('/:controller/:action', [], ['routeClass' => 'AjaxDashedRoute']);
+});
+
 Router::scope('/', function ($routes) {
     /**
      * Here, we are connecting '/' (base path) to a controller called 'Pages',

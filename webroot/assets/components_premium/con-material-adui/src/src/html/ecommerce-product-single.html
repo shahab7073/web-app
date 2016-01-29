@@ -1,0 +1,268 @@
+@@include('./parts/head.html', {
+  "plugin_fa_icons": true,
+  "plugin_mdi_icons": true,
+  "plugin_ion_icons": true,
+  "plugin_wi_icons": true,
+
+  "plugin_rickshaw": false,
+  "plugin_nvd3": false,
+  "plugin_flot": false,
+  "plugin_sparkline": false,
+
+  "plugin_markitup": false,
+  "plugin_ckeditor": true,
+
+  "plugin_select2": false,
+  "plugin_dropzone": false,
+  "plugin_tagsinput": false,
+  "plugin_clockpicker": false,
+  "plugin_pikaday": false,
+  "plugin_spectrum": false,
+  "plugin_inputmask": false,
+  "plugin_parsley": false,
+
+  "plugin_gmaps": false,
+  "plugin_jvectormap": false,
+
+  "plugin_datatables": false,
+  "plugin_fullcalendar": false,
+  "plugin_simpleweather": false,
+  "plugin_prettify": true,
+  "plugin_animatecss": false,
+  "plugin_wowjs": false,
+  "plugin_photoswipe": false,
+  "plugin_isotope": false,
+  "plugin_videojs": false
+})
+
+<body>
+
+@@include('./parts/top-navbar.html')
+
+@@include('./parts/sidebar.html', {
+  "page": "ecommerce-product-single",
+  "classes": "yay-shrink yay-hide-to-small yay-gestures"
+})
+
+<!-- Main Content -->
+<section class="content-wrap ecommerce-product-single">
+
+  @@include('./parts/ecommerce-title.html', {
+    "page": "ecommerce-product-single"
+  })
+
+  <form action="ecommerce-product-single.html">
+    <!-- Save and Cancel buttons -->
+    <p class="right-align">
+      <button class="btn" type="submit">Save</button>
+      <a class="btn" href="ecommerce-products.html">Cancel</a>
+    </p>
+    <!-- /Save and Cancel buttons -->
+
+    <!-- General -->
+    <div class="card">
+      <div class="title">
+        <h5>General</h5>
+        <a class="minimize" href="#">
+          <i class="mdi-navigation-expand-less"></i>
+        </a>
+      </div>
+      <div class="content">
+        <!-- Product Name -->
+        <div class="row no-margin-top">
+          <div class="col s12 l3">
+            <label for="ecommerce-product-name" class="setting-title">
+              Product Name
+            </label>
+          </div>
+          <div class="col s12 l9">
+            <div class="input-field no-margin-top">
+              <input id="ecommerce-product-name" type="text" placeholder="Product Name" value="Apple iPhone 6" name="product-name">
+            </div>
+          </div>
+        </div>
+        <!-- /Product Name -->
+
+        <!-- Product SKU, Price, Stock -->
+        <div class="row no-margin-top">
+          <div class="col s12 l3">
+          </div>
+          <div class="col s12 l3">
+            <div class="input-field">
+              <input id="ecommerce-product-sku" type="text" value="00782" name="product-sku">
+              <label for="ecommerce-product-sku">SKU</label>
+            </div>
+          </div>
+          <div class="col s12 l3">
+            <div class="input-field">
+              <input id="ecommerce-product-price" type="text" value="699" name="product-price">
+              <label for="ecommerce-product-price">Price</label>
+            </div>
+          </div>
+          <div class="col s12 l3">
+            <div class="input-field">
+              <input id="ecommerce-product-stock" type="text" value="765" name="product-stock">
+              <label for="ecommerce-product-stock">Stock</label>
+            </div>
+          </div>
+        </div>
+        <!-- /Product SKU, Price, Stock -->
+        
+        <!-- Product Photos -->
+        <div class="row product-photos">
+          <div class="col s12 l3">
+            <label for="ecommerce-product-photos" class="setting-title">
+              Product Photos
+            </label>
+          </div>
+          <div class="col s12 l9">
+            <div class="file-field input-field">
+              <div class="btn">
+                <span>File</span>
+                <input id="ecommerce-product-photos" type="file" name="product-photos" />
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path" type="text"/>
+              </div>
+            </div>
+            <div class="photos">
+              <div class="main-photo">
+                <img class="materialboxed" width="150" src="assets/_con/images/ecommerce-apple-iphone-1.jpg">
+              </div>
+              <div class="small-photo">
+                <img class="materialboxed" width="50" src="assets/_con/images/ecommerce-apple-iphone-2.jpg">
+                <img class="materialboxed" width="50" src="assets/_con/images/ecommerce-apple-iphone-3.jpg">
+                <img class="materialboxed" width="50" src="assets/_con/images/ecommerce-apple-iphone-4.jpg">
+                <img class="materialboxed" width="50" src="assets/_con/images/ecommerce-apple-iphone-5.jpg">
+                <img class="materialboxed" width="50" src="assets/_con/images/ecommerce-apple-iphone-6.jpg">
+                <img class="materialboxed" width="50" src="assets/_con/images/ecommerce-apple-iphone-7.jpg">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /Product Photos -->
+
+        <!-- Product Description -->
+        <div class="row no-margin-top">
+          <div class="col s12 l3">
+            <label class="setting-title">
+              Product Description
+            </label>
+          </div>
+          <div class="col s12 l9">
+
+            <textarea id="ckeditor1" name="product-description">
+              <u>Small Description</u>
+              <p><i>The Good</i>
+                <br>
+                The iPhone 6 delivers a spacious, crisp 4.7-inch screen, improved wireless speeds, better camera autofocus, and bumped-up storage capacities to 128GB at the top end. iOS remains a top-notch mobile operating system with an excellent app selection, and Apple Pay is a smooth, secure payment system.
+              </p>
+              <p><i>The Bad</i>
+                <br>
+                Battery life isn't much better than last year's iPhone 5S. An even larger screen could have been squeezed into the same housing.
+              </p>
+              <p><i>The Bottom Line</i>
+                <br>
+                The iPhone 6 is an exceptional phone in nearly every way except its average battery life: it's thin and fast with a spacious screen and the smoothest payment system we've seen. It's the best overall phone of 2014.
+              </p>
+
+              <u>Specifications</u>
+              <ul>
+                <li><strong>Network</strong>: GSM / CDMA / HSPA / EVDO / LTE</li>
+                <li><strong>Dimensions</strong>: 138.1 x 67 x 6.9 mm (5.44 x 2.64 x 0.27 in)</li>
+                <li><strong>Weight</strong>: 129 g (4.55 oz)</li>
+                <li><strong>Display</strong>: 4.7 inches LED-backlit IPS LCD, capacitive touchscreen, 750 x 1334 pixels (~326 ppi pixel density)</li>
+                <li><strong>OS</strong>: iOS 8, upgradable to iOS 8.2</li>
+                <li><strong>Chipset</strong>: Apple A8</li>
+                <li><strong>CPU</strong>: Dual-core 1.4 GHz Cyclone (ARM v8-based)</li>
+                <li><strong>GPU</strong>: PowerVR GX6450 (quad-core graphics)</li>
+                <li><strong>RAM</strong>: 1 GB</li>
+                <li><strong>ROM</strong>: 16/64/128 GB</li>
+                <li><strong>Camera</strong>: 8 MP, 3264 x 2448 pixels, phase detection autofocus, dual-LED (dual tone) flash</li>
+                <li><strong>Wi-Fi</strong>: 802.11 a/b/g/n/ac, dual-band, hotspot</li>
+                <li><strong>Bluetooth</strong>: v4.0, A2DP, LE</li>
+                <li><strong>GPS</strong>: with A-GPS, GLONASS</li>
+                <li><strong>Battery</strong>: Non-removable Li-Po 1810 mAh battery (6.9 Wh)</li>
+              </ul>
+            </textarea>
+
+          </div>
+        </div>
+        <!-- /Product Description -->
+      </div>
+    </div>
+    <!-- /General -->
+
+    <!-- Meta -->
+    <div class="card">
+      <div class="title">
+        <h5>Meta</h5>
+        <a class="minimize" href="#">
+          <i class="mdi-navigation-expand-less"></i>
+        </a>
+      </div>
+      <div class="content">
+
+        <!-- Keywords -->
+        <div class="row no-margin-top">
+          <div class="col s12 l3">
+            <label for="ecommerce-product-keywords" class="setting-title">
+              Keywords
+            </label>
+          </div>
+          <div class="col s12 l9">
+            <div class="input-field no-margin-top">
+              <input id="ecommerce-product-keywords" type="text" placeholder="Product meta keywords" value="Apple, iPhone, Device, Apple iPhone 6" name="product-meta-keywords">
+            </div>
+          </div>
+        </div>
+        <!-- /Keywords -->
+
+        <!-- Description -->
+        <div class="row no-margin-top">
+          <div class="col s12 l3">
+            <label for="ecommerce-product-keywords" class="setting-title">
+              Description
+            </label>
+          </div>
+          <div class="col s12 l9">
+            <div class="input-field no-margin-top">
+                <textarea name="product-keywords" id="ecommerce-product-keywords" placeholder="Product meta description" class="materialize-textarea"></textarea>
+            </div>
+          </div>
+        </div>
+        <!-- /Description -->
+
+      </div>
+    </div>
+    <!-- /Meta -->
+  
+    <!-- Save and Cancel buttons -->
+    <p class="right-align">
+      <button class="btn" type="submit">Save</button>
+      <a class="btn" href="ecommerce-products.html">Cancel</a>
+    </p>
+    <!-- /Save and Cancel buttons -->
+  </form>
+
+</section>
+<!-- /Main Content -->
+
+@@include('./parts/search-bar.html')
+
+@@include('./parts/chat.html')
+
+@@include('./parts/foot.html', {
+  "copyright": true
+})
+
+
+<!-- Init CKEditor -->
+<script src="assets/ckeditor/ckeditor.js"></script>
+<script>
+  CKEDITOR.replace( 'ckeditor1' );
+</script>
+<!-- /Init CKEditor -->
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+._inline-block {
+	display: inline-block;
+}
+
+._no-label + label {
+    padding-left: 10px;
+}
+
+._no-text-transform {
+    text-transform: none;
+}
+
+._no-margin-bottom {
+	margin-bottom: 0;
+}
+
+._no-input-margin-bottom {
+	&, input.select-dropdown {
+		@extend ._no-margin-bottom;
+	}
+}
+
+._valign-center {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}

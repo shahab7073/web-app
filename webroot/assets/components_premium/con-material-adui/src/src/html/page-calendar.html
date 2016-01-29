@@ -1,0 +1,201 @@
+@@include('./parts/head.html', {
+  "plugin_fa_icons": true,
+  "plugin_mdi_icons": true,
+  "plugin_ion_icons": true,
+  "plugin_wi_icons": true,
+
+  "plugin_rickshaw": false,
+  "plugin_nvd3": false,
+  "plugin_flot": false,
+  "plugin_sparkline": false,
+
+  "plugin_markitup": false,
+  "plugin_ckeditor": false,
+
+  "plugin_select2": false,
+  "plugin_dropzone": false,
+  "plugin_tagsinput": false,
+  "plugin_clockpicker": false,
+  "plugin_pikaday": false,
+  "plugin_spectrum": false,
+  "plugin_inputmask": false,
+  "plugin_parsley": false,
+
+  "plugin_gmaps": false,
+  "plugin_jvectormap": false,
+
+  "plugin_datatables": false,
+  "plugin_fullcalendar": true,
+  "plugin_simpleweather": false,
+  "plugin_prettify": false,
+  "plugin_animatecss": false,
+  "plugin_wowjs": false,
+  "plugin_photoswipe": false,
+  "plugin_isotope": false,
+  "plugin_videojs": false
+})
+
+<body>
+
+@@include('./parts/top-navbar.html')
+
+@@include('./parts/sidebar.html', {
+  "page": "page-calendar",
+  "classes": "yay-shrink yay-hide-to-small yay-gestures"
+})
+
+<!-- Main Content -->
+<section class="content-wrap">
+
+  @@include('./parts/title.html', {
+    "title": "Calendar",
+    "crumbs": "<li><a href='dashboard.html'>Dashboard</a> <i class='fa fa-angle-right'></i></li><li><a href='#'>Pages</a> <i class='fa fa-angle-right'></i></li><li><a href='page-calendar.html'>Calendar</a></li>"
+  })
+  
+  <div class="row">
+    <div class="col s12 l3">
+      <!-- Events -->
+      <div class="card-panel" id="events-list">
+        <h4>Events</h4>
+
+        <p class="switch">
+          <label>
+            <input type="checkbox" name="remove-draggable" />
+            <span class="lever"></span>
+            Remove After Drop
+          </label>
+        </p>
+
+        <div class="fc-event red lighten-1">
+          Learn Meteor.js
+        </div>
+
+        <div class="fc-event teal lighten-1">
+          Help users
+        </div>
+
+        <div class="fc-event indigo lighten-1">
+          Develop a new product
+        </div>
+
+        <div class="fc-event orange lighten-1">
+          Go to the zoo
+        </div>
+
+        <div class="fc-event">
+          Update Con
+        </div>
+
+      </div>
+      <!-- /Events -->
+    </div>
+    <div class="col s12 l9">
+      <!-- Calendar -->
+      <div class="card">
+        <div id="calendar"></div>
+      </div>
+      <!-- /Calendar -->
+    </div>
+  </div>
+
+</section>
+<!-- /Main Content -->
+
+@@include('./parts/search-bar.html')
+
+@@include('./parts/chat.html')
+
+@@include('./parts/foot.html', {
+  "copyright": true
+})
+
+<script>
+  /*
+   * Init Draggable Events
+   */
+  var removeDraggable = $('#events-list [name=remove-draggable]');
+  $('#events-list .fc-event').each(function() {
+    // store data so the calendar knows to render an event upon drop
+    $(this).data('event', {
+      title: $.trim($(this).text()), // use the element's text as the event title
+      stick: true, // maintain when user navigates (see docs on the renderEvent method)
+      className: this.className
+    });
+
+    $(this).draggable({
+      zIndex: 999,
+      revert: true, // will cause the event to go back to its
+      revertDuration: 0 //  original position after the drag
+    });
+  });
+
+
+  /*
+   * Init Calendar
+   */
+  $('#calendar').fullCalendar({
+    height: 700,
+    header: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'month,agendaWeek,agendaDay'
+    },
+    defaultDate: '2015-02-12',
+    editable: true,
+    droppable: true,
+    drop: function() {
+      // is the "remove after drop" checkbox checked?
+      if (removeDraggable.is(':checked')) {
+        // if so, remove the element from the "Draggable Events" list
+        $(this).remove();
+      }
+    },
+    events: [
+      {
+        title: 'All Day Event',
+        start: '2015-02-01'
+      },
+      {
+        title: 'Long Event',
+        start: '2015-02-07',
+        end: '2015-02-10'
+      },
+      {
+        id: 999,
+        title: 'Repeating Event',
+        start: '2015-02-09T16:00:00'
+      },
+      {
+        id: 999,
+        title: 'Repeating Event',
+        start: '2015-02-16T16:00:00'
+      },
+      {
+        title: 'Conference',
+        start: '2015-02-11',
+        end: '2015-02-13'
+      },
+      {
+        title: 'Meeting',
+        start: '2015-02-12T10:30:00',
+        end: '2015-02-12T12:30:00'
+      },
+      {
+        title: 'Lunch',
+        start: '2015-02-12T12:00:00'
+      },
+      {
+        title: 'Meeting',
+        start: '2015-02-12T14:30:00'
+      },
+      {
+        title: 'Click for Google',
+        url: 'http://google.com/',
+        start: '2015-02-28'
+      }
+    ]
+  });
+</script>
+
+</body>
+</html>

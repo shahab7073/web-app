@@ -1,0 +1,26 @@
+
+<!-- Breadcrumb -->
+<div class="ecommerce-title">
+
+  <div class="row">
+    <div class="col s12 m9 l10">
+      <!--h1>@@title</h1-->
+      <nav>
+        <ul class="left">
+          <li @@if(page == 'ecommerce-dashboard'){class="active"}><a href="ecommerce-dashboard.html">Dashboard</a></li>
+          <li @@if(page == 'ecommerce-products' || page == 'ecommerce-product-single'){class="active"}><a href="ecommerce-products.html">Products</a></li>
+          <li @@if(page == 'ecommerce-orders' || page == 'ecommerce-order-single'){class="active"}><a href="ecommerce-orders.html">Orders</a></li>
+          <li @@if(page == 'ecommerce-customers'){class="active"}><a href="ecommerce-customers.html">Customers</a></li>
+          <li @@if(page == 'ecommerce-settings'){class="active"}><a href="ecommerce-settings.html">Settings</a></li>
+          <li @@if(page == 'ecommerce-pricing-tables'){class="active"}><a href="ecommerce-pricing-tables.html">Pricing</a></li>
+        </ul>
+      </nav>
+
+    </div>
+    <div class="col s12 m3 l2 right-align">
+      <a href="#!" class="btn grey lighten-3 grey-text z-depth-0 chat-toggle"><i class="fa fa-comments"></i></a>
+    </div>
+  </div>
+
+</div>
+<!-- /Breadcrumb -->

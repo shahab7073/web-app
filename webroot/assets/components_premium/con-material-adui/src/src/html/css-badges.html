@@ -1,0 +1,123 @@
+@@include('./parts/head.html', {
+  "plugin_fa_icons": true,
+  "plugin_mdi_icons": true,
+  "plugin_ion_icons": true,
+  "plugin_wi_icons": true,
+
+  "plugin_rickshaw": false,
+  "plugin_nvd3": false,
+  "plugin_flot": false,
+  "plugin_sparkline": false,
+
+  "plugin_markitup": false,
+  "plugin_ckeditor": false,
+
+  "plugin_select2": false,
+  "plugin_dropzone": false,
+  "plugin_tagsinput": false,
+  "plugin_clockpicker": false,
+  "plugin_pikaday": false,
+  "plugin_spectrum": false,
+  "plugin_inputmask": false,
+  "plugin_parsley": false,
+
+  "plugin_gmaps": false,
+  "plugin_jvectormap": false,
+
+  "plugin_datatables": false,
+  "plugin_fullcalendar": false,
+  "plugin_simpleweather": false,
+  "plugin_prettify": true,
+  "plugin_animatecss": false,
+  "plugin_wowjs": false,
+  "plugin_photoswipe": false,
+  "plugin_isotope": false,
+  "plugin_videojs": false
+})
+
+<body>
+
+@@include('./parts/top-navbar.html')
+
+@@include('./parts/sidebar.html', {
+  "page": "css-badges",
+  "classes": "yay-shrink yay-hide-to-small yay-gestures"
+})
+
+<!-- Main Content -->
+<section class="content-wrap">
+
+  @@include('./parts/title.html', {
+    "title": "Badges",
+    "crumbs": "<li><a href='dashboard.html'>Dashboard</a> <i class='fa fa-angle-right'></i></li><li><a href='#'>CSS</a> <i class='fa fa-angle-right'></i></li><li><a href='css-badges.html'>Badges</a></li>"
+  })
+  
+  <div class="card-panel">
+    Badges can notify you that there are new or unread messages or notifications. Add the <code>new</code> class to the badge to give it the background.
+  </div>
+
+
+  <!--  Collections  -->
+  <div class="card-panel">
+    <h4>Collections</h4>
+    <div class="row">
+      <div class="col l6 s12">
+        <div class="collection">
+          <a href="#!" class="collection-item">Alan<span class="badge">1</span></a>
+          <a href="#!" class="collection-item">Alan<span class="new badge">4</span></a>
+          <a href="#!" class="collection-item">Alan</li>
+          <a href="#!" class="collection-item">Alan<span class="badge">14</span></a>
+        </div>
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums">
+&lt;div class="collection">
+  &lt;a href="#!" class="collection-item">Alan&lt;span class="badge">1&lt;/span>&lt;/a>
+  &lt;a href="#!" class="collection-item">Alan&lt;span class="new badge">4&lt;/span>&lt;/a>
+  &lt;a href="#!" class="collection-item">Alan&lt;/li>
+  &lt;a href="#!" class="collection-item">Alan&lt;span class="badge">14&lt;/span>&lt;/a>
+&lt;/div></pre>
+      </div>
+    </div>
+  </div>
+  <!--  /Collections  -->
+
+
+  <!--  Badges in Dropdown  -->
+  <div class="card-panel">
+    <h4>Badges in Dropdown</h4>
+    <div class="row">
+      <div class="col l6 s12">
+        <ul id="dropdown2" class="dropdown-content">
+          <li><a href="#!">one<span class="badge">1</span></a></li>
+          <li><a href="#!">two<span class="new badge">1</span></a></li>
+          <li><a href="#!">three</a></li>
+        </ul>
+        <a class="btn dropdown-button" href="#!" data-activates="dropdown2">Dropdown<i class="mdi-navigation-arrow-drop-down right"></i></a>
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;ul id="dropdown2" class="dropdown-content">
+  &lt;li>&lt;a href="#!">one&lt;span class="badge">1&lt;/span>&lt;/a>&lt;/li>
+  &lt;li>&lt;a href="#!">two&lt;span class="new badge">1&lt;/span>&lt;/a>&lt;/li>
+  &lt;li>&lt;a href="#!">three&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;a class="btn dropdown-button" href="#!" data-activates="dropdown2">Dropdown&lt;i class="mdi-navigation-arrow-drop-down right">&lt;/i>&lt;/a></pre>
+      </div>
+    </div>
+  </div>
+  <!--  /Badges in Dropdown  -->
+
+</section>
+<!-- /Main Content -->
+
+@@include('./parts/search-bar.html')
+
+@@include('./parts/chat.html')
+
+@@include('./parts/foot.html', {
+  "copyright": true
+})
+
+</body>
+</html>

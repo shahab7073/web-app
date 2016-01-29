@@ -1,0 +1,19 @@
+h5._uppercase Hello world!
+
+table.display.table.table-bordered.table-striped.table-hover
+	thead: tr
+		th A
+		th B
+		th C
+	tbody
+		for $i = 0; $i < 25; $i ++
+			tr
+				td= $i
+				td= $i
+				td= $i
+
+- $view->Html->scriptStart(['block' => 'add_script']);
+|
+	$('table').materialDataTable();
+	
+- $view->Html->scriptEnd();

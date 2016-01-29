@@ -1,0 +1,53 @@
+//- Search Bar
+.search-bar
+	.layer-overlay
+	.layer-content
+		form(action='#!')
+			//- Header
+			a.search-bar-toggle.grey-text.text-darken-2(href='#!'): i.mdi-navigation-close
+			//- Search Input
+			.input-field
+				i.mdi-action-search.prefix
+				input(type='text' name='con-search' placeholder='Search...')
+			//- Search Results
+			.search-results
+				.row
+					.col.s12.l4
+						h4 Users
+						.each-result
+							!= $view->Html->image('user2.jpg', ['class' => 'circle photo', 'alt' => 'Felecia Castro'])
+							.title Felecia Castro
+							.label Content Manager
+						.each-result
+							!= $view->Html->image('user3.jpg', ['class' => 'circle photo', 'alt' => 'Felecia Castro'])
+							.title Max Brooks
+							.label Programmer
+						.each-result
+							!= $view->Html->image('user4.jpg', ['class' => 'circle photo', 'alt' => 'Felecia Castro'])
+							.title Patsy Griffin
+							.label Support
+						.each-result
+							!= $view->Html->image('user6.jpg', ['class' => 'circle photo', 'alt' => 'Felecia Castro'])
+							.title Vernon Garrett
+							.label Photographer
+					.col.s12.l4
+						h4 Articles
+						.each-result
+							.icon.circle.blue.white-text MD
+							.title Material Design
+							.label.nowrap Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi consequartur debitis veritatis dolorum, enim libero!
+						.each-result
+							.icon.circle.blue.white-text: i.fa.fa-dashboard
+							.title Admin Dashboard
+							.label.nowrap Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi consequartur debitis veritatis dolorum, enim libero!
+						.each-result
+							.icon.circle.blue.white-text RD
+							.title Responsive Design
+							.label.nowrap Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi consequartur debitis veritatis dolorum, enim libero!
+						.each-result
+							.icon.circle.blue.white-text: i.fa.fa-tablet
+							.title Mobile First
+							.label.nowrap Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi consequartur debitis veritatis dolorum, enim libero!
+					.col.s12.l4
+						h4 Posts
+						.no-result No results were found ;(

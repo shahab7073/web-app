@@ -1,0 +1,123 @@
+@@include('./parts/head.html', {
+  "plugin_fa_icons": true,
+  "plugin_mdi_icons": true,
+  "plugin_ion_icons": true,
+  "plugin_wi_icons": true,
+
+  "plugin_rickshaw": false,
+  "plugin_nvd3": false,
+  "plugin_flot": false,
+  "plugin_sparkline": false,
+
+  "plugin_markitup": false,
+  "plugin_ckeditor": false,
+
+  "plugin_select2": false,
+  "plugin_dropzone": false,
+  "plugin_tagsinput": false,
+  "plugin_clockpicker": false,
+  "plugin_pikaday": false,
+  "plugin_spectrum": false,
+  "plugin_inputmask": false,
+  "plugin_parsley": false,
+
+  "plugin_gmaps": false,
+  "plugin_jvectormap": false,
+
+  "plugin_datatables": false,
+  "plugin_fullcalendar": false,
+  "plugin_simpleweather": false,
+  "plugin_prettify": true,
+  "plugin_animatecss": false,
+  "plugin_wowjs": false,
+  "plugin_photoswipe": false,
+  "plugin_isotope": false,
+  "plugin_videojs": false
+})
+
+<body>
+
+@@include('./parts/top-navbar.html')
+
+@@include('./parts/sidebar.html', {
+  "page": "ui-tabs",
+  "classes": "yay-shrink yay-hide-to-small yay-gestures"
+})
+
+<!-- Main Content -->
+<section class="content-wrap">
+
+  @@include('./parts/title.html', {
+    "title": "Tabs",
+    "crumbs": "<li><a href='dashboard.html'>Dashboard</a> <i class='fa fa-angle-right'></i></li><li><a href='#'>UI</a> <i class='fa fa-angle-right'></i></li><li><a href='ui-tabs.html'>Tabs</a></li>"
+  })
+  
+  <div class="card-panel">
+    The tabs structure consists of an unordered list of tabs that have hashes corresponding to tab ids. Then when you click on each tab, only the container with the corresponding tab id will become visible.
+  </div>
+
+  <!-- Basic -->
+  <div class="card-panel">
+    <h4>Basic</h4>
+    <div class="row">
+      <div class="col l6 s12">
+        <ul class="tabs tab-demo z-depth-1">
+          <li class="tab col s3"><a href="#test1">Test 1</a></li>
+          <li class="tab col s3"><a class="active" href="#test2">Test 2</a></li>
+          <li class="tab col s3 disabled"><a href="#test3">Disabled</a></li>
+          <li class="tab col s3"><a href="#test4">Test 4</a></li>
+        </ul>
+        <div id="test1" class="col s12"><p>Test 1</p></div>
+        <div id="test2" class="col s12"><p>Test 2</p></div>
+        <div id="test3" class="col s12"><p>Test 3</p></div>
+        <div id="test4" class="col s12"><p>Test 4</p></div>
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;div class="row">
+  &lt;div class="col s12">
+    &lt;ul class="tabs">
+      &lt;li class="tab col s3">&lt;a href="#test1">Test 1&lt;/a>&lt;/li>
+      &lt;li class="tab col s3">&lt;a class="active" href="#test2">Test 2&lt;/a>&lt;/li>
+      &lt;li class="tab col s3">&lt;a href="#test3">Test 3&lt;/a>&lt;/li>
+      &lt;li class="tab col s3">&lt;a href="#test4">Test 4&lt;/a>&lt;/li>
+    &lt;/ul>
+  &lt;/div>
+  &lt;div id="test1" class="col s12">Test 1&lt;/div>
+  &lt;div id="test2" class="col s12">Test 2&lt;/div>
+  &lt;div id="test3" class="col s12">Test 3&lt;/div>
+  &lt;div id="test4" class="col s12">Test 4&lt;/div>
+&lt;/div></pre>
+      </div>
+    </div>
+  </div>
+  <!-- /Basic -->
+
+  <!-- Presenting a tab -->
+  <div class="card-panel">
+    <h4>Preselecting a tab</h4>
+    <div class="row">
+      <div class="col l6 s12">
+        By default, the first tab is selected. But if this is not what you want, you can preselect a tab by either passing in the hash in the url ex:<code class="language-markup">#test2</code>. Or you can add the class <code class="language-markup">active</code> to the <code class="language-markup">a</code> tag.
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;li class="tab col s2">&lt;a class="active" href="#test3">Test 3&lt;/a>&lt;/li></pre>
+      </div>
+    </div>
+  </div>
+  <!-- /Presenting a tab -->
+
+</section>
+<!-- /Main Content -->
+
+@@include('./parts/search-bar.html')
+
+@@include('./parts/chat.html')
+
+@@include('./parts/foot.html', {
+  "copyright": true
+})
+
+</body>
+</html>

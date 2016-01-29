@@ -1,0 +1,149 @@
+@@include('./parts/head.html', {
+  "plugin_fa_icons": true,
+  "plugin_mdi_icons": true,
+  "plugin_ion_icons": true,
+  "plugin_wi_icons": true,
+
+  "plugin_rickshaw": false,
+  "plugin_nvd3": false,
+  "plugin_flot": false,
+  "plugin_sparkline": false,
+
+  "plugin_markitup": false,
+  "plugin_ckeditor": false,
+
+  "plugin_select2": false,
+  "plugin_dropzone": false,
+  "plugin_tagsinput": false,
+  "plugin_clockpicker": false,
+  "plugin_pikaday": false,
+  "plugin_spectrum": false,
+  "plugin_inputmask": false,
+  "plugin_parsley": false,
+
+  "plugin_gmaps": false,
+  "plugin_jvectormap": false,
+
+  "plugin_datatables": false,
+  "plugin_fullcalendar": false,
+  "plugin_simpleweather": false,
+  "plugin_prettify": true,
+  "plugin_animatecss": false,
+  "plugin_wowjs": false,
+  "plugin_photoswipe": false,
+  "plugin_isotope": false,
+  "plugin_videojs": false
+})
+
+<body>
+
+@@include('./parts/top-navbar.html')
+
+@@include('./parts/sidebar.html', {
+  "page": "media-slider",
+  "classes": "yay-shrink yay-hide-to-small yay-gestures"
+})
+
+<!-- Main Content -->
+<section class="content-wrap">
+
+  @@include('./parts/title.html', {
+    "title": "Slider",
+    "crumbs": "<li><a href='dashboard.html'>Dashboard</a> <i class='fa fa-angle-right'></i></li><li><a href='#'>Media</a> <i class='fa fa-angle-right'></i></li><li><a href='media-slider.html'>Slider</a></li>"
+  })
+
+  <div class="card-panel">
+    Our slider is a simple and elegant image carousel. You can also have captions that will be transitioned on their own depending on their alignment. You can also have indicators that show up on the bottom of the slider.
+
+    <br>
+    <i>Note: This is also Hammer.js compatible! Try swiping with your finger to scroll through the slider.</i>
+  </div>
+
+  <div class="card-panel">
+    <h4>Basic</h4>
+    <div class="row">
+      <div class="col l6 s12">
+        <div class="slider">
+          <ul class="slides">
+            <li>
+              <img src="assets/_con/images/image-1.jpg">
+              <div class="caption center-align">
+                <h3>This is our big Tagline!</h3>
+                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+              </div>
+            </li>
+            <li>
+              <img src="assets/_con/images/image-2.jpeg">
+              <div class="caption left-align">
+                <h3>Left Aligned Caption</h3>
+                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+              </div>
+            </li>
+            <li>
+              <img src="assets/_con/images/image-3.jpg">
+              <div class="caption right-align">
+                <h3>Right Aligned Caption</h3>
+                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+              </div>
+            </li>
+            <li>
+              <img src="assets/_con/images/image-4.jpg">
+              <div class="caption center-align">
+                <h3>This is our big Tagline!</h3>
+                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums no-margin height-auto">
+&lt;div class="slider">
+  &lt;ul class="slides">
+    &lt;li>
+      &lt;img src="assets/_con/images/image-1.jpg">
+      &lt;div class="caption center-align">
+        &lt;h3>This is our big Tagline!&lt;/h3>
+        &lt;h5 class="light grey-text text-lighten-3">Here's our small slogan.&lt;/h5>
+      &lt;/div>
+    &lt;/li>
+    &lt;li>
+      &lt;img src="assets/_con/images/image-2.jpeg">
+      &lt;div class="caption left-align">
+        &lt;h3>Left Aligned Caption&lt;/h3>
+        &lt;h5 class="light grey-text text-lighten-3">Here's our small slogan.&lt;/h5>
+      &lt;/div>
+    &lt;/li>
+    &lt;li>
+      &lt;img src="assets/_con/images/image-3.jpg">
+      &lt;div class="caption right-align">
+        &lt;h3>Right Aligned Caption&lt;/h3>
+        &lt;h5 class="light grey-text text-lighten-3">Here's our small slogan.&lt;/h5>
+      &lt;/div>
+    &lt;/li>
+    &lt;li>
+      &lt;img src="assets/_con/images/image-4.jpg">
+      &lt;div class="caption center-align">
+        &lt;h3>This is our big Tagline!&lt;/h3>
+        &lt;h5 class="light grey-text text-lighten-3">Here's our small slogan.&lt;/h5>
+      &lt;/div>
+    &lt;/li>
+  &lt;/ul>
+&lt;/div></pre>
+      </div>
+    </div>
+  </div>
+
+</section>
+<!-- /Main Content -->
+
+@@include('./parts/search-bar.html')
+
+@@include('./parts/chat.html')
+
+@@include('./parts/foot.html', {
+  "copyright": true
+})
+
+</body>
+</html>

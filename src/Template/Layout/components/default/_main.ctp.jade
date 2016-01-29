@@ -1,0 +1,25 @@
+//- Main Content
+section.content-wrap
+	//- Breadcrumb
+	.page-title
+		.row
+			.col.s12.m9.l10
+				h1= $view->fetch('title')
+				ul
+					li
+						a(href='#!') #[i.fa.fa-home] Home
+						i.fa.fa-angle-right
+					li
+						a(href='#!') Dashboard
+						i.fa.fa-angle-right
+					li
+						a(href='#!') Pages
+						i.fa.fa-angle-right
+					li: a(href='page-blank.html') Blank
+			.col.s12.m3.l2.right-align
+				a.btn.grey.lighten-3.grey-text.z-depth-0.chat-toggle
+					i.fa.fa-comments
+	//- Contents
+	section
+		!= $view->Flash->render()
+		!= $view->fetch('content')

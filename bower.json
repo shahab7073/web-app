@@ -1,0 +1,28 @@
+{
+  "name": "coolops-web-app",
+  "description": "CoolOps web application skeleton (based on CakePHP 3)",
+  "main": "",
+  "authors": [
+    "clthck <joey.corleone92@yahoo.com>"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "underscore": "",
+    "materialize": "",
+    "datatables": "~1.10.10",
+    "datatables-buttons": "~1.1.1",
+    "datatables-select": "~1.1.0",
+    "blockUI": "blockui#*"
+  },
+  "devDependencies": {}
+}

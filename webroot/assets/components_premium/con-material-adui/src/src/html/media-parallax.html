@@ -1,0 +1,89 @@
+@@include('./parts/head.html', {
+  "plugin_fa_icons": true,
+  "plugin_mdi_icons": true,
+  "plugin_ion_icons": true,
+  "plugin_wi_icons": true,
+
+  "plugin_rickshaw": false,
+  "plugin_nvd3": false,
+  "plugin_flot": false,
+  "plugin_sparkline": false,
+
+  "plugin_markitup": false,
+  "plugin_ckeditor": false,
+
+  "plugin_select2": false,
+  "plugin_dropzone": false,
+  "plugin_tagsinput": false,
+  "plugin_clockpicker": false,
+  "plugin_pikaday": false,
+  "plugin_spectrum": false,
+  "plugin_inputmask": false,
+  "plugin_parsley": false,
+
+  "plugin_gmaps": false,
+  "plugin_jvectormap": false,
+
+  "plugin_datatables": false,
+  "plugin_fullcalendar": false,
+  "plugin_simpleweather": false,
+  "plugin_prettify": true,
+  "plugin_animatecss": false,
+  "plugin_wowjs": false,
+  "plugin_photoswipe": false,
+  "plugin_isotope": false,
+  "plugin_videojs": false
+})
+
+<body>
+
+@@include('./parts/top-navbar.html')
+
+@@include('./parts/sidebar.html', {
+  "page": "media-parallax",
+  "classes": "yay-shrink yay-hide-to-small yay-gestures"
+})
+
+<!-- Main Content -->
+<section class="content-wrap">
+
+  @@include('./parts/title.html', {
+    "title": "Parallax",
+    "crumbs": "<li><a href='dashboard.html'>Dashboard</a> <i class='fa fa-angle-right'></i></li><li><a href='#'>Media</a> <i class='fa fa-angle-right'></i></li><li><a href='media-parallax.html'>Parallax</a></li>"
+  })
+
+  <div class="parallax-container mnt-17 mnl-17 mnr-17 mb-17">
+    <div class="parallax"><img src="assets/_con/images/image-1.jpg"></div>
+  </div>
+
+  <div class="card-panel">
+    Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.
+  </div>
+
+  <div class="card-panel">
+    <h4>Usage</h4>
+    <pre class="prettyprint linenums no-margin height-auto">
+&lt;div class="parallax-container">
+  &lt;div class="parallax">&lt;img src="assets/_con/images/image-1.jpg">&lt;/div>
+&lt;/div></pre>
+  </div>
+
+  <div class="card parallax-container">
+
+      <div class="parallax"><img src="assets/_con/images/image-2.jpeg"></div>
+
+  </div>
+
+</section>
+<!-- /Main Content -->
+
+@@include('./parts/search-bar.html')
+
+@@include('./parts/chat.html')
+
+@@include('./parts/foot.html', {
+  "copyright": true
+})
+
+</body>
+</html>

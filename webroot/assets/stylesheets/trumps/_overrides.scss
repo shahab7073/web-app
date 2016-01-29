@@ -1,0 +1,32 @@
+.btn {
+	&.-real-flat {
+	    color: #039be5;
+	    &:hover { color: #fff; }
+	}
+}
+
+.dropdown-content {
+	li {
+		min-height: $dropdown-item-height;
+		
+		&.divider {
+			min-height: 0;
+		}
+		& > a, & > span {
+			line-height: 22px;
+			padding: (($dropdown-item-height - 22) / 2) 16px;
+		}
+		// Icon alignment override
+		& > a > i {
+			height: inherit;
+			line-height: inherit;
+		}
+	}
+}
+
+.navbar-top .dropdown-content {
+	li > a > i {
+		height: inherit;
+		line-height: inherit;
+	}
+}

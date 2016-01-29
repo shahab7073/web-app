@@ -1,0 +1,231 @@
+@@include('./parts/head.html', {
+  "plugin_fa_icons": true,
+  "plugin_mdi_icons": true,
+  "plugin_ion_icons": true,
+  "plugin_wi_icons": true,
+
+  "plugin_rickshaw": true,
+  "plugin_nvd3": false,
+  "plugin_flot": false,
+  "plugin_sparkline": false,
+
+  "plugin_markitup": false,
+  "plugin_ckeditor": false,
+
+  "plugin_select2": false,
+  "plugin_dropzone": false,
+  "plugin_tagsinput": false,
+  "plugin_clockpicker": false,
+  "plugin_pikaday": false,
+  "plugin_spectrum": false,
+  "plugin_inputmask": false,
+  "plugin_parsley": false,
+
+  "plugin_gmaps": false,
+  "plugin_jvectormap": false,
+
+  "plugin_datatables": false,
+  "plugin_fullcalendar": false,
+  "plugin_simpleweather": false,
+  "plugin_prettify": true,
+  "plugin_animatecss": false,
+  "plugin_wowjs": false,
+  "plugin_photoswipe": false,
+  "plugin_isotope": false,
+  "plugin_videojs": false
+})
+
+<body>
+
+@@include('./parts/top-navbar.html')
+
+@@include('./parts/sidebar.html', {
+  "page": "charts-rickshaw",
+  "classes": "yay-shrink yay-hide-to-small yay-gestures"
+})
+
+<!-- Main Content -->
+<section class="content-wrap">
+
+  @@include('./parts/title.html', {
+    "title": "Rickshaw Charts",
+    "crumbs": "<li><a href='dashboard.html'>Dashboard</a> <i class='fa fa-angle-right'></i></li><li><a href='charts-rickshaw.html'>Rickshaw Charts</a></li>"
+  })
+
+  <div class="card-panel">
+    Con uses <a href="http://code.shutterstock.com/rickshaw/">Rickshaw charts</a>. This is a JavaScript toolkit for creating interactive time series graphs.
+  </div>
+
+  <div class="row">
+    <div class="col l6 s12">
+      <!-- Line Chart -->
+      <div class="card-panel">
+        <h4>Line</h4>
+        <div id="rickshawLine" style="height: 250px"></div>
+      </div>
+      <!-- /Line Chart -->
+    </div>
+    <div class="col l6 s12">
+      <!-- Stacked Area Chart -->
+      <div class="card-panel">
+        <h4>Stacked Area</h4>
+        <div id="rickshawStackedArea" style="height: 250px"></div>
+      </div>
+      <!-- /Stacked Area Chart -->
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col l6 s12">
+      <!-- Stacked Bars Chart -->
+      <div class="card-panel">
+        <h4>Stacked Bars</h4>
+        <div id="rickshawStackedBars" style="height: 250px"></div>
+      </div>
+      <!-- /Stacked Bars Chart -->
+    </div>
+    <div class="col l6 s12">
+      <!-- Multiple Bars Chart -->
+      <div class="card-panel">
+        <h4>Multiple Bars</h4>
+        <div id="rickshawMultipleBars" style="height: 250px"></div>
+      </div>
+      <!-- /Multiple Bars Chart -->
+    </div>
+  </div>
+
+</section>
+<!-- /Main Content -->
+
+@@include('./parts/search-bar.html')
+
+@@include('./parts/chat.html')
+
+@@include('./parts/foot.html', {
+  "copyright": true
+})
+
+
+<script>
+
+var rickshawLine1 = [ { x: 0, y: 43 }, { x: 1, y: 42 }, { x: 2, y: 32 }, { x: 3, y: 12 }, { x: 4, y: 46 }, { x: 5, y: 67 }, { x: 6, y: 34 }, { x: 7, y: 25 }, { x: 8, y: 32 }, { x: 9, y: 14 }, { x: 10, y: 2 }, { x: 11, y: 25 }, { x: 12, y: 48 } ];
+var rickshawLine2 = [ { x: 0, y: 40 }, { x: 1, y: 49 }, { x: 2, y: 24 }, { x: 3, y: 32 }, { x: 4, y: 67 }, { x: 5, y: 53 }, { x: 6, y: 42 }, { x: 7, y: 32 }, { x: 8, y: 12 }, { x: 9, y: 35 }, { x: 10, y: 87 }, { x: 11, y: 56 }, { x: 12, y: 36 } ];
+var rickshawLine3 = [ { x: 0, y: 30 }, { x: 1, y: 29 }, { x: 2, y: 12 }, { x: 3, y: 5 }, { x: 4, y: 38 }, { x: 5, y: 57 }, { x: 6, y: 21 }, { x: 7, y: 16 }, { x: 8, y: 29 }, { x: 9, y: 10 }, { x: 10, y: 0 }, { x: 11, y: 20 }, { x: 12, y: 37 } ];
+
+// Line
+(function() {
+  var element = $("#rickshawLine");
+  var graph = new Rickshaw.Graph( {
+    element: element[0],
+    renderer: 'line',
+    stroke: true,
+    series: [ {
+      data: rickshawLine1,
+      color: '#673ab7',
+      name: 'Visits'
+    }, {    
+      data: rickshawLine3,
+      color: '#2196f3',
+      name: 'Posts'
+    }]
+  } );
+  graph.render();
+
+  var hoverDetail = new Rickshaw.Graph.HoverDetail({
+    graph: graph,
+    xFormatter: function(x) { return x + " Jan 2015" },
+    yFormatter: function(y) { return Math.floor(y) }
+  });
+
+  // responsive
+  $(window).on('resize', function() {
+    graph.configure({
+      width: element.width()
+    });
+    graph.render();
+  });
+}());
+
+
+// Stacked Area
+(function() {
+  var element = $("#rickshawStackedArea");
+  var graph = new Rickshaw.Graph( {
+    element: element[0],
+    renderer: 'area',
+    stroke: true,
+    series: [ {
+      data: rickshawLine1,
+      color: '#673ab7'
+    }, {    
+      data: rickshawLine2,
+      color: '#2196f3'
+    } ]
+  } );
+  graph.render();
+
+  // responsive
+  $(window).on('resize', function() {
+    graph.configure({
+      width: element.width()
+    });
+    graph.render();
+  });
+}());
+
+
+// Stacked Bars
+(function() {
+  var element = $("#rickshawStackedBars");
+  var graph = new Rickshaw.Graph( {
+    element: element[0],
+    renderer: 'bar',
+    series: [ {
+      data: rickshawLine1,
+      color: '#673ab7'
+    }, {    
+      data: rickshawLine2,
+      color: '#2196f3'
+    } ]
+  } );
+  graph.render();
+
+  // responsive
+  $(window).on('resize', function() {
+    graph.configure({
+      width: element.width()
+    });
+    graph.render();
+  });
+}());
+
+
+// Multiple Bars
+(function() {
+  var element = $("#rickshawMultipleBars");
+  var graph = new Rickshaw.Graph( {
+    element: element[0],
+    renderer: 'bar',
+    stack: false,
+    series: [ {
+      data: rickshawLine1,
+      color: '#673ab7'
+    }, {    
+      data: rickshawLine3,
+      color: '#2196f3'
+    } ]
+  } );
+  graph.render();
+
+  // responsive
+  $(window).on('resize', function() {
+    graph.configure({
+      width: element.width()
+    });
+    graph.render();
+  });
+}());
+</script>
+
+</body>
+</html>

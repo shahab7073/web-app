@@ -35,8 +35,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         <?= $cakeDescription ?>
     </title>
     <?= $this->Html->meta('icon') ?>
-    <?= $this->Html->css('base.css') ?>
-    <?= $this->Html->css('cake.css') ?>
+    <?= $this->AssetCompress->css('cake_default') ?>
 </head>
 <body class="home">
     <header>

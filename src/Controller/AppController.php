@@ -28,6 +28,18 @@ use Cake\Event\Event;
 class AppController extends Controller
 {
 
+    /* * * * * * * * * * * * * *
+     * [public] - properties   *
+     * * * * * * * * * * * * * */
+
+    /* * * * * * * * * * * * * * * * * *
+     * [protected] - member variables  *
+     * * * * * * * * * * * * * * * * * */
+
+    /* * * * * * * * * * * * * * * * *
+     * [public override] - methods   *
+     * * * * * * * * * * * * * * * * */
+
     /**
      * Initialization hook method.
      *
@@ -43,6 +55,18 @@ class AppController extends Controller
 
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
+        // $this->loadComponent('Auth', [
+        //     'authorize' => ['Controller'],
+        //     'loginRedirect' => [
+        //         'controller' => 'Users',
+        //         'action' => 'index'
+        //     ],
+        //     'logoutRedirect' => [
+        //         'controller' => 'Pages',
+        //         'action' => 'display',
+        //         'home'
+        //     ]
+        // ]);
     }
 
     /**
@@ -58,5 +82,38 @@ class AppController extends Controller
         ) {
             $this->set('_serialize', true);
         }
+
+        // Use different layout for signed in members.
+        // if ($this->Auth->user()) {
+        //     $this->viewBuilder()->layout('members');
+        // }
     }
+
+    /**
+     * isAuthorized hook method
+     *
+     * @param array $user
+     * @return boolean
+     */
+    // public function isAuthorized($user)
+    // {
+    //     // Default deny
+    //     return false;
+    // }
+
+    /* * * * * * * * * * * * * * * * * * *
+     * [protected override] - methods    *
+     * * * * * * * * * * * * * * * * * * */
+
+    /* * * * * * * * * * * * *
+     * [public] - actions    *
+     * * * * * * * * * * * * */
+
+    /* * * * * * * * * * * * * * * * * * *
+     * [public] - actions for AJAX call  *
+     * * * * * * * * * * * * * * * * * * */
+
+    /* * * * * * * * * * * * * *
+     * [protected] - methods   *
+     * * * * * * * * * * * * * */
 }

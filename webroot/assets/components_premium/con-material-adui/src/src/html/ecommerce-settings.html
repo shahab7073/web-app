@@ -1,0 +1,289 @@
+@@include('./parts/head.html', {
+  "plugin_fa_icons": true,
+  "plugin_mdi_icons": true,
+  "plugin_ion_icons": true,
+  "plugin_wi_icons": true,
+
+  "plugin_rickshaw": false,
+  "plugin_nvd3": false,
+  "plugin_flot": false,
+  "plugin_sparkline": false,
+
+  "plugin_markitup": false,
+  "plugin_ckeditor": false,
+
+  "plugin_select2": false,
+  "plugin_dropzone": false,
+  "plugin_tagsinput": false,
+  "plugin_clockpicker": false,
+  "plugin_pikaday": false,
+  "plugin_spectrum": false,
+  "plugin_inputmask": false,
+  "plugin_parsley": false,
+
+  "plugin_gmaps": false,
+  "plugin_jvectormap": false,
+
+  "plugin_datatables": false,
+  "plugin_fullcalendar": false,
+  "plugin_simpleweather": false,
+  "plugin_prettify": true,
+  "plugin_animatecss": false,
+  "plugin_wowjs": false,
+  "plugin_photoswipe": false,
+  "plugin_isotope": false,
+  "plugin_videojs": false
+})
+
+<body>
+
+@@include('./parts/top-navbar.html')
+
+@@include('./parts/sidebar.html', {
+  "page": "ecommerce-settings",
+  "classes": "yay-shrink yay-hide-to-small yay-gestures"
+})
+
+<!-- Main Content -->
+<section class="content-wrap ecommerce-settings">
+
+  @@include('./parts/ecommerce-title.html', {
+    "page": "ecommerce-settings"
+  })
+
+  <!-- Store Settings -->
+  <div class="card">
+    <div class="title">
+      <h5><i class="fa fa-cog"></i> Store Settings</h5>
+      <a class="minimize" href="#">
+        <i class="mdi-navigation-expand-less"></i>
+      </a>
+    </div>
+    <div class="content">
+
+      <div class="row no-margin-top">
+        <div class="col s12 l3">
+          <label for="ecommerce-name">
+            Store Name
+          </label>
+        </div>
+        <div class="col s12 l9">
+          <div class="input-field">
+            <i class="mdi mdi-action-home prefix"></i>
+            <input id="ecommerce-name" type="text" placeholder="Store Name">
+          </div>
+        </div>
+      </div>
+
+      <div class="row no-margin-top">
+        <div class="col s12 l3">
+          <label for="ecommerce-url">
+            Store URL
+          </label>
+        </div>
+        <div class="col s12 l9">
+          <div class="input-field">
+            <i class="mdi mdi-action-language prefix"></i>
+            <input id="ecommerce-url" type="text" placeholder="Store URL">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 l3">
+          <label for="ecommerce-timezone">
+            Timezone
+          </label>
+        </div>
+        <div class="col s12 l9">
+          <select id="ecommerce-timezone">
+            <option value="" disabled>Choose option</option>
+            <option value="1">GMT+1 (Paris, France)</option>
+            <option value="2" selected>GMT+2 (Athens, Greece)</option>
+            <option value="3">GMT+3 (Kuwait)</option>
+            <option value="4">GMT+4 (Moscow, Russia)</option>
+            <option value="5">GMT+5</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 l3">
+          <label for="ecommerce-currency">
+            Currency
+          </label>
+        </div>
+        <div class="col s12 l9">
+          <div class="input-field">
+            <i class="mdi mdi-editor-attach-money prefix"></i>
+            <input id="ecommerce-currency" type="text" placeholder="US Dollar">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 l3">
+          <label for="ecommerce-unit-system">
+            Unit System
+          </label>
+        </div>
+        <div class="col s12 l9">
+          <div class="input-field">
+            <i class="mdi mdi-action-swap-horiz prefix"></i>
+            <input id="ecommerce-unit-system" type="text" placeholder="Metric System">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 l3">
+          <label for="ecommerce-weight-unit">
+            Weight Unit
+          </label>
+        </div>
+        <div class="col s12 l9">
+          <div class="input-field">
+            <i class="mdi mdi-action-view-stream prefix"></i>
+            <input id="ecommerce-weight-unit" type="text" placeholder="Kilogram(kg)">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- /Store Settings -->
+
+
+  <!-- Owner Information -->
+  <div class="card">
+    <div class="title">
+      <h5><i class="mdi mdi-social-person"></i> Owner Information</h5>
+      <a class="minimize" href="#">
+        <i class="mdi-navigation-expand-less"></i>
+      </a>
+    </div>
+    <div class="content">
+
+      <div class="row no-margin-top">
+        <div class="col s12 l3">
+          <label for="ecommerce-account-fname">
+            Name
+          </label>
+        </div>
+        <div class="col s12 m6 l4">
+          <div class="input-field">
+          <i class="mdi mdi-social-person prefix"></i>
+            <input id="ecommerce-account-fname" type="text" placeholder="First Name">
+          </div>
+        </div>
+        <div class="col s12 m6 l5">
+          <div class="input-field">
+          <i class="mdi mdi-social-person prefix"></i>
+            <input id="ecommerce-account-lname" type="text" placeholder="Last Name">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 l3">
+          <label for="ecommerce-account-email">
+            Email
+          </label>
+        </div>
+        <div class="col s12 l9">
+          <div class="input-field">
+            <i class="mdi mdi-communication-email prefix"></i>
+            <input id="ecommerce-account-email" type="text" placeholder="Email">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 l3">
+          <label for="ecommerce-account-phone">
+            Phote
+          </label>
+        </div>
+        <div class="col s12 l9">
+          <div class="input-field">
+            <i class="mdi mdi-communication-phone prefix"></i>
+            <input id="ecommerce-account-phone" type="text" placeholder="Phone">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- /Owner Information -->
+
+
+  <!-- Store Policies -->
+  <div class="card">
+    <div class="title">
+      <h5><i class="mdi mdi-notification-event-available"></i> Store Policies</h5>
+      <a class="minimize" href="#">
+        <i class="mdi-navigation-expand-less"></i>
+      </a>
+    </div>
+    <div class="content">
+
+      <div class="row no-margin-top">
+        <div class="col s12 l3">
+          <label for="ecommerce-refund-policy">
+            Refund Policy
+          </label>
+        </div>
+        <div class="col s12 l9">
+          <div class="input-field">
+            <i class="mdi mdi-notification-event-available prefix"></i>
+            <textarea id="ecommerce-refund-policy" class="materialize-textarea" placeholder="Describe your refund policy"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 l3">
+          <label for="ecommerce-privacy-policy">
+            Privacy Policy
+          </label>
+        </div>
+        <div class="col s12 l9">
+          <div class="input-field">
+            <i class="mdi mdi-notification-event-available prefix"></i>
+            <textarea id="ecommerce-privacy-policy" class="materialize-textarea" placeholder="Describe your privacy policy"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 l3">
+          <label for="ecommerce-terms-of-use">
+            Terms of Use
+          </label>
+        </div>
+        <div class="col s12 l9">
+          <div class="input-field">
+            <i class="mdi mdi-notification-event-available prefix"></i>
+            <textarea id="ecommerce-terms-of-use" class="materialize-textarea" placeholder="Describe your terms of use"></textarea>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- /Store Policies -->
+
+
+</section>
+<!-- /Main Content -->
+
+@@include('./parts/search-bar.html')
+
+@@include('./parts/chat.html')
+
+@@include('./parts/foot.html', {
+  "copyright": true
+})
+
+</body>
+</html>

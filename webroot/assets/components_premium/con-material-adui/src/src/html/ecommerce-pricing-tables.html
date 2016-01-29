@@ -1,0 +1,144 @@
+@@include('./parts/head.html', {
+  "plugin_fa_icons": true,
+  "plugin_mdi_icons": true,
+  "plugin_ion_icons": true,
+  "plugin_wi_icons": true,
+
+  "plugin_rickshaw": false,
+  "plugin_nvd3": false,
+  "plugin_flot": false,
+  "plugin_sparkline": false,
+
+  "plugin_markitup": false,
+  "plugin_ckeditor": false,
+
+  "plugin_select2": false,
+  "plugin_dropzone": false,
+  "plugin_tagsinput": false,
+  "plugin_clockpicker": false,
+  "plugin_pikaday": false,
+  "plugin_spectrum": false,
+  "plugin_inputmask": false,
+  "plugin_parsley": false,
+
+  "plugin_gmaps": false,
+  "plugin_jvectormap": false,
+
+  "plugin_datatables": false,
+  "plugin_fullcalendar": false,
+  "plugin_simpleweather": false,
+  "plugin_prettify": true,
+  "plugin_animatecss": false,
+  "plugin_wowjs": false,
+  "plugin_photoswipe": false,
+  "plugin_isotope": false,
+  "plugin_videojs": false
+})
+
+<body>
+
+@@include('./parts/top-navbar.html')
+
+@@include('./parts/sidebar.html', {
+  "page": "ecommerce-pricing-tables",
+  "classes": "yay-shrink yay-hide-to-small yay-gestures"
+})
+
+<!-- Main Content -->
+<section class="content-wrap">
+
+  @@include('./parts/ecommerce-title.html', {
+    "page": "ecommerce-pricing-tables"
+  })
+  
+  <div class="pricing-table">
+    <div class="pt-col-4">
+      <div class="pt-header">
+        <div class="pt-title">Free</div>
+        <div class="pt-price">
+          <span class="pt-currency">$</span>
+          <span class="pt-amount">0</span>
+        </div>
+      </div>
+      <ul class="pt-features">
+        <li><strong>1</strong> Project</li>
+        <li><strong>1GB</strong> Storage</li>
+        <li><strong>128MB</strong> Memory</li>
+        <li>No Support</li>
+      </ul>
+      <div class="pt-footer">
+        <a class="btn btn-primary z-depth-0" role="button">Add to card</a>
+      </div>
+    </div>
+    <div class="pt-col-4 pt-featured">
+      <div class="pt-header">
+        <div class="pt-title">Standard</div>
+        <div class="pt-price">
+          <span class="pt-currency">$</span>
+          <span class="pt-amount">50</span>
+          <span class="pt-period">/ mo</span>
+        </div>
+      </div>
+      <ul class="pt-features">
+        <li><strong>10</strong> Projects</li>
+        <li><strong>5GB</strong> Storage</li>
+        <li><strong>256MB</strong> Memory</li>
+        <li>24/7 Technical Support</li>
+      </ul>
+      <div class="pt-footer">
+        <a class="btn btn-primary z-depth-0" role="button">Add to card</a>
+      </div>
+    </div>
+    <div class="pt-col-4">
+      <div class="pt-header">
+        <div class="pt-title">Premium</div>
+        <div class="pt-price">
+          <span class="pt-currency">$</span>
+          <span class="pt-amount">60</span>
+          <span class="pt-period">/ mo</span>
+        </div>
+      </div>
+      <ul class="pt-features">
+        <li><strong>15</strong> Projects</li>
+        <li><strong>10GB</strong> Storage</li>
+        <li><strong>512MB</strong> Memory</li>
+        <li>24/7 Technical Support</li>
+      </ul>
+      <div class="pt-footer">
+        <a class="btn btn-primary z-depth-0" role="button">Add to card</a>
+      </div>
+    </div>
+    <div class="pt-col-4">
+      <div class="pt-header">
+        <div class="pt-title">Professional</div>
+        <div class="pt-price">
+          <span class="pt-currency">$</span>
+          <span class="pt-amount">70</span>
+          <span class="pt-period">/ mo</span>
+        </div>
+      </div>
+      <ul class="pt-features">
+        <li><strong>25</strong> Projects</li>
+        <li><strong>20GB</strong> Storage</li>
+        <li><strong>1024MB</strong> Memory</li>
+        <li>24/7 Technical Support</li>
+      </ul>
+      <div class="pt-footer">
+        <a class="btn btn-primary z-depth-0" role="button">Add to card</a>
+      </div>
+    </div>
+  </div>
+
+</section>
+<!-- /Main Content -->
+
+@@include('./parts/search-bar.html')
+
+@@include('./parts/chat.html')
+
+@@include('./parts/foot.html', {
+  "copyright": true
+})
+
+</body>
+</html>

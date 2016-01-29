@@ -1,0 +1,47 @@
+.input-field {
+	.prefix ~ .select-wrapper {
+		margin-left: 3rem;
+	}
+}
+
+input[type=text] {
+
+	&.form-error {
+		margin-bottom: 5px;
+		border-bottom-color: $input-border-color;
+		box-shadow: none;
+	}
+
+	&.form-error:focus {
+		border-bottom-color: $error-color;
+		box-shadow: 0 1px 0 0 $error-color;
+	}
+}
+
+.error-message {
+	margin-left: 3rem;
+	color: $error-color;
+	font-size: 0.8rem;
+}
+
+.spinner-button-color-only {
+	border-color: $button-color-raised;
+}
+
+.spinner-button-color-disabled-only {
+	border-color: $button-color-disabled;
+}
+
+.preloader-wrapper.tiny {
+	width: $preloader-tiny-size;
+	height: $preloader-tiny-size;
+}
+
+.collection a.collection-item.simple-avatar {
+	display: flex;
+	align-items: center;
+
+	> .title {
+		margin-left: .7rem;
+	}
+}

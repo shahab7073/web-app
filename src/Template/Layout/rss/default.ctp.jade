@@ -1,0 +1,13 @@
+-
+	if (!isset($channel)):
+	    $channel = array();
+	endif;
+	if (!isset($channel['title'])):
+	    $channel['title'] = $view->fetch('title');
+	endif;
+
+	echo $view->Rss->document(
+	    $view->Rss->channel(
+	        [], $channel, $view->fetch('content')
+	    )
+	);

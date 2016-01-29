@@ -1,0 +1,127 @@
+@@include('./parts/head.html', {
+  "plugin_fa_icons": true,
+  "plugin_mdi_icons": true,
+  "plugin_ion_icons": true,
+  "plugin_wi_icons": true,
+
+  "plugin_rickshaw": false,
+  "plugin_nvd3": false,
+  "plugin_flot": false,
+  "plugin_sparkline": false,
+
+  "plugin_markitup": true,
+  "plugin_ckeditor": true,
+
+  "plugin_select2": false,
+  "plugin_dropzone": false,
+  "plugin_tagsinput": false,
+  "plugin_clockpicker": false,
+  "plugin_pikaday": false,
+  "plugin_spectrum": false,
+  "plugin_inputmask": false,
+  "plugin_parsley": false,
+
+  "plugin_gmaps": false,
+  "plugin_jvectormap": false,
+
+  "plugin_datatables": false,
+  "plugin_fullcalendar": false,
+  "plugin_simpleweather": false,
+  "plugin_prettify": true,
+  "plugin_animatecss": false,
+  "plugin_wowjs": false,
+  "plugin_photoswipe": false,
+  "plugin_isotope": false,
+  "plugin_videojs": false
+})
+
+<body>
+
+@@include('./parts/top-navbar.html')
+
+@@include('./parts/sidebar.html', {
+  "page": "forms-editors",
+  "classes": "yay-shrink yay-hide-to-small yay-gestures"
+})
+
+<!-- Main Content -->
+<section class="content-wrap">
+
+  @@include('./parts/title.html', {
+    "title": "Editors",
+    "crumbs": "<li><a href='dashboard.html'>Dashboard</a> <i class='fa fa-angle-right'></i></li><li><a href='#'>Forms</a> <i class='fa fa-angle-right'></i></li><li><a href='forms-editors.html'>Editors</a></li>"
+  })
+
+  <!-- CKEditor -->
+  <div class="card-panel">
+    <h4>CKEditor</h4>
+    Con uses <strong>CKEditor</strong>. Full documentation and examples you can see here - <a href="http://ckeditor.com/">http://ckeditor.com/</a>
+
+    <div class="row">
+      <div class="col l5 m12">
+        <textarea id="ckeditor1"></textarea>
+
+        <br>
+
+        <h4 id="ckeditor2" contenteditable="true">Inline CKEditor</h4>
+        <div id="ckeditor3" contenteditable="true">
+          <strong>Lorem ipsum</strong>, consectetur <i>adipisicing elit</i>. Dolorum sit quia rem, iste fuga quas <del>suscipit rerum blanditiis</del>, voluptatum voluptatibus minima sequi iure unde eum quam nesciunt voluptatem, qui illo.
+        </div>
+      </div>
+      <div class="col l7 m12">
+        <pre class="prettyprint linenums no-margin">
+&lt;textarea id="ckeditor1">&lt;/textarea>
+&lt;div id="ckeditor2">Inline Text Editing&lt;/div>
+
+&lt;script type="text/javascript" src="assets/ckeditor/ckeditor.js">&lt;/script>
+&lt;script>
+  CKEDITOR.replace( 'ckeditor1' );
+  CKEDITOR.inline( 'ckeditor2' );
+&lt;/script></pre>
+      </div>
+    </div>
+  </div>
+  <!-- /CKEditor -->
+
+  <!-- MarkItUp -->
+  <div class="card-panel">
+    <h4>MarkItUp</h4>
+    Con uses <strong>MarkItUp</strong>. Full documentation and examples you can see here - <a href="http://markitup.jaysalvat.com/home/">http://markitup.jaysalvat.com/home/</a>
+
+    <div class="row">
+      <div class="col l5 m12">
+        <textarea class="markItUp"></textarea>
+      </div>
+      <div class="col l7 m12">
+        <pre class="prettyprint linenums no-margin">
+&lt;textarea class="markItUp">&lt;/textarea>
+
+&lt;link rel="stylesheet" type="text/css" href="assets/markitup/skins/_con/style.css" />
+&lt;link rel="stylesheet" type="text/css" href="assets/markitup/sets/default/style.css" />
+&lt;script type="text/javascript" src="assets/markitup/sets/default/set.js">&lt;/script>
+&lt;script type="text/javascript" src="assets/markitup/jquery.markitup.js">&lt;/script></pre>
+      </div>
+    </div>
+  </div>
+  <!-- /MarkItUp -->
+
+</section>
+<!-- /Main Content -->
+
+@@include('./parts/search-bar.html')
+
+@@include('./parts/chat.html')
+
+@@include('./parts/foot.html', {
+  "copyright": true
+})
+
+<!-- CKEditor -->
+<script>
+  CKEDITOR.replace( 'ckeditor1' );
+  CKEDITOR.inline( 'ckeditor2' );
+  CKEDITOR.inline( 'ckeditor3' );
+</script>
+
+</body>
+</html>

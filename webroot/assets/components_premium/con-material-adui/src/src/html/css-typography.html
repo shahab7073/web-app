@@ -1,0 +1,291 @@
+@@include('./parts/head.html', {
+  "plugin_fa_icons": true,
+  "plugin_mdi_icons": true,
+  "plugin_ion_icons": true,
+  "plugin_wi_icons": true,
+
+  "plugin_rickshaw": false,
+  "plugin_nvd3": false,
+  "plugin_flot": false,
+  "plugin_sparkline": false,
+
+  "plugin_markitup": false,
+  "plugin_ckeditor": false,
+
+  "plugin_select2": false,
+  "plugin_dropzone": false,
+  "plugin_tagsinput": false,
+  "plugin_clockpicker": false,
+  "plugin_pikaday": false,
+  "plugin_spectrum": false,
+  "plugin_inputmask": false,
+  "plugin_parsley": false,
+
+  "plugin_gmaps": false,
+  "plugin_jvectormap": false,
+
+  "plugin_datatables": false,
+  "plugin_fullcalendar": false,
+  "plugin_simpleweather": false,
+  "plugin_prettify": true,
+  "plugin_animatecss": false,
+  "plugin_wowjs": false,
+  "plugin_photoswipe": false,
+  "plugin_isotope": false,
+  "plugin_videojs": false
+})
+
+<body>
+
+@@include('./parts/top-navbar.html')
+
+@@include('./parts/sidebar.html', {
+  "page": "css-typography",
+  "classes": "yay-shrink yay-hide-to-small yay-gestures"
+})
+
+<!-- Main Content -->
+<section class="content-wrap">
+
+  @@include('./parts/title.html', {
+    "title": "Typography",
+    "crumbs": "<li><a href='dashboard.html'>Dashboard</a> <i class='fa fa-angle-right'></i></li><li><a href='#'>CSS</a> <i class='fa fa-angle-right'></i></li><li><a href='css-typography.html'>Typography</a></li>"
+  })
+
+  <!-- Headings -->
+  <div class="card-panel">
+    <h4>Headings</h4>
+    All HTML headings, <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code>, are available. <code>.h1</code> through <code>.h6</code> classes are also available, for when you want to match the font styling of a heading but still want your text to be displayed inline.
+    
+    <div class="row">
+      <div class="col l6 s12">
+        <h1>Heading h1</h1>
+        <h2>Heading h2</h2>
+        <h3>Heading h3</h3>
+        <h4>Heading h4</h4>
+        <h5>Heading h5</h5>
+        <h6>Heading h6</h6>
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums">
+&lt;h1>Heading h1&lt;/h1>
+&lt;h2>Heading h2&lt;/h2>
+&lt;h3>Heading h3&lt;/h3>
+&lt;h4>Heading h4&lt;/h4>
+&lt;h5>Heading h5&lt;/h5>
+&lt;h6>Heading h6&lt;/h6></pre>
+      </div>
+    </div>
+  </div>
+  <!-- /Headings -->
+
+  <!-- Light -->
+  <div class="card-panel">
+    <h4>Light</h4>
+    Use <code>.light</code> classname to set <code>font-weight: 300</code> on element.
+    
+    <div class="row">
+      <div class="col l6 s12">
+        <h1 class="light">Heading h1</h1>
+        <h2 class="light">Heading h2</h2>
+        <h3 class="light">Heading h3</h3>
+        <h4 class="light">Heading h4</h4>
+        <h5 class="light">Heading h5</h5>
+        <h6 class="light">Heading h6</h6>
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums">
+&lt;h1 class="light">Heading h1&lt;/h1>
+&lt;h2 class="light">Heading h2&lt;/h2>
+&lt;h3 class="light">Heading h3&lt;/h3>
+&lt;h4 class="light">Heading h4&lt;/h4>
+&lt;h5 class="light">Heading h5&lt;/h5>
+&lt;h6 class="light">Heading h6&lt;/h6></pre>
+      </div>
+    </div>
+  </div>
+  <!-- /Light -->
+
+  <!-- Thin -->
+  <div class="card-panel">
+    <h4>Thin</h4>
+    Use <code>.thin</code> classname to set <code>font-weight: 200</code> on element.
+    
+    <div class="row">
+      <div class="col l6 s12">
+        <h1 class="thin">Heading h1</h1>
+        <h2 class="thin">Heading h2</h2>
+        <h3 class="thin">Heading h3</h3>
+        <h4 class="thin">Heading h4</h4>
+        <h5 class="thin">Heading h5</h5>
+        <h6 class="thin">Heading h6</h6>
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums">
+&lt;h1 class="thin">Heading h1&lt;/h1>
+&lt;h2 class="thin">Heading h2&lt;/h2>
+&lt;h3 class="thin">Heading h3&lt;/h3>
+&lt;h4 class="thin">Heading h4&lt;/h4>
+&lt;h5 class="thin">Heading h5&lt;/h5>
+&lt;h6 class="thin">Heading h6&lt;/h6></pre>
+      </div>
+    </div>
+  </div>
+  <!-- /Thin -->
+
+  <!-- Secondary -->
+  <div class="card-panel">
+    <h4>Secondary</h4>
+    Create lighter, secondary text in any heading with a generic <code>&lt;small&gt;</code> tag or the <code>.small</code> class.
+    
+    <div class="row">
+      <div class="col l6 s12">
+        <h1>Heading h1 <small>Secondary text</small></h1>
+        <h2>Heading h2 <small>Secondary text</small></h2>
+        <h3>Heading h3 <small>Secondary text</small></h3>
+        <h4>Heading h4 <small>Secondary text</small></h4>
+        <h5>Heading h5 <small>Secondary text</small></h5>
+        <h6>Heading h6 <small>Secondary text</small></h6>
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums">
+&lt;h1>Heading h1 &lt;small>Secondary text&lt;/small>&lt;/h1>
+&lt;h2>Heading h2 &lt;small>Secondary text&lt;/small>&lt;/h2>
+&lt;h3>Heading h3 &lt;small>Secondary text&lt;/small>&lt;/h3>
+&lt;h4>Heading h4 &lt;small>Secondary text&lt;/small>&lt;/h4>
+&lt;h5>Heading h5 &lt;small>Secondary text&lt;/small>&lt;/h5>
+&lt;h6>Heading h6 &lt;small>Secondary text&lt;/small>&lt;/h6></pre>
+      </div>
+    </div>
+  </div>
+  <!-- /Secondary -->
+
+  <!-- Alignment -->
+  <div class="card-panel">
+    <h4>Alignment</h4>
+    Easily realign text to components with text alignment classes.
+    
+    <div class="row">
+      <div class="col l6 s12">
+        <p class="left-align">Left aligned text.</p>
+        <p class="center-align">Center aligned text.</p>
+        <p class="right-align">Right aligned text.</p>
+        <p class="justify-align">Justified text.</p>
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums">
+&lt;p class="left-align">Left aligned text.&lt;/p>
+&lt;p class="center-align">Center aligned text.&lt;/p>
+&lt;p class="right-align">Right aligned text.&lt;/p>
+&lt;p class="justify-align">Justified text.&lt;/p></pre>
+      </div>
+    </div>
+  </div>
+  <!-- /Alignment -->
+
+  <!-- Blockquotes -->
+  <div class="card-panel">
+    <h4>Blockquotes</h4>
+
+    <div class="row">
+      <div class="col l6 s12">
+        Blockquotes are mainly used to give emphasis to a quote or citation. You can also use these for some extra text hierarchy and emphasis.
+
+        <blockquote>
+          <p>
+            This is an example quotation that uses the blockquote tag.
+            <br>
+            <small>Here is another line with small text.</small>
+          </p>
+        </blockquote>
+
+        <blockquote class="red-text">
+          <p>
+            This is an example quotation that uses the blockquote tag.
+            <br>
+            <small>Here is another line with small text.</small>
+          </p>
+        </blockquote>
+
+        <blockquote class="orange-text">
+          <p>
+            This is an example quotation that uses the blockquote tag.
+            <br>
+            <small>Here is another line with small text.</small>
+          </p>
+        </blockquote>
+
+
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;blockquote>
+  &lt;p>
+    This is an example quotation that uses the blockquote tag.
+    &lt;br>
+    &lt;small>Here is another line with small text.&lt;/small>
+  &lt;/p>
+&lt;/blockquote>
+
+&lt;blockquote class="red-text">
+  &lt;p>
+    This is an example quotation that uses the blockquote tag.
+    &lt;br>
+    &lt;small>Here is another line with small text.&lt;/small>
+  &lt;/p>
+&lt;/blockquote>
+
+&lt;blockquote class="orange-text">
+  &lt;p>
+    This is an example quotation that uses the blockquote tag.
+    &lt;br>
+    &lt;small>Here is another line with small text.&lt;/small>
+  &lt;/p>
+&lt;/blockquote></pre>
+      </div>
+    </div>
+  </div>
+  <!-- /Blockquotes -->
+
+
+  <!-- Flow Text -->
+  <div class="card-panel">
+    <h4>Flow Text</h4>
+    <div class="row">
+      <div class="col l6 s12">
+        <p class="flow-text">One common flaw we've seen in many frameworks is a lack of support for truly responsive text. While elements on the page resize fluidly, text still resizes on a fixed basis. To ameliorate this problem, for text heavy pages, we've created a class that fluidly scales text size and line-height to optimize readability for the user. Line length stays between 45-80 characters and line height scales to be larger on smaller screens.</p>
+        <p class="flow-text">
+        To see Flow Text in action, slowly resize your browser and watch the size of this text body change! Use the button above to toggle off/on flow-text to see the difference!</p>
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums">
+&lt;p class="flow-text">I am Flow Text&lt;/p></pre>
+        <p>To use flow-text on a body of text, simply just add the class <code class=" language-markup">flow-text</code> to a tag, see the code blow.</p>
+        <a id="flow-toggle" class="btn waves-effect waves-light">Toggle flow-text</a>
+      </div>
+    </div>
+
+  </div>
+  <!-- /Flow Text -->
+
+</section>
+<!-- /Main Content -->
+
+@@include('./parts/search-bar.html')
+
+@@include('./parts/chat.html')
+
+@@include('./parts/foot.html', {
+  "copyright": true
+})
+
+<script type="text/javascript">
+  var flowBtn = jQuery('#flow-toggle');
+  var flowP = $('p.flow-text');
+  flowBtn.on('click', function() {
+    flowP.toggleClass('flow-text');
+  });
+</script>
+
+</body>
+</html>

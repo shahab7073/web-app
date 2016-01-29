@@ -1,0 +1,96 @@
+@@include('./parts/head.html', {
+  "plugin_fa_icons": true,
+  "plugin_mdi_icons": true,
+  "plugin_ion_icons": true,
+  "plugin_wi_icons": true,
+
+  "plugin_rickshaw": false,
+  "plugin_nvd3": false,
+  "plugin_flot": false,
+  "plugin_sparkline": false,
+
+  "plugin_markitup": false,
+  "plugin_ckeditor": false,
+
+  "plugin_select2": false,
+  "plugin_dropzone": false,
+  "plugin_tagsinput": false,
+  "plugin_clockpicker": false,
+  "plugin_pikaday": false,
+  "plugin_spectrum": false,
+  "plugin_inputmask": false,
+  "plugin_parsley": false,
+
+  "plugin_gmaps": false,
+  "plugin_jvectormap": false,
+
+  "plugin_datatables": false,
+  "plugin_fullcalendar": false,
+  "plugin_simpleweather": false,
+  "plugin_prettify": true,
+  "plugin_animatecss": false,
+  "plugin_wowjs": false,
+  "plugin_photoswipe": false,
+  "plugin_isotope": false,
+  "plugin_videojs": false
+})
+
+<body>
+
+@@include('./parts/top-navbar.html')
+
+@@include('./parts/sidebar.html', {
+  "page": "ui-pagination",
+  "classes": "yay-shrink yay-hide-to-small yay-gestures"
+})
+
+<!-- Main Content -->
+<section class="content-wrap">
+
+  @@include('./parts/title.html', {
+    "title": "Pagination",
+    "crumbs": "<li><a href='dashboard.html'>Dashboard</a> <i class='fa fa-angle-right'></i></li><li><a href='#'>UI</a> <i class='fa fa-angle-right'></i></li><li><a href='ui-pagination.html'>Pagination</a></li>"
+  })
+
+  <div class="card-panel">
+    <div class="row">
+      <div class="col m6 s12">
+        Add pagination links to help split up your long content into shorter, easier to understand blocks.
+       <ul class="pagination">
+          <li class="disabled"><a href="#!"><i class="mdi-navigation-chevron-left"></i></a></li>
+          <li class="active"><a href="#!">1</a></li>
+          <li class="waves-effect"><a href="#!">2</a></li>
+          <li class="waves-effect"><a href="#!">3</a></li>
+          <li class="waves-effect"><a href="#!">4</a></li>
+          <li class="waves-effect"><a href="#!">5</a></li>
+          <li class="waves-effect"><a href="#!"><i class="mdi-navigation-chevron-right"></i></a></li>
+        </ul>
+      </div>
+      <div class="col m6 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;ul class="pagination">
+  &lt;li class="disabled">&lt;a href="#!">&lt;i class="mdi-navigation-chevron-left">&lt;/i>&lt;/a>&lt;/li>
+  &lt;li class="active">&lt;a href="#!">1&lt;/a>&lt;/li>
+  &lt;li class="waves-effect">&lt;a href="#!">2&lt;/a>&lt;/li>
+  &lt;li class="waves-effect">&lt;a href="#!">3&lt;/a>&lt;/li>
+  &lt;li class="waves-effect">&lt;a href="#!">4&lt;/a>&lt;/li>
+  &lt;li class="waves-effect">&lt;a href="#!">5&lt;/a>&lt;/li>
+  &lt;li class="waves-effect">&lt;a href="#!">&lt;i class="mdi-navigation-chevron-right">&lt;/i>&lt;/a>&lt;/li>
+&lt;/ul></pre>
+      </div>
+    </div>
+  </div>
+
+</section>
+<!-- /Main Content -->
+
+@@include('./parts/search-bar.html')
+
+@@include('./parts/chat.html')
+
+@@include('./parts/foot.html', {
+  "copyright": true
+})
+
+</body>
+</html>
