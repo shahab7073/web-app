@@ -28,11 +28,9 @@ if (Configure::read('debug')):
     $this->end();
 endif;
 ?>
-<h2><?= h($message) ?></h2>
-<p class="error">
-    <strong><?= __d('cake', 'Error') ?>: </strong>
-    <?= sprintf(
-        __d('cake', 'The requested address %s was not found on this server.'),
-        "<strong>'{$url}'</strong>"
-    ) ?>
-</p>
+<div id="page-message">
+    <h2>404</h2>
+    <h3 class="error">
+        <?= __d('cake', 'Page not Found') ?> ;(
+    </h3>
+</div>
