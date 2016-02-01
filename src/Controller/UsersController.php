@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\Event\Event;
+use Cake\Network\Exception\NotFoundException;
 
 /**
  * Users Controller
@@ -88,6 +89,7 @@ class UsersController extends AppController
      */
     public function logout()
     {
+        $this->request->session()->delete('afterSnsLoginCalled');
         return $this->redirect($this->Auth->logout());
     }
 
@@ -99,6 +101,10 @@ class UsersController extends AppController
      */
     public function afterSnsLogin()
     {
+        if ($this->request->session()->check('afterSnsLoginCalled')) {
+            throw new NotFoundException();
+        }
+
         $user = $this->Auth->user();
         $userEntity = $this->Users->get($user['id']);
         $this->Users->touch($userEntity, 'Controller.Users.afterLogin');
@@ -109,6 +115,9 @@ class UsersController extends AppController
             $greetingName = $user['username'];
         }
         $this->Flash->toast(__("Welcome back, {$greetingName}!"));
+
+        // For security
+        $this->request->session()->write('afterSnsLoginCalled', true);
 
         return $this->redirect($this->Auth->redirectUrl());
     }
@@ -130,7 +139,7 @@ class UsersController extends AppController
             if ($this->Users->save($user)) {
                 $this->Flash->success(__("You've successfully signed up."));
                 $this->Auth->setUser($user->toArray());
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect($this->Auth->redirectUrl());
             } else {
                 $this->Flash->error(__("We couldn't complete your registration. Please, try again."));
             }
