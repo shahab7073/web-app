@@ -11,7 +11,8 @@
         "cakephp/migrations": "~1.0",
         "cakephp/plugin-installer": "*",
         "clthck/cakephp-jade": "*",
-        "clthck/asset-compress-improved": "~3.0"
+        "clthck/asset-compress-improved": "~3.0",
+        "admad/cakephp-hybridauth": "~3.0"
     },
     "require-dev": {
         "psy/psysh": "@stable",

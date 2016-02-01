@@ -32,9 +32,16 @@ class AppController extends Controller
      * [public] - properties   *
      * * * * * * * * * * * * * */
 
+    public $components = ['RequestHandler', 'Flash', 'Auth'];
+
     /* * * * * * * * * * * * * * * * * *
      * [protected] - member variables  *
      * * * * * * * * * * * * * * * * * */
+
+    protected $_publicActions = [
+        'Pages' => ['display'],
+        'Users' => ['add'],
+    ];
 
     /* * * * * * * * * * * * * * * * *
      * [public override] - methods   *
@@ -53,20 +60,48 @@ class AppController extends Controller
     {
         parent::initialize();
 
-        $this->loadComponent('RequestHandler');
-        $this->loadComponent('Flash');
-        // $this->loadComponent('Auth', [
-        //     'authorize' => ['Controller'],
-        //     'loginRedirect' => [
-        //         'controller' => 'Users',
-        //         'action' => 'index'
-        //     ],
-        //     'logoutRedirect' => [
-        //         'controller' => 'Pages',
-        //         'action' => 'display',
-        //         'home'
-        //     ]
-        // ]);
+        $this->_loadComponents();
+
+        $this->Auth->config([
+            'authenticate' => [
+                'Form',
+                'ADmad/HybridAuth.HybridAuth' => [
+                    'registrationCallback' => 'addFromSnsProvider',
+                    'hauth_return_to' => [
+                        'controller' => 'Users',
+                        'action' => 'afterSnsLogin'
+                    ],
+                ],
+            ],
+            // 'authorize' => ['Controller'],
+            'loginRedirect' => [
+                'plugin' => false,
+                'controller' => 'Pages',
+                'action' => 'display',
+                'test'
+            ],
+            'logoutRedirect' => [
+                'controller' => 'Pages',
+                'action' => 'display',
+                'test'
+            ]
+        ]);
+    }
+
+    /**
+     * AppController::beforeFilter()
+     *
+     * @return void
+     */
+    public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+
+        // Allow public actions with no authentication.
+        $controllerName = $this->request->params['controller'];
+        if (array_key_exists($controllerName, $this->_publicActions)) {
+            $this->Auth->allow($this->_publicActions[$controllerName]);
+        }
     }
 
     /**
