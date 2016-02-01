@@ -1,5 +1,56 @@
+- $view->layout = 'full_screen';
+
+// != $view->Form->create()
+// != $view->Form->input('provider', ['value' => 'Twitter'])
+// != $view->Form->input('twitter_identifier', ['value' => ''])
+// != $view->Form->submit('Login')
+// != $view->Form->end()
+
 != $view->Form->create()
-!= $view->Form->input('provider', ['value' => 'Twitter'])
-!= $view->Form->input('twitter_identifier', ['value' => ''])
-!= $view->Form->submit('Login')
+
+!= $view->Flash->render()
+
+.row.links
+	.col.s6.logo
+		!= $view->Html->image('logo-white.png')
+	.col.s6.right-align
+		strong Sign In
+		| /
+		!= $view->Html->link('Sign Up', ['action' => 'add'])
+
+.card-panel.clearfix
+	//- Social Sign Up
+	!= $view->Form->hidden('provider', ['value' => '', 'id' => 'provider']);
+	.row.socials
+		.col.s4
+			a.btn.blue.darken-2.z-depth-0.z-depth-1-hover.waves-effect.waves-light(href='#!' data-provider='Facebook'): i.fa.fa-2x.fa-facebook
+		.col.s4
+			a.btn.blue.lighten-2.z-depth-0.z-depth-1-hover.waves-effect.waves-light(href='#!' data-provider='Twitter'): i.fa.fa-2x.fa-twitter
+		.col.s4
+			a.btn.red.z-depth-0.z-depth-1-hover.waves-effect.waves-light(href='#!' data-provider='Google'): i.fa.fa-2x.fa-google-plus
+
+	.row: div.col
+
+	//- Username
+	.input-field
+		i.fa.fa-user.prefix
+		!= $view->Form->input('username', ['class' => 'validate'])
+
+	//- Password
+	.input-field
+		i.fa.fa-unlock-alt.prefix
+		!= $view->Form->input('password', ['class' => 'validate'])
+
+	//- Remember me
+	.switch
+		label
+			!= $view->Form->input('remember_me', ['type' => 'checkbox', 'label' => false])
+			span.lever
+			| Remember Me
+
+	button.waves-effect.waves-light.btn-large.z-depth-0.z-depth-1-hover Sign In
+
+.links.right-align
+	!= $view->Html->link('Forgot Password?', ['action' => 'forgotPassword'])
+
 != $view->Form->end()

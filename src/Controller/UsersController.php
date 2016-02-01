@@ -98,7 +98,7 @@ class UsersController extends AppController
         $userEntity = $this->Users->get($user['id']);
         $this->Users->touch($userEntity, 'Controller.Users.afterLogin');
         $this->Users->save($userEntity);
-        
+
         return $this->redirect($this->Auth->redirectUrl());
     }
 

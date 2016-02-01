@@ -16,6 +16,7 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+use Cake\Utility\Inflector;
 
 /**
  * Application Controller
@@ -122,6 +123,9 @@ class AppController extends Controller
         // if ($this->Auth->user()) {
         //     $this->viewBuilder()->layout('members');
         // }
+
+        $page_id = Inflector::dasherize($this->request->params['controller'] . '-' . $this->request->params['action']);
+        $this->set(compact('page_id'));
     }
 
     /**

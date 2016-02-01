@@ -5,6 +5,6 @@
  * @link http://book.cakephp.org/3.0/en/views/helpers/form.html#customizing-the-templates-formhelper-uses
  */
 return [
-	// 'inputContainer' => '{{content}}',
+	'inputContainer' => '{{content}}',
 	// 'inputContainerError' => '{{content}}{{error}}',
 ];

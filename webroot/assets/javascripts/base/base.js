@@ -1,5 +1,8 @@
 (function (init) {
 
+	window.CAKE = window.CAKE || {};
+	window.CAKE.pages = window.CAKE.pages || {};
+
 	init(window.jQuery, window, document);
 
 })(function($, window, document) {
