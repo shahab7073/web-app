@@ -31,4 +31,4 @@ nav.navbar-top
 						span.badge.new 2
 					li: a(href='#!') #[i.fa.fa-cogs] Settings
 					li.divider
-					li: a(href='page-sign-in.html') #[i.fa.fa-sign-out] Logout
+					li: a(href!=$view->Url->build(['controller' => 'Users', 'action' => 'logout'])) #[i.fa.fa-sign-out] Logout

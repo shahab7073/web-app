@@ -17,6 +17,8 @@ namespace App\Controller;
 use Cake\Core\Configure;
 use Cake\Network\Exception\NotFoundException;
 use Cake\View\Exception\MissingTemplateException;
+use Cake\Event\Event;
+use Cake\Utility\Inflector;
 
 /**
  * Static content controller
@@ -27,6 +29,25 @@ use Cake\View\Exception\MissingTemplateException;
  */
 class PagesController extends AppController
 {
+
+    /* * * * * * * * * * * * * * * * *
+     * [public override] - methods   *
+     * * * * * * * * * * * * * * * * */
+
+    /**
+     * Before render callback.
+     *
+     * @param \Cake\Event\Event $event The beforeRender event.
+     * @return void
+     */
+    public function beforeRender(Event $event)
+    {
+        parent::beforeRender($event);
+
+        $params = $this->request->params;
+        $page_id = Inflector::dasherize(implode('-', array_merge([$params['controller']], $params['pass'])));
+        $this->set(compact('page_id'));
+    }
 
     /**
      * Displays a view
@@ -54,7 +75,7 @@ class PagesController extends AppController
         $this->set(compact('page', 'subpage'));
 
         try {
-            $this->render(implode('/', $path));
+            $this->render(implode('/', $path), 'public');
         } catch (MissingTemplateException $e) {
             if (Configure::read('debug')) {
                 throw $e;

@@ -24,7 +24,7 @@ doctype html
 	!= $view->Html->meta('icon')
 
 	block override_css
-		!= $view->AssetCompress->css('application', ['media' => 'screen, projection'])
+		!= $view->AssetCompress->css('public', ['media' => 'screen, projection'])
 	block add_css
 
 	<!--[if lt IE 9]>
@@ -36,14 +36,11 @@ doctype html
 </head>
 <body id="<?= $page_id ?>">
 	
-	//- Background Bubbles
-	section#sign-in
-		canvas#bubble-canvas
-		!= $view->fetch('content')
+	!= $view->fetch('content')
 
 	//- Scripts
 	block override_script
-		!= $view->AssetCompress->script('application')
+		!= $view->AssetCompress->script('public')
 	block add_script
 	!= $view->fetch('add_script');
 </body>

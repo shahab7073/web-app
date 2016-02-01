@@ -19,7 +19,7 @@ doctype html
 <html>
 <head>
     != $view->Html->charset()
-    title #{$baseTitle}: #{$view->fetch('title')}
+    title #{$view->fetch('full_title', $baseTitle . ': ' . $view->fetch('title'))}
 
     != $view->Html->meta('icon')
 

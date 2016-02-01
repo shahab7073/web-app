@@ -119,13 +119,12 @@ class AppController extends Controller
             $this->set('_serialize', true);
         }
 
-        // Use different layout for signed in members.
-        // if ($this->Auth->user()) {
-        //     $this->viewBuilder()->layout('members');
-        // }
+        $params = $this->request->params;
 
-        $page_id = Inflector::dasherize($this->request->params['controller'] . '-' . $this->request->params['action']);
-        $this->set(compact('page_id'));
+        if ($params['controller'] !== 'Pages') {
+            $page_id = Inflector::dasherize($params['controller'] . '-' . $params['action']);
+            $this->set(compact('page_id'));
+        }
     }
 
     /**

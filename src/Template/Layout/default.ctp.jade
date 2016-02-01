@@ -33,7 +33,7 @@ doctype html
 	!= $view->Html->meta("viewport", "width=device-width, initial-scale=1.0, maximum-scale=1")
 
 	block title
-		title #{$baseTitle}: #{$view->fetch('title')}
+		title #{$view->fetch('full_title', $baseTitle . ': ' . $view->fetch('title'))}
 
 	!= $view->Html->meta('icon')
 

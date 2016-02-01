@@ -1,0 +1,99 @@
+/* 
+ * Stylesheet for public pages
+ *
+ * Made by coolops
+ */
+
+@charset "utf-8";
+
+$con_theme: 'deep-purple';
+
+// @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
+// Import materializecss & con-material-admin-dashboard-ui
+// @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/mixins";
+@import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/color";
+
+// Variables
+@import "../components_premium/con-material-adui/src/src/scss/parts/_variables";
+// @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/variables";
+@import "global/variables";
+
+@import "../components_premium/con-material-adui/src/src/scss/parts/helpers";
+
+// Resets
+@import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/normalize";
+
+// Components
+@import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/global";
+// @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/icons-material-design";
+@import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/grid";
+@import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/navbar";
+@import "../components/materialize/sass/components/roboto";
+@import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/typography";
+@import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/cards";
+@import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/toast";
+@import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/tabs";
+@import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/tooltip";
+@import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/buttons";
+@import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/dropdown";
+@import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/waves";
+@import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/modal";
+@import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/collapsible";
+@import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/chips";
+@import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/materialbox";
+@import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/form";
+@import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/table_of_contents";
+@import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/sideNav";
+@import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/preloader";
+@import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/slider";
+// @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/carousel";
+@import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/date_picker/default.scss";
+@import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/date_picker/default.date.scss";
+@import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/date_picker/default.time.scss";
+
+@import "../components_premium/con-material-adui/src/src/scss/parts/main";
+@import "../components_premium/con-material-adui/src/src/scss/parts/bootstrap";
+@import "../components_premium/con-material-adui/src/src/scss/parts/scroller";
+@import "../components_premium/con-material-adui/src/src/scss/parts/yay";
+@import "../components_premium/con-material-adui/src/src/scss/parts/navbar-top";
+@import "../components_premium/con-material-adui/src/src/scss/parts/search-bar";
+@import "../components_premium/con-material-adui/src/src/scss/parts/widgets";
+@import "../components_premium/con-material-adui/src/src/scss/parts/chat";
+@import "../components_premium/con-material-adui/src/src/scss/parts/forms";
+@import "../components_premium/con-material-adui/src/src/scss/parts/timeline";
+@import "../components_premium/con-material-adui/src/src/scss/parts/datatables";
+@import "../components_premium/con-material-adui/src/src/scss/parts/calendar";
+@import "../components_premium/con-material-adui/src/src/scss/parts/photo-swipe";
+@import "../components_premium/con-material-adui/src/src/scss/parts/pricing-table";
+
+@import "../components_premium/con-material-adui/src/src/scss/parts/profile";
+@import "../components_premium/con-material-adui/src/src/scss/parts/layouts";
+@import "../components_premium/con-material-adui/src/src/scss/parts/ecommerce";
+
+@import "../components_premium/con-material-adui/src/src/scss/parts/hover-effects";
+@import "../components_premium/con-material-adui/src/src/scss/parts/load-spinner";
+
+@import "../components_premium/con-material-adui/src/src/scss/parts/footer";
+
+@import "../components_premium/con-material-adui/src/src/scss/parts/rtl";
+
+// Import datatables
+// @import "../components/datatables-buttons/css/buttons.dataTables";
+// @import "../components/datatables-select/css/select.dataTables";
+
+@import "global/functions";
+@import "global/mixins";
+@import "global/placeholders";
+
+@import "sections/pages/base/base";
+
+@import "sections/pages/components/**/*";
+
+@import "sections/pages/trumps/helpers";
+@import "sections/pages/trumps/overrides";
+@import "sections/pages/trumps/reusable";
+@import "sections/pages/trumps/jade_mixins";
+
+// Import page-specific stylesheets
+@import "sections/pages/index";

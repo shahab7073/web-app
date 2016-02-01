@@ -37,21 +37,21 @@ class User extends Entity
 
     protected $_hidden = ['password'];
 
-    /*************************
+    /* * * * * * * * * * * * *
      * [properties setter]   *
-     *************************/
+     * * * * * * * * * * * * */
 
     /**
      * Set password
      *
      * @param string $password
-     * @return
+     * @return string
      */
     protected function _setPassword($password) {
         return (new DefaultPasswordHasher)->hash($password);
     }
 
-    /*************************
+    /* * * * * * * * * * * * *
      * [virtual properties]  *
-     *************************/
+     * * * * * * * * * * * * */
 }
