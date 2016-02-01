@@ -1,0 +1,9 @@
+- $view->Html->scriptStart(['block' => 'add_script']);
+|
+	(function ($, window, document) {
+		$(function() {
+			Materialize.toast('!{h($message)}', 4000, 'rounded');
+		});
+	}) (window.jQuery, window, document);
+
+- $view->Html->scriptEnd();

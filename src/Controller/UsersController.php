@@ -69,11 +69,15 @@ class UsersController extends AppController
         if ($this->request->is('post')) {
             $user = $this->Auth->identify();
             if ($user) {
-                die ('ha');
                 $this->Auth->setUser($user);
+                $greetingName = trim($user['first_name']);
+                if (empty($greetingName)) {
+                    $greetingName = $user['username'];
+                }
+                $this->Flash->toast(__("Welcome back, {$greetingName}!"));
                 return $this->redirect($this->Auth->redirectUrl());
             }
-            $this->Flash->error(__('Invalid username or password, try again'));
+            $this->Flash->error(__('Invalid username or password, try again.'));
         }
     }
 
@@ -88,7 +92,8 @@ class UsersController extends AppController
     }
 
     /**
-     * Action for SNS login post processing
+     * Action for SNS login post processing.
+     * This is called by HybridAuth plugin after successful SNS login.
      *
      * @return void Redirects to $this->Auth->redirectUrl()
      */
@@ -98,6 +103,12 @@ class UsersController extends AppController
         $userEntity = $this->Users->get($user['id']);
         $this->Users->touch($userEntity, 'Controller.Users.afterLogin');
         $this->Users->save($userEntity);
+
+        $greetingName = trim($user['first_name']);
+        if (empty($greetingName)) {
+            $greetingName = $user['username'];
+        }
+        $this->Flash->toast(__("Welcome back, {$greetingName}!"));
 
         return $this->redirect($this->Auth->redirectUrl());
     }
