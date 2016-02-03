@@ -48,25 +48,26 @@ doctype html
 	!= $view->fetch('meta')
 	!= $view->fetch('add_css')
 </head>
-<body id="<?= $page_id ?>">
-	include components/default/_nav.ctp.jade
+<body id="<?= $page_id ?>" class="nano" style="height: 100vh;">
+	.nano-content
+		include components/default/_nav.ctp.jade
 
-	//- block next-to-header
+		//- block next-to-header
 
-	include components/default/_aside.ctp.jade
-	include components/default/_main.ctp.jade
-	include components/default/_search_bar.ctp.jade
-	include components/default/_chat.ctp.jade
-	
-	footer
-		| &copy; 2016
-		strong #[a(href='http://github.com/coolops' target='_new') CoolOps]
-		| All rights reserved.
+		include components/default/_aside.ctp.jade
+		include components/default/_main.ctp.jade
+		include components/default/_search_bar.ctp.jade
+		include components/default/_chat.ctp.jade
+		
+		footer
+			| &copy; 2016
+			strong #[a(href='http://github.com/coolops' target='_new') CoolOps]
+			| All rights reserved.
 
-	//- Scripts
-	block override_script
-		!= $view->AssetCompress->script('application')
-	block add_script
-	!= $view->fetch('add_script');
+		//- Scripts
+		block override_script
+			!= $view->AssetCompress->script('application')
+		block add_script
+		!= $view->fetch('add_script');
 </body>
 </html>

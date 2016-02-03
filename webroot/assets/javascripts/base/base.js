@@ -63,12 +63,12 @@
 	 */
 	$(function() {
 
-		$('.button-collapse').sideNav();
-		$('.parallax').parallax();
-		$('.modal-trigger').leanModal();
+		$.fn.sideNav && $('.button-collapse').sideNav();
+		$.fn.parallax && $('.parallax').parallax();
+		$.fn.leanModal && $('.modal-trigger').leanModal();
 
-		$('select').material_select();
-		$('.datepicker').pickadate({
+		$.fn.material_select && $('select').material_select();
+		$.fn.pickadate && $('.datepicker').pickadate({
 			selectMonths: true,
 			selectYears: 15,
 			closeOnSelect: true,
@@ -77,6 +77,8 @@
 			formatSubmit: 'yyyy-mm-dd',
 			hiddenName: true
 		});
+
+		$.fn.nanoScroller && $('.nano').nanoScroller();
 
 	});
 
