@@ -147,6 +147,16 @@ class UsersController extends AppController
         $this->set(compact('user'));
     }
 
+    /**
+     * Index action (Dashboard)
+     *
+     * @return void
+     */
+    public function index()
+    {
+
+    }
+
     /* * * * * * * * * * * * * * * * * * *
      * [public] - actions for AJAX call  *
      * * * * * * * * * * * * * * * * * * */
