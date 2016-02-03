@@ -14,7 +14,7 @@
 namespace App\View;
 
 use Cake\View\View;
-use clthck\JadeView\View\JadeView;
+use JadeView\View\JadeView;
 
 /**
  * Application View
