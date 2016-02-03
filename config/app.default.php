@@ -45,8 +45,9 @@ return [
         // 'baseUrl' => env('SCRIPT_NAME'),
         'fullBaseUrl' => false,
         'imageBaseUrl' => 'img/',
-        'cssBaseUrl' => 'css/',
-        'jsBaseUrl' => 'js/',
+        // Since we're using AssetCompress plugin, `cssBaseUrl` and `jsBaseUrl` are meaningless here.
+        // 'cssBaseUrl' => 'css/',
+        // 'jsBaseUrl' => 'js/',
         'paths' => [
             'plugins' => [ROOT . DS . 'plugins' . DS],
             'templates' => [APP . 'Template' . DS],
