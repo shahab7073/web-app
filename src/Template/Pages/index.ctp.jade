@@ -1,14 +1,12 @@
 include ../Mixin/divider_with_text.ctp.jade
 
--
-	$faker = \Faker\Factory::create();
-	$fakeText = implode(' ', [$faker->text, $faker->text]);
+$faker = \Faker\Factory::create();
 
 //- iPhone
 #iphone-container.pt-50
 	.overlay.center.p-20.pink-text.text-accent-3(style='width: 600px;').br-5.mt-50
 		h1 A Whole New World
-		p= $fakeText
+		p?= $faker->text . ' ' . $faker->text
 	.center.w-200.mt-50
 		a.btn.btn-extra.fluid-width.waves-effect.waves-light.blue(href!=$view->Url->build(['controller' => 'Users', 'action' => 'add'])) Start Today #[i.mdi-content-send.right]
 	+divider_with_text.mt-30.grey-text('OR')
