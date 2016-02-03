@@ -34,9 +34,10 @@ doctype html
 	!= $view->fetch('meta')
 	!= $view->fetch('add_css')
 </head>
-<body id="<?= $page_id ?>">
+<body id="<?= $page_id ?>" class="nano">
 	
-	!= $view->fetch('content')
+	.nano-content
+		!= $view->fetch('content')
 
 	//- Scripts
 	block override_script

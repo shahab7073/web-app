@@ -1,0 +1,42 @@
+include ../Mixin/divider_with_text.ctp.jade
+
+-
+	$faker = \Faker\Factory::create();
+	$fakeText = implode(' ', [$faker->text, $faker->text]);
+
+//- iPhone
+#iphone-container.pt-50
+	.overlay.center.p-20.pink-text.text-accent-3(style='width: 600px;').br-5.mt-50
+		h1 A Whole New World
+		p= $fakeText
+	.center.w-200.mt-50
+		a.btn.btn-extra.fluid-width.waves-effect.waves-light.blue(href!=$view->Url->build(['controller' => 'Users', 'action' => 'add'])) Start Today #[i.mdi-content-send.right]
+	+divider_with_text.mt-30.grey-text('OR')
+	.center.w-140.mt-30
+		a.btn.btn-large.fluid-width.waves-effect.waves-light(href!=$view->Url->build(['controller' => 'Users', 'action' => 'login'])) Sign In
+	#wrapper
+		#iphone
+			#shadow
+			#side
+			#lines #[div: div: div] #[div: div: div]
+			#toggler: div
+			#aux
+			#lightning
+			#bottom-speaker #[div] #[div] #[div] #[div] #[div] #[div] #[div]
+			#skrews #[div] #[div]
+			#volume #[div] #[div]
+			#front
+				#front-cover
+				#camera: div
+				#speaker
+				#screen
+					#reminder #[div] #[div.truncate Welcome to a whole new world!] #[div now]
+					#circle
+					#time #[#clock #[#hours] #[#minutes] #[#seconds]]
+					#date CoolOps
+					#bottom
+					#top
+					#slide #[div] #[p slide to unlock]
+					#signal #[div] #[div] #[div] #[div] #[div]
+					#battery #[div 91%] #[div #[div] #[div]]
+				#home: div: div.pulse
