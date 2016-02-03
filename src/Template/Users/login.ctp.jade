@@ -6,10 +6,7 @@
 .row.links
 	.col.s6.logo
 		!= $view->Html->image('logo-white.png')
-	.col.s6.right-align
-		strong Sign In
-		| /
-		!= $view->Html->link('Sign Up', ['action' => 'add'])
+	.col.s6.right-align #[strong Sign In] / !{$view->Html->link('Sign Up', ['action' => 'add'])}
 
 .card-panel.clearfix
 	//- Social Sign Up
