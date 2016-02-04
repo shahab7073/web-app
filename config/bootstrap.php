@@ -53,6 +53,8 @@ use Cake\Network\Request;
 use Cake\Routing\DispatcherFactory;
 use Cake\Utility\Inflector;
 use Cake\Utility\Security;
+use Cake\Event\EventManager;
+use App\Event\Listener\AuthEventListener;
 
 /**
  * Read configuration file and inject configuration into various
@@ -215,6 +217,11 @@ DispatcherFactory::add('ControllerFactory');
  */
 Type::build('date')->useLocaleParser();
 Type::build('datetime')->useLocaleParser();
+
+/**
+ * Custom event listeners.
+ */
+EventManager::instance()->on(new AuthEventListener());
 
 /**
  * Include custom constants and functions here.

@@ -48,20 +48,6 @@ class UsersController extends AppController
         parent::beforeFilter($event);
     }
 
-    /**
-     * implementedEvents override method
-     *
-     * @return array
-     */
-    public function implementedEvents()
-    {
-        return [
-            'Auth.afterIdentify' => 'afterLogin',
-            'Auth.logout' => 'afterLogout',
-
-        ] + parent::implementedEvents();
-    }
-
     /* * * * * * * * * * * * * * * * * * *
      * [protected override] - methods    *
      * * * * * * * * * * * * * * * * * * */
@@ -69,36 +55,6 @@ class UsersController extends AppController
     /* * * * * * * * * * * * * * * * * *
      * [public] - non-action methods   *
      * * * * * * * * * * * * * * * * * */
-
-    /**
-     * afterLogin event handler
-     *
-     * @param \Cake\Event\Event $event
-     * @return void
-     */
-    public function afterLogin(Event $event)
-    {
-        $user = $event->data[0];
-        $userEntity = $this->Users->get($user['id']);
-        $this->Users->touch($userEntity, 'Controller.Users.afterLogin');
-        $this->Users->save($userEntity);
-    }
-
-    /**
-     * afterLogout event handler
-     *
-     * @param \Cake\Event\Event $event
-     * @return void
-     */
-    public function afterLogout(Event $event)
-    {
-        $user = $event->data[0];
-        $name = trim($user['first_name']);
-        if (empty($name)) {
-            $name = trim($user['username']);
-        }
-        $this->Flash->toast(__("Goodbye, {$name}!"));
-    }
 
     /* * * * * * * * * * * * *
      * [public] - actions    *
@@ -133,6 +89,13 @@ class UsersController extends AppController
      */
     public function logout()
     {
+        $user = $this->Auth->user();
+        $name = trim($user['first_name']);
+        if (empty($name)) {
+            $name = trim($user['username']);
+        }
+        $this->Flash->toast(__("Goodbye, {$name}!"));
+
         $this->request->session()->delete('afterSnsLoginCalled');
         return $this->redirect($this->Auth->logout());
     }

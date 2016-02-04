@@ -46,9 +46,9 @@ class AppController extends Controller
         'Users' => ['add'],
     ];
 
-    protected $_nonActionMethods = [
-        'Users' => ['afterLogout'],
-    ];
+    // protected $_nonActionMethods = [
+    //     'Users' => ['afterLogout'],
+    // ];
 
     /* * * * * * * * * * * * * * * * *
      * [public override] - methods   *
@@ -159,15 +159,15 @@ class AppController extends Controller
      * @param string $action The action to check.
      * @return boolean Whether or not the method is accessible from a URL.
      */
-    public function isAction($action)
-    {
-        $className = str_replace('Controller', '', (new \ReflectionClass(static::class))->getShortName());
-        if (array_key_exists($className, $this->_nonActionMethods) && 
-            in_array( strtolower($action), array_map("strtolower", $this->_nonActionMethods[$className])) ) {
-            return false;
-        }
-        return parent::isAction($action);
-    }
+    // public function isAction($action)
+    // {
+    //     $className = str_replace('Controller', '', (new \ReflectionClass(static::class))->getShortName());
+    //     if (array_key_exists($className, $this->_nonActionMethods) && 
+    //         in_array( strtolower($action), array_map("strtolower", $this->_nonActionMethods[$className])) ) {
+    //         return false;
+    //     }
+    //     return parent::isAction($action);
+    // }
 
     /* * * * * * * * * * * * * * * * * * *
      * [protected override] - methods    *
