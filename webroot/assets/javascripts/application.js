@@ -12,12 +12,4 @@
 //= require <_con.min.js>
 //= require "base.js"
 
-//= require "users/login.js"
-
-var pageId = document.body.getAttribute('id');
-
-window.CAKE = window.CAKE || {};
-
-if (CAKE.pages && CAKE.pages[pageId]) {
-	CAKE.pages[pageId].run();
-}
+//= require "_CAKE.js"

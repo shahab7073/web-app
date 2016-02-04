@@ -4,12 +4,12 @@
 //= require <jquery.requestAnimationFrame.min.js>
 //= require <jquery.nanoscroller.min.js>
 //= require <materialize.min.js>
-//= require <Sortable.min.js>
-//= require <jquery.dataTables.min.js>
-//= require <dataTables.tableTools.min.js>
+//= require <parsley.min.js>
 
+//= require <_con.min.js>
 //= require "base.js"
 
-//= require "pages/index.js"
+//= require "users/login.js"
+//= require "users/add.js"
 
 //= require "_CAKE.js"
