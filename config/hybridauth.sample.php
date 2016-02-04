@@ -6,12 +6,12 @@ $config['HybridAuth'] = [
 		'Twitter' => [
 			'enabled' => true,
 			'keys' => [
-				'key' => '74wNa5NCQ4FbVHX8LaGDTSXxO',
-				'secret' => '9FxtPOBDIajRL3iozGnOJUNjZT3qTOLilTELDmmVD58YfyVrI6',
+				'key' => 'YOUR_KEY_HERE',
+				'secret' => 'YOUR_SECRET_HERE',
 			]
 		],
 	],
 	'debug_mode' => Configure::read('debug'),
 	'debug_file' => LOGS . 'hybridauth.log',
-	'proxy' => '127.0.0.1:3213',
+	// 'proxy' => 'address:port',
 ];
