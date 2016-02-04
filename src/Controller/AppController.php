@@ -18,6 +18,7 @@ use Cake\Controller\Controller;
 use Cake\Event\Event;
 use Cake\Utility\Inflector;
 use Cake\ORM\TableRegistry;
+use Cake\Network\Exception\NotFoundException;
 
 /**
  * Application Controller
@@ -43,6 +44,10 @@ class AppController extends Controller
     protected $_publicActions = [
         'Pages' => ['display'],
         'Users' => ['add'],
+    ];
+
+    protected $_nonActionMethods = [
+        'Users' => ['afterLogout'],
     ];
 
     /* * * * * * * * * * * * * * * * *
@@ -98,8 +103,9 @@ class AppController extends Controller
     {
         parent::beforeFilter($event);
 
-        // Allow public actions with no authentication.
         $controllerName = $this->request->params['controller'];
+
+        // Allow public actions with no authentication.
         if (array_key_exists($controllerName, $this->_publicActions)) {
             $this->Auth->allow($this->_publicActions[$controllerName]);
         }
@@ -126,7 +132,6 @@ class AppController extends Controller
         if ($params['controller'] !== 'Pages') {
             $page_id = Inflector::dasherize($params['controller'] . '-' . $params['action']);
             $viewVars[] = 'page_id';
-            $this->set(compact('page_id'));
         }
 
         if ($user = $this->Auth->user()) {
@@ -147,6 +152,22 @@ class AppController extends Controller
     //     // Default deny
     //     return false;
     // }
+
+    /**
+     * isAction override method
+     *
+     * @param string $action The action to check.
+     * @return boolean Whether or not the method is accessible from a URL.
+     */
+    public function isAction($action)
+    {
+        $className = str_replace('Controller', '', (new \ReflectionClass(static::class))->getShortName());
+        if (array_key_exists($className, $this->_nonActionMethods) && 
+            in_array( strtolower($action), array_map("strtolower", $this->_nonActionMethods[$className])) ) {
+            return false;
+        }
+        return parent::isAction($action);
+    }
 
     /* * * * * * * * * * * * * * * * * * *
      * [protected override] - methods    *

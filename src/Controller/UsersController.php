@@ -48,9 +48,57 @@ class UsersController extends AppController
         parent::beforeFilter($event);
     }
 
+    /**
+     * implementedEvents override method
+     *
+     * @return array
+     */
+    public function implementedEvents()
+    {
+        return [
+            'Auth.afterIdentify' => 'afterLogin',
+            'Auth.logout' => 'afterLogout',
+
+        ] + parent::implementedEvents();
+    }
+
     /* * * * * * * * * * * * * * * * * * *
      * [protected override] - methods    *
      * * * * * * * * * * * * * * * * * * */
+
+    /* * * * * * * * * * * * * * * * * *
+     * [public] - non-action methods   *
+     * * * * * * * * * * * * * * * * * */
+
+    /**
+     * afterLogin event handler
+     *
+     * @param \Cake\Event\Event $event
+     * @return void
+     */
+    public function afterLogin(Event $event)
+    {
+        $user = $event->data[0];
+        $userEntity = $this->Users->get($user['id']);
+        $this->Users->touch($userEntity, 'Controller.Users.afterLogin');
+        $this->Users->save($userEntity);
+    }
+
+    /**
+     * afterLogout event handler
+     *
+     * @param \Cake\Event\Event $event
+     * @return void
+     */
+    public function afterLogout(Event $event)
+    {
+        $user = $event->data[0];
+        $name = trim($user['first_name']);
+        if (empty($name)) {
+            $name = trim($user['username']);
+        }
+        $this->Flash->toast(__("Goodbye, {$name}!"));
+    }
 
     /* * * * * * * * * * * * *
      * [public] - actions    *
@@ -71,13 +119,7 @@ class UsersController extends AppController
             $user = $this->Auth->identify();
             if ($user) {
                 $this->Auth->setUser($user);
-
-                $userEntity = $this->Users->get($user['id']);
-                $this->Users->touch($userEntity, 'Controller.Users.afterLogin');
-                $this->Users->save($userEntity);
-
                 $this->_setWelcomeToast($user['first_name'], $user['username']);
-
                 return $this->redirect($this->Auth->redirectUrl());
             }
             $this->Flash->error(__('Invalid username or password, try again.'));
@@ -108,11 +150,7 @@ class UsersController extends AppController
         }
 
         $user = $this->Auth->user();
-        $userEntity = $this->Users->get($user['id']);
         $isNewbie = !$user['last_login'];
-        $this->Users->touch($userEntity, 'Controller.Users.afterLogin');
-        $this->Users->save($userEntity);
-
         $this->_setWelcomeToast($user['first_name'], $user['username'], $isNewbie);
 
         // For security

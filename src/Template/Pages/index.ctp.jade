@@ -2,6 +2,8 @@ include ../Mixin/divider_with_text.ctp.jade
 
 $faker = \Faker\Factory::create();
 
+!= $view->Flash->render()
+
 //- iPhone
 #iphone-container.pt-50
 	.overlay.center.p-20.pink-text.text-accent-3(style='width: 600px;').br-5.mt-50

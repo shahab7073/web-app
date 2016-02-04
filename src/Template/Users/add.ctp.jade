@@ -1,6 +1,6 @@
 - $view->layout = 'full_screen';
 
-!= $view->Form->create(null, ['data-parsley-validate' => true])
+!= $view->Form->create($user, ['data-parsley-validate' => true])
 
 != $view->Flash->render()
 .row.links
@@ -24,28 +24,28 @@
 		.col.m6.s12
 			.input-field
 				i.fa.fa-user.prefix
-				!= $view->Form->input('first_name', ['required' => true])
+				!= $view->Form->input('first_name')
 
 		//- Last Name
 		.col.m6.s12
 			.input-field
 				i.fa.fa-user.prefix
-				!= $view->Form->input('last_name', ['required' => true])
+				!= $view->Form->input('last_name')
 
 	//- Email
 	.input-field
 		i.fa.fa-envelope.prefix
-		!= $view->Form->input('email', ['required' => true])
+		!= $view->Form->input('email')
 
 	//- Username
 	.input-field
 		i.fa.fa-user.prefix
-		!= $view->Form->input('username', ['required' => true])
+		!= $view->Form->input('username')
 
 	//- Password
 	.input-field
 		i.fa.fa-unlock-alt.prefix
-		!= $view->Form->input('password', ['required' => true])
+		!= $view->Form->input('password')
 
 	//- Agree to the TOS
 	p
