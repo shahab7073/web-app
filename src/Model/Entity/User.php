@@ -54,4 +54,14 @@ class User extends Entity
     /* * * * * * * * * * * * *
      * [virtual properties]  *
      * * * * * * * * * * * * */
+
+    /**
+     * Get full_name
+     *
+     * @return string
+     */
+    protected function _getFullName()
+    {
+        return $this->_properties['first_name'] . ' ' . $this->_properties['last_name'];
+    }
 }
