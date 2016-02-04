@@ -35,7 +35,7 @@ class AppController extends Controller
      * [public] - properties   *
      * * * * * * * * * * * * * */
 
-    public $components = ['RequestHandler', 'Flash', 'Auth'];
+    public $components = ['RequestHandler', 'Flash', 'Auth', 'Cookie'];
 
     /* * * * * * * * * * * * * * * * * *
      * [protected] - member variables  *
@@ -79,6 +79,7 @@ class AppController extends Controller
                         'action' => 'afterSnsLogin'
                     ],
                 ],
+                'Xety/Cake3CookieAuth.Cookie',
             ],
             // 'authorize' => ['Controller'],
             'loginRedirect' => [
@@ -92,6 +93,11 @@ class AppController extends Controller
                 'index'
             ]
         ]);
+
+        $this->Cookie->configKey('CookieAuth', [
+            'expires' => '+1 year',
+            'httpOnly' => true
+        ]);
     }
 
     /**
@@ -102,6 +108,16 @@ class AppController extends Controller
     public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
+
+        // Automatic login using cookie.
+        if (!$this->Auth->user() && $this->Cookie->read('CookieAuth')) {
+            $user = $this->Auth->identify();
+            if ($user) {
+                $this->Auth->setUser($user);
+            } else {
+                $this->Cookie->delete('CookieAuth');
+            }
+        }
 
         $controllerName = $this->request->params['controller'];
 

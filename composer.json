@@ -13,7 +13,8 @@
         "clthck/cakephp-jade": "*",
         "clthck/asset-compress-improved": "~3.0",
         "admad/cakephp-hybridauth": "~3.0",
-        "fzaninotto/faker": "*"
+        "fzaninotto/faker": "*",
+        "xety/cake3-cookieauth": "1.*"
     },
     "require-dev": {
         "psy/psysh": "@stable",

@@ -26,6 +26,20 @@ class UsersController extends AppController
      * * * * * * * * * * * * * * * * */
 
     /**
+     * Initialization hook method.
+     *
+     * Use this method to add common initialization code like loading components.
+     *
+     * e.g. `$this->loadComponent('Security');`
+     *
+     * @return void
+     */
+    public function initialize()
+    {
+        parent::initialize();
+    }
+
+    /**
      * isAuthorized hook method
      *
      * @param array $user
@@ -73,8 +87,15 @@ class UsersController extends AppController
 
         if ($this->request->is('post')) {
             $user = $this->Auth->identify();
+            $data = $this->request->data;
             if ($user) {
                 $this->Auth->setUser($user);
+                if ($data['remember_me']) {
+                    $this->Cookie->write('CookieAuth', [
+                        'username' => $data['username'],
+                        'password' => $data['password']
+                    ]);
+                }
                 $this->_setWelcomeToast($user['first_name'], $user['username']);
                 return $this->redirect($this->Auth->redirectUrl());
             }
