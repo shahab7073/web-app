@@ -1,0 +1,11 @@
+input {
+	&.form-error {
+		margin-bottom: 5px;
+		border-bottom-color: $error-color;
+		box-shadow: 0 1px 0 0 $error-color;
+	}
+}
+
+.error-message {
+	color: $error-color;
+}

@@ -6,5 +6,5 @@
  */
 return [
 	'inputContainer' => '{{content}}',
-	// 'inputContainerError' => '{{content}}{{error}}',
+	'inputContainerError' => '{{content}}{{error}}',
 ];
