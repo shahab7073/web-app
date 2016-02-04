@@ -71,11 +71,13 @@ class UsersController extends AppController
             $user = $this->Auth->identify();
             if ($user) {
                 $this->Auth->setUser($user);
-                $greetingName = trim($user['first_name']);
-                if (empty($greetingName)) {
-                    $greetingName = $user['username'];
-                }
-                $this->Flash->toast(__("Welcome back, {$greetingName}!"));
+
+                $userEntity = $this->Users->get($user['id']);
+                $this->Users->touch($userEntity, 'Controller.Users.afterLogin');
+                $this->Users->save($userEntity);
+
+                $this->_setWelcomeToast($user['first_name'], $user['username']);
+
                 return $this->redirect($this->Auth->redirectUrl());
             }
             $this->Flash->error(__('Invalid username or password, try again.'));
@@ -107,14 +109,11 @@ class UsersController extends AppController
 
         $user = $this->Auth->user();
         $userEntity = $this->Users->get($user['id']);
+        $isNewbie = !$user['last_login'];
         $this->Users->touch($userEntity, 'Controller.Users.afterLogin');
         $this->Users->save($userEntity);
 
-        $greetingName = trim($user['first_name']);
-        if (empty($greetingName)) {
-            $greetingName = $user['username'];
-        }
-        $this->Flash->toast(__("Welcome back, {$greetingName}!"));
+        $this->_setWelcomeToast($user['first_name'], $user['username'], $isNewbie);
 
         // For security
         $this->request->session()->write('afterSnsLoginCalled', true);
@@ -135,10 +134,20 @@ class UsersController extends AppController
 
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
-            $user = $this->Users->patchEntity($user, $this->request->data);
+            $data = $this->request->data;
+
+            // Check if user tries SNS sign up
+            if (empty($data['provider']) === false) {
+                $this->Auth->identify();
+                return;
+            }
+
+            $user = $this->Users->patchEntity($user, $data);
+            $this->Users->touch($user, 'Controller.Users.afterLogin');
+
             if ($this->Users->save($user)) {
-                $this->Flash->success(__("You've successfully signed up."));
                 $this->Auth->setUser($user->toArray());
+                $this->_setWelcomeToast($user->first_name, $user->username, true);
                 return $this->redirect($this->Auth->redirectUrl());
             } else {
                 $this->Flash->error(__("We couldn't complete your registration. Please, try again."));
@@ -154,7 +163,6 @@ class UsersController extends AppController
      */
     public function index()
     {
-
     }
 
     /* * * * * * * * * * * * * * * * * * *
@@ -164,4 +172,22 @@ class UsersController extends AppController
     /* * * * * * * * * * * * * *
      * [protected] - methods   *
      * * * * * * * * * * * * * */
+
+    /**
+     * _setWelcomeToast method
+     *
+     * @param string $name
+     * @param string $nameAlt = "Guest"
+     * @param boolean $isNewbie = false
+     * @return void
+     */
+    protected function _setWelcomeToast($name, $nameAlt = "Guest", $isNewbie = false)
+    {
+        $greetingName = trim($name);
+        if (empty($greetingName)) {
+            $greetingName = trim($nameAlt);
+        }
+        $phrase = $isNewbie ? "Welcome to CoolOps" : "Welcome back";
+        $this->Flash->toast(__("{$phrase}, {$greetingName}!"));
+    }
 }

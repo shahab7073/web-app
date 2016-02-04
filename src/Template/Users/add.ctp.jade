@@ -1,0 +1,57 @@
+- $view->layout = 'full_screen';
+
+!= $view->Form->create(null, ['data-parsley-validate' => true])
+
+!= $view->Flash->render()
+.row.links
+	.col.s6.logo
+		!= $view->Html->image('logo-white.png')
+	.col.s6.right-align !{$view->Html->link('Sign In', ['action' => 'login'])} / #[strong Sign Up]
+
+.card-panel.clearfix
+	//- Social Sign Up
+	!= $view->Form->hidden('provider', ['value' => '', 'id' => 'provider']);
+	.row.socials
+		.col.s4
+			a.btn.blue.darken-2.z-depth-0.z-depth-1-hover.waves-effect.waves-light(href='#!' data-provider='Facebook'): i.fa.fa-2x.fa-facebook
+		.col.s4
+			a.btn.blue.lighten-2.z-depth-0.z-depth-1-hover.waves-effect.waves-light(href='#!' data-provider='Twitter'): i.fa.fa-2x.fa-twitter
+		.col.s4
+			a.btn.red.z-depth-0.z-depth-1-hover.waves-effect.waves-light(href='#!' data-provider='Google'): i.fa.fa-2x.fa-google-plus
+
+	.row
+		//- First Name
+		.col.m6.s12
+			.input-field
+				i.fa.fa-user.prefix
+				!= $view->Form->input('first_name', ['required' => true])
+
+		//- Last Name
+		.col.m6.s12
+			.input-field
+				i.fa.fa-user.prefix
+				!= $view->Form->input('last_name', ['required' => true])
+
+	//- Email
+	.input-field
+		i.fa.fa-envelope.prefix
+		!= $view->Form->input('email', ['required' => true])
+
+	//- Username
+	.input-field
+		i.fa.fa-user.prefix
+		!= $view->Form->input('username', ['required' => true])
+
+	//- Password
+	.input-field
+		i.fa.fa-unlock-alt.prefix
+		!= $view->Form->input('password', ['required' => true])
+
+	//- Agree to the TOS
+	p
+		!= $view->Form->input('checkbox_terms', ['type' => 'checkbox', 'label' => false, 'required' => true, 'data-parsley-required-message' => 'You must agree to the terms of service of CoolOps.'])
+		label(for='checkbox-terms') I agree to the #[a(href='#') terms of use].
+
+	button.waves-effect.waves-light.btn-large.z-depth-0.z-depth-1-hover Sign Up
+
+!= $view->Form->end()

@@ -77,14 +77,6 @@ class UsersTable extends Table
             ->requirePresence('last_name', 'create')
             ->notEmpty('last_name');
 
-        $validator
-            ->requirePresence('provider', 'create')
-            ->notEmpty('provider');
-
-        $validator
-            ->requirePresence('provider_uid', 'create')
-            ->notEmpty('provider_uid');
-
         return $validator;
     }
 
