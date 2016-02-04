@@ -1,4 +1,16 @@
-.alert.blue.lighten-2.white-text.alert-dismissible
+-
+	$classes = ['blue', 'lighten-2', 'white-text'];
+	
+	if (isset($params['class'])) {
+		switch ($params['class']) {
+			case 'error':
+				$classes = [];
+				break;
+			default:
+		}
+	}
+
+.alert.alert-dismissible&class($classes)
 	strong Heads up!
 	!= h($message)
 	button.close &times;

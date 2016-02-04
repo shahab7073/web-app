@@ -3,6 +3,7 @@
 != $view->Form->create(null, ['data-parsley-validate' => true])
 
 != $view->Flash->render()
+!= $view->Flash->render('auth')
 .row.links
 	.col.s6.logo
 		!= $view->Html->image('logo-white.png')
