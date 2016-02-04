@@ -17,6 +17,7 @@ namespace App\Controller;
 use Cake\Controller\Controller;
 use Cake\Event\Event;
 use Cake\Utility\Inflector;
+use Cake\ORM\TableRegistry;
 
 /**
  * Application Controller
@@ -118,12 +119,21 @@ class AppController extends Controller
             $this->set('_serialize', true);
         }
 
+        $viewVars = [];
+
         $params = $this->request->params;
 
         if ($params['controller'] !== 'Pages') {
             $page_id = Inflector::dasherize($params['controller'] . '-' . $params['action']);
+            $viewVars[] = 'page_id';
             $this->set(compact('page_id'));
         }
+
+        if ($user = $this->Auth->user()) {
+            $user = TableRegistry::get('Users')->get($user['id']);
+            $viewVars[] = 'user';
+        }
+        $this->set(compact($viewVars));
     }
 
     /**

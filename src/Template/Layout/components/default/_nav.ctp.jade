@@ -21,7 +21,7 @@ nav.navbar-top
 			li.user
 				a.dropdown-button(href='#!' data-activates='user-dropdown')
 					!= $view->Html->image('user.jpg', ['class' => 'circle', 'alt' => 'John Doe'])
-					| John Doe
+					| #{$user->full_name}
 					i.mdi-navigation-expand-more.right
 				ul.dropdown-content#user-dropdown
 					li: a(href='page-profile.html') #[i.fa.fa-user] Profile
