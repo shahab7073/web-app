@@ -19,6 +19,7 @@ use Cake\Event\Event;
 use Cake\Utility\Inflector;
 use Cake\ORM\TableRegistry;
 use Cake\Network\Exception\NotFoundException;
+use Cake\Core\Configure;
 
 /**
  * Application Controller
@@ -81,7 +82,12 @@ class AppController extends Controller
                 ],
                 'Xety/Cake3CookieAuth.Cookie',
             ],
-            // 'authorize' => ['Controller'],
+            'authorize' => [
+                'TinyAuth.Tiny' => [
+                    'multiRole' => false,
+                    'autoClearCache' => Configure::read('debug'),
+                ],
+            ],
             'loginRedirect' => [
                 'plugin' => false,
                 'controller' => 'Users',

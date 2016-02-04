@@ -14,7 +14,8 @@
         "clthck/asset-compress-improved": "~3.0",
         "admad/cakephp-hybridauth": "~3.0",
         "fzaninotto/faker": "*",
-        "xety/cake3-cookieauth": "1.*"
+        "xety/cake3-cookieauth": "1.*",
+        "dereuromark/cakephp-tinyauth": "1.*"
     },
     "require-dev": {
         "psy/psysh": "@stable",

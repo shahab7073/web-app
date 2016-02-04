@@ -40,18 +40,6 @@ class UsersController extends AppController
     }
 
     /**
-     * isAuthorized hook method
-     *
-     * @param array $user
-     * @return boolean
-     */
-    // public function isAuthorized($user)
-    // {
-    //     // Default deny
-    //     return false;
-    // }
-
-    /**
      * beforeFilter hook method
      *
      * @param Cake\Event\Event $event
