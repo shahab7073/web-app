@@ -24,7 +24,7 @@ doctype html
 	!= $view->Html->meta('icon')
 
 	block override_css
-		!= $view->AssetCompress->css('public', ['media' => 'screen, projection'])
+		!= $view->fetch('override_css', $view->AssetCompress->css('public', ['media' => 'screen, projection']))
 	block add_css
 
 	<!--[if lt IE 9]>

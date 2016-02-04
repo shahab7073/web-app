@@ -23,8 +23,7 @@ doctype html
 
     != $view->Html->meta('icon')
 
-    != $view->Html->css('base.css')
-    != $view->Html->css('cake.css')
+    != $view->AssetCompress->css('cake_default')
 
     != $view->fetch('meta')
     != $view->fetch('css')

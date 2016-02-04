@@ -38,7 +38,7 @@ doctype html
 	!= $view->Html->meta('icon')
 
 	block override_css
-		!= $view->AssetCompress->css('application', ['media' => 'screen, projection'])
+		!= $view->fetch('override_css', $view->AssetCompress->css('application', ['media' => 'screen, projection']))
 	block add_css
 
 	<!--[if lt IE 9]>
@@ -48,7 +48,7 @@ doctype html
 	!= $view->fetch('meta')
 	!= $view->fetch('add_css')
 </head>
-<body id="<?= $page_id ?>" class="nano" style="height: 100vh;">
+<body id="<?= $page_id ?>" class="nano">
 	.nano-content
 		include components/default/_nav.ctp.jade
 

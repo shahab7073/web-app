@@ -1,6 +1,10 @@
-@include MyiPhone('#iphone-container');
-@include divider_with_text(5px);
+#pages-index {
 
-.overlay {
-	@include overlay();
+	@include MyiPhone('#iphone-container');
+	@include divider_with_text(5px);
+
+	.overlay {
+		@include overlay();
+	}
+
 }

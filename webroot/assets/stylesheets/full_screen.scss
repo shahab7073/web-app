@@ -1,5 +1,5 @@
 /* 
- * Stylesheet for public pages
+ * Stylesheet for full_screen layout
  *
  * Made by coolops
  */
@@ -10,21 +10,21 @@ $con_theme: 'deep-purple';
 
 // @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 
-// Import materializecss & con-material-admin-dashboard-ui
+// import materializecss & con-material-admin-dashboard-ui
 // @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/mixins";
 @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/color";
 
-// Variables
+// variables
 @import "../components_premium/con-material-adui/src/src/scss/parts/_variables";
 // @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/variables";
 @import "global/variables";
 
 @import "../components_premium/con-material-adui/src/src/scss/parts/helpers";
 
-// Resets
+// resets
 @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/normalize";
 
-// Components
+// components
 @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/global";
 // @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/icons-material-design";
 @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/grid";
@@ -33,15 +33,15 @@ $con_theme: 'deep-purple';
 @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/typography";
 @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/cards";
 @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/toast";
-@import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/tabs";
+// @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/tabs";
 @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/tooltip";
 @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/buttons";
 @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/dropdown";
 @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/waves";
 @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/modal";
-@import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/collapsible";
+// @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/collapsible";
 @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/chips";
-@import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/materialbox";
+// @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/materialbox";
 @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/form";
 @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/table_of_contents";
 @import "../components_premium/con-material-adui/src/src/scss/parts/_materialize_components/sideNav";
@@ -58,16 +58,18 @@ $con_theme: 'deep-purple';
 // @import "../components_premium/con-material-adui/src/src/scss/parts/yay";
 // @import "../components_premium/con-material-adui/src/src/scss/parts/navbar-top";
 // @import "../components_premium/con-material-adui/src/src/scss/parts/search-bar";
-@import "../components_premium/con-material-adui/src/src/scss/parts/widgets";
+// @import "../components_premium/con-material-adui/src/src/scss/parts/widgets";
 // @import "../components_premium/con-material-adui/src/src/scss/parts/chat";
 @import "../components_premium/con-material-adui/src/src/scss/parts/forms";
-@import "../components_premium/con-material-adui/src/src/scss/parts/timeline";
-@import "../components_premium/con-material-adui/src/src/scss/parts/datatables";
+// @import "../components_premium/con-material-adui/src/src/scss/parts/timeline";
+// @import "../components_premium/con-material-adui/src/src/scss/parts/datatables";
 // @import "../components_premium/con-material-adui/src/src/scss/parts/calendar";
 @import "../components_premium/con-material-adui/src/src/scss/parts/photo-swipe";
-@import "../components_premium/con-material-adui/src/src/scss/parts/pricing-table";
+// @import "../components_premium/con-material-adui/src/src/scss/parts/pricing-table";
 
 // @import "../components_premium/con-material-adui/src/src/scss/parts/profile";
+@import "../components_premium/con-material-adui/src/src/scss/parts/sign-pages";
+// @import "../components_premium/con-material-adui/src/src/scss/parts/mail";
 @import "../components_premium/con-material-adui/src/src/scss/parts/layouts";
 // @import "../components_premium/con-material-adui/src/src/scss/parts/ecommerce";
 
@@ -78,7 +80,7 @@ $con_theme: 'deep-purple';
 
 // @import "../components_premium/con-material-adui/src/src/scss/parts/rtl";
 
-// Import datatables
+// import datatables
 // @import "../components/datatables-buttons/css/buttons.dataTables";
 // @import "../components/datatables-select/css/select.dataTables";
 
@@ -86,13 +88,12 @@ $con_theme: 'deep-purple';
 @import "global/mixins";
 @import "global/placeholders";
 
-@import "sections/layout/public/base/base";
+@import "sections/layout/full_screen/base/base";
 
-@import "sections/layout/public/components/**/*";
+@import "sections/layout/full_screen/components/**/*";
 
-@import "sections/layout/public/trumps/helpers";
-@import "sections/layout/public/trumps/overrides";
-@import "sections/layout/public/trumps/reusable";
+@import "sections/layout/full_screen/trumps/helpers";
+@import "sections/layout/full_screen/trumps/overrides";
+@import "sections/layout/full_screen/trumps/reusable";
 
 // Import view-specific stylesheets
-@import "sections/pages/*";

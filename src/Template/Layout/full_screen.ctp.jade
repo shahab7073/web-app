@@ -24,7 +24,7 @@ doctype html
 	!= $view->Html->meta('icon')
 
 	block override_css
-		!= $view->AssetCompress->css('application', ['media' => 'screen, projection'])
+		!= $view->fetch('override_css', $view->AssetCompress->css('full_screen', ['media' => 'screen, projection']))
 	block add_css
 
 	<!--[if lt IE 9]>
@@ -43,7 +43,7 @@ doctype html
 
 	//- Scripts
 	block override_script
-		!= $view->AssetCompress->script('application')
+		!= $view->AssetCompress->script('full_screen')
 	block add_script
 	!= $view->fetch('add_script');
 </body>
