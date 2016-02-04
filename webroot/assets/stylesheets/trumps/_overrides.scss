@@ -30,3 +30,10 @@
 		line-height: inherit;
 	}
 }
+
+.alert {
+	.close {
+		line-height: initial;
+		top: -3px;
+	}
+}

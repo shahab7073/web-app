@@ -89,12 +89,20 @@ $con_theme: 'deep-purple';
 @import "global/placeholders";
 
 @import "base/base";
+@import "sections/layout/default/base/base";
 
 @import "components/**/*";
+@import "sections/layout/default/components/**/*";
 
 @import "trumps/helpers";
+@import "sections/layout/default/trumps/helpers";
+
 @import "trumps/overrides";
+@import "sections/layout/default/trumps/overrides";
+
 @import "trumps/reusable";
+@import "sections/layout/default/trumps/reusable";
+
 @import "trumps/trumps";
 
 // Import view-specific stylesheets
