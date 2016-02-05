@@ -1,7 +1,7 @@
 <?php
 use Migrations\AbstractMigration;
 
-class AddAvatarToUsers extends AbstractMigration
+class AddProviderAvatarToUsers extends AbstractMigration
 {
     public function up()
     {
@@ -69,6 +69,11 @@ class AddAvatarToUsers extends AbstractMigration
             ->addColumn('provider_uid', 'string', [
                 'default' => null,
                 'limit' => 255,
+                'null' => true,
+            ])
+            ->addColumn('provider_avatar', 'string', [
+                'default' => null,
+                'limit' => 1024,
                 'null' => true,
             ])
             ->addColumn('created', 'datetime', [

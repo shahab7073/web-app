@@ -169,6 +169,7 @@ class UsersTable extends Table
                 'username' => $pp->displayName ?? '',
                 'first_name' => $pp->firstName ?? '',
                 'last_name' => $pp->lastName ?? '',
+                'provider_avatar' => $pp->photoURL ?? '',
             ];
         }
         $user->set($fields);

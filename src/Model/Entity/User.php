@@ -42,6 +42,27 @@ class User extends Entity
     protected $_hidden = ['password'];
 
     /* * * * * * * * * * * * *
+     * [protected] - methods   *
+     * * * * * * * * * * * * */
+
+    /**
+     * Helper method for getting avatar_url virtual properties
+     *
+     * @param string $size 'tiny'
+     * @return string
+     */
+    protected function _getAvatarUrl($size = 'tiny')
+    {
+        if (!empty($this->_properties['avatar'])) {
+            return '../upload/users/avatar/' . $this->_properties['avatar_dir'] . "/{$size}_" . $this->_properties['avatar'];
+        }
+        if (!empty($this->_properties['provider_avatar'])) {
+            return $this->_properties['provider_avatar'];
+        }
+        return "{$size}_default_avatar.jpg";
+    }
+
+    /* * * * * * * * * * * * *
      * [properties setter]   *
      * * * * * * * * * * * * */
 
@@ -76,9 +97,7 @@ class User extends Entity
      */
     protected function _getAvatarUrlTiny()
     {
-        return empty($this->_properties['avatar']) ? 
-                'tiny_default_avatar.jpg'
-                : '../upload/users/avatar/' . $this->_properties['avatar_dir'] . '/tiny_' . $this->_properties['avatar'];
+        return $this->_getAvatarUrl('tiny');
     }
 
     /**
@@ -88,9 +107,7 @@ class User extends Entity
      */
     protected function _getAvatarUrlSmall()
     {
-        return empty($this->_properties['avatar']) ? 
-                'small_default_avatar.jpg'
-                : '../upload/users/avatar/' . $this->_properties['avatar_dir'] . '/small_' . $this->_properties['avatar'];
+        return $this->_getAvatarUrl('small');
     }
 
     /**
@@ -100,8 +117,6 @@ class User extends Entity
      */
     protected function _getAvatarUrlMedium()
     {
-        return empty($this->_properties['avatar']) ? 
-                'medium_default_avatar.jpg'
-                : '../upload/users/avatar/' . $this->_properties['avatar_dir'] . '/medium_' . $this->_properties['avatar'];
+        return $this->_getAvatarUrl('medium');
     }
 }
