@@ -86,14 +86,20 @@ class AppController extends Controller
                 'TinyAuth.Tiny' => [
                     'multiRole' => false,
                     'autoClearCache' => Configure::read('debug'),
+                    'authorizeByPrefix' => true,
+                    'prefixes' => ['admin'],
                 ],
             ],
+            'unauthorizedRedirect' => false,
             'loginRedirect' => [
                 'plugin' => false,
+                'prefix' => false,
                 'controller' => 'Users',
                 'action' => 'index',
             ],
             'logoutRedirect' => [
+                'plugin' => false,
+                'prefix' => false,
                 'controller' => 'Pages',
                 'action' => 'display',
                 'index'

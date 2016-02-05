@@ -78,6 +78,17 @@ Router::scope('/', function ($routes) {
     $routes->fallbacks('DashedRoute');
 });
 
+Router::prefix('admin', function ($routes) {
+    /**
+     * Because we are in admin scope,
+     * we don't need to include the /admin prefix
+     * or the admin route element.
+     */
+    $routes->connect('/', ['controller' => 'Users', 'action' => 'index']);
+
+    $routes->fallbacks('DashedRoute');
+});
+
 /**
  * Load all plugin routes.  See the Plugin documentation on
  * how to customize the loading of plugin routes.

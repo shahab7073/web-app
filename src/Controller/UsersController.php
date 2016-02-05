@@ -4,6 +4,7 @@ namespace App\Controller;
 use App\Controller\AppController;
 use Cake\Event\Event;
 use Cake\Network\Exception\NotFoundException;
+use Cake\Routing\Router;
 
 /**
  * Users Controller
@@ -70,7 +71,7 @@ class UsersController extends AppController
     public function login()
     {
         if ($this->Auth->user()) {
-            return $this->redirect($this->Auth->redirectUrl());
+            return $this->redirect($this->_loginRedirectUrl($this->Auth->user('role_id')));
         }
 
         if ($this->request->is('post')) {
@@ -85,7 +86,7 @@ class UsersController extends AppController
                     ]);
                 }
                 $this->_setWelcomeToast($user['first_name'], $user['username']);
-                return $this->redirect($this->Auth->redirectUrl());
+                return $this->redirect($this->_loginRedirectUrl($user['role_id']));
             }
             $this->Flash->error(__('Invalid username or password, try again.'));
         }
@@ -128,7 +129,7 @@ class UsersController extends AppController
         // For security
         $this->request->session()->write('afterSnsLoginCalled', true);
 
-        return $this->redirect($this->Auth->redirectUrl());
+        return $this->redirect($this->_loginRedirectUrl($user['role_id']));
     }
 
     /**
@@ -139,10 +140,17 @@ class UsersController extends AppController
     public function add()
     {
         if ($this->Auth->user()) {
-            return $this->redirect($this->Auth->redirectUrl());
+            return $this->redirect($this->_loginRedirectUrl($this->Auth->user('role_id')));
         }
 
         $user = $this->Users->newEntity();
+        $roles = $this->Users->Roles
+            ->find('list', [
+                'keyField' => 'alias',
+                'valueField' => 'id',
+            ])
+            ->toArray();
+
         if ($this->request->is('post')) {
             $data = $this->request->data;
 
@@ -153,12 +161,13 @@ class UsersController extends AppController
             }
 
             $user = $this->Users->patchEntity($user, $data);
+            $user->set(['role_id' => $roles['user']]);
             $this->Users->touch($user, 'Controller.Users.afterLogin');
 
             if ($this->Users->save($user)) {
                 $this->Auth->setUser($user->toArray());
                 $this->_setWelcomeToast($user->first_name, $user->username, true);
-                return $this->redirect($this->Auth->redirectUrl());
+                return $this->redirect($this->_loginRedirectUrl($user->role_id));
             } else {
                 $this->Flash->error(__("We couldn't complete your registration. Please, try again."));
             }
@@ -199,5 +208,27 @@ class UsersController extends AppController
         }
         $phrase = $isNewbie ? "Welcome to CoolOps" : "Welcome back";
         $this->Flash->toast(__("{$phrase}, {$greetingName}!"));
+    }
+
+    /**
+     * _loginRedirectUrl method
+     *
+     * @param int $roleId
+     * @return string Redirect URL
+     */
+    protected function _loginRedirectUrl($roleId)
+    {
+        $role = $this->Users->Roles->get($roleId);
+
+        if ($role->alias === 'user') {
+            return $this->Auth->redirectUrl();
+        }
+
+        return Router::url([
+            'plugin' => false,
+            'prefix' => $role->alias,
+            'controller' => 'Users',
+            'action' => 'index',
+        ]);
     }
 }
