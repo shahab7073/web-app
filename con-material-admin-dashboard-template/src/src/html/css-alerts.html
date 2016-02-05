@@ -1,0 +1,226 @@
+@@include('./parts/head.html', {
+  "plugin_fa_icons": true,
+  "plugin_mdi_icons": true,
+  "plugin_ion_icons": true,
+  "plugin_wi_icons": true,
+
+  "plugin_rickshaw": false,
+  "plugin_nvd3": false,
+  "plugin_flot": false,
+  "plugin_sparkline": false,
+
+  "plugin_markitup": false,
+  "plugin_ckeditor": false,
+
+  "plugin_select2": false,
+  "plugin_dropzone": false,
+  "plugin_tagsinput": false,
+  "plugin_clockpicker": false,
+  "plugin_pikaday": false,
+  "plugin_spectrum": false,
+  "plugin_inputmask": false,
+  "plugin_parsley": false,
+
+  "plugin_gmaps": false,
+  "plugin_jvectormap": false,
+
+  "plugin_datatables": false,
+  "plugin_fullcalendar": false,
+  "plugin_simpleweather": false,
+  "plugin_prettify": true,
+  "plugin_animatecss": false,
+  "plugin_wowjs": false,
+  "plugin_photoswipe": false,
+  "plugin_isotope": false,
+  "plugin_videojs": false
+})
+
+<body>
+
+@@include('./parts/top-navbar.html')
+
+@@include('./parts/sidebar.html', {
+  "page": "css-alerts",
+  "classes": "yay-shrink yay-hide-to-small yay-gestures"
+})
+
+<!-- Main Content -->
+<section class="content-wrap">
+
+  @@include('./parts/title.html', {
+    "title": "Alerts",
+    "crumbs": "<li><a href='dashboard.html'>Dashboard</a> <i class='fa fa-angle-right'></i></li><li><a href='#'>CSS</a> <i class='fa fa-angle-right'></i></li><li><a href='css-alerts.html'>Alerts</a></li>"
+  })
+
+
+  <!--  Basic Alert  -->
+  <div class="card-panel">
+    <h4>Basic</h4>
+    <div class="row">
+      <div class="col s12 l6">
+        <div class="alert">
+          <strong>Oh snap!</strong> Change a few things up and try submitting again.
+        </div>
+      </div>
+      <div class="col s12 l6">
+        <pre class="prettyprint linenums">
+&lt;div class="alert">
+  &lt;strong>Oh snap!&lt;/strong> Change a few things up and try submitting again.
+&lt;/div></pre>
+      </div>
+    </div>
+  </div>
+  <!--  /Basic Alert  -->
+
+  <!--  Alert Colors  -->
+  <div class="card-panel">
+    <h4>Different colors</h4>
+    <div class="row">
+      <div class="col l6 s12">
+        You can use colors from list <a href="css-colors.html">css-colors.html</a>.
+        <div class="alert green lighten-4 green-text text-darken-2">
+          <strong>Well done!</strong> You successfully read this important alert message.
+        </div>
+        <div class="alert blue lighten-2 white-text">
+          <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+        </div>
+        <div class="alert orange lighten-2 white-text">
+          <strong>Warning!</strong> Better check yourself, you're not looking too good.
+        </div>
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;div class="alert green lighten-4 green-text text-darken-2">
+  &lt;strong>Well done!&lt;/strong> You successfully read this important alert message.
+&lt;/div>
+&lt;div class="alert blue lighten-2 white-text">
+  &lt;strong>Heads up!&lt;/strong> This alert needs your attention, but it's not super important.
+&lt;/div>
+&lt;div class="alert orange lighten-2 white-text">
+  &lt;strong>Warning!&lt;/strong> Better check yourself, you're not looking too good.
+&lt;/div></pre>
+      </div>
+    </div>
+  </div>
+  <!--  /Alert Colors  -->
+
+  <!--  Dismissible Alerts  -->
+  <div class="card-panel">
+    <h4>Dismissible</h4>
+    <div class="row">
+      <div class="col l6 s12">
+        Build on any alert by adding an optional <code>.alert-dismissible</code> and close button.
+        <div class="alert alert-dismissible orange lighten-4 orange-text text-darken-2">
+          <strong>Warning!</strong> Better check yourself, you're not looking too good.
+          <button class="close">&times;</button>
+        </div>
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;div class="alert alert-dismissible orange lighten-4 orange-text text-darken-2">
+  &lt;strong>Warning!&lt;/strong> Better check yourself, you're not looking too good.
+  &lt;button class="close">&amp;times;&lt;/button>
+&lt;/div></pre>
+      </div>
+    </div>
+  </div>
+  <!--  /Dismissible Alerts  -->
+
+
+  <!--  Bordered Alert  -->
+  <div class="card-panel">
+    <h4>Bordered</h4>
+    <div class="row">
+      <div class="col l6 s12">
+        <div class="alert alert-border-left pink lighten-4 pink-text text-darken-2">
+          <strong>Oh snap!</strong> Change a few things up and try submitting again.
+        </div>
+        <div class="alert alert-border-right purple lighten-4 purple-text text-darken-2">
+          <strong>Well done!</strong> You successfully read this important alert message.
+        </div>
+        <div class="alert alert-border-top teal lighten-4 teal-text text-darken-2">
+          <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+        </div>
+        <div class="alert alert-border-bottom deep-orange lighten-4 deep-orange-text text-darken-2">
+          <strong>Warning!</strong> Better check yourself, you're not looking too good.
+        </div>
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums">
+&lt;div class="alert alert-border-left">
+  &lt;strong>Oh snap!&lt;/strong> Change a few things up and try submitting again.
+&lt;/div>
+&lt;div class="alert green lighten-4 green-text text-darken-2 alert-border-right">
+  &lt;strong>Well done!&lt;/strong> You successfully read this important alert message.
+&lt;/div>
+&lt;div class="alert blue lighten-4 blue-text text-darken-2 alert-border-top">
+  &lt;strong>Heads up!&lt;/strong> This alert needs your attention, but it's not super important.
+&lt;/div>
+&lt;div class="alert orange lighten-4 orange-text text-darken-2 alert-border-bottom">
+  &lt;strong>Warning!&lt;/strong> Better check yourself, you're not looking too good.
+&lt;/div></pre>
+      </div>
+    </div>
+  </div>
+  <!--  /Bordered Alert  -->
+
+
+  <!--  Not Only Messages  -->
+  <div class="card-panel">
+    <h4>Not Only Messages</h4>
+    <div class="row">
+      <div class="col l6 s12">
+        <div class="alert orange lighten-4 orange-text text-darken-2">
+          <h4>Warning!</h4>
+          <p>Better check yourself, you're not looking too good.</p>
+          <p><a class="btn waves-effect orange z-depth-0" href="#!">Okay</a></p>
+        </div>
+        <div class="alert alert-border-bottom cyan lighten-4 cyan-text text-darken-2">
+          <h4>Warning!</h4>
+          <p>Better check yourself, you're not looking too good.</p>
+          <p>
+            <a class="btn waves-effect cyan z-depth-0" href="#!">Okay</a>
+            <a class="btn waves-effect white cyan-text text-darken-2 z-depth-0" href="#!">Cancel</a>
+          </p>
+        </div>
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums">
+&lt;div class="alert orange lighten-4 orange-text text-darken-2">
+  &lt;h4>Warning!&lt;/h4>
+  &lt;p>Better check yourself, you're not looking too good.&lt;/p>
+  &lt;p>&lt;a class="btn waves-effect orange z-depth-0" href="#!">Okay&lt;/a>&lt;/p>
+&lt;/div>
+&lt;div class="alert alert-border-bottom cyan lighten-4 cyan-text text-darken-2">
+  &lt;h4>Warning!&lt;/h4>
+  &lt;p>Better check yourself, you're not looking too good.&lt;/p>
+  &lt;p>
+    &lt;a class="btn waves-effect cyan z-depth-0" href="#!">Okay&lt;/a>
+    &lt;a class="btn waves-effect white cyan-text text-darken-2 z-depth-0" href="#!">Cancel&lt;/a>
+  &lt;/p>
+&lt;/div></pre>
+      </div>
+    </div>
+  </div>
+  <!--  /Not Only Messages  -->
+
+</section>
+<!-- /Main Content -->
+
+@@include('./parts/search-bar.html')
+
+@@include('./parts/chat.html')
+
+@@include('./parts/foot.html', {
+  "copyright": true
+})
+
+<style type="text/css">
+  .btn-example {
+    margin-top: 15px;
+    margin-bottom: 0;
+  }
+</style>
+
+</body>
+</html>

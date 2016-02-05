@@ -1,0 +1,2499 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Con - documentation for admin template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="documentation for admin template">
+    <meta name="author" content="nK">
+
+    <!-- Le styles -->
+    <link href="assets/bootstrap.css" rel="stylesheet">
+    <link href="assets/jquery-ui.css" rel="stylesheet">
+    <link href="assets/jquery.tocify.css" rel="stylesheet">
+    <link href="assets/prettify.css" type="text/css" rel="stylesheet" />
+    <link href="assets/custom.css" type="text/css" rel="stylesheet" />
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <div id="toc">
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span9">
+          <div class="hero-unit">
+            <h1>Con</h1>
+            
+            <br />
+            <h2>Thank You For Purchasing</h2>
+            <br />
+            <p>Material Admin Dashboard Template</a>.
+            </p>
+            <p>
+              <a class="btn" href="http://themeforest.net/item/con-material-admin-dashboard-template/full_screen_preview/10621512" target="_blank">Preview</a>
+              <a class="btn btn-teal" href="http://themeforest.net/user/nKdev" target="_blank">Profile</a>
+              <a class="btn btn-orange" href="http://nk.ticksy.com" target="_blank">Support</a>
+            </p>
+          </div>
+              
+              <div class="well">
+                <h2>Overview</h2>
+                Con is admin dashboard based on Materialize framework. Template fully based on HTML5, CSS3 standards. Is fully responsive and clean on every device and every modern browser (IE9 and newer). Responsive. Con admin dashboard looks equally good on computers and mobile devices. Customizable.<br>If you know how to work with Gulp, you can easily change the template source code. Change the main color, sizes, fonts, menus, etc. HTML code is divided into blocks – for example you can easily change the side navigation in one place and it will builds in all html files directly. You do not have to worry about cross-browser CSS. SASS and Autoprefixer will do it for you. Material Design. Con based on clean and modern design technique. Commented code. All code commented and all pages have code samples for each item or widget. Over 2100 icons. You can use FontAwesome, Material Design, IonIcons and Weather icons packs. Free updates and lifetime support.
+              </div>
+
+
+              <div class="well">
+                <h2>Template Structure</h2>
+                All template files have fixed structure consisting of <code>top navbar</code>, <code>sidebar</code>, <code>breadcrumbs</code>, <code>search bar</code>, <code>chat</code>, <code>content</code> and <code>footer</code> as shown below:
+                <br>
+                <img src="assets/images/structure.png" alt="">
+
+                <h3>Beginning of Page</h3>
+                Below code is used at the beginning of all HTML pages to detect Internet Explorer browser version and set a spesific class applied to Internet Explorer versions.
+<pre class="prettyprint linenums">
+&lt;!DOCTYPE html>
+&lt;!--[if lt IE 7]>  &lt;html class="lt-ie7"> &lt;![endif]-->
+&lt;!--[if IE 7]>     &lt;html class="lt-ie8"> &lt;![endif]-->
+&lt;!--[if IE 8]>     &lt;html class="lt-ie9"> &lt;![endif]-->
+&lt;!--[if gt IE 8]>&lt;!--> &lt;html> &lt;!--&lt;![endif]--></pre>
+
+
+                <h3>RTL Support</h3>
+                Con friendly with Right to Left orientation. To use it, just add <code>.rtl</code> classname in <code>&lt;html></code> tag.
+                <pre class="prettyprint linenums">
+&lt;!DOCTYPE html>
+&lt;!--[if lt IE 7]>  &lt;html class="lt-ie7 rtl"> &lt;![endif]-->
+&lt;!--[if IE 7]>     &lt;html class="lt-ie8 rtl"> &lt;![endif]-->
+&lt;!--[if IE 8]>     &lt;html class="lt-ie9 rtl"> &lt;![endif]-->
+&lt;!--[if gt IE 8]>&lt;!--> &lt;html class="rtl"> &lt;!--&lt;![endif]--></pre>
+
+
+                <h3>Page Head</h3>
+                Page head contains metadata, javascript and css files:
+<pre class="prettyprint linenums">
+&lt;head>
+  &lt;meta charset="utf-8">
+  &lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
+  &lt;title>Con - Admin Dashboard with Material Design&lt;/title>
+
+  &lt;meta name="description" content="">
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1">
+
+  &lt;link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+
+  &lt;link rel="icon" type="image/png" href="assets/_con/images/icon.png">
+  &lt;!-- build:css assets/css/style.css -->
+  &lt;!-- nanoScroller -->
+  &lt;link rel="stylesheet" type="text/css" href="assets/nanoScroller/nanoscroller.css" />
+
+  &lt;!-- Main -->
+  &lt;link rel="stylesheet" type="text/css" href="assets/_con/css/_con.min.css" />
+  &lt;!-- endbuild -->
+
+  &lt;!--[if lt IE 9]>
+    &lt;script src="assets/html5shiv/html5shiv.min.js">&lt;/script>
+  &lt;![endif]-->
+&lt;/head></pre>
+
+                <h3>Top Navbar</h3>
+                Top navbar has some options. You can change it, using this classnames:
+                <ul>
+                  <li><i>.navbar-dark</i> - dark color scheme</li>
+                  <li><i>.navbar-static</i> - static position</li>
+                  <li><i>.navbar-under</i> - navbar under sidebar</li>
+                </ul>
+<pre class="prettyprint linenums">
+&lt;!--
+Top Navbar
+  Options:
+    .navbar-dark - dark color scheme
+    .navbar-static - static navbar
+    .navbar-under - under sidebar
+-->
+&lt;nav class="navbar-top">
+  &lt;div class="nav-wrapper">
+
+    &lt;!-- Sidebar toggle -->
+    &lt;a href="#" class="yay-toggle">
+      &lt;div class="burg1">&lt;/div>
+      &lt;div class="burg2">&lt;/div>
+      &lt;div class="burg3">&lt;/div>
+    &lt;/a>
+    &lt;!-- Sidebar toggle -->
+
+    &lt;!-- Logo -->
+    &lt;a href="#!" class="brand-logo">
+      &lt;img src="assets/_con/images/logo.png" alt="Con">
+    &lt;/a>
+    &lt;!-- /Logo -->
+
+    &lt;!-- Menu -->
+    &lt;ul>
+      &lt;li>&lt;a href="#!" class="search-bar-toggle">&lt;i class="mdi-action-search">&lt;/i>&lt;/a>
+      &lt;/li>
+      &lt;li class="user">
+        &lt;a class="dropdown-button" href="#!" data-activates="user-dropdown">
+          &lt;img src="assets/_con/images/user.jpg" alt="John Doe" class="circle">John Doe&lt;i class="mdi-navigation-expand-more right">&lt;/i>
+        &lt;/a>
+
+        &lt;ul id="user-dropdown" class="dropdown-content">
+          &lt;li>&lt;a href="page-profile.html">&lt;i class="fa fa-user">&lt;/i> Profile&lt;/a>
+          &lt;/li>
+          &lt;li>&lt;a href="mail-inbox.html">&lt;i class="fa fa-envelope">&lt;/i> Messages &lt;span class="badge new">2&lt;/span>&lt;/a>
+          &lt;/li>
+          &lt;li>&lt;a href="#!">&lt;i class="fa fa-cogs">&lt;/i> Settings&lt;/a>
+          &lt;/li>
+          &lt;li class="divider">&lt;/li>
+          &lt;li>&lt;a href="page-sign-in.html">&lt;i class="fa fa-sign-out">&lt;/i> Logout&lt;/a>
+          &lt;/li>
+        &lt;/ul>
+      &lt;/li>
+    &lt;/ul>
+    &lt;!-- /Menu -->
+
+  &lt;/div>
+&lt;/nav>
+&lt;!-- /Top Navbar --></pre>
+
+
+                <h3>Sidebar</h3>
+                Con uses <a href="http://nkdev.info/yay-advanced-sidebar-for-bootstrap">Yay sidebar</a>. This is list with available sidebar classes:
+                <ul>
+                  <li><strong>Effects:</strong>
+                    <ul>
+                      <li><i>.yay-overlay</i> - overlay content</li>
+                      <li><i>.yay-push</i> - push content to right</li>
+                      <li><i>.yay-shrink</i> - shrink content width</li>
+                    </ul>
+                  </li>
+
+                  <li><strong>Options:</strong>
+                    <ul>
+                      <li><i>.yay-hide-to-small</i> - no hide menu, just set it small with big icons</li>
+                      <li><i>.yay-static</i> - stop using fixed sidebar (will scroll with content)</li>
+                      <li><i>.yay-gestures</i> - to show and hide menu using gesture swipes</li>
+                      <li><i>.yay-overlap-content</i> - hide menu on content click</li>
+                      <li><i>.yay-light</i> - light color scheme</li>
+                    </ul>
+                  </li>
+
+                  <li><strong>Hide on Page Startup:</strong>
+                    <ul>
+                      <li><i>.yay-hide</i> - set it to <code>&lt;body></code> tag.</li>
+                    </ul>
+                  </li>
+
+                  <li><strong>Toggle button:</strong>
+                    <ul>
+                      <li><i>.yay-toggle</i> classname for custom toggle buttons.</li>
+                    </ul>
+                  </li>
+
+                </ul>
+
+<pre class="prettyprint linenums">
+&lt;!--
+Yay Sidebar
+Options [you can use all of theme classnames]:
+  .yay-hide-to-small         - no hide menu, just set it small with big icons
+  .yay-static                - stop using fixed sidebar (will scroll with content)
+  .yay-gestures              - to show and hide menu using gesture swipes
+  .yay-light                 - light color scheme
+  .yay-hide-on-content-click - hide menu on content click
+
+Effects [you can use one of these classnames]:
+  .yay-overlay  - overlay content
+  .yay-push     - push content to right
+  .yay-shrink   - shrink content width
+-->
+&lt;aside class="yaybar yay-shrink yay-hide-to-small yay-gestures">
+
+  &lt;div class="top">
+    &lt;div>
+      &lt;!-- Sidebar toggle -->
+      &lt;a href="#" class="yay-toggle">
+        &lt;div class="burg1">&lt;/div>
+        &lt;div class="burg2">&lt;/div>
+        &lt;div class="burg3">&lt;/div>
+      &lt;/a>
+      &lt;!-- Sidebar toggle -->
+
+      &lt;!-- Logo -->
+      &lt;a href="#!" class="brand-logo">
+        &lt;img src="assets/_con/images/logo-white.png" alt="Con">
+      &lt;/a>
+      &lt;!-- /Logo -->
+    &lt;/div>
+  &lt;/div>
+
+
+  &lt;div class="nano">
+    &lt;div class="nano-content">
+
+      &lt;ul>
+        &lt;li class="label">Menu&lt;/li>
+        &lt;li>
+          &lt;a class="yay-sub-toggle waves-effect waves-blue">&lt;i class="fa fa-dashboard">&lt;/i> Dashboards&lt;span class="yay-collapse-icon mdi-navigation-expand-more">&lt;/span>&lt;/a>
+          &lt;ul>
+            &lt;li>
+              &lt;a href="dashboard.html" class="waves-effect waves-blue"> Dashboard &lt;span class="badge new">&lt;/span>&lt;/a>
+            &lt;/li>
+            &lt;li>
+              &lt;a href="dashboard-v1.html" class="waves-effect waves-blue"> Dashboard v1&lt;/a>
+            &lt;/li>
+          &lt;/ul>
+        &lt;/li>
+
+        &lt;li>
+          &lt;a href="widgets.html" class="waves-effect waves-blue">&lt;i class="fa fa-magic">&lt;/i> Widgets&lt;/a>
+        &lt;/li>
+
+        &lt;li>
+          &lt;a href="layouts.html" class="waves-effect waves-blue">&lt;i class="mdi mdi-av-web">&lt;/i> Layouts&lt;/a>
+        &lt;/li>
+
+        &lt;li>
+          &lt;a class="yay-sub-toggle waves-effect waves-blue">&lt;i class="fa fa-indent">&lt;/i> Menu Levels&lt;span class="yay-collapse-icon mdi-navigation-expand-more">&lt;/span>&lt;/a>
+          &lt;ul>
+            &lt;li>
+              &lt;a class="yay-sub-toggle waves-effect waves-blue" href="#!">Second Level&lt;span class="yay-collapse-icon mdi-navigation-expand-more">&lt;/span>&lt;/a>
+              &lt;ul>
+                &lt;li>
+                  &lt;a class="yay-sub-toggle waves-effect waves-blue" href="#!">Third Level&lt;span class="yay-collapse-icon mdi-navigation-expand-more">&lt;/span>&lt;/a>
+                  &lt;ul>
+                    &lt;li>&lt;a href="#!" class="waves-effect waves-blue">Fourth Level&lt;/a>
+                    &lt;/li>
+                    &lt;li>&lt;a href="#!" class="waves-effect waves-blue">Fourth Level&lt;/a>
+                    &lt;/li>
+                    &lt;li>&lt;a href="#!" class="waves-effect waves-blue">Fourth Level&lt;/a>
+                    &lt;/li>
+                  &lt;/ul>
+                &lt;/li>
+                &lt;li>
+                  &lt;a class="yay-sub-toggle waves-effect waves-blue" href="#!">Third Level&lt;span class="yay-collapse-icon mdi-navigation-expand-more">&lt;/span>&lt;/a>
+                  &lt;ul>
+                    &lt;li>&lt;a href="#!" class="waves-effect waves-blue">Fourth Level&lt;/a>
+                    &lt;/li>
+                    &lt;li>&lt;a href="#!" class="waves-effect waves-blue">Fourth Level&lt;/a>
+                    &lt;/li>
+                    &lt;li>&lt;a href="#!" class="waves-effect waves-blue">Fourth Level&lt;/a>
+                    &lt;/li>
+                  &lt;/ul>
+                &lt;/li>
+              &lt;/ul>
+            &lt;/li>
+          &lt;/ul>
+        &lt;/li>
+
+        &lt;li class="label">Elements&lt;/li>
+        &lt;li>
+          &lt;a class="yay-sub-toggle waves-effect waves-blue">&lt;i class="fa fa-css3">&lt;/i> CSS&lt;span class="yay-collapse-icon mdi-navigation-expand-more">&lt;/span>&lt;/a>
+          &lt;ul>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="css-alerts.html">&lt;i class="mdi-alert-warning">&lt;/i> Alerts&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="css-badges.html">&lt;i class="mdi-action-stars">&lt;/i> Badges&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="css-colors.html">&lt;i class="mdi-image-palette">&lt;/i> Colors&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="css-grid.html">&lt;i class="mdi-action-dashboard">&lt;/i> Grid&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="css-icons.html">&lt;i class="mdi-communication-invert-colors-on">&lt;/i> Icons&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="css-shadow.html">&lt;i class="mdi-maps-layers">&lt;/i> Shadow&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="css-typography.html">&lt;i class="fa fa-font">&lt;/i> Typography&lt;/a>
+            &lt;/li>
+          &lt;/ul>
+        &lt;/li>
+
+        &lt;li>
+          &lt;a class="yay-sub-toggle waves-effect waves-blue">&lt;i class="fa fa-cubes">&lt;/i> UI Elements&lt;span class="yay-collapse-icon mdi-navigation-expand-more">&lt;/span>&lt;/a>
+          &lt;ul>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="ui-buttons.html">&lt;i class="fa fa-square">&lt;/i> Buttons&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="ui-cards.html">&lt;i class="mdi-av-web">&lt;/i> Cards&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="ui-collapsible.html">&lt;i class="mdi-action-view-day">&lt;/i> Collapsible&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="ui-collections.html">&lt;i class="fa fa-server">&lt;/i> Collections&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="ui-dropdown.html">&lt;i class="mdi-navigation-arrow-drop-down-circle">&lt;/i> Dropdown&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="ui-modals.html">&lt;i class="fa fa-external-link">&lt;/i> Modals&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="ui-progress-bars.html">&lt;i class="fa fa-tasks">&lt;/i> Progress Bars&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="ui-tables.html">&lt;i class="fa fa-table">&lt;/i> Tables&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="ui-tabs.html">&lt;i class="mdi-action-tab-unselected">&lt;/i> Tabs&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="ui-toasts.html">&lt;i class="mdi-action-announcement">&lt;/i> Toasts&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="ui-tooltips.html">&lt;i class="fa fa-comment-o">&lt;/i> Tooltips&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="ui-waves.html">&lt;i class="mdi-image-blur-on">&lt;/i> Waves&lt;/a>
+            &lt;/li>
+
+            &lt;li>&lt;a class="waves-effect waves-blue" href="ui-search-bar.html">&lt;i class="mdi-action-search">&lt;/i> Search Bar&lt;/a>
+            &lt;/li>
+          &lt;/ul>
+        &lt;/li>
+
+        &lt;li class="label">Components&lt;/li>
+        &lt;li>
+          &lt;a class="yay-sub-toggle waves-effect waves-blue">&lt;i class="fa fa-check-square-o">&lt;/i> Forms&lt;span class="yay-collapse-icon mdi-navigation-expand-more">&lt;/span>&lt;/a>
+          &lt;ul>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="forms-base.html">&lt;i class="fa fa-cube">&lt;/i> Base&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="forms-advanced.html">&lt;i class="fa fa-cubes">&lt;/i> Advanced&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="forms-validation.html">&lt;i class="fa fa-check-square-o">&lt;/i> Validation&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="forms-editors.html">&lt;i class="fa fa-edit">&lt;/i> Editors&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="forms-checkout.html"> Checkout&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="forms-contacts.html"> Contacts&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="forms-login.html"> Login&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="forms-register.html"> Register&lt;/a>
+            &lt;/li>
+          &lt;/ul>
+        &lt;/li>
+
+        &lt;li class="open">
+          &lt;a class="yay-sub-toggle waves-effect waves-blue">&lt;i class="fa fa-globe">&lt;/i> Pages&lt;span class="yay-collapse-icon mdi-navigation-expand-more">&lt;/span>&lt;/a>
+          &lt;ul>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="page-profile.html">Profile&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="page-timeline.html">Timeline&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="page-forgot-password.html">Forgot Password&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="page-lock.html">Screen Lock&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="page-sign-in.html">Sign In&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="page-sign-up.html">Sign Up&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="page-404.html">404&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="page-500.html">500&lt;/a>
+            &lt;/li>
+            &lt;li class="active">&lt;a class="waves-effect waves-blue" href="page-blank.html">Blank&lt;/a>
+            &lt;/li>
+          &lt;/ul>
+        &lt;/li>
+
+        &lt;li class="label">Extra&lt;/li>
+        &lt;li>
+          &lt;a class="yay-sub-toggle waves-effect waves-blue">&lt;i class="fa fa-envelope">&lt;/i> Mailbox&lt;span class="yay-collapse-icon mdi-navigation-expand-more">&lt;/span>&lt;/a>
+          &lt;ul>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="mail-inbox.html">&lt;i class="mdi-content-inbox">&lt;/i> Inbox&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="mail-compose.html">&lt;i class="mdi-content-add-circle">&lt;/i> Compose&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="mail-view.html">&lt;i class="mdi-content-drafts">&lt;/i> View&lt;/a>
+            &lt;/li>
+          &lt;/ul>
+        &lt;/li>
+
+        &lt;li>
+          &lt;a class="yay-sub-toggle waves-effect waves-blue">&lt;i class="mdi mdi-action-shopping-cart">&lt;/i> eCommerce&lt;span class="yay-collapse-icon mdi-navigation-expand-more">&lt;/span>&lt;/a>
+          &lt;ul>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="ecommerce-dashboard.html">&lt;i class="fa fa-dashboard">&lt;/i> Dashboard&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="ecommerce-products.html">&lt;i class="fa fa-tags">&lt;/i> Products&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="ecommerce-product-single.html">&lt;i class="fa fa-tag">&lt;/i> Product Single&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="ecommerce-orders.html">&lt;i class="fa fa-cart-plus">&lt;/i> Orders&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="ecommerce-order-single.html">&lt;i class="fa fa-cart-plus">&lt;/i> Order Single&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="ecommerce-customers.html">&lt;i class="fa fa-users">&lt;/i> Customers&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="ecommerce-settings.html">&lt;i class="fa fa-cog">&lt;/i> Settings&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="ecommerce-invoice.html">&lt;i class="ion ion-android-list">&lt;/i> Invoice&lt;/a>
+            &lt;/li>
+          &lt;/ul>
+        &lt;/li>
+
+        &lt;li>
+          &lt;a class="yay-sub-toggle waves-effect waves-blue">&lt;i class="fa fa-bar-chart">&lt;/i> Charts&lt;span class="yay-collapse-icon mdi-navigation-expand-more">&lt;/span>&lt;/a>
+          &lt;ul>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="charts-flot.html">Flot&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="charts-rickshaw.html">Rickshaw&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="charts-sparkline.html">Sparkline&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="charts-nvd3.html">NVD3&lt;/a>
+            &lt;/li>
+          &lt;/ul>
+        &lt;/li>
+
+        &lt;li>
+          &lt;a class="yay-sub-toggle waves-effect waves-blue">&lt;i class="mdi mdi-maps-place">&lt;/i> Maps&lt;span class="yay-collapse-icon mdi-navigation-expand-more">&lt;/span>&lt;/a>
+          &lt;ul>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="maps-google.html">Google Maps&lt;/a>
+            &lt;/li>
+            &lt;li>&lt;a class="waves-effect waves-blue" href="maps-vector.html">Vector Maps&lt;/a>
+            &lt;/li>
+          &lt;/ul>
+        &lt;/li>
+
+        &lt;li class="label">Stats&lt;/li>
+        &lt;li class="content">
+          &lt;span>&lt;i class="fa fa-spinner">&lt;/i> Server Load&lt;/span>
+          &lt;div class="progress small light-green lighten-4">
+            &lt;div class="light-green accent-5" style="width: 37%">&lt;/div>
+          &lt;/div>
+
+          &lt;span>&lt;i class="fa fa-thumbs-o-up">&lt;/i> User Satisfaction&lt;/span>
+          &lt;div class="progress small">
+            &lt;div style="width: 91%">&lt;/div>
+          &lt;/div>
+        &lt;/li>
+      &lt;/ul>
+
+    &lt;/div>
+  &lt;/div>
+&lt;/aside>
+&lt;!-- /Yay Sidebar --></pre>
+
+
+                <h3>Content</h3>
+                Content consists of page title, breadcrumbs and page's main body. HTML code of Content container as shown below:
+
+<pre class="prettyprint linenums">
+&lt;!-- Main Content -->
+&lt;section class="content-wrap">
+
+  &lt;!-- Breadcrumb -->
+  &lt;div class="page-title">
+    &lt;div class="row">
+      &lt;div class="col s12 m9 l10">
+        &lt;h1>Blank&lt;/h1>
+
+        &lt;ul>
+          &lt;li>
+            &lt;a href="#">&lt;i class="fa fa-home">&lt;/i> Home&lt;/a>  &lt;i class="fa fa-angle-right">&lt;/i>
+          &lt;/li>
+
+          &lt;li>&lt;a href='dashboard.html'>Dashboard&lt;/a>  &lt;i class='fa fa-angle-right'>&lt;/i>
+          &lt;/li>
+          &lt;li>&lt;a href='#'>Pages&lt;/a>  &lt;i class='fa fa-angle-right'>&lt;/i>
+          &lt;/li>
+          &lt;li>&lt;a href='page-blank.html'>Blank&lt;/a>
+          &lt;/li>
+        &lt;/ul>
+      &lt;/div>
+      &lt;div class="col s12 m3 l2 right-align">
+        &lt;a href="#!" class="btn grey lighten-3 grey-text z-depth-0 chat-toggle">&lt;i class="fa fa-comments">&lt;/i>&lt;/a>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+  &lt;!-- /Breadcrumb -->
+
+  &lt;!-- Page Content-->
+  Page content goes here
+  &lt;!-- /Page Content-->
+
+&lt;/section>
+&lt;!-- /Main Content --></pre>
+
+
+                <h3>Search Bar</h3>
+                Search Bar contains search results and big search input. HTML code as shown below:
+                <br>
+                <img src="assets/images/search.png" alt="Search Bar">
+<pre class="prettyprint linenums">
+&lt;!-- Search Bar -->
+&lt;div class="search-bar">
+  &lt;div class="layer-overlay">&lt;/div>
+  &lt;div class="layer-content">
+    &lt;form action="#!">
+      &lt;!-- Header -->
+      &lt;a class="search-bar-toggle grey-text text-darken-2" href="#!">&lt;i class="mdi-navigation-close">&lt;/i>&lt;/a>
+
+      &lt;!-- Search Input -->
+      &lt;div class="input-field">
+        &lt;i class="mdi-action-search prefix">&lt;/i>
+        &lt;input type="text" name="con-search" placeholder="Search...">
+      &lt;/div>
+
+      &lt;!-- Search Results -->
+      &lt;div class="search-results">
+
+        &lt;div class="row">
+          &lt;div class="col s12 l4">
+            &lt;h4>Users&lt;/h4>
+
+            &lt;div class="each-result">
+              &lt;img src="assets/_con/images/user2.jpg" alt="Felecia Castro" class="circle photo">
+              &lt;div class="title">Felecia Castro&lt;/div>
+              &lt;div class="label">Content Manager&lt;/div>
+            &lt;/div>
+
+            &lt;div class="each-result">
+              &lt;img src="assets/_con/images/user3.jpg" alt="Max Brooks" class="circle photo">
+              &lt;div class="title">Max Brooks&lt;/div>
+              &lt;div class="label">Programmer&lt;/div>
+            &lt;/div>
+
+            &lt;div class="each-result">
+              &lt;img src="assets/_con/images/user4.jpg" alt="Patsy Griffin" class="circle photo">
+              &lt;div class="title">Patsy Griffin&lt;/div>
+              &lt;div class="label">Support&lt;/div>
+            &lt;/div>
+
+            &lt;div class="each-result">
+              &lt;img src="assets/_con/images/user6.jpg" alt="Vernon Garrett" class="circle photo">
+              &lt;div class="title">Vernon Garrett&lt;/div>
+              &lt;div class="label">Photographer&lt;/div>
+            &lt;/div>
+          &lt;/div>
+          &lt;div class="col s12 l4">
+            &lt;h4>Articles&lt;/h4>
+
+            &lt;div class="each-result">
+              &lt;div class="icon circle blue white-text">MD&lt;/div>
+              &lt;div class="title">Material Design&lt;/div>
+              &lt;div class="label nowrap">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi consequatur debitis veritatis dolorum, enim libero!&lt;/div>
+            &lt;/div>
+
+            &lt;div class="each-result">
+              &lt;div class="icon circle teal white-text">
+                &lt;i class="fa fa-dashboard">&lt;/i>
+              &lt;/div>
+              &lt;div class="title">Admin Dashboard&lt;/div>
+              &lt;div class="label nowrap">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi consequatur debitis veritatis dolorum, enim libero!&lt;/div>
+            &lt;/div>
+
+            &lt;div class="each-result">
+              &lt;div class="icon circle orange white-text">RD&lt;/div>
+              &lt;div class="title">Responsive Design&lt;/div>
+              &lt;div class="label nowrap">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi consequatur debitis veritatis dolorum, enim libero!&lt;/div>
+            &lt;/div>
+
+            &lt;div class="each-result">
+              &lt;div class="icon circle red white-text">
+                &lt;i class="fa fa-tablet">&lt;/i>
+              &lt;/div>
+              &lt;div class="title">Mobile First&lt;/div>
+              &lt;div class="label nowrap">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi consequatur debitis veritatis dolorum, enim libero!&lt;/div>
+            &lt;/div>
+          &lt;/div>
+          &lt;div class="col s12 l4">
+            &lt;h4>Posts&lt;/h4>
+
+            &lt;div class="no-result">No results were found ;(&lt;/div>
+          &lt;/div>
+        &lt;/div>
+
+      &lt;/div>
+
+    &lt;/form>
+  &lt;/div>
+&lt;/div>
+&lt;!-- /Search Bar --></pre>
+
+
+                <h3>Chat</h3>
+                <img src="assets/images/chat.png" alt="Chat">
+                <br>
+                Chat contains list of contacts and chat messages block. For customaze available 1 option for light color scheme. Just use <code>chat-light</code> classname. HTML code as shown below:
+<pre class="prettyprint linenums">
+&lt;!--
+Chat
+  .chat-light - light color scheme
+-->
+&lt;div class="chat">
+  &lt;div class="layer-overlay">&lt;/div>
+
+  &lt;div class="layer-content">
+
+    &lt;!-- Contacts -->
+    &lt;div class="contacts">
+      &lt;!-- Top Bar -->
+      &lt;div class="topbar">
+        &lt;a href="#!" class="text">Chat&lt;/a>
+        &lt;a href="#!" class="chat-toggle">&lt;i class="mdi-navigation-close">&lt;/i>&lt;/a>
+      &lt;/div>
+      &lt;!-- /Top Bar -->
+
+      &lt;div class="nano">
+        &lt;div class="nano-content">
+
+          &lt;span class="label">Online&lt;/span>
+
+          &lt;div class="user">
+            &lt;img src="assets/_con/images/user2.jpg" alt="Felecia Castro" class="circle photo">
+
+            &lt;div class="name">Felecia Castro&lt;/div>
+            &lt;div class="status">Lorem status&lt;/div>
+
+            &lt;div class="online">&lt;i class="green-text fa fa-circle">&lt;/i>
+            &lt;/div>
+          &lt;/div>
+
+          &lt;div class="user">
+            &lt;img src="assets/_con/images/user3.jpg" alt="Max Brooks" class="circle photo">
+
+            &lt;div class="name">Max Brooks&lt;/div>
+            &lt;div class="status">Lorem status&lt;/div>
+
+            &lt;div class="online">&lt;i class="green-text fa fa-circle">&lt;/i>
+            &lt;/div>
+          &lt;/div>
+
+          &lt;div class="user">
+            &lt;img src="assets/_con/images/user4.jpg" alt="Patsy Griffin" class="circle photo">
+
+            &lt;div class="name">Patsy Griffin&lt;/div>
+            &lt;div class="status">Lorem status&lt;/div>
+
+            &lt;div class="online">&lt;i class="green-text fa fa-circle">&lt;/i>
+            &lt;/div>
+          &lt;/div>
+
+          &lt;div class="user">
+            &lt;img src="assets/_con/images/user5.jpg" alt="Chloe Morgan" class="circle photo">
+
+            &lt;div class="name">Chloe Morgan&lt;/div>
+            &lt;div class="status">Lorem status&lt;/div>
+
+            &lt;div class="online">&lt;i class="green-text fa fa-circle">&lt;/i>
+            &lt;/div>
+          &lt;/div>
+
+          &lt;div class="user">
+            &lt;img src="assets/_con/images/user6.jpg" alt="Vernon Garrett" class="circle photo">
+
+            &lt;div class="name">Vernon Garrett&lt;/div>
+            &lt;div class="status">Lorem status&lt;/div>
+
+            &lt;div class="online">&lt;i class="yellow-text fa fa-circle">&lt;/i>
+            &lt;/div>
+          &lt;/div>
+
+          &lt;div class="user">
+            &lt;img src="assets/_con/images/user7.jpg" alt="Greg Mcdonalid" class="circle photo">
+
+            &lt;div class="name">Greg Mcdonalid&lt;/div>
+            &lt;div class="status">Lorem status&lt;/div>
+
+            &lt;div class="online">&lt;i class="yellow-text fa fa-circle">&lt;/i>
+            &lt;/div>
+          &lt;/div>
+
+          &lt;div class="user">
+            &lt;img src="assets/_con/images/user8.jpg" alt="Christian Jackson" class="circle photo">
+
+            &lt;div class="name">Christian Jackson&lt;/div>
+            &lt;div class="status">Lorem status&lt;/div>
+
+            &lt;div class="online">&lt;i class="yellow-text fa fa-circle">&lt;/i>
+            &lt;/div>
+          &lt;/div>
+
+
+          &lt;span class="label">Offline&lt;/span>
+
+          &lt;div class="user">
+            &lt;img src="assets/_con/images/user9.jpg" alt="Willie Kelly" class="circle photo">
+
+            &lt;div class="name">Willie Kelly&lt;/div>
+            &lt;div class="status">Lorem status&lt;/div>
+          &lt;/div>
+
+          &lt;div class="user">
+            &lt;img src="assets/_con/images/user10.jpg" alt="Jenny Phillips" class="circle photo">
+
+            &lt;div class="name">Jenny Phillips&lt;/div>
+            &lt;div class="status">Lorem status&lt;/div>
+          &lt;/div>
+
+          &lt;div class="user">
+            &lt;img src="assets/_con/images/user11.jpg" alt="Darren Cunningham" class="circle photo">
+
+            &lt;div class="name">Darren Cunningham&lt;/div>
+            &lt;div class="status">Lorem status&lt;/div>
+          &lt;/div>
+
+          &lt;div class="user">
+            &lt;img src="assets/_con/images/user12.jpg" alt="Sandra Cole" class="circle photo">
+
+            &lt;div class="name">Sandra Cole&lt;/div>
+            &lt;div class="status">Lorem status&lt;/div>
+          &lt;/div>
+
+        &lt;/div>
+      &lt;/div>
+    &lt;/div>
+    &lt;!-- /Contacts -->
+
+    &lt;!-- Messages -->
+    &lt;div class="messages">
+
+      &lt;!-- Top Bar with back link -->
+      &lt;div class="topbar">
+        &lt;a href="#!" class="chat-toggle">&lt;i class="mdi-navigation-close">&lt;/i>&lt;/a>
+        &lt;a href="#!" class="chat-back">&lt;i class="mdi-hardware-keyboard-arrow-left">&lt;/i> Back&lt;/a>
+      &lt;/div>
+      &lt;!-- /Top Bar with back link -->
+
+      &lt;!-- All messages list -->
+      &lt;div class="list">
+        &lt;div class="nano scroll-bottom">
+          &lt;div class="nano-content">
+
+            &lt;div class="date">Monday, Feb 23, 8:23 pm&lt;/div>
+
+            &lt;div class="from-me">
+              Hi, Felicia.
+              &lt;br>How are you?
+            &lt;/div>
+
+            &lt;div class="clear">&lt;/div>
+
+            &lt;div class="from-them">
+              &lt;img src="assets/_con/images/user2.jpg" alt="John Doe" class="circle photo">Hi! I am good!
+            &lt;/div>
+
+            &lt;div class="clear">&lt;/div>
+
+            &lt;div class="from-me">
+              Glad to see you :)
+              &lt;br>This long text is intended to show how the chat will display it.
+            &lt;/div>
+
+            &lt;div class="clear">&lt;/div>
+
+            &lt;div class="from-them">
+              &lt;img src="assets/_con/images/user2.jpg" alt="John Doe" class="circle photo">Also, we will send the longest word to show how it will fit in the chat window: &lt;strong>Pneumonoultramicroscopicsilicovolcanoconiosis&lt;/strong>
+            &lt;/div>
+
+            &lt;div class="date">Friday, Mar 10, 5:07 pm&lt;/div>
+
+            &lt;div class="from-me">
+              Hi again!
+            &lt;/div>
+
+            &lt;div class="clear">&lt;/div>
+
+            &lt;div class="from-them">
+              &lt;img src="assets/_con/images/user2.jpg" alt="John Doe" class="circle photo">Hi! Glad to see you.
+            &lt;/div>
+
+            &lt;div class="clear">&lt;/div>
+
+            &lt;div class="from-me">
+              I want to add you in my Facebook.
+            &lt;/div>
+
+            &lt;div class="clear">&lt;/div>
+
+            &lt;div class="from-me">
+              Can you give me your page?
+            &lt;/div>
+
+            &lt;div class="clear">&lt;/div>
+
+            &lt;div class="from-them">
+              &lt;img src="assets/_con/images/user2.jpg" alt="John Doe" class="circle photo">I do not use Facebook. But you can follow me in Twitter.
+            &lt;/div>
+
+            &lt;div class="clear">&lt;/div>
+
+            &lt;div class="from-me">
+              It's good idea!
+            &lt;/div>
+
+            &lt;div class="clear">&lt;/div>
+
+            &lt;div class="from-them">
+              &lt;img src="assets/_con/images/user2.jpg" alt="John Doe" class="circle photo">You can find me here - &lt;a href="https://twitter.com/nkdevv">https://twitter.com/nkdevv&lt;/a>
+            &lt;/div>
+
+          &lt;/div>
+        &lt;/div>
+      &lt;/div>
+      &lt;!-- /All messages list -->
+
+      &lt;!-- Send message -->
+      &lt;div class="send">
+        &lt;form action="#!">
+          &lt;div class="input-field">
+            &lt;input id="chat-message" type="text" name="chat-message">
+          &lt;/div>
+
+          &lt;button class="btn waves-effect z-depth-0">&lt;i class="mdi-content-send">&lt;/i>
+          &lt;/button>
+        &lt;/form>
+      &lt;/div>
+      &lt;!-- /Send message -->
+
+    &lt;/div>
+    &lt;!-- /Messages -->
+  &lt;/div>
+
+&lt;/div>
+&lt;!-- /Chat --></pre>
+
+
+                <h3>Footer</h3>
+<pre class="prettyprint linenums">
+&lt;footer>&copy; 2015 &lt;strong>nK&lt;/strong>. All rights reserved.&lt;/footer>
+</pre>
+
+
+                <h3>Page End</h3>
+                End of page contains JavaScript codes. This is blank example without plugins.
+<pre class="prettyprint linenums">
+&lt;!-- DEMO [REMOVE IT ON PRODUCTION] -->
+&lt;script type="text/javascript" src="assets/_con/js/_demo.js">&lt;/script>
+
+&lt;!-- jQuery -->
+&lt;script type="text/javascript" src="assets/jquery/jquery.min.js">&lt;/script>
+
+&lt;!-- jQuery RAF (improved animation performance) -->
+&lt;script type="text/javascript" src="assets/jqueryRAF/jquery.requestAnimationFrame.min.js">&lt;/script>
+
+&lt;!-- nanoScroller -->
+&lt;script type="text/javascript" src="assets/nanoScroller/jquery.nanoscroller.min.js">&lt;/script>
+
+&lt;!-- Materialize -->
+&lt;script type="text/javascript" src="assets/materialize/js/materialize.min.js">&lt;/script>
+
+&lt;!-- Sortable -->
+&lt;script type="text/javascript" src="assets/sortable/Sortable.min.js">&lt;/script>
+
+&lt;!-- Main -->
+&lt;script type="text/javascript" src="assets/_con/js/_con.min.js">&lt;/script></pre>
+
+              </div>
+
+              <div class="well">
+                <h2>Fonts</h2>
+                Con uses Roboto font from Google fonts. Loaded in header.
+<pre class="prettyprint linenums">
+&lt;link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+</pre>
+              </div>
+
+              <div class="well">
+                <h2>Theme & Layouts</h2>
+
+                <h3>Color Themes</h3>
+                Con comes with 18 color themes:
+                <code>base</code>,
+                <code>amber</code>,
+                <code>blue-grey</code>,
+                <code>brown</code>,
+                <code>cyan</code>,
+                <code>deep-orange</code>,
+                <code>deep-purple</code>,
+                <code>green</code>,
+                <code>indigo</code>,
+                <code>light-blue</code>,
+                <code>light-green</code>,
+                <code>lime</code>,
+                <code>orange</code>,
+                <code>pink</code>,
+                <code>purple</code>,
+                <code>red</code>,
+                <code>teal</code>,
+                <code>yellow</code>
+
+                <p>
+                To setup a selected theme. Include <code>assets/_con/css/_con-[theme_name].css</code> in page head.
+                </p>
+<pre class="prettyprint linenums">
+&lt;link rel="stylesheet" type="text/css" href="assets/_con/css/_con-red.min.css" />
+</pre>
+
+                <h3>Layouts</h3>
+                The best way to learn how to use Con's available layout options, please go to <a href="../dist/layouts.html">layouts.html</a> page.
+
+              </div>
+
+
+              <div class="well">
+                <h2>New Page</h2>
+                To create a new page, you can use <a href="../dist/page-blank.html">page-blank.html</a> which provides basic page layout which you can extend and modify further.
+              </div>
+
+
+              <div class="well">
+                <h2>Source Files + SASS</h2>
+                Con uses SASS and gulp for development. You can find everything you need to build in <code>src</code> directory. Ready to use gulpfile.js, batch files, source scss, html and js files.
+                <br>
+                Getting started Gulp guide - <a href="http://travismaynard.com/writing/getting-started-with-gulp">see here</a>.
+              </div>
+
+
+              <div class="well">
+                <h2>Plugins Usage</h2>
+                Choose plugin:
+                <select name="plugins">
+                  <optgroup label="Icons">
+                    <option value="fontawesome">Font Awesome</option>
+                    <option value="materialdesignicons">Material Design</option>
+                    <option value="ionicons">Ion</option>
+                    <option value="weathericons">Weather</option>
+                  </optgroup>
+
+                  <optgroup label="Forms">
+                    <option value="pikaday">Pikaday</option>
+                    <option value="clockpicker">Clock Picker</option>
+                    <option value="spectrum">Spectrum</option>
+                    <option value="select2">Select2</option>
+                    <option value="tagsinput">Tags Input</option>
+                    <option value="dropzone">Drop Zone</option>
+                    <option value="inputmask">Inputmask</option>
+                    <option value="parsleyjs">ParsleyJS</option>
+                  </optgroup>
+
+                  <optgroup label="Editors">
+                    <option value="ckeditor">CKEditor</option>
+                    <option value="markitup">MarkItUp</option>
+                  </optgroup>
+
+                  <optgroup label="Charts">
+                    <option value="flot">Flot</option>
+                    <option value="rickshaw">Rickshaw</option>
+                    <option value="sparkline">Sparkline</option>
+                    <option value="nvd3">NVD3</option>
+                  </optgroup>
+
+                  <optgroup label="Maps">
+                    <option value="gmaps">Google Maps</option>
+                    <option value="jvectormap">Vector Maps</option>
+                  </optgroup>
+
+                  <optgroup label="Media">
+                    <option value="wowjs">WOW.js</option>
+                    <option value="animatecss">Animate.css</option>
+                    <option value="photoswipe">PhotoSwipe</option>
+                    <option value="isotope">Isotope</option>
+                  </optgroup>
+
+                  <optgroup label="Other">
+                    <option value="datatables">DataTables</option>
+                    <option value="fullcalendar">FullCalendar</option>
+                  </optgroup>
+                </select>
+
+                <div class="plugins-description">
+                  <!-- FontAwesome -->
+                  <div data-plugin="fontawesome" class="active">
+                    <h4>FontAwesome</h4>
+                    Font Awesome gives you scalable vector icons that can instantly be customized — size, color, drop shadow, and anything that can be done with the power of CSS.
+                    <br><br>
+                    Plugin Page: <a href="http://fortawesome.github.io/Font-Awesome/">http://fortawesome.github.io/Font-Awesome/</a>
+                    <br>
+                    Demo Page: <a href="../dist/css-icons.html">css-icons.html</a>
+                    <br><br>
+                    
+                    CSS Files:
+                    <pre class="prettyprint linenums">
+&lt;link rel="stylesheet" type="text/css" href="assets/font-awesome/css/font-awesome.min.css"></pre>
+
+                    JavaScript Files:
+                    <pre class="prettyprint linenums">
+No JavaScript</pre>
+
+                    Usage Example:
+                    <pre class="prettyprint linenums">
+&lt;i class="fa fa-html5">&lt;/i></pre>
+                  </div>
+                  <!-- /FontAwesome -->
+                  <!-- Material Design Icons -->
+                  <div data-plugin="materialdesignicons">
+                    <h4>Material Design Icons</h4>
+                    Material Design Icons is set of 740 icons courtesy of Google.
+                    <br><br>
+                    Plugin Page: <a href="http://materializecss.com/icons.html">http://materializecss.com/icons.html</a>
+                    <br>
+                    Demo Page: <a href="../dist/css-icons.html">css-icons.html</a>
+                    <br><br>
+                    
+                    CSS Files:
+                    <pre class="prettyprint linenums">
+&lt;link rel="stylesheet" type="text/css" href="assets/material-design-icons/css/material-design-icons.min.css"></pre>
+
+                    JavaScript Files:
+                    <pre class="prettyprint linenums">
+No JavaScript</pre>
+
+                    Usage Example:
+                    <pre class="prettyprint linenums">
+&lt;i class="mdi-content-add">&lt;/i></pre>
+                  </div>
+                  <!-- /Material Design Icons -->
+                  <!-- Ion Icons -->
+                  <div data-plugin="ionicons">
+                    <h4>Ion Icons</h4>
+                    Ion Icons is premium icon font for Ionic Framework.
+                    <br><br>
+                    Plugin Page: <a href="http://ionicons.com/">http://ionicons.com/</a>
+                    <br>
+                    Demo Page: <a href="../dist/css-icons.html">css-icons.html</a>
+                    <br><br>
+                    
+                    CSS Files:
+                    <pre class="prettyprint linenums">
+&lt;link rel="stylesheet" type="text/css" href="assets/ionicons/css/ionicons.min.css"></pre>
+
+                    JavaScript Files:
+                    <pre class="prettyprint linenums">
+No JavaScript</pre>
+
+                    Usage Example:
+                    <pre class="prettyprint linenums">
+&lt;i class="ion-fireball">&lt;/i></pre>
+                  </div>
+                  <!-- /Ion Icons -->
+                  <!-- Weather Icons -->
+                  <div data-plugin="weathericons">
+                    <h4>Weather Icons</h4>
+                    Weather Icons is a font of 189 weather themed icons, ready to be dropped right into Bootstrap or any other project.
+                    <br><br>
+                    Plugin Page: <a href="http://erikflowers.github.io/weather-icons/">http://erikflowers.github.io/weather-icons/</a>
+                    <br>
+                    Demo Page: <a href="../dist/css-icons.html">css-icons.html</a>
+                    <br><br>
+                    
+                    CSS Files:
+                    <pre class="prettyprint linenums">
+&lt;link rel="stylesheet" type="text/css" href="assets/weatherIcons/css/weather-icons.min.css"></pre>
+
+                    JavaScript Files:
+                    <pre class="prettyprint linenums">
+No JavaScript</pre>
+
+                    Usage Example:
+                    <pre class="prettyprint linenums">
+&lt;i class="wi wi-wind-default">&lt;/i></pre>
+                  </div>
+                  <!-- /Weather Icons -->
+
+
+                  <!-- Pikaday -->
+                  <div data-plugin="pikaday">
+                    <h4>Pikaday</h4>
+                    Pikaday - is refreshing JavaScript Datepicker.
+                    <br><br>
+                    Plugin Page: <a href="https://github.com/dbushell/Pikaday">https://github.com/dbushell/Pikaday</a>
+                    <br>
+                    Demo Page: <a href="../dist/forms-advanced.html">forms-advanced.html</a>
+                    <br><br>
+                    
+                    CSS Files:
+                    <pre class="prettyprint linenums">
+&lt;link rel="stylesheet" type="text/css" href="assets/pikaday/pikaday.css"></pre>
+
+                    JavaScript Files:
+                    <pre class="prettyprint linenums">
+&lt;script type="text/javascript" src="assets/pikaday/pikaday.js">&lt;/script>
+&lt;script type="text/javascript" src="assets/pikaday/pikaday.jquery.js">&lt;/script></pre>
+
+                    Usage Example:
+                    <pre class="prettyprint linenums">
+&lt;input class="pikaday" type="date"></pre>
+                  </div>
+                  <!-- /Pikaday -->
+                  <!-- Clock Picker -->
+                  <div data-plugin="clockpicker">
+                    <h4>Clock Picker</h4>
+                    Clockpicker - is clock-style timepicker for Bootstrap (or jQuery).
+                    <br><br>
+                    Plugin Page: <a href="http://weareoutman.github.io/clockpicker/">http://weareoutman.github.io/clockpicker/</a>
+                    <br>
+                    Demo Page: <a href="../dist/forms-advanced.html">forms-advanced.html</a>
+                    <br><br>
+                    
+                    CSS Files:
+                    <pre class="prettyprint linenums">
+&lt;link rel="stylesheet" type="text/css" href="assets/jquery-clockpicker/jquery-clockpicker.min.css"></pre>
+
+                    JavaScript Files:
+                    <pre class="prettyprint linenums">
+&lt;script type="text/javascript" src="assets/jquery-clockpicker/jquery-clockpicker.min.js">&lt;/script></pre>
+
+                    Usage Example:
+                    <pre class="prettyprint linenums">
+&lt;input class="clockpicker" type="text" value="18:10" data-donetext="OK"></pre>
+                  </div>
+                  <!-- /Clock Picker -->
+                  <!-- Spectrum -->
+                  <div data-plugin="spectrum">
+                    <h4>Spectrum</h4>
+                    Spectrum - is No Hassle JavaScript Colorpicker.
+                    <br><br>
+                    Plugin Page: <a href="https://bgrins.github.io/spectrum/">https://bgrins.github.io/spectrum/</a>
+                    <br>
+                    Demo Page: <a href="../dist/forms-advanced.html">forms-advanced.html</a>
+                    <br><br>
+                    
+                    CSS Files:
+                    <pre class="prettyprint linenums">
+&lt;link rel="stylesheet" type="text/css" href="assets/spectrum/spectrum.css"></pre>
+
+                    JavaScript Files:
+                    <pre class="prettyprint linenums">
+&lt;script type="text/javascript" src="assets/spectrum/spectrum.js"></script></pre>
+
+                    Usage Example:
+                    <pre class="prettyprint linenums">
+&lt;input type='text' class="spectrum" value="#42A5F5" /></pre>
+                  </div>
+                  <!-- /Spectrum -->
+                  <!-- Select2 -->
+                  <div data-plugin="select2">
+                    <h4>Select2</h4>
+                    Select2 gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options.
+                    <br><br>
+                    Plugin Page: <a href="https://select2.github.io/">https://select2.github.io/</a>
+                    <br>
+                    Demo Page: <a href="../dist/forms-advanced.html">forms-advanced.html</a>
+                    <br><br>
+                    
+                    CSS Files:
+                    <pre class="prettyprint linenums">
+&lt;link rel="stylesheet" type="text/css" href="assets/select2/css/select2.min.css" /></pre>
+
+                    JavaScript Files:
+                    <pre class="prettyprint linenums">
+&lt;script type="text/javascript" src="assets/select2/js/select2.full.min.js">&lt;/script></pre>
+
+                    Usage Example:
+                    <pre class="prettyprint linenums">
+&lt;select class="select2">
+  &lt;optgroup label="Alaskan/Hawaiian Time Zone">
+    &lt;option value="AK">Alaska&lt;/option>
+    &lt;option value="HI">Hawaii&lt;/option>
+  &lt;/optgroup>
+  &lt;optgroup label="Pacific Time Zone">
+    &lt;option value="CA">California&lt;/option>
+    &lt;option value="NV">Nevada&lt;/option>
+    &lt;option value="OR">Oregon&lt;/option>
+    &lt;option value="WA">Washington&lt;/option>
+  &lt;/optgroup>
+  ...
+&lt;/select></pre>
+                  </div>
+                  <!-- /Select2 -->
+                  <!-- TagsInput -->
+                  <div data-plugin="tagsinput">
+                    <h4>Tags Input</h4>
+                    Magically convert a simple text input into a cool tag list with this jQuery plugin.
+                    <br><br>
+                    Plugin Page: <a href="http://xoxco.com/projects/code/tagsinput/">http://xoxco.com/projects/code/tagsinput/</a>
+                    <br>
+                    Demo Page: <a href="../dist/forms-advanced.html">forms-advanced.html</a>
+                    <br><br>
+                    
+                    CSS Files:
+                    <pre class="prettyprint linenums">
+&lt;link rel="stylesheet" type="text/css" href="assets/jquery-tags-input/jquery.tagsinput.css" /></pre>
+
+                    JavaScript Files:
+                    <pre class="prettyprint linenums">
+&lt;script type="text/javascript" src="assets/jquery-tags-input/jquery.tagsinput.js">&lt;/script></pre>
+
+                    Usage Example:
+                    <pre class="prettyprint linenums">
+&lt;input class="input-tag" type="text" name="tags" id="tags" value="PHP,JavaScript,CSS" /></pre>
+                  </div>
+                  <!-- /TagsInput -->
+                  <!-- DropZone -->
+                  <div data-plugin="dropzone">
+                    <h4>Drop Zone</h4>
+                    DropzoneJS is an open source library that provides drag’n’drop file uploads with image previews.
+                    <br><br>
+                    Plugin Page: <a href="http://www.dropzonejs.com/">http://www.dropzonejs.com/</a>
+                    <br>
+                    Demo Page: <a href="../dist/forms-advanced.html">forms-advanced.html</a>
+                    <br><br>
+                    
+                    CSS Files:
+                    <pre class="prettyprint linenums">
+&lt;link rel="stylesheet" type="text/css" href="assets/dropzone/dropzone.min.css" /></pre>
+
+                    JavaScript Files:
+                    <pre class="prettyprint linenums">
+&lt;script type="text/javascript" src="assets/dropzone/dropzone.min.js">&lt;/script></pre>
+
+                    Usage Example:
+                    <pre class="prettyprint linenums">
+&lt;form action="/file-upload"
+      class="dropzone"
+      id="my-dropzone">&lt;/form></pre>
+                  </div>
+                  <!-- /DropZone -->
+                  <!-- Inputmask -->
+                  <div data-plugin="inputmask">
+                    <h4>Inputmask</h4>
+                    jquery.inputmask is a jquery plugin which create an input mask.
+                    <br>An inputmask helps the user with the input by ensuring a predefined format. This can be usefull for dates, numerics, phone numbers, ...
+                    <br><br>
+                    Plugin Page: <a href="http://robinherbots.github.io/jquery.inputmask/">http://robinherbots.github.io/jquery.inputmask/</a>
+                    <br>
+                    Demo Page: <a href="../dist/forms-advanced.html">forms-advanced.html</a>
+                    <br><br>
+                    
+                    CSS Files:
+                    <pre class="prettyprint linenums">
+No CSS</pre>
+
+                    JavaScript Files:
+                    <pre class="prettyprint linenums">
+&lt;script type="text/javascript" src="assets/jquery-input-mask/jquery.inputmask.bundle.min.js">&lt;/script></pre>
+
+                    Usage Example:
+                    <pre class="prettyprint linenums">
+&lt;!-- Date -->
+&lt;div class="input-field">
+  &lt;input id="masked-date" type="text" data-inputmask="'alias': 'date'">
+  &lt;label for="masked-date">Date&lt;/label>
+&lt;/div>
+&lt;!-- /Date -->
+ 
+&lt;!-- Date Alt -->
+&lt;div class="input-field">
+  &lt;input id="masked-date-alt" type="text" data-inputmask="'mask': 'y/m/d'">
+  &lt;label for="masked-date-alt">Date Alt&lt;/label>
+&lt;/div>
+&lt;!-- /Date Alt -->
+ 
+&lt;!-- Time -->
+&lt;div class="input-field">
+  &lt;input id="masked-time" type="text" data-inputmask="'mask': 'h:s'">
+  &lt;label for="masked-time">Time&lt;/label>
+&lt;/div>
+&lt;!-- /Time -->
+ 
+&lt;!-- Phone -->
+&lt;div class="input-field">
+  &lt;input id="masked-phone" type="text" data-inputmask="'mask': '(999) 999-9999'">
+  &lt;label for="masked-phone">Phone&lt;/label>
+&lt;/div>
+&lt;!-- /Phone -->
+ 
+&lt;!-- Currency -->
+&lt;div class="input-field">
+  &lt;input id="masked-currency" type="text" data-inputmask="'numericInput': true, 'mask': '$ 999,999.99', 'rightAlignNumerics':false">
+  &lt;label for="masked-currency">Currency&lt;/label>
+&lt;/div>
+&lt;!-- /Currency --></pre>
+                  </div>
+                  <!-- /Inputmask -->
+                  <!-- ParsleyJS -->
+                  <div data-plugin="parsleyjs">
+                    <h4>ParsleyJS</h4>
+                    Parsley, the ultimate JavaScript form validation library
+                    <br>Validating forms frontend have never been so powerful and easy.
+                    <br><br>
+                    Plugin Page: <a href="http://parsleyjs.org/">http://parsleyjs.org/</a>
+                    <br>
+                    Demo Page: <a href="../dist/forms-validation.html">forms-validation.html</a>
+                    <br><br>
+                    
+                    CSS Files:
+                    <pre class="prettyprint linenums">
+No CSS</pre>
+
+                    JavaScript Files:
+                    <pre class="prettyprint linenums">
+&lt;script type="text/javascript" src="assets/parsley/parsley.min.js">&lt;/script></pre>
+
+                    Usage Example:
+                    <pre class="prettyprint linenums">
+&lt;form data-parsley-validate>
+  &lt;!-- Name -->
+  &lt;div class="input-field">
+    &lt;input id="input-name" type="text" required>
+    &lt;label for="input-name">Name&lt;/label>
+  &lt;/div>
+  &lt;!-- /Name -->
+ 
+  &lt;!-- Email -->
+  &lt;div class="input-field">
+    &lt;input id="input-email" type="email" required>
+    &lt;label for="input-email">Email&lt;/label>
+  &lt;/div>
+  &lt;!-- /Email -->
+ 
+  &lt;!-- Gender -->
+  &lt;p>
+    &lt;input name="radio-gender" type="radio" id="radio-gender-1" required />
+    &lt;label for="radio-gender-1">Male&lt;/label>
+    &lt;input name="radio-gender" type="radio" id="radio-gender-2" />
+    &lt;label for="radio-gender-2">Female&lt;/label>
+  &lt;/p>
+  &lt;!-- /Gender -->
+ 
+  &lt;!-- Hobbies -->
+  &lt;label>Hobbies (2 minimum):&lt;/label>
+  &lt;p>
+    &lt;input name="check-hobbies" type="checkbox" id="check-skiing" value="skiing" data-parsley-mincheck="2" required />
+    &lt;label for="check-skiing">Skiing&lt;/label>
+    &lt;input name="check-hobbies" type="checkbox" id="check-running" value="running" />
+    &lt;label for="check-running">Running&lt;/label>
+    &lt;input name="check-hobbies" type="checkbox" id="check-eating" value="eating" />
+    &lt;label for="check-eating">Eating&lt;/label>
+    &lt;input name="check-hobbies" type="checkbox" id="check-sleeping" value="sleeping" />
+    &lt;label for="check-sleeping">Sleeping&lt;/label>
+  &lt;/p>
+  &lt;!-- /Hobbies -->
+ 
+  &lt;!-- Heard -->
+  &lt;select name="heard" required>
+    &lt;option value="" disabled selected>Choose option&lt;/option>
+    &lt;option value="press">Press&lt;/option>
+    &lt;option value="internet">Internet&lt;/option>
+    &lt;option value="mouth">Word of mouth&lt;/option>
+    &lt;option value="other">Other...&lt;/option>
+  &lt;/select>
+  &lt;!-- /Heard -->
+ 
+  &lt;!-- Message -->
+  &lt;div class="input-field">
+    &lt;textarea id="textarea-msg" class="materialize-textarea" name="message" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="100" data-parsley-validation-threshold="10" data-parsley-minlength-message="Come on! You need to enter at least a 20 caracters long comment.." required>&lt;/textarea>
+    &lt;label  for="textarea-msg">Message (20 chars min, 100 max):&lt;/label>
+  &lt;/div>
+  &lt;!-- /Message -->
+ 
+  &lt;!-- Validation Button -->
+  &lt;div class="row">
+    &lt;div class="col s12">
+      &lt;button class="btn">Validate&lt;/button>
+    &lt;/div>
+  &lt;/div>
+  &lt;!-- /Validation Button -->
+&lt;form></pre>
+                  </div>
+                  <!-- /ParsleyJS -->
+
+
+                  <!-- CKEditor -->
+                  <div data-plugin="ckeditor">
+                    <h4>CKEditor</h4>
+                    CKEditor is a ready-for-use HTML text editor designed to simplify web content creation. It's a WYSIWYG editor that brings common word processor features directly to your web pages. Enhance your website experience with our community maintained editor.
+                    <br><br>
+                    Plugin Page: <a href="http://ckeditor.com/">http://ckeditor.com/</a>
+                    <br>
+                    Demo Page: <a href="../dist/forms-editors.html">forms-editors.html</a>
+                    <br><br>
+                    
+                    CSS Files:
+                    <pre class="prettyprint linenums">
+No CSS</pre>
+
+                    JavaScript Files:
+                    <pre class="prettyprint linenums">
+&lt;script type="text/javascript" src="assets/ckeditor/ckeditor.js">&lt;/script></pre>
+
+                    Usage Example:
+                    <pre class="prettyprint linenums">
+&lt;textarea id="ckeditor1">&lt;/textarea>
+&lt;div id="ckeditor2">Inline Text Editing&lt;/div>
+
+&lt;script>
+  CKEDITOR.replace( 'ckeditor1' );
+  CKEDITOR.inline( 'ckeditor2' );
+&lt;/script></pre>
+                  </div>
+                  <!-- /CKEditor -->
+                  <!-- MarkItUp -->
+                  <div data-plugin="markitup">
+                    <h4>MarkItUp</h4>
+                    markItUp! is a JavaScript plugin built on the jQuery library. It allows you to turn any textarea into a markup editor. Html, Textile, Wiki Syntax, Markdown, BBcode or even your own Markup system can be easily implemented.
+                    <br><br>
+                    Plugin Page: <a href="http://markitup.jaysalvat.com/home/">http://markitup.jaysalvat.com/home/</a>
+                    <br>
+                    Demo Page: <a href="../dist/forms-editors.html">forms-editors.html</a>
+                    <br><br>
+                    
+                    CSS Files:
+                    <pre class="prettyprint linenums">
+&lt;link rel="stylesheet" type="text/css" href="assets/markitup/skins/_con/style.css" />
+&lt;link rel="stylesheet" type="text/css" href="assets/markitup/sets/default/style.css" /></pre>
+
+                    JavaScript Files:
+                    <pre class="prettyprint linenums">
+&lt;script type="text/javascript" src="assets/markitup/sets/default/set.js">&lt;/script>
+&lt;script type="text/javascript" src="assets/markitup/jquery.markitup.js">&lt;/script></pre>
+
+                    Usage Example:
+                    <pre class="prettyprint linenums">
+&lt;textarea class="markItUp">&lt;/textarea></pre>
+                  </div>
+                  <!-- /MarkItUp -->
+
+
+                  <!-- Flot -->
+                  <div data-plugin="flot">
+                    <h4>Flot</h4>
+                    Flot is a pure JavaScript plotting library for jQuery, with a focus on simple usage, attractive looks and interactive features.
+                    <br><br>
+                    Plugin Page: <a href="http://www.flotcharts.org/">http://www.flotcharts.org/</a>
+                    <br>
+                    Demo Page: <a href="../dist/charts-flot.html">charts-flot.html</a>
+                    <br><br>
+                    
+                    CSS Files:
+                    <pre class="prettyprint linenums">
+No CSS</pre>
+
+                    JavaScript Files:
+                    <pre class="prettyprint linenums">
+&lt;script type="text/javascript" src="assets/flot/jquery.flot.min.js">&lt;/script>
+&lt;script type="text/javascript" src="assets/flot/jquery.flot.time.min.js">&lt;/script>
+&lt;script type="text/javascript" src="assets/flot/jquery.flot.pie.min.js">&lt;/script>
+&lt;script type="text/javascript" src="assets/flot/jquery.flot.tooltip.min.js">&lt;/script>
+&lt;script type="text/javascript" src="assets/flot/jquery.flot.categories.min.js">&lt;/script></pre>
+
+                    Usage Example:
+                    <pre class="prettyprint linenums">
+&lt;div id="flotLineChart" style="height: 250px">&lt;/div>
+
+&lt;script>
+  (function() {
+    var chart = $("#flotLineChart");
+    var data1 = {
+      data: [[1, 50], [2, 40], [3, 45], [4, 23],[5, 55],[6, 65],[7, 61],[8, 70],[9, 65],[10, 75],[11, 57],[12, 59]],
+      label: "Mails"
+    };
+    var data2 = {
+      data: [[1, 25], [2, 50], [3, 23], [4, 48],[5, 38],[6, 40],[7, 47],[8, 55],[9, 43],[10,50],[11,47],[12, 39]],
+      label: "SMS"
+    };
+    var options = {
+      series: {
+        lines: {
+          show: true,
+          lineWidth: 1,
+          fill: true, 
+          fillColor: { colors: [ { opacity: 0.1 }, { opacity: 0.13 } ] }
+        },
+        points: {
+          show: true, 
+          lineWidth: 2,
+          radius: 3
+        },
+        shadowSize: 0,
+        stack: true
+      },
+      grid: {
+        hoverable: true, 
+        clickable: true, 
+        tickColor: "#f9f9f9",
+        borderWidth: 0
+      },
+      legend: {
+        // show: false
+        backgroundOpacity: 0,
+        labelBoxBorderColor: "#fff"
+      },  
+      colors: ["#3f51b5", "#009688"],
+      xaxis: {
+        ticks: [[1, "Jan"], [2, "Feb"], [3, "Mar"], [4,"Apr"], [5,"May"], [6,"Jun"], 
+                   [7,"Jul"], [8,"Aug"], [9,"Sep"], [10,"Oct"], [11,"Nov"], [12,"Dec"]],
+        font: {
+          family: "Roboto,sans-serif",
+          color: "#ccc"
+        }
+      },
+      yaxis: {
+        ticks:7, 
+        tickDecimals: 0,
+        font: {color: "#ccc"}
+      }
+    };
+    
+    function initFlot() {
+      $.plot(chart, [data1, data2], options);
+      chart.find('.legend table').css('width', 'auto')
+           .find('td').css('padding', 5);
+    }
+    initFlot();
+    $(window).on('resize', initFlot);
+
+    function showTooltip(x, y, contents) {
+      $('&lt;div id="tooltip">' + contents + '&lt;/div>').css( {
+        position: 'absolute',
+        display: 'none',
+        top: y - 40,
+        left: x - 55,
+        color: "#fff",
+        padding: '5px 10px',
+        'border-radius': '3px',
+        'background-color': 'rgba(0,0,0,0.6)'
+      }).appendTo("body").fadeIn(200);
+    }
+
+    var previousPoint = null;
+    chart.bind("plothover", function (event, pos, item) {
+      if (item) {
+        if (previousPoint != item.dataIndex) {
+          previousPoint = item.dataIndex;
+
+          $("#tooltip").remove();
+          var x = item.datapoint[0].toFixed(0),
+              y = item.datapoint[1].toFixed(0);
+
+          var month = item.series.xaxis.ticks[item.dataIndex].label;
+
+          showTooltip(item.pageX, item.pageY,
+                      item.series.label + " of " + month + ": " + y);
+        }
+      }
+      else {
+        $("#tooltip").remove();
+        previousPoint = null;
+      }
+    });
+  }());
+&lt;/script></pre>
+                  </div>
+                  <!-- /Flot -->
+                  <!-- Rickshaw -->
+                  <div data-plugin="rickshaw">
+                    <h4>Rickshaw</h4>
+                    Rickshaw is a JavaScript toolkit for creating interactive time series graphs.
+                    <br><br>
+                    Plugin Page: <a href="http://code.shutterstock.com/rickshaw/">http://code.shutterstock.com/rickshaw/</a>
+                    <br>
+                    Demo Page: <a href="../dist/charts-rickshaw.html">charts-rickshaw.html</a>
+                    <br><br>
+                    
+                    CSS Files:
+                    <pre class="prettyprint linenums">
+&lt;link rel="stylesheet" type="text/css" href="assets/rickshaw/rickshaw.min.css" /></pre>
+
+                    JavaScript Files:
+                    <pre class="prettyprint linenums">
+&lt;script type="text/javascript" src="assets/d3/d3.min.js">&lt;/script>
+&lt;script type="text/javascript" src="assets/rickshaw/rickshaw.min.js">&lt;/script></pre>
+
+                    Usage Example:
+                    <pre class="prettyprint linenums">
+&lt;div id="rickshawLine" style="height: 250px">&lt;/div>
+
+&lt;script>
+  var rickshawLine1 = [ { x: 0, y: 43 }, { x: 1, y: 42 }, { x: 2, y: 32 }, { x: 3, y: 12 }, { x: 4, y: 46 }, { x: 5, y: 67 }, { x: 6, y: 34 }, { x: 7, y: 25 }, { x: 8, y: 32 }, { x: 9, y: 14 }, { x: 10, y: 2 }, { x: 11, y: 25 }, { x: 12, y: 48 } ];
+  var rickshawLine2 = [ { x: 0, y: 40 }, { x: 1, y: 49 }, { x: 2, y: 24 }, { x: 3, y: 32 }, { x: 4, y: 67 }, { x: 5, y: 53 }, { x: 6, y: 42 }, { x: 7, y: 32 }, { x: 8, y: 12 }, { x: 9, y: 35 }, { x: 10, y: 87 }, { x: 11, y: 56 }, { x: 12, y: 36 } ];
+  var rickshawLine3 = [ { x: 0, y: 30 }, { x: 1, y: 29 }, { x: 2, y: 12 }, { x: 3, y: 5 }, { x: 4, y: 38 }, { x: 5, y: 57 }, { x: 6, y: 21 }, { x: 7, y: 16 }, { x: 8, y: 29 }, { x: 9, y: 10 }, { x: 10, y: 0 }, { x: 11, y: 20 }, { x: 12, y: 37 } ];
+
+  // Line
+  (function() {
+    var element = $("#rickshawLine");
+    var graph = new Rickshaw.Graph( {
+      element: element[0],
+      renderer: 'line',
+      stroke: true,
+      series: [ {
+        data: rickshawLine1,
+        color: '#673ab7',
+        name: 'Visits'
+      }, {    
+        data: rickshawLine3,
+        color: '#2196f3',
+        name: 'Posts'
+      }]
+    } );
+    graph.render();
+
+    var hoverDetail = new Rickshaw.Graph.HoverDetail({
+      graph: graph,
+      xFormatter: function(x) { return x + " Jan 2015" },
+      yFormatter: function(y) { return Math.floor(y) }
+    });
+
+    // responsive
+    $(window).on('resize', function() {
+      graph.configure({
+        width: element.width()
+      });
+      graph.render();
+    });
+  }());
+&lt;/script></pre>
+                  </div>
+                  <!-- /Rickshaw -->
+                  <!-- Sparkline -->
+                  <div data-plugin="sparkline">
+                    <h4>Sparkline</h4>
+                    This jQuery plugin generates sparklines (small inline charts) directly in the browser using data supplied either inline in the HTML, or via javascript.
+                    <br><br>
+                    Plugin Page: <a href="http://omnipotent.net/jquery.sparkline/">http://omnipotent.net/jquery.sparkline/</a>
+                    <br>
+                    Demo Page: <a href="../dist/charts-sparkline.html">charts-sparkline.html</a>
+                    <br><br>
+                    
+                    CSS Files:
+                    <pre class="prettyprint linenums">
+No CSS</pre>
+
+                    JavaScript Files:
+                    <pre class="prettyprint linenums">
+&lt;script type="text/javascript" src="assets/sparkline/jquery.sparkline.min.js">&lt;/script></pre>
+
+                    Usage Example:
+                    <pre class="prettyprint linenums">
+&lt;div id="sparkline1">&lt;/div>
+&lt;div id="sparkline2">&lt;/div>
+
+&lt;script>
+  $("#sparkline1").conSparkline([5,6,7,9,9,5,3,2,2,4,6,7], {
+    type: 'line',
+    width: '100%',
+    height: '100',
+    lineColor: '#64b5f6',
+    spotColor: undefined,
+    minSpotColor: undefined,
+    maxSpotColor: undefined,
+    highlightSpotColor: '#2196f3',
+    highlightLineColor: '#2196f3',
+    spotRadius: 2});
+ 
+  $("#sparkline2").conSparkline([12,9,7,8,9,5,3,5,10,14,5,2,3,4,6,9,4 ], {
+    type: 'line',
+    width: '100%',
+    height: '100 ',
+    lineColor: '#4db6ac',
+    fillColor: '#b2dfdb',
+    highlightSpotColor: '#009688',
+    spotColor: false,
+    minSpotColor: false,
+    maxSpotColor: false,
+    highlightLineColor: false,
+    highlightLineColor: false,
+    spotRadius: 5});
+&lt;/script></pre>
+                  </div>
+                  <!-- /Sparkline -->
+                  <!-- NVD3 -->
+                  <div data-plugin="nvd3">
+                    <h4>NVD3</h4>
+                    This project is an attempt to build re-usable charts and chart components for d3.js without taking away the power that d3.js gives you. This is a very young collection of components, with the goal of keeping these components very customizeable, staying away from your standard cookie cutter solutions.
+                    <br><br>
+                    Plugin Page: <a href="http://nvd3.org/index.html">http://nvd3.org/index.html</a>
+                    <br>
+                    Demo Page: <a href="../dist/charts-nvd3.html">charts-nvd3.html</a>
+                    <br><br>
+                    
+                    CSS Files:
+                    <pre class="prettyprint linenums">
+&lt;link rel="stylesheet" type="text/css" href="assets/nvd3/nv.d3.min.css" /></pre>
+
+                    JavaScript Files:
+                    <pre class="prettyprint linenums">
+&lt;script type="text/javascript" src="assets/d3/d3.min.js">&lt;/script>
+&lt;script type="text/javascript" src="assets/nvd3/nv.d3.min.js">&lt;/script></pre>
+
+                    Usage Example:
+                    <pre class="prettyprint linenums">
+&lt;div id="chart1" style="height: 300px;">&lt;/div>
+
+&lt;script>
+  (function() {
+    nv.addGraph(function() {
+      var chart = nv.models.lineChart()
+                    .margin({right: 10})
+                    .useInteractiveGuideline(true)  //We want nice looking tooltips and a guideline!
+                    .showLegend(true)       //Show the legend, allowing users to turn on/off line series.
+                    .showYAxis(true)        //Show the y-axis
+                    .showXAxis(true)        //Show the x-axis
+      ;
+
+      chart.xAxis     //Chart x-axis settings
+          .axisLabel('Time (ms)')
+          .tickFormat(d3.format(',r'));
+
+      chart.yAxis     //Chart y-axis settings
+          .axisLabel('Voltage (v)')
+          .tickFormat(d3.format('.02f'));
+
+      /* Done setting the chart up? Time to render it!*/
+      var myData = sinAndCos();   //You need data...
+
+      d3.select('#chart1').append('svg')       //Select the &lt;svg> element you want to render the chart in.   
+          .datum(myData)         //Populate the &lt;svg> element with chart data...
+          .call(chart);          //Finally, render the chart!
+
+      //Update the chart when window resizes.
+      nv.utils.windowResize(function() { chart.update() });
+      return chart;
+    });
+    function sinAndCos() {
+      var sin = [],sin2 = [],
+          cos = [];
+
+      //Data is represented as an array of {x,y} pairs.
+      for (var i = 0; i &lt; 100; i++) {
+        sin.push({x: i, y: Math.sin(i/10)});
+        sin2.push({x: i, y: Math.sin(i/10) *0.25 + 0.5});
+        cos.push({x: i, y: .5 * Math.cos(i/10)});
+      }
+
+      //Line chart data should be sent as an array of series objects.
+      return [
+        {
+          values: sin,      //values - represents the array of {x,y} data points
+          key: 'Sine Wave', //key  - the name of the series.
+          color: '#ff7f0e'  //color - optional: choose your own line color.
+        },
+        {
+          values: cos,
+          key: 'Cosine Wave',
+          color: '#2ca02c'
+        },
+        {
+          values: sin2,
+          key: 'Another sine wave',
+          color: '#7777ff',
+          area: true      //area - set to true if you want this line to turn into a filled area chart.
+        }
+      ];
+    }
+  }());
+&lt;/script></pre>
+                  </div>
+                  <!-- /NVD3 -->
+
+
+                  <!-- GMAPS -->
+                  <div data-plugin="gmaps">
+                    <h4>Gmaps</h4>
+                    gmaps.js allows you to use the potential of Google Maps in a simple way.
+                    <br>No more extensive documentation or large amount of code.
+                    <br><br>
+                    Plugin Page: <a href="http://hpneo.github.io/gmaps/">http://hpneo.github.io/gmaps/</a>
+                    <br>
+                    Demo Page: <a href="../dist/maps-google.html">maps-google.html</a>
+                    <br><br>
+                    
+                    CSS Files:
+                    <pre class="prettyprint linenums">
+No CSS</pre>
+
+                    JavaScript Files:
+                    <pre class="prettyprint linenums">
+&lt;script src="http://maps.google.com/maps/api/js?sensor=true">&lt;/script>
+&lt;script type="text/javascript" src="assets/gmaps/gmaps.min.js">&lt;/script></pre>
+
+                    Usage Example:
+                    <pre class="prettyprint linenums">
+&lt;!-- Map -->
+&lt;div class="map" id="map1">&lt;/div>
+&lt;!-- /Map -->
+ 
+&lt;script>
+  /*
+   * MAP 1
+   */
+  jQuery(function() {
+    "use strict";
+
+    // init panorama
+    var panorama = GMaps.createPanorama({
+      el: '#map1',
+      lat: -23.442896,
+      lng: 151.906584,
+      pov: {
+        heading: 340,
+        pitch: -3
+      }
+    });
+  });
+&lt;/script></pre>
+                  </div>
+                  <!-- /GMAPS -->
+                  <!-- jVectorMap -->
+                  <div data-plugin="jvectormap">
+                    <h4>jVectorMap</h4>
+                    Javascript vector maps.
+                    <br><br>
+                    Plugin Page: <a href="http://jvectormap.com/">http://jvectormap.com/</a>
+                    <br>
+                    Demo Page: <a href="../dist/maps-vector.html">maps-vector.html</a>
+                    <br><br>
+                    
+                    CSS Files:
+                    <pre class="prettyprint linenums">
+&lt;link rel="stylesheet" type="text/css" href="assets/jquery-jvectormap/jquery-jvectormap.css" /></pre>
+
+                    JavaScript Files:
+                    <pre class="prettyprint linenums">
+&lt;script type="text/javascript" src="assets/jquery-jvectormap/jquery-jvectormap.min.js">&lt;/script>
+&lt;script type="text/javascript" src="assets/jquery-jvectormap/jquery-jvectormap-world-mill-en.js">&lt;/script>
+&lt;script type="text/javascript" src="assets/jquery-jvectormap/gdp-data.js">&lt;/script></pre>
+
+                    Usage Example:
+                    <pre class="prettyprint linenums">
+&lt;!-- map -->
+&lt;div id="map1" class="map">&lt;/div>
+&lt;!-- /map -->
+
+&lt;script>
+/*
+ * MAP 1
+ */
+jQuery(function() {
+  $('#map1').vectorMap({
+    map: 'world_mill_en',
+    series: {
+      regions: [{
+        values: gdpData,
+        scale: ['#C8EEFF', '#0071A4'],
+        normalizeFunction: 'polynomial'
+      }]
+    },
+    onRegionTipShow: function(e, el, code){
+      el.html(el.html()+' (GDP - '+gdpData[code]+')');
+    }
+  });
+})
+&lt;/script></pre>
+                  </div>
+                  <!-- /jVectorMap -->
+
+
+                  <!-- WOW.js -->
+                  <div data-plugin="wowjs">
+                    <h4>WOW.js</h4>
+                    WOW.js is Reveal Animations When You Scroll. Very Animate.css Friend :-) Easily customize animation settings: style, delay, length, offset, iterations...
+                    <br><br>
+                    Plugin Page: <a href="http://mynameismatthieu.com/WOW/">http://mynameismatthieu.com/WOW/</a>
+                    <br>
+                    Demo Page: <a href="../dist/media-scroll-effects.html">media-scroll-effects.html</a>
+                    <br><br>
+                    
+                    CSS Files:
+                    <pre class="prettyprint linenums">
+No CSS</pre>
+
+                    JavaScript Files:
+                    <pre class="prettyprint linenums">
+&lt;script type="text/javascript" src="assets/wow.js/wow.min.js">&lt;/script></pre>
+
+                    Usage Example:
+                    <pre class="prettyprint linenums">
+&lt;div class="wow fadeIn">&lt;/div>
+&lt;div class="wow slideInLeft" data-wow-duration="2s" data-wow-delay="5s">&lt;/div>
+&lt;div class="wow pulse" data-wow-offset="10" data-wow-iteration="100">&lt;/div></pre>
+                  </div>
+                  <!-- /WOW.js -->
+
+
+                  <!-- Animate.css -->
+                  <div data-plugin="animatecss">
+                    <h4>Animate.css</h4>
+                    Animate.css is cross-browser library of CSS animations. As easy to use as an easy thing.
+                    <br>Finally you need to add one of the following classes:
+                    <ul>
+                      <li><code>bounce</code></li>
+                      <li><code>flash</code></li>
+                      <li><code>pulse</code></li>
+                      <li><code>rubberBand</code></li>
+                      <li><code>shake</code></li>
+                      <li><code>swing</code></li>
+                      <li><code>tada</code></li>
+                      <li><code>wobble</code></li>
+                      <li><code>jello</code></li>
+                      <li><code>bounceIn</code></li>
+                      <li><code>bounceInDown</code></li>
+                      <li><code>bounceInLeft</code></li>
+                      <li><code>bounceInRight</code></li>
+                      <li><code>bounceInUp</code></li>
+                      <li><code>bounceOut</code></li>
+                      <li><code>bounceOutDown</code></li>
+                      <li><code>bounceOutLeft</code></li>
+                      <li><code>bounceOutRight</code></li>
+                      <li><code>bounceOutUp</code></li>
+                      <li><code>fadeIn</code></li>
+                      <li><code>fadeInDown</code></li>
+                      <li><code>fadeInDownBig</code></li>
+                      <li><code>fadeInLeft</code></li>
+                      <li><code>fadeInLeftBig</code></li>
+                      <li><code>fadeInRight</code></li>
+                      <li><code>fadeInRightBig</code></li>
+                      <li><code>fadeInUp</code></li>
+                      <li><code>fadeInUpBig</code></li>
+                      <li><code>fadeOut</code></li>
+                      <li><code>fadeOutDown</code></li>
+                      <li><code>fadeOutDownBig</code></li>
+                      <li><code>fadeOutLeft</code></li>
+                      <li><code>fadeOutLeftBig</code></li>
+                      <li><code>fadeOutRight</code></li>
+                      <li><code>fadeOutRightBig</code></li>
+                      <li><code>fadeOutUp</code></li>
+                      <li><code>fadeOutUpBig</code></li>
+                      <li><code>flipInX</code></li>
+                      <li><code>flipInY</code></li>
+                      <li><code>flipOutX</code></li>
+                      <li><code>flipOutY</code></li>
+                      <li><code>lightSpeedIn</code></li>
+                      <li><code>lightSpeedOut</code></li>
+                      <li><code>rotateIn</code></li>
+                      <li><code>rotateInDownLeft</code></li>
+                      <li><code>rotateInDownRight</code></li>
+                      <li><code>rotateInUpLeft</code></li>
+                      <li><code>rotateInUpRight</code></li>
+                      <li><code>rotateOut</code></li>
+                      <li><code>rotateOutDownLeft</code></li>
+                      <li><code>rotateOutDownRight</code></li>
+                      <li><code>rotateOutUpLeft</code></li>
+                      <li><code>rotateOutUpRight</code></li>
+                      <li><code>hinge</code></li>
+                      <li><code>rollIn</code></li>
+                      <li><code>rollOut</code></li>
+                      <li><code>zoomIn</code></li>
+                      <li><code>zoomInDown</code></li>
+                      <li><code>zoomInLeft</code></li>
+                      <li><code>zoomInRight</code></li>
+                      <li><code>zoomInUp</code></li>
+                      <li><code>zoomOut</code></li>
+                      <li><code>zoomOutDown</code></li>
+                      <li><code>zoomOutLeft</code></li>
+                      <li><code>zoomOutRight</code></li>
+                      <li><code>zoomOutUp</code></li>
+                      <li><code>slideInDown</code></li>
+                      <li><code>slideInLeft</code></li>
+                      <li><code>slideInRight</code></li>
+                      <li><code>slideInUp</code></li>
+                      <li><code>slideOutDown</code></li>
+                      <li><code>slideOutLeft</code></li>
+                      <li><code>slideOutRight</code></li>
+                      <li><code>slideOutUp</code></li>
+                    </ul>
+                    <br>
+                    Plugin Page: <a href="https://daneden.github.io/animate.css/">https://daneden.github.io/animate.css/</a>
+                    <br>
+                    Demo Page: <a href="../dist/media-scroll-effects.html">media-scroll-effects.html</a>
+                    <br><br>
+                    
+                    CSS Files:
+                    <pre class="prettyprint linenums">
+&lt;link rel="stylesheet" type="text/css" href="assets/animate.css/animate.css" /></pre>
+
+                    JavaScript Files:
+                    <pre class="prettyprint linenums">
+No JS</pre>
+
+                    Usage Example:
+                    <pre class="prettyprint linenums">
+&lt;h1 class="animated infinite bounce">Example&lt;/h1></pre>
+                  </div>
+                  <!-- /Animate.css -->
+
+
+                  <!-- PhotoSwipe -->
+                  <div data-plugin="photoswipe">
+                    <h4>PhotoSwipe</h4>
+                    PhotoSwipe is JavaScript gallery, no dependencies.
+                    <br><br>
+                    Plugin Page: <a href="http://photoswipe.com/">http://photoswipe.com/</a>
+                    <br>
+                    Demo Page: <a href="../dist/media-gallery.html">media-gallery.html</a>
+                    <br><br>
+                    
+                    CSS Files:
+                    <pre class="prettyprint linenums">
+&lt;link rel="stylesheet" type="text/css" href="assets/PhotoSwipe/photoswipe.css" />
+&lt;link rel="stylesheet" type="text/css" href="assets/PhotoSwipe/default-skin/default-skin.css" /></pre>
+
+                    JavaScript Files:
+                    <pre class="prettyprint linenums">
+&lt;script type="text/javascript" src="assets/PhotoSwipe/photoswipe.min.js">&lt;/script>
+&lt;script type="text/javascript" src="assets/PhotoSwipe/photoswipe-ui-default.min.js">&lt;/script></pre>
+
+                    Usage Example:
+                    <pre class="prettyprint linenums">
+&lt;div class="photoswipe-gallery">
+  &lt;a href="assets/_con/images/gallery-1.jpg" data-size="2880x1800" data-med="assets/_con/images/gallery-1-med.jpg" data-med-size="1440x900" data-author="AUTHOR">
+    &lt;img src="assets/_con/images/gallery-1-small.jpg" alt="" />
+    &lt;figure>CAPTION&lt;/figure>
+  &lt;/a>
+
+  &lt;a href="assets/_con/images/gallery-2.jpg" data-size="2880x1800" data-med="assets/_con/images/gallery-2-med.jpg" data-med-size="1440x900" data-author="AUTHOR">
+    &lt;img src="assets/_con/images/gallery-2-small.jpg" alt="" />
+    &lt;figure>CAPTION&lt;/figure>
+  &lt;/a>
+&lt;/div></pre>
+                  </div>
+                  <!-- /PhotoSwipe -->
+
+
+                  <!-- Isotope -->
+                  <div data-plugin="isotope">
+                    <h4>Isotope</h4>
+                    Filter & sort magical layouts.
+                    <br><br>
+                    Plugin Page: <a href="http://isotope.metafizzy.co/">http://isotope.metafizzy.co/</a>
+                    <br>
+                    Demo Page: <a href="../dist/media-gallery.html">media-gallery.html</a>
+                    <br><br>
+                    
+                    CSS Files:
+                    <pre class="prettyprint linenums">
+No CSS</pre>
+
+                    JavaScript Files:
+                    <pre class="prettyprint linenums">
+&lt;script type="text/javascript" src="assets/isotope/isotope.pkgd.min.js">&lt;/script></pre>
+
+                    Usage Example:
+                    <pre class="prettyprint linenums">
+&lt;div class="row isotope">
+  &lt;div class="col s12 m6 l3 item">
+    Item
+  &lt;/div>
+  &lt;div class="col s12 m6 l3 item">
+    Item
+  &lt;/div>
+  &lt;div class="col s12 m6 l3 item">
+    Item
+  &lt;/div>
+  &lt;div class="col s12 m6 l3 item">
+    Item
+  &lt;/div>
+  &lt;div class="col s12 m6 l3 item">
+    Item
+  &lt;/div>
+&lt;/div></pre>
+                  </div>
+                  <!-- /Isotope -->
+
+
+                  <!-- DataTables -->
+                  <div data-plugin="datatables">
+                    <h4>DataTables</h4>
+                    DataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, based upon the foundations of progressive enhancement, and will add advanced interaction controls to any HTML table.
+                    <br><br>
+                    Plugin Page: <a href="http://www.datatables.net/">http://www.datatables.net/</a>
+                    <br>
+                    Demo Page: <a href="../dist/ui-datatables.html">ui-datatables.html</a>
+                    <br><br>
+                    
+                    CSS Files:
+                    <pre class="prettyprint linenums">
+No CSS</pre>
+
+                    JavaScript Files:
+                    <pre class="prettyprint linenums">
+&lt;script type="text/javascript" src="assets/dataTables/js/jquery.dataTables.min.js">&lt;/script>
+&lt;script type="text/javascript" src="assets/dataTables/extensions/TableTools/js/dataTables.tableTools.min.js">&lt;/script>
+&lt;script type="text/javascript" src="assets/dataTables/extensions/Scroller/js/dataTables.scroller.min.js">&lt;/script></pre>
+
+                    Usage Example:
+                    <pre class="prettyprint linenums">
+&lt;table id="table1" class="display table table-bordered table-striped table-hover">
+  &lt;thead>
+    &lt;tr>
+      &lt;th>Name&lt;/th>
+      &lt;th>Position&lt;/th>
+      &lt;th>Office&lt;/th>
+      &lt;th>Age&lt;/th>
+      &lt;th>Start date&lt;/th>
+      &lt;th>Salary&lt;/th>
+    &lt;/tr>
+  &lt;/thead>
+  &lt;tbody>
+    &lt;tr>
+      &lt;td>Tiger Nixon&lt;/td>
+      &lt;td>System Architect&lt;/td>
+      &lt;td>Edinburgh&lt;/td>
+      &lt;td>61&lt;/td>
+      &lt;td>2011/04/25&lt;/td>
+      &lt;td>$320,800&lt;/td>
+    &lt;/tr>
+    &lt;tr>
+      &lt;td>Garrett Winters&lt;/td>
+      &lt;td>Accountant&lt;/td>
+      &lt;td>Tokyo&lt;/td>
+      &lt;td>63&lt;/td>
+      &lt;td>2011/07/25&lt;/td>
+      &lt;td>$170,750&lt;/td>
+    &lt;/tr>
+    ...
+  &lt;/tbody>
+&lt;/table>
+ 
+&lt;script type="text/javascript" src="assets/dataTables/js/jquery.dataTables.min.js">&lt;/script>
+&lt;script>
+  $('#table1').DataTable({
+    "bLengthChange": false,
+    "iDisplayLength": 5,
+    "filter": false
+  });
+&lt;/script></pre>
+                  </div>
+                  <!-- /DataTables -->
+
+
+                  <!-- FullCalendar -->
+                  <div data-plugin="fullcalendar">
+                    <h4>FullCalendar</h4>
+                    FullCalendar is a jQuery plugin that provides a full-sized, drag & drop event calendar like the one below. It uses AJAX to fetch events on-the-fly and is easily configured to use your own feed format. It is visually customizable with a rich API.
+                    <br><br>
+                    Plugin Page: <a href="http://fullcalendar.io/">http://fullcalendar.io/</a>
+                    <br>
+                    Demo Page: <a href="../dist/page-calendar.html">page-calendar.html</a>
+                    <br><br>
+                    
+                    CSS Files:
+                    <pre class="prettyprint linenums">
+&lt;link rel="stylesheet" type="text/css" href="assets/fullcalendar/fullcalendar.min.css" /></pre>
+
+                    JavaScript Files:
+                    <pre class="prettyprint linenums">
+&lt;script type="text/javascript" src="assets/fullcalendar/moment.min.js">&lt;/script>
+&lt;script type="text/javascript" src="assets/fullcalendar/jquery-ui.custom.min.js">&lt;/script>
+&lt;script type="text/javascript" src="assets/fullcalendar/fullcalendar.min.js">&lt;/script></pre>
+
+                    Usage Example:
+                    <pre class="prettyprint linenums">
+&lt;!-- Calendar -->
+&lt;div class="card">
+  &lt;div id="calendar">&lt;/div>
+&lt;/div>
+&lt;!-- /Calendar -->
+
+&lt;script>
+  $('#calendar').fullCalendar({
+    header: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'month,agendaWeek,agendaDay'
+    },
+    defaultDate: '2015-02-12',
+    editable: true,
+    events: [
+      {
+        title: 'All Day Event',
+        start: '2015-02-01'
+      },
+      {
+        title: 'Long Event',
+        start: '2015-02-07',
+        end: '2015-02-10'
+      },
+      {
+        id: 999,
+        title: 'Repeating Event',
+        start: '2015-02-09T16:00:00'
+      },
+      {
+        id: 999,
+        title: 'Repeating Event',
+        start: '2015-02-16T16:00:00'
+      },
+      {
+        title: 'Conference',
+        start: '2015-02-11',
+        end: '2015-02-13'
+      },
+      {
+        title: 'Meeting',
+        start: '2015-02-12T10:30:00',
+        end: '2015-02-12T12:30:00'
+      },
+      {
+        title: 'Lunch',
+        start: '2015-02-12T12:00:00'
+      },
+      {
+        title: 'Meeting',
+        start: '2015-02-12T14:30:00'
+      },
+      {
+        title: 'Click for Google',
+        url: 'http://google.com/',
+        start: '2015-02-28'
+      }
+    ]
+  });
+&lt;/script></pre>
+                  </div>
+                  <!-- /FullCalendar -->
+                </div>
+
+              </div>
+
+
+
+              <div class="well">
+                <h2>AngularJS</h2>
+
+                  <h3>Change Page Options</h3>
+                  <p>You can add your setting for each page in <strong>js/app.js</strong> file. Full list of available options:</p>
+                  <pre class="prettyprint linenums">
+conAngular.factory('settings', ['$rootScope', function($rootScope) {
+  var settings = {
+    rtl: false, // rtl mode
+    navbar: {
+      dark:   false, // dark color scheme
+      static: false, // static
+      under:  false  // navbar under sidebar
+    },
+    sidebar: {
+      hideToSmall:     true,    // hide to small sidebar
+      static:          false,   // static
+      gestures:        true,    // gestures support
+      light:           false,   // light color scheme
+      overlapContent:  false,   // Overlay content when opened
+      effect:          'shrink' // show effect: [shrink, push, overlay]
+    },
+    chat: {
+      light: false // light color scheme
+    }
+  }
+  ...</pre>
+
+                  <h3>New Page</h3>
+                  <p>
+                    To create new page in AngularJS version of template, you need to done some steps:
+                  </p>
+                  <ol>
+                    <li>Create html file <strong>angularjs/tpl/new_page.html</strong></li>
+                    <li>Add the page to Sidebar <strong>angularjs/tpl/parts/sidebar.html</strong>:
+                    <pre class="prettyprint linenums">
+&lt;li>
+  &lt;a href="#/new_page.html" class="waves-effect waves-blue">&lt;i class="fa fa-css3">&lt;/i> New Page&lt;/a>
+&lt;/li></pre>
+  
+                    </li>
+                    <li>Add new state for your page in <strong>angularjs/js/app.js [223 line]</strong>. Example with Sortable script included:
+                    <pre class="prettyprint linenums">
+.state('/new_page', {
+  url: "/new_page.html",
+  templateUrl: "tpl/new_page.html",
+  controller: "PageController",
+  data: {
+    pageTitle: 'New Page Title',
+    crumbs: [{
+        title: '&lt;i class="fa fa-home">&lt;/i> Home',
+        href: '#'
+      }, {
+        title: 'Dashboard',
+        href: '#/dashboard.html'
+      }, {
+        title: 'New Page',
+        href: '#/new_page.html'
+      }]
+  },
+  resolve: {
+    deps: ['$ocLazyLoad', function($ocLazyLoad) {
+      return $ocLazyLoad.load([{
+        name: 'conAngular',
+        insertBefore: '#ngInsertBefore',
+        files: conAssets('sortable')
+      }]);
+    }]
+  }
+})</pre>
+                    </li>
+                  </ol>
+
+                  <h3>Use Plugins</h3>
+                  <p>To use plugins you have 2 ways:</p>
+                  <ol>
+                    <li><strong>ocLazyLoad</strong> way. Example with Sortable and Markitup plugins:
+                    <pre class="prettyprint linenums">
+resolve: {
+  deps: ['$ocLazyLoad', function($ocLazyLoad) {
+    return $ocLazyLoad.load([{
+      name: 'conAngular',
+      insertBefore: '#ngInsertBefore',
+      files: [
+        '../assets/sortable/Sortable.min.js',
+        '../assets/markitup/skins/_con/style.css',
+        '../assets/markitup/sets/default/style.css',
+        '../assets/markitup/sets/default/set.js',
+        '../assets/markitup/jquery.markitup.js'
+      ]
+    }]);
+  }]
+}</pre>
+                    </li>
+                    <li><strong>conAssets</strong> method way. Example with Sortable and Markitup plugins:
+                    <pre class="prettyprint linenums">
+resolve: {
+  deps: ['$ocLazyLoad', function($ocLazyLoad) {
+    return $ocLazyLoad.load([{
+      name: 'conAngular',
+      insertBefore: '#ngInsertBefore',
+      files: conAssets('sortable,markitup')
+    }]);
+  }]
+}</pre>
+
+                    </li>
+                  </ol>
+
+                  <p>All available plugin name for <strong>conAssets</strong> method</p>
+                  <ul>
+                    <li>simpleWeather</li>
+                    <li>sparkline</li>
+                    <li>flot</li>
+                    <li>nvd3</li>
+                    <li>rickshaw</li>
+                    <li>markitup</li>
+                    <li>ckeditor</li>
+                    <li>select2</li>
+                    <li>tagsinput</li>
+                    <li>dropzone</li>
+                    <li>clockpicker</li>
+                    <li>pikaday</li>
+                    <li>spectrum</li>
+                    <li>inputmask</li>
+                    <li>parsley</li>
+                    <li>gmaps</li>
+                    <li>jvectormap</li>
+                    <li>dataTables</li>
+                    <li>fullcalendar</li>
+                    <li>sortable</li>
+                    <li>wowjs</li>
+                    <li>animatecss</li>
+                    <li>photoswipe</li>
+                    <li>isotope</li>
+                    <li>videojs</li>
+                  </ul>
+              </div>
+
+
+
+              <div class="well">
+                <h2>Credits</h2>
+                <ul>
+                  <li><strong>Materialize</strong> – <a href="http://materializecss.com/">http://materializecss.com/</a></li>
+                  <li><strong>jQuery</strong> – <a href="http://jquery.com/">http://jquery.com/</a></li>
+                  <li><strong>nanoScroller</strong> – <a href="http://jamesflorentino.github.io/nanoScrollerJS/">http://jamesflorentino.github.io/nanoScrollerJS/</a></li>
+                  <li><strong>SimpleWeather</strong> – <a href="http://simpleweatherjs.com/">http://simpleweatherjs.com/</a></li>
+                  <li><strong>DataTables</strong> – <a href="http://www.datatables.net/">http://www.datatables.net/</a></li>
+                  <li><strong>FullCalendar</strong> – <a href="http://fullcalendar.io/">http://fullcalendar.io/</a></li>
+                  <li><strong>YAY bar</strong> – <a href="http://codecanyon.net/item/yay-advanced-sidebar-for-bootstrap/10702487">http://codecanyon.net/item/yay-advanced-sidebar-for-bootstrap/10702487</a></li>
+                  <li><strong>Google Code Prettify</strong> – <a href="https://code.google.com/p/google-code-prettify/">https://code.google.com/p/google-code-prettify/</a></li>
+                  <li><strong>HTML5shiv</strong> – <a href="https://github.com/aFarkas/html5shiv">https://github.com/aFarkas/html5shiv</a></li>
+
+                  <li><strong>Icons</strong>:
+                    <ul>
+                      <li><strong>FontAwesome</strong> – <a href="http://fontawesome.io">http://fontawesome.io</a></li>
+                      <li><strong>ionicons</strong> – <a href="http://ionicons.com/">http://ionicons.com/</a></li>
+                      <li><strong>WeatherIcons</strong> – <a href="http://erikflowers.github.io/weather-icons/">http://erikflowers.github.io/weather-icons/</a></li>
+                      <li><strong>Flag Icons</strong> – <a href="http://www.famfamfam.com/lab/icons/flags/">http://www.famfamfam.com/lab/icons/flags/</a></li>
+                    </ul>
+                  </li>
+
+                  <li><strong>Charts</strong>:
+                    <ul>
+                      <li><strong>NVD3</strong> – <a href="http://nvd3.org">http://nvd3.org</a></li>
+                      <li><strong>Flot Charts</strong> – <a href="http://www.flotcharts.org/">http://www.flotcharts.org/</a></li>
+                      <li><strong>Rickshaw Charts</strong> – <a href="http://code.shutterstock.com/rickshaw/">http://code.shutterstock.com/rickshaw/</a></li>
+                      <li><strong>Sparkline</strong> – <a href="http://omnipotent.net/jquery.sparkline/#s-about">http://omnipotent.net/jquery.sparkline/</a></li>
+                    </ul>
+                  </li>
+
+                  <li><strong>Editors</strong>:
+                    <ul>
+                      <li><strong>CKEditor</strong> – <a href="http://ckeditor.com/">http://ckeditor.com/</a></li>
+                      <li><strong>MarkItUp</strong> – <a href="http://markitup.jaysalvat.com/">http://markitup.jaysalvat.com/</a></li>
+                    </ul>
+                  </li>
+                  
+                  <li><strong>Advanced Form Elements</strong>:
+                    <ul>
+                      <li><strong>Pikaday</strong> – <a href="https://github.com/dbushell/Pikaday">https://github.com/dbushell/Pikaday</a></li>
+                      <li><strong>Clockpicker</strong> – <a href="http://weareoutman.github.io/clockpicker/">http://weareoutman.github.io/clockpicker/</a></li>
+                      <li><strong>Spectrum</strong> – <a href="https://bgrins.github.io/spectrum/">https://bgrins.github.io/spectrum/</a></li>
+                      <li><strong>Select2</strong> – <a href="https://select2.github.io/">https://select2.github.io/</a></li>
+                      <li><strong>Tags Input</strong> – <a href="https://github.com/xoxco/jQuery-Tags-Input">https://github.com/xoxco/jQuery-Tags-Input</a></li>
+                      <li><strong>DropzoneJS</strong> – <a href="http://www.dropzonejs.com/">http://www.dropzonejs.com/</a></li>
+                      <li><strong>jQuery.inputmask</strong> – <a href="http://robinherbots.github.io/jquery.inputmask">http://robinherbots.github.io/jquery.inputmask</a></li>
+                      <li><strong>Parsley</strong> – <a href="http://parsleyjs.org/">http://parsleyjs.org/</a></li>
+                    </ul>
+                  </li>
+
+                  <li><strong>Maps</strong>:
+                    <ul>
+                      <li><strong>gmaps</strong> – <a href="http://hpneo.github.com/gmaps/">http://hpneo.github.com/gmaps/</a></li>
+                      <li><strong>jVectorMap</strong> – <a href="http://jvectormap.com/">http://jvectormap.com/</a></li>
+                    </ul>
+                  </li>
+                  
+                  <li>Images – <a href="http://pixabay.com/">http://pixabay.com/</a></li>
+                  <li>Images - <a href="http://www.pexels.com/">http://www.pexels.com/</a></li>
+                  <li>Music - <a href="http://audiojungle.net/item/epic-dubstep/7916002?ref=_nK">http://audiojungle.net/item/epic-dubstep/7916002</a></li>
+                </ul>
+              </div>
+
+
+
+              <div class="well">
+                <h2>End of Documentation</h2>
+                Thanks for purchasing Con. We hope you will enjoy using it for your next project.
+              </div>
+
+        </div><!--/span-->
+      </div><!--/row-->
+
+    </div><!--/.fluid-container-->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/jquery-1.8.3.min.js"></script>
+    <script src="assets/jquery-ui-1.9.1.custom.min.js"></script>
+    <script src="assets/bootstrap.js"></script>
+    <script src="assets/jquery.tocify.min.js"></script>
+    <script src="assets/prettify.js"></script>
+    <script>
+        $(function() {
+
+            var toc = $("#toc").tocify({
+              selectors: "h2,h3"
+            }).data("toc-tocify");
+
+            prettyPrint();
+            $(".optionName").popover({ trigger: "hover" });
+
+        });
+
+
+        // plugins selector
+        $(function() {
+          var select = $('select[name=plugins]');
+          var descriptions = $('.plugins-description');
+
+          select.on('change', function() {
+            descriptions.find('.active').removeClass('active');
+            descriptions.find('[data-plugin=' + this.value + ']').addClass('active');
+          });
+        });
+    </script>
+
+  </body>
+</html>

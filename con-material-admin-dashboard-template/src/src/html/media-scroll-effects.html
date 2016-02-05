@@ -1,0 +1,396 @@
+@@include('./parts/head.html', {
+  "plugin_fa_icons": true,
+  "plugin_mdi_icons": true,
+  "plugin_ion_icons": true,
+  "plugin_wi_icons": true,
+
+  "plugin_rickshaw": false,
+  "plugin_nvd3": false,
+  "plugin_flot": false,
+  "plugin_sparkline": false,
+
+  "plugin_markitup": false,
+  "plugin_ckeditor": false,
+
+  "plugin_select2": false,
+  "plugin_dropzone": false,
+  "plugin_tagsinput": false,
+  "plugin_clockpicker": false,
+  "plugin_pikaday": false,
+  "plugin_spectrum": false,
+  "plugin_inputmask": false,
+  "plugin_parsley": false,
+
+  "plugin_gmaps": false,
+  "plugin_jvectormap": false,
+
+  "plugin_datatables": false,
+  "plugin_fullcalendar": false,
+  "plugin_simpleweather": false,
+  "plugin_prettify": true,
+  "plugin_animatecss": true,
+  "plugin_wowjs": true,
+  "plugin_photoswipe": false,
+  "plugin_isotope": false,
+  "plugin_videojs": false
+})
+
+<body>
+
+@@include('./parts/top-navbar.html')
+
+@@include('./parts/sidebar.html', {
+  "page": "media-scroll-effects",
+  "classes": "yay-shrink yay-hide-to-small yay-gestures"
+})
+
+<!-- Main Content -->
+<section class="content-wrap">
+
+  @@include('./parts/title.html', {
+    "title": "Scroll Effects",
+    "crumbs": "<li><a href='dashboard.html'>Dashboard</a> <i class='fa fa-angle-right'></i></li><li><a href='#'>Media</a> <i class='fa fa-angle-right'></i></li><li><a href='media-scroll-effects.html'>Scroll Effects</a></li>"
+  })
+
+  <div class="card-panel mt-16 wow zoomIn">
+    WOW.js - Reveal Animations When You Scroll - <a href="http://mynameismatthieu.com/WOW/">http://mynameismatthieu.com/WOW/</a>.
+  </div>
+
+  <div class="row">
+    <div class="col l4 s12">
+      <div class="card small wow fadeInDown">
+        <div class="card-image wow fadeIn" data-wow-delay="300ms">
+          <img src="assets/_con/images/image-8.jpg">
+          <span class="card-title">Card Title</span>
+        </div>
+        <div class="content wow flipInX" data-wow-delay="600ms">
+          I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+        </div>
+        <div class="card-action wow lightSpeedIn" data-wow-delay="800ms">
+          <a href="#!">This is a link</a>
+        </div>
+      </div>
+    </div>
+    <div class="col l4 s12">
+      <div class="card small wow fadeInDown" data-wow-delay="300ms">
+        <div class="card-image wow fadeIn" data-wow-delay="600ms">
+          <img src="assets/_con/images/image-6.jpg">
+          <span class="card-title">Card Title</span>
+        </div>
+        <div class="content wow flipInX" data-wow-delay="900ms">
+          I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+        </div>
+        <div class="card-action wow lightSpeedIn" data-wow-delay="1100ms">
+          <a href="#!">This is a link</a>
+        </div>
+      </div>
+    </div>
+    <div class="col l4 s12">
+      <div class="card small wow fadeInDown" data-wow-delay="600ms">
+        <div class="card-image wow fadeIn" data-wow-delay="900ms">
+          <img src="assets/_con/images/image-7.jpg">
+          <span class="card-title">Card Title</span>
+        </div>
+        <div class="content wow flipInX" data-wow-delay="1200ms">
+          I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+        </div>
+        <div class="card-action wow lightSpeedIn" data-wow-delay="1400ms">
+          <a href="#!">This is a link</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-panel mt-16 wow zoomIn">
+    <h4>Usage</h4>
+    You can see all available effects: <a href="https://daneden.github.io/animate.css/">https://daneden.github.io/animate.css/</a>.
+    <pre class="prettyprint linenums no-margin height-auto">
+&lt;div class="wow fadeIn">&lt;/div>
+&lt;div class="wow slideInLeft" data-wow-duration="2s" data-wow-delay="5s">&lt;/div>
+&lt;div class="wow pulse" data-wow-offset="10" data-wow-iteration="100">&lt;/div></pre>
+  </div>
+
+  <div class="row">
+    <div class="col l4 s12">
+      <div class="card wow fadeInUp" data-wow-delay="600ms">
+        <figure class="hover-effect effect-duke">
+          <img src="assets/_con/images/image-6.jpg" alt="image-6">
+          <figcaption>
+            <h2>Messy <span>Duke</span></h2>
+            <p>Duke is very bored. When he looks at the sky, he feels to run.</p>
+            <a href="#">View more</a>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="col l4 s12">
+      <div class="card wow fadeInUp" data-wow-delay="300ms">
+        <figure class="hover-effect effect-bubba">
+          <img src="assets/_con/images/image-4.jpg" alt="image-4">
+          <figcaption>
+            <h2>Fresh <span>Bubba</span></h2>
+            <p>Bubba likes to appear out of thin air.</p>
+            <a href="#">View more</a>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="col l4 s12">
+      <div class="card wow fadeInUp">
+        <figure class="hover-effect effect-sadie">
+          <img src="assets/_con/images/image-6.jpg" alt="image-6">
+          <figcaption>
+            <h2>Holy <span>Sadie</span></h2>
+            <p>Sadie never took her eyes off me.
+              <br>She had a dark soul.</p>
+            <a href="#">View more</a>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col l4 s12">
+      <div class="card wow fadeIn">
+        <div class="title">
+          <h5 class="wow fadeIn" data-wow-delay="200ms">Title</h5>
+          <a class="close wow fadeIn" data-wow-delay="600ms" href="#">
+            <i class="mdi-content-clear"></i>
+          </a>
+          <a class="minimize wow fadeIn" data-wow-delay="400ms" href="#">
+            <i class="mdi-navigation-expand-less"></i>
+          </a>
+        </div>
+        <div class="content wow fadeIn" data-wow-delay="800ms">Content</div>
+      </div>
+    </div>
+    <div class="col l4 s12">
+      <div class="card wow fadeIn" data-wow-delay="300ms">
+        <div class="title">
+          <h5 class="wow fadeIn" data-wow-delay="500ms">Title</h5>
+          <a class="close wow fadeIn" data-wow-delay="900ms" href="#">
+            <i class="mdi-content-clear"></i>
+          </a>
+          <a class="minimize wow fadeIn" data-wow-delay="700ms" href="#">
+            <i class="mdi-navigation-expand-less"></i>
+          </a>
+        </div>
+        <div class="content wow fadeIn" data-wow-delay="1100ms">Content</div>
+      </div>
+    </div>
+    <div class="col l4 s12">
+      <div class="card wow fadeIn" data-wow-delay="600ms">
+        <div class="title">
+          <h5 class="wow fadeIn" data-wow-delay="800ms">Title</h5>
+          <a class="close wow fadeIn" data-wow-delay="1200ms" href="#">
+            <i class="mdi-content-clear"></i>
+          </a>
+          <a class="minimize wow fadeIn" data-wow-delay="1000ms" href="#">
+            <i class="mdi-navigation-expand-less"></i>
+          </a>
+        </div>
+        <div class="content wow fadeIn" data-wow-delay="1400ms">Content</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col l2 m4 s12">
+      <div class="card-panel align-center wow rotateInDownRight">
+        <i class="fa fa-5x fa-css3 wow rotateIn"></i>
+      </div>
+    </div>
+    <div class="col l2 m4 s12">
+      <div class="card-panel align-center wow rotateInDownRight" data-wow-delay="100ms">
+        <i class="fa fa-5x fa-child wow rotateIn" data-wow-delay="200ms"></i>
+      </div>
+    </div>
+    <div class="col l2 m4 s12">
+      <div class="card-panel align-center wow rotateInDownRight" data-wow-delay="200ms">
+        <i class="fa fa-5x fa-cloud wow rotateIn" data-wow-delay="300ms"></i>
+      </div>
+    </div>
+    <div class="col l2 m4 s12">
+      <div class="card-panel align-center wow rotateInDownRight" data-wow-delay="300ms">
+        <i class="fa fa-5x fa-cogs wow rotateIn" data-wow-delay="400ms"></i>
+      </div>
+    </div>
+    <div class="col l2 m4 s12">
+      <div class="card-panel align-center wow rotateInDownRight" data-wow-delay="400ms">
+        <i class="fa fa-5x fa-comments-o wow rotateIn" data-wow-delay="500ms"></i>
+      </div>
+    </div>
+    <div class="col l2 m4 s12">
+      <div class="card-panel align-center wow rotateInDownRight" data-wow-delay="500ms">
+        <i class="fa fa-5x fa-cubes wow rotateIn" data-wow-delay="600ms"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col l2 m4 s12">
+      <div class="card-panel align-center wow bounceIn" data-wow-duration="2000ms" data-wow-delay="500ms">
+        <i class="fa fa-5x fa-futbol-o wow bounceIn" data-wow-duration="2000ms" data-wow-delay="600ms"></i>
+      </div>
+    </div>
+    <div class="col l2 m4 s12">
+      <div class="card-panel align-center wow bounceIn" data-wow-duration="2000ms" data-wow-delay="400ms">
+        <i class="fa fa-5x fa-graduation-cap wow bounceIn" data-wow-duration="2000ms" data-wow-delay="500ms"></i>
+      </div>
+    </div>
+    <div class="col l2 m4 s12">
+      <div class="card-panel align-center wow bounceIn" data-wow-duration="2000ms" data-wow-delay="300ms">
+        <i class="fa fa-5x fa-language wow bounceIn" data-wow-duration="2000ms" data-wow-delay="400ms"></i>
+      </div>
+    </div>
+    <div class="col l2 m4 s12">
+      <div class="card-panel lighten-2 align-center wow bounceIn" data-wow-duration="2000ms" data-wow-delay="200ms">
+        <i class="fa fa-5x fa-microphone wow bounceIn" data-wow-duration="2000ms" data-wow-delay="300ms"></i>
+      </div>
+    </div>
+    <div class="col l2 m4 s12">
+      <div class="card-panel align-center wow bounceIn" data-wow-duration="2000ms" data-wow-delay="100ms">
+        <i class="fa fa-5x fa-motorcycle wow bounceIn" data-wow-duration="2000ms" data-wow-delay="200ms"></i>
+      </div>
+    </div>
+    <div class="col l2 m4 s12">
+      <div class="card-panel align-center wow bounceIn" data-wow-duration="2000ms">
+        <i class="fa fa-5x fa-pie-chart wow bounceIn" data-wow-duration="2000ms" data-wow-delay="100ms"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col l2 m4 s12">
+      <div class="card-panel align-center wow zoomInUp" data-wow-duration="2000ms">
+        <i class="fa fa-5x fa-recycle wow jello" data-wow-delay="1000ms"></i>
+      </div>
+    </div>
+    <div class="col l2 m4 s12">
+      <div class="card-panel align-center wow zoomInUp" data-wow-duration="2000ms" data-wow-delay="200ms">
+        <i class="fa fa-5x fa-send wow jello" data-wow-delay="1300ms"></i>
+      </div>
+    </div>
+    <div class="col l2 m4 s12">
+      <div class="card-panel align-center wow zoomInUp" data-wow-duration="2000ms" data-wow-delay="400ms">
+        <i class="fa fa-5x fa-sliders wow jello" data-wow-delay="1500ms"></i>
+      </div>
+    </div>
+    <div class="col l2 m4 s12">
+      <div class="card-panel align-center wow zoomInUp" data-wow-duration="2000ms" data-wow-delay="400ms">
+        <i class="fa fa-5x fa-star-o wow jello" data-wow-delay="1500ms"></i>
+      </div>
+    </div>
+    <div class="col l2 m4 s12">
+      <div class="card-panel align-center wow zoomInUp" data-wow-duration="2000ms" data-wow-delay="200ms">
+        <i class="fa fa-5x fa-tachometer wow jello" data-wow-delay="1300ms"></i>
+      </div>
+    </div>
+    <div class="col l2 m4 s12">
+      <div class="card-panel align-center wow zoomInUp" data-wow-duration="2000ms">
+        <i class="fa fa-5x fa-html5 wow jello" data-wow-delay="1000ms"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert alert-border-left wow bounceInLeft">
+    <strong>Oh snap!</strong> Change a few things up and try submitting again.
+  </div>
+  <div class="alert green lighten-4 green-text text-darken-2 alert-border-right wow bounceInLeft">
+    <strong>Well done!</strong> You successfully read this important alert message.
+  </div>
+  <div class="alert blue lighten-4 blue-text text-darken-2 alert-border-top wow bounceInLeft">
+    <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+  </div>
+  <div class="alert orange lighten-4 orange-text text-darken-2 alert-border-bottom wow bounceInLeft">
+    <strong>Warning!</strong> Better check yourself, you're not looking too good.
+  </div>
+
+  <div class="row">
+    <div class="col l2 m4 s12">
+      <div class="card-panel white-text red lighten-2 align-center wow fadeIn">
+        <img width="100" src="assets/_con/images/user4.jpg" alt="Patsy Griffin" class="circle photo wow rotateIn" data-wow-delay="100ms">
+      </div>
+    </div>
+    <div class="col l2 m4 s12">
+      <div class="card-panel white-text pink lighten-2 align-center wow fadeIn" data-wow-delay="100ms">
+        <img width="100" src="assets/_con/images/user.jpg" alt="John Doe" class="circle photo wow rotateIn" data-wow-delay="200ms">
+      </div>
+    </div>
+    <div class="col l2 m4 s12">
+      <div class="card-panel white-text purple lighten-2 align-center wow fadeIn" data-wow-delay="200ms">
+        <img width="100" src="assets/_con/images/user5.jpg" alt="Chloe Morgan" class="circle photo wow rotateIn" data-wow-delay="300ms">
+      </div>
+    </div>
+    <div class="col l2 m4 s12">
+      <div class="card-panel white-text deep-purple lighten-2 align-center wow fadeIn" data-wow-delay="300ms">
+        <img width="100" src="assets/_con/images/user3.jpg" alt="Max Brooks" class="circle photo wow rotateIn" data-wow-delay="400ms">
+      </div>
+    </div>
+    <div class="col l2 m4 s12">
+      <div class="card-panel white-text indigo lighten-2 align-center wow fadeIn" data-wow-delay="400ms">
+        <img width="100" src="assets/_con/images/user6.jpg" alt="Vernon Garrett" class="circle photo wow rotateIn" data-wow-delay="500ms">
+      </div>
+    </div>
+    <div class="col l2 m4 s12">
+      <div class="card-panel white-text blue lighten-2 align-center wow fadeIn" data-wow-delay="500ms">
+        <img width="100" src="assets/_con/images/user2.jpg" alt="Felicia Castro" class="circle photo wow rotateIn" data-wow-delay="600ms">
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col l2 m4 s12">
+      <div class="card-panel white-text light-blue lighten-2 align-center wow fadeIn" data-wow-delay="800ms">
+        <img width="100" src="assets/_con/images/user7.jpg" alt="Greg Mcdonalid" class="circle photo wow rotateIn" data-wow-delay="900ms">
+      </div>
+    </div>
+    <div class="col l2 m4 s12">
+      <div class="card-panel white-text cyan lighten-2 align-center wow fadeIn"  data-wow-delay="700ms">
+        <img width="100" src="assets/_con/images/user8.jpg" alt="Christian Jackson" class="circle photo wow rotateIn" data-wow-delay="800ms">
+      </div>
+    </div>
+    <div class="col l2 m4 s12">
+      <div class="card-panel white-text teal lighten-2 align-center wow fadeIn"  data-wow-delay="600ms">
+        <img width="100" src="assets/_con/images/user9.jpg" alt="Willier Kelly" class="circle photo wow rotateIn" data-wow-delay="700ms">
+      </div>
+    </div>
+    <div class="col l2 m4 s12">
+      <div class="card-panel white-text green lighten-2 align-center wow fadeIn"  data-wow-delay="500ms">
+        <img width="100" src="assets/_con/images/user10.jpg" alt="Jenny Philips" class="circle photo wow rotateIn" data-wow-delay="600ms">
+      </div>
+    </div>
+    <div class="col l2 m4 s12">
+      <div class="card-panel white-text light-green lighten-2 align-center wow fadeIn"  data-wow-delay="400ms">
+        <img width="100" src="assets/_con/images/user11.jpg" alt="Darren Cunningham" class="circle photo wow rotateIn" data-wow-delay="500ms">
+      </div>
+    </div>
+    <div class="col l2 m4 s12">
+      <div class="card-panel white-text lime lighten-2 align-center wow fadeIn" data-wow-delay="300ms">
+        <img width="100" src="assets/_con/images/user12.jpg" alt="Sandra Cole" class="circle photo wow rotateIn" data-wow-delay="400ms">
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col l6 m10 s12 offset-l3 offset-m1">
+      <div class="card-panel align-center wow fadeIn">
+        <img src="assets/_con/images/logo.png" alt="Con Admin" class="photo wow pulse" data-wow-iteration="infinite">
+      </div>
+    </div>
+  </div>
+
+</section>
+<!-- /Main Content -->
+
+@@include('./parts/search-bar.html')
+
+@@include('./parts/chat.html')
+
+@@include('./parts/foot.html', {
+  "copyright": true
+})
+
+</body>
+</html>

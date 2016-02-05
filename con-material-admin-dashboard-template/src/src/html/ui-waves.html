@@ -1,0 +1,183 @@
+@@include('./parts/head.html', {
+  "plugin_fa_icons": true,
+  "plugin_mdi_icons": true,
+  "plugin_ion_icons": true,
+  "plugin_wi_icons": true,
+
+  "plugin_rickshaw": false,
+  "plugin_nvd3": false,
+  "plugin_flot": false,
+  "plugin_sparkline": false,
+
+  "plugin_markitup": false,
+  "plugin_ckeditor": false,
+
+  "plugin_select2": false,
+  "plugin_dropzone": false,
+  "plugin_tagsinput": false,
+  "plugin_clockpicker": false,
+  "plugin_pikaday": false,
+  "plugin_spectrum": false,
+  "plugin_inputmask": false,
+  "plugin_parsley": false,
+
+  "plugin_gmaps": false,
+  "plugin_jvectormap": false,
+
+  "plugin_datatables": false,
+  "plugin_fullcalendar": false,
+  "plugin_simpleweather": false,
+  "plugin_prettify": true,
+  "plugin_animatecss": false,
+  "plugin_wowjs": false,
+  "plugin_photoswipe": false,
+  "plugin_isotope": false,
+  "plugin_videojs": false
+})
+
+<body>
+
+@@include('./parts/top-navbar.html')
+
+@@include('./parts/sidebar.html', {
+  "page": "ui-waves",
+  "classes": "yay-shrink yay-hide-to-small yay-gestures"
+})
+
+<!-- Main Content -->
+<section class="content-wrap">
+     
+  @@include('./parts/title.html', {
+    "title": "Waves",
+    "crumbs": "<li><a href='dashboard.html'>Dashboard</a> <i class='fa fa-angle-right'></i></li><li><a href='#'>UI</a> <i class='fa fa-angle-right'></i></li><li><a href='ui-waves.html'>Waves</a></li>"
+  })
+
+  <div class="card-panel">
+    Waves is an external library that we've included in Materialize to allow us to create the ink effect outlined in Material Design.
+  </div>
+
+  <!-- Basic -->
+  <div class="card-panel">
+    <h4>Basic</h4>
+    <div class="row">
+      <div class="col l6 s12">
+        To put the waves effect on buttons, you just have to put the class <code>waves-effect</code> on to the buttons. If you want the waves effect to be white instead, add both <code>waves-effect waves-light</code> as classes.
+        <p>
+          <a class="waves-effect waves-light btn" href="#!">Wave</a>
+        </p>
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;a class="waves-effect waves-light btn-large" href="#">Wave&lt;/a></pre>
+      </div>
+    </div>
+  </div>
+  <!-- /Basic -->
+
+
+  <!--  Customization  -->
+  <div class="card-panel">
+  <h4>Customization</h4>
+    <p>There are several ways to customize waves, you can either use pre-created classes, or you can define your own color by creating a new class</p>
+    <div class="row">
+      <div class="col s12 l6">
+        <h5 class="light">Available Colors</h5>
+        <p>To use these, just add the corresponding class to your button. Play around with changing the background color of butons and the waves effect to create something cool!</p>
+        <pre class="prettyprint linenums">
+&lt;a href="#!" class="btn waves-effect waves-teal">Press Me ;)&lt;/a></pre>
+        <div class="collection waves-color-demo">
+          <div class="collection-item">Default<a href="#!" class="blue-grey waves-effect btn secondary-content">Press Me ;)</a></div>
+          <div class="collection-item"><code class="language-markup">waves-light</code><a href="#!" class="blue-grey waves-effect waves-light btn secondary-content">Press Me ;)</a></div>
+          <div class="collection-item"><code class="language-markup">waves-red</code><a href="#!" class="blue-grey waves-effect waves-red btn secondary-content">Press Me ;)</a></div>
+          <div class="collection-item"><code class="language-markup">waves-yellow</code><a href="#!" class="blue-grey waves-effect waves-yellow btn secondary-content">Press Me ;)</a></div>
+          <div class="collection-item"><code class="language-markup">waves-orange</code><a href="#!" class="blue-grey waves-effect waves-orange btn secondary-content">Press Me ;)</a></div>
+          <div class="collection-item"><code class="language-markup">waves-purple</code><a href="#!" class="blue-grey waves-effect waves-purple btn secondary-content">Press Me ;)</a></div>
+          <div class="collection-item"><code class="language-markup">waves-green</code><a href="#!" class="blue-grey waves-effect waves-green btn secondary-content">Press Me ;)</a></div>
+          <div class="collection-item"><code class="language-markup">waves-teal</code><a href="#!" class="blue-grey waves-effect waves-teal btn secondary-content">Press Me ;)</a></div>
+          <div class="collection-item"><code class="language-markup">waves-pink</code><a href="#!" class="blue-grey waves-effect waves-pink btn secondary-content">Press Me ;)</a></div>
+          <div class="collection-item"><code class="language-markup">waves-deep-purple</code><a href="#!" class="blue-grey waves-effect waves-deep-purple btn secondary-content">Press Me ;)</a></div>
+          <div class="collection-item"><code class="language-markup">waves-indigo</code><a href="#!" class="blue-grey waves-effect waves-indigo btn secondary-content">Press Me ;)</a></div>
+          <div class="collection-item"><code class="language-markup">waves-blue</code><a href="#!" class="blue-grey waves-effect waves-blue btn secondary-content">Press Me ;)</a></div>
+          <div class="collection-item"><code class="language-markup">waves-light-blue</code><a href="#!" class="blue-grey waves-effect waves-light-blue btn secondary-content">Press Me ;)</a></div>
+          <div class="collection-item"><code class="language-markup">waves-cyan</code><a href="#!" class="blue-grey waves-effect waves-cyan btn secondary-content">Press Me ;)</a></div>
+          <div class="collection-item"><code class="language-markup">waves-teal</code><a href="#!" class="blue-grey waves-effect waves-teal btn secondary-content">Press Me ;)</a></div>
+          <div class="collection-item"><code class="language-markup">waves-light-green</code><a href="#!" class="blue-grey waves-effect waves-light-green btn secondary-content">Press Me ;)</a></div>
+          <div class="collection-item"><code class="language-markup">waves-lime</code><a href="#!" class="blue-grey waves-effect waves-lime btn secondary-content">Press Me ;)</a></div>
+          <div class="collection-item"><code class="language-markup">waves-amber</code><a href="#!" class="blue-grey waves-effect waves-amber btn secondary-content">Press Me ;)</a></div>
+          <div class="collection-item"><code class="language-markup">waves-deep-orange</code><a href="#!" class="blue-grey waves-effect waves-deep-orange btn secondary-content">Press Me ;)</a></div>
+          <div class="collection-item"><code class="language-markup">waves-brown</code><a href="#!" class="blue-grey waves-effect waves-brown btn secondary-content">Press Me ;)</a></div>
+
+        </div>
+      </div>
+
+      <div class="col s12 l6">
+        <h5 class="light">Custom Colors</h5>
+        <p>If the color you want is not already available, you can easily make your own waves color by creating a custom CSS class. Take a look at the example below where we add a waves-brown effect</p>
+
+        <pre class="prettyprint linenums">
+/*
+When creating your CSS selector,
+change "brown" to something of your choosing
+*/
+.waves-effect.waves-brown .waves-ripple {
+  /* The alpha value allows the text and background color
+  of the button to still show through. */
+  background-color: rgba(121, 85, 72, 0.65);
+}</pre>
+      </div>
+    </div>
+  </div>
+  <!--  /Customization  -->
+
+
+
+  <!--  Circle  -->
+  <div class="card-panel">
+    <h4>Circle</h4>
+    If you want waves to form to a non rectangular shape, there is an option for circular waves. Just add the <code class="language-markup">waves-circle</code> in addition to <code class="language-markup">waves-effect</code>
+
+    <div class="row">
+      <div class="col l6 s12">
+        <div class="collection waves-color-demo">
+          <div class="collection-item">
+            Default
+            <a href="#!" class="waves-effect waves-circle btn-floating secondary-content"><i class="mdi-content-add"></i></a>
+          </div>
+          <div class="collection-item">
+            <code class="language-markup">waves-light</code>
+            <a href="#!" class="waves-effect waves-circle waves-light btn-floating secondary-content"><i class="mdi-content-add"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums">
+&lt;a href="#!" class="waves-effect waves-circle waves-light btn-floating secondary-content">
+  &lt;i class="mdi-content-add">&lt;/i>
+&lt;/a></pre>
+      </div>
+    </div>
+
+  </div>
+  <!--  /Circle  -->
+
+</section>
+<!-- /Main Content -->
+
+@@include('./parts/search-bar.html')
+
+@@include('./parts/chat.html')
+
+@@include('./parts/foot.html', {
+  "copyright": true
+})
+
+
+<style type="text/css">
+  .collection .collection-item {
+    height: 57px;
+    line-height: 35px;
+  }
+</style>
+
+</body>
+</html>

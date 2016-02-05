@@ -1,0 +1,135 @@
+@@include('./parts/head.html', {
+  "plugin_fa_icons": true,
+  "plugin_mdi_icons": true,
+  "plugin_ion_icons": true,
+  "plugin_wi_icons": true,
+
+  "plugin_rickshaw": false,
+  "plugin_nvd3": false,
+  "plugin_flot": false,
+  "plugin_sparkline": false,
+
+  "plugin_markitup": false,
+  "plugin_ckeditor": false,
+
+  "plugin_select2": false,
+  "plugin_dropzone": false,
+  "plugin_tagsinput": false,
+  "plugin_clockpicker": false,
+  "plugin_pikaday": false,
+  "plugin_spectrum": false,
+  "plugin_inputmask": false,
+  "plugin_parsley": false,
+
+  "plugin_gmaps": false,
+  "plugin_jvectormap": false,
+
+  "plugin_datatables": false,
+  "plugin_fullcalendar": false,
+  "plugin_simpleweather": false,
+  "plugin_prettify": true,
+  "plugin_animatecss": false,
+  "plugin_wowjs": false,
+  "plugin_photoswipe": false,
+  "plugin_isotope": false,
+  "plugin_videojs": false
+})
+
+<body>
+
+<section id="sign-up">
+
+  <!-- Background Bubbles -->
+  <canvas id="bubble-canvas"></canvas>
+  <!-- /Background Bubbles -->
+
+  <!-- Sign Up Form -->
+  <form action="dashboard.html">
+    <div class="row links">
+      <div class="col s6 logo">
+        <img src="assets/_con/images/logo-white.png" alt="">
+      </div>
+      <div class="col s6 right-align"><a href="page-sign-in.html">Sign In</a> / <strong>Sign Up</strong></div>
+    </div>
+
+    <div class="card-panel clearfix">
+
+      <!-- Social Sign Up -->
+      <div class="row socials">
+        <div class="col s4">
+          <a class="btn blue darken-2 z-depth-0 z-depth-1-hover" href="#"><i class="fa fa-2x fa-facebook"></i></a>
+        </div>
+        <div class="col s4">
+          <a class="btn blue lighten-2 z-depth-0 z-depth-1-hover" href="#"><i class="fa fa-2x fa-twitter"></i></a>
+        </div>
+        <div class="col s4">
+          <a class="btn red z-depth-0 z-depth-1-hover" href="#"><i class="fa fa-2x fa-google-plus"></i></a>
+        </div>
+      </div>
+      <!-- /Social Sign Up -->
+      
+      <div class="row">
+        <!-- First Name -->
+        <div class="col m6 s12">
+          <div class="input-field">
+            <i class="fa fa-user prefix"></i>
+            <input id="input_fname" type="text">
+            <label for="input_fname">First Name</label>
+          </div>
+        </div>
+        <!-- /First Name -->
+
+        <!-- Last Name -->
+        <div class="col m6 s12">
+          <div class="input-field">
+            <i class="fa fa-user prefix"></i>
+            <input id="input_lname" type="text">
+            <label for="input_lname">Last Name</label>
+          </div>
+        </div>
+        <!-- /Last Name -->
+      </div>
+
+      <!-- Email -->
+      <div class="input-field">
+        <i class="fa fa-envelope prefix"></i>
+        <input id="input_email" type="email">
+        <label for="input_email">Email</label>
+      </div>
+      <!-- /Email -->
+
+      <!-- Username -->
+      <div class="input-field">
+        <i class="fa fa-user prefix"></i>
+        <input id="input_username" type="text">
+        <label for="input_username">Username</label>
+      </div>
+      <!-- /Username -->
+
+      <!-- Password -->
+      <div class="input-field">
+        <i class="fa fa-unlock-alt prefix"></i>
+        <input id="input_password" type="password">
+        <label for="input_password">Password</label>
+      </div>
+      <!-- /Password -->
+
+      <p>
+        <input type="checkbox" id="checkbox_terms" />
+        <label for="checkbox_terms">I agree to the <a href="#">terms of use</a>.</label>
+      </p>
+
+      <button class="waves-effect waves-light btn-large z-depth-0 z-depth-1-hover">Sign Up</button>
+    </div>
+
+  </form>
+  <!-- /Sign Up Form -->
+
+</section>
+
+@@include('./parts/foot.html', {
+  "copyright": false
+})
+
+</body>
+</html>

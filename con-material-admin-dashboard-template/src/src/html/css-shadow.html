@@ -1,0 +1,172 @@
+@@include('./parts/head.html', {
+  "plugin_fa_icons": true,
+  "plugin_mdi_icons": true,
+  "plugin_ion_icons": true,
+  "plugin_wi_icons": true,
+
+  "plugin_rickshaw": false,
+  "plugin_nvd3": false,
+  "plugin_flot": false,
+  "plugin_sparkline": false,
+
+  "plugin_markitup": false,
+  "plugin_ckeditor": false,
+
+  "plugin_select2": false,
+  "plugin_dropzone": false,
+  "plugin_tagsinput": false,
+  "plugin_clockpicker": false,
+  "plugin_pikaday": false,
+  "plugin_spectrum": false,
+  "plugin_inputmask": false,
+  "plugin_parsley": false,
+
+  "plugin_gmaps": false,
+  "plugin_jvectormap": false,
+
+  "plugin_datatables": false,
+  "plugin_fullcalendar": false,
+  "plugin_simpleweather": false,
+  "plugin_prettify": true,
+  "plugin_animatecss": false,
+  "plugin_wowjs": false,
+  "plugin_photoswipe": false,
+  "plugin_isotope": false,
+  "plugin_videojs": false
+})
+
+<body>
+
+@@include('./parts/top-navbar.html')
+
+@@include('./parts/sidebar.html', {
+  "page": "css-shadow",
+  "classes": "yay-shrink yay-hide-to-small yay-gestures"
+})
+
+<!-- Main Content -->
+<section class="content-wrap">
+
+  @@include('./parts/title.html', {
+    "title": "Shadow",
+    "crumbs": "<li><a href='dashboard.html'>Dashboard</a> <i class='fa fa-angle-right'></i></li><li><a href='#'>CSS</a> <i class='fa fa-angle-right'></i></li><li><a href='css-shadow.html'>Shadow</a></li>"
+  })
+
+  <div class="card-panel">
+    In material design, everything should have a certain z-depth that determines how far raised or close to the page the element is.
+  </div>
+
+  <div class="card-panel">
+    <h4>Basic</h4>
+    You can easily apply this shadow effect by adding a <code>class="z-depth-2"</code> to an HTML tag.
+
+    <div class="row">
+      <div class="col s12 m4 l2">
+        <p class="z-depth-1 shadow-demo"></p>
+      </div>
+      <div class="col s12 m4 l2">
+        <p class="z-depth-2 shadow-demo"></p>
+      </div>
+      <div class="col s12 m4 l2">
+        <p class="z-depth-3 shadow-demo"></p>
+      </div>
+      <div class="col s12 m4 l2">
+        <p class="z-depth-4 shadow-demo"></p>
+      </div>
+      <div class="col s12 m4 l2">
+        <p class="z-depth-5 shadow-demo"></p>
+      </div>
+      <div class="col s12 m4 l2">
+        <p class="z-depth-6 shadow-demo"></p>
+      </div>
+    </div>
+    <pre class="prettyprint linenums">
+&lt;div class="col s12 m2">
+  &lt;p class="z-depth-1">z-depth-1&lt;/p>
+&lt;/div>
+&lt;div class="col s12 m2">
+  &lt;p class="z-depth-2">z-depth-2&lt;/p>
+&lt;/div>
+&lt;div class="col s12 m2">
+  &lt;p class="z-depth-3">z-depth-3&lt;/p>
+&lt;/div>
+&lt;div class="col s12 m2">
+  &lt;p class="z-depth-4">z-depth-4&lt;/p>
+&lt;/div>
+&lt;div class="col s12 m2">
+  &lt;p class="z-depth-5">z-depth-5&lt;/p>
+&lt;/div>
+&lt;div class="col s12 m2">
+  &lt;p class="z-depth-6">z-depth-6&lt;/p>
+&lt;/div></pre>
+  </div>
+
+
+  <div class="card-panel">
+    <h4>Hover</h4>
+    Also you can use shadow on hover. Just apply this shadow effect by adding a <code>class="z-depth-2-hover"</code> to an HTML tag.
+
+    <div class="row">
+      <div class="col s12 m4 l2">
+        <p class="z-depth-1-hover shadow-demo"></p>
+      </div>
+      <div class="col s12 m4 l2">
+        <p class="z-depth-1 z-depth-2-hover shadow-demo"></p>
+      </div>
+      <div class="col s12 m4 l2">
+        <p class="z-depth-1 z-depth-3-hover shadow-demo"></p>
+      </div>
+      <div class="col s12 m4 l2">
+        <p class="z-depth-1 z-depth-4-hover shadow-demo"></p>
+      </div>
+      <div class="col s12 m4 l2">
+        <p class="z-depth-1 z-depth-5-hover shadow-demo"></p>
+      </div>
+      <div class="col s12 m4 l2">
+        <p class="z-depth-1 z-depth-6-hover shadow-demo"></p>
+      </div>
+    </div>
+    <pre class="prettyprint linenums">
+&lt;div class="col s12 m2">
+  &lt;p class="z-depth-1-hover">z-depth-1-hover&lt;/p>
+&lt;/div>
+&lt;div class="col s12 m2">
+  &lt;p class="z-depth-1 z-depth-2-hover">z-depth-2-hover&lt;/p>
+&lt;/div>
+&lt;div class="col s12 m2">
+  &lt;p class="z-depth-1 z-depth-3-hover">z-depth-3-hover&lt;/p>
+&lt;/div>
+&lt;div class="col s12 m2">
+  &lt;p class="z-depth-1 z-depth-4-hover">z-depth-4-hover&lt;/p>
+&lt;/div>
+&lt;div class="col s12 m2">
+  &lt;p class="z-depth-1 z-depth-5-hover">z-depth-5-hover&lt;/p>
+&lt;/div>
+&lt;div class="col s12 m2">
+  &lt;p class="z-depth-1 z-depth-6-hover">z-depth-6-hover&lt;/p>
+&lt;/div></pre>
+  </div>
+
+
+</section>
+<!-- /Main Content -->
+
+@@include('./parts/search-bar.html')
+
+@@include('./parts/chat.html')
+
+@@include('./parts/foot.html', {
+  "copyright": true
+})
+
+
+<style type="text/css">
+  .shadow-demo {
+    display: block;
+    background: #fff;
+    height: 125px;
+  }
+</style>
+
+</body>
+</html>

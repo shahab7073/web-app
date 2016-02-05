@@ -1,0 +1,335 @@
+@@include('./parts/head.html', {
+  "plugin_fa_icons": true,
+  "plugin_mdi_icons": true,
+  "plugin_ion_icons": true,
+  "plugin_wi_icons": true,
+
+  "plugin_rickshaw": false,
+  "plugin_nvd3": false,
+  "plugin_flot": true,
+  "plugin_sparkline": false,
+
+  "plugin_markitup": false,
+  "plugin_ckeditor": false,
+
+  "plugin_select2": false,
+  "plugin_dropzone": false,
+  "plugin_tagsinput": false,
+  "plugin_clockpicker": false,
+  "plugin_pikaday": false,
+  "plugin_spectrum": false,
+  "plugin_inputmask": false,
+  "plugin_parsley": false,
+
+  "plugin_gmaps": false,
+  "plugin_jvectormap": false,
+
+  "plugin_datatables": false,
+  "plugin_fullcalendar": false,
+  "plugin_simpleweather": false,
+  "plugin_prettify": true,
+  "plugin_animatecss": false,
+  "plugin_wowjs": false,
+  "plugin_photoswipe": false,
+  "plugin_isotope": false,
+  "plugin_videojs": false
+})
+
+<body>
+
+@@include('./parts/top-navbar.html')
+
+@@include('./parts/sidebar.html', {
+  "page": "charts-flot",
+  "classes": "yay-shrink yay-hide-to-small yay-gestures"
+})
+
+<!-- Main Content -->
+<section class="content-wrap">
+
+  @@include('./parts/title.html', {
+    "title": "Flot Charts",
+    "crumbs": "<li><a href='dashboard.html'>Dashboard</a> <i class='fa fa-angle-right'></i></li><li><a href='charts-flot.html'>Flot Charts</a></li>"
+  })
+
+  <div class="card-panel">
+    Con uses <a href="http://www.flotcharts.org/">Flot charts</a>. This is a pure JavaScript plotting library for jQuery, with a focus on simple usage, attractive looks and interactive features..
+  </div>
+  
+  <div class="row">
+    <div class="col l7 s12">
+      <!-- Line Chart -->
+      <div class="card-panel">
+        <h4>Interactive Linechart</h4>
+        <div id="flotLineChart" style="height: 250px"></div>
+      </div>
+      <!-- /Line Chart -->
+    </div>
+    <div class="col l5 s12">
+      <!-- Pie Chart -->
+      <div class="card-panel">
+        <h4>Pie Chart</h4>
+        <div id="flotPieChart" style="height: 250px"></div>
+      </div>
+      <!-- /Pie Chart -->
+    </div>
+  </div>
+
+  <!-- Realtime Chart -->
+  <div class="row">
+    <div class="col s12">
+      <div class="card-panel">
+        <h4>Realtime Chart</h4>
+        <div id="flotRealtimeChart" style="height: 250px"></div>
+      </div>
+    </div>
+  </div>
+  <!-- /Realtime Chart -->
+
+</section>
+<!-- /Main Content -->
+
+@@include('./parts/search-bar.html')
+
+@@include('./parts/chat.html')
+
+@@include('./parts/foot.html', {
+  "copyright": true
+})
+
+<script>
+
+// Line Chart
+(function() {
+  var chart = $("#flotLineChart");
+  var data1 = {
+    data: [[1, 50], [2, 40], [3, 45], [4, 23],[5, 55],[6, 65],[7, 61],[8, 70],[9, 65],[10, 75],[11, 57],[12, 59]],
+    label: "Mails"
+  };
+  var data2 = {
+    data: [[1, 25], [2, 50], [3, 23], [4, 48],[5, 38],[6, 40],[7, 47],[8, 55],[9, 43],[10,50],[11,47],[12, 39]],
+    label: "SMS"
+  };
+  var options = {
+    series: {
+      lines: {
+        show: true,
+        lineWidth: 1,
+        fill: true, 
+        fillColor: { colors: [ { opacity: 0.1 }, { opacity: 0.13 } ] }
+      },
+      points: {
+        show: true, 
+        lineWidth: 2,
+        radius: 3
+      },
+      shadowSize: 0,
+      stack: true
+    },
+    grid: {
+      hoverable: true, 
+      clickable: true, 
+      tickColor: "#f9f9f9",
+      borderWidth: 0
+    },
+    legend: {
+      // show: false
+      backgroundOpacity: 0,
+      labelBoxBorderColor: "#fff"
+    },  
+    colors: ["#3f51b5", "#009688"],
+    xaxis: {
+      ticks: [[1, "Jan"], [2, "Feb"], [3, "Mar"], [4,"Apr"], [5,"May"], [6,"Jun"], 
+                 [7,"Jul"], [8,"Aug"], [9,"Sep"], [10,"Oct"], [11,"Nov"], [12,"Dec"]],
+      font: {
+        family: "Roboto,sans-serif",
+        color: "#ccc"
+      }
+    },
+    yaxis: {
+      ticks:7, 
+      tickDecimals: 0,
+      font: {color: "#ccc"}
+    }
+  };
+  
+  function initFlot() {
+    $.plot(chart, [data1, data2], options);
+    chart.find('.legend table').css('width', 'auto')
+         .find('td').css('padding', 5);
+  }
+  initFlot();
+  $(window).on('resize', initFlot);
+
+  function showTooltip(x, y, contents) {
+    $('<div id="tooltip">' + contents + '</div>').css( {
+      position: 'absolute',
+      display: 'none',
+      top: y - 40,
+      left: x - 55,
+      color: "#fff",
+      padding: '5px 10px',
+      'border-radius': '3px',
+      'background-color': 'rgba(0,0,0,0.6)'
+    }).appendTo("body").fadeIn(200);
+  }
+
+  var previousPoint = null;
+  chart.bind("plothover", function (event, pos, item) {
+    if (item) {
+      if (previousPoint != item.dataIndex) {
+        previousPoint = item.dataIndex;
+
+        $("#tooltip").remove();
+        var x = item.datapoint[0].toFixed(0),
+            y = item.datapoint[1].toFixed(0);
+
+        var month = item.series.xaxis.ticks[item.dataIndex].label;
+
+        showTooltip(item.pageX, item.pageY,
+                    item.series.label + " of " + month + ": " + y);
+      }
+    }
+    else {
+      $("#tooltip").remove();
+      previousPoint = null;
+    }
+  });
+}());
+
+
+// Pie Chart
+(function() {
+  var chart = $("#flotPieChart");
+  var data = [
+      { label: "IE",  data: 19.5, color: "#90a4ae"},
+      { label: "Safari",  data: 4.5, color: "#7986cb"},
+      { label: "Firefox",  data: 36.6, color: "#9575cd"},
+      { label: "Opera",  data: 2.3, color: "#4db6ac"},
+      { label: "Chrome",  data: 36.3, color: "#64b5f6"}
+  ];
+  var options = {
+    series: {
+      pie: {
+        innerRadius: 0.5,
+        show: true
+      }
+    },
+    grid: {
+      hoverable: true
+    },
+    legend: {
+      backgroundOpacity: 0,
+      labelBoxBorderColor: "none"
+    },
+    tooltip: true,
+    tooltipOpts: {
+      content: "%p.0%, %s", // show percentages, rounding to 2 decimal places
+      shifts: {
+        x: 20,
+        y: 0
+      },
+      defaultTheme: false
+    }
+  };
+
+  function initFlot() {
+    $.plot(chart, data, options);
+    chart.find('.legend table').css('width', 'auto')
+         .find('td').css('padding', 5);
+  }
+  initFlot();
+  $(window).on('resize', initFlot);
+
+}());
+
+
+
+// Realtime Chart
+(function () {
+  var chart = $("#flotRealtimeChart");
+  var labelColor = '#ccc';
+  var options = {
+    colors: ['#3f51b5', '#3f51b5'],
+    series: {
+      shadowSize: 0,
+      lines: {
+        show: true,
+        lineWidth: 1,
+        fill: true
+      }
+    },
+    legend: {
+      show: false
+    },
+    xaxis: {
+      show: false,
+      font: {color: labelColor}
+    },
+    yaxis: {
+      min: 0,
+      max: 100,
+      font: {color: labelColor}
+    },
+    grid: {
+      borderWidth: 0,
+      color: labelColor,
+      hoverable: true
+    }
+  };
+
+  // We use an inline data source in the example, usually data would
+  // be fetched from a server
+  var data = [];
+  var totalPoints = 300;
+
+  function getRandomData() {
+    if (data.length > 0) {
+      data = data.slice(1);
+    }
+
+    // Do a random walk
+    while (data.length < totalPoints) {
+      var prev = data.length > 0 ? data[data.length - 1] : 50;
+      var y = prev + Math.random() * 10 - 5;
+
+      if (y < 0) {
+        y = 0;
+      } else if (y > 100) {
+        y = 100;
+      }
+      data.push(y);
+    }
+
+    // Zip the generated y values with the x values
+    var res = [];
+    for (var i = 0; i < data.length; ++i) {
+      res.push([i, data[i]])
+    }
+    return res;
+  }
+
+  // Set up the control widget
+  var updateInterval = 30;
+  var plot = $.plot(chart, [getRandomData()], options);
+
+  $(window).on('resize', function() {
+    plot = $.plot(chart, [getRandomData()], options);
+  });
+
+  function update() {
+    plot.setData([getRandomData()]);
+
+    // Since the axes don't change, we don't need to call plot.setupGrid()
+    plot.draw();
+    setTimeout(update, updateInterval);
+  }
+
+  update();
+  
+}());
+
+</script>
+
+</body>
+</html>

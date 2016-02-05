@@ -1,0 +1,174 @@
+@@include('./parts/head.html', {
+  "plugin_fa_icons": true,
+  "plugin_mdi_icons": true,
+  "plugin_ion_icons": true,
+  "plugin_wi_icons": true,
+
+  "plugin_rickshaw": false,
+  "plugin_nvd3": false,
+  "plugin_flot": false,
+  "plugin_sparkline": false,
+
+  "plugin_markitup": false,
+  "plugin_ckeditor": false,
+
+  "plugin_select2": false,
+  "plugin_dropzone": false,
+  "plugin_tagsinput": false,
+  "plugin_clockpicker": false,
+  "plugin_pikaday": false,
+  "plugin_spectrum": false,
+  "plugin_inputmask": false,
+  "plugin_parsley": false,
+
+  "plugin_gmaps": false,
+  "plugin_jvectormap": false,
+
+  "plugin_datatables": false,
+  "plugin_fullcalendar": false,
+  "plugin_simpleweather": false,
+  "plugin_prettify": true,
+  "plugin_animatecss": false,
+  "plugin_wowjs": false,
+  "plugin_photoswipe": false,
+  "plugin_isotope": false,
+  "plugin_videojs": false
+})
+
+<body>
+
+@@include('./parts/top-navbar.html')
+
+@@include('./parts/sidebar.html', {
+  "page": "layouts",
+  "classes": "yay-shrink yay-hide-to-small yay-gestures"
+})
+
+<!-- Main Content -->
+<section class="content-wrap">
+
+  @@include('./parts/title.html', {
+    "title": "Layouts",
+    "crumbs": "<li><a href='dashboard.html'>Dashboard</a> <i class='fa fa-angle-right'></i></li><li><a href='layouts.html'>Layouts</a></li>"
+  })
+
+  <div class="card-panel">
+    Con has several layouts. You can choose full-width top navbar or full-height sidebar.
+  </div>
+  
+
+  <div class="row">
+    <div class="col l6 s12">
+      <div class="layout-top-fixed card">
+        <div class="layout-side"></div>
+        <div class="layout-top"></div>
+
+        <pre class="prettyprint">
+&lt;body>
+  &lt;nav class="navbar-top">&lt;/nav>
+  &lt;aside class="yaybar">&lt;/aside>
+&lt;/body></pre>
+      </div>
+    </div>
+    <div class="col l6 s12">
+      <div class="layout-left-small card">
+        <div class="layout-side"></div>
+        <div class="layout-top"></div>
+        
+        <pre class="prettyprint">
+&lt;body class="yay-hide">
+  &lt;nav class="navbar-top">&lt;/nav>
+  &lt;aside class="yaybar yay-hide-to-small">&lt;/aside>
+&lt;/body></pre>
+      </div>
+    </div>
+    <div class="col l6 s12">
+      <div class="layout-top-static card">
+        <div class="layout-side"></div>
+        <div class="layout-top"></div>
+
+        <pre class="prettyprint">
+&lt;body>
+  &lt;nav class="navbar-top navbar-static">&lt;/nav>
+  &lt;aside class="yaybar">&lt;/aside>
+&lt;/body></pre>
+      </div>
+    </div>
+    <div class="col l6 s12">
+      <div class="layout-top-static-left-small card">
+        <div class="layout-side"></div>
+        <div class="layout-top"></div>
+
+        <pre class="prettyprint">
+&lt;body class="yay-hide">
+  &lt;nav class="navbar-top navbar-static">&lt;/nav>
+  &lt;aside class="yaybar yay-hide-to-small">&lt;/aside>
+&lt;/body></pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col l6 s12">
+      <div class="layout-top-under card">
+        <div class="layout-side"></div>
+        <div class="layout-top"></div>
+
+        <pre class="prettyprint">
+&lt;body>
+  &lt;nav class="navbar-top navbar-under">&lt;/nav>
+  &lt;aside class="yaybar">&lt;/aside>
+&lt;/body></pre>
+      </div>
+    </div>
+    <div class="col l6 s12">
+      <div class="layout-top-under-left-small card">
+        <div class="layout-side"></div>
+        <div class="layout-top"></div>
+
+        <pre class="prettyprint">
+&lt;body class="yay-hide">
+  &lt;nav class="navbar-top navbar-under">&lt;/nav>
+  &lt;aside class="yaybar yay-hide-to-small">&lt;/aside>
+&lt;/body></pre>
+      </div>
+    </div>
+    <div class="col l6 s12">
+      <div class="layout-top-under-static card">
+        <div class="layout-side"></div>
+        <div class="layout-top"></div>
+
+        <pre class="prettyprint">
+&lt;body>
+  &lt;nav class="navbar-top navbar-under navbar-static">&lt;/nav>
+  &lt;aside class="yaybar">&lt;/aside>
+&lt;/body></pre>
+      </div>
+    </div>
+    <div class="col l6 s12">
+      <div class="layout-top-under-static-left-small card">
+        <div class="layout-side"></div>
+        <div class="layout-top"></div>
+
+        <pre class="prettyprint">
+&lt;body class="yay-hide">
+  &lt;nav class="navbar-top navbar-under navbar-static">&lt;/nav>
+  &lt;aside class="yaybar yay-hide-to-small">&lt;/aside>
+&lt;/body></pre>
+      </div>
+    </div>
+  </div>
+
+</section>
+<!-- /Main Content -->
+
+@@include('./parts/search-bar.html')
+
+@@include('./parts/chat.html')
+
+@@include('./parts/foot.html', {
+  "copyright": true
+})
+
+</body>
+</html>

@@ -1,0 +1,180 @@
+@@include('./parts/head.html', {
+  "plugin_fa_icons": true,
+  "plugin_mdi_icons": true,
+  "plugin_ion_icons": true,
+  "plugin_wi_icons": true,
+
+  "plugin_rickshaw": false,
+  "plugin_nvd3": false,
+  "plugin_flot": false,
+  "plugin_sparkline": false,
+
+  "plugin_markitup": false,
+  "plugin_ckeditor": false,
+
+  "plugin_select2": false,
+  "plugin_dropzone": false,
+  "plugin_tagsinput": false,
+  "plugin_clockpicker": false,
+  "plugin_pikaday": false,
+  "plugin_spectrum": false,
+  "plugin_inputmask": false,
+  "plugin_parsley": false,
+
+  "plugin_gmaps": false,
+  "plugin_jvectormap": false,
+
+  "plugin_datatables": false,
+  "plugin_fullcalendar": false,
+  "plugin_simpleweather": false,
+  "plugin_prettify": true,
+  "plugin_animatecss": false,
+  "plugin_wowjs": false,
+  "plugin_photoswipe": false,
+  "plugin_isotope": false,
+  "plugin_videojs": false
+})
+
+<body>
+
+@@include('./parts/top-navbar.html')
+
+@@include('./parts/sidebar.html', {
+  "page": "css-icons",
+  "classes": "yay-shrink yay-hide-to-small yay-gestures"
+})
+
+<!-- Main Content -->
+<section class="content-wrap">
+
+  @@include('./parts/title.html', {
+    "title": "Icons",
+    "crumbs": "<li><a href='dashboard.html'>Dashboard</a> <i class='fa fa-angle-right'></i></li><li><a href='#'>CSS</a> <i class='fa fa-angle-right'></i></li><li><a href='css-icons.html'>Icons</a></li>"
+  })
+  
+  <div class="card-panel">
+    <div class="input-field">
+      <i class="mdi-action-search prefix"></i>
+      <input id="inputIconSearch" type="text">
+      <label for="inputIconSearch">Icon Search</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12">
+      <ul class="tabs z-depth-1">
+        <li class="tab col s3"><a class="active" href="#icons-mdi">Material Design</a></li>
+        <li class="tab col s3"><a href="#icons-fa">Font Awesome</a></li>
+        <li class="tab col s3"><a href="#icons-ion">Ion Icons</a></li>
+        <li class="tab col s3"><a href="#icons-wi">Weather Icons</a></li>
+      </ul>
+    </div>
+
+    <!-- Material Design Icons -->
+    <div id="icons-mdi" class="col s12">
+      <div class="card-panel">
+        <p class="flow-text">
+          740 icons.<br>
+          Full documentation see in <a href="http://materializecss.com/icons.html">http://materializecss.com/icons.html</a>
+        </p>
+
+        <pre class="prettyprint linenums">
+&lt;i class="mdi-content-add">&lt;/i></pre>
+      </div>
+
+      @@include('./parts/icons-mdi.html')
+    </div>
+    <!-- /Material Design Icons -->
+
+    <!-- FontAwesome Icons -->
+    <div id="icons-fa" class="col s12">
+      <div class="card-panel">
+        <p class="flow-text">
+          519 icons. <br>
+          Full documentation see in <a href="http://fontawesome.io/">http://fontawesome.io/</a>
+        </p>
+
+        <pre class="prettyprint linenums">
+&lt;i class="fa fa-html5">&lt;/i></pre>
+      </div>
+
+      @@include('./parts/icons-fa.html')
+    </div>
+    <!-- /FontAwesome Icons -->
+
+    <!-- Ion Icons -->
+    <div id="icons-ion" class="col s12">
+      <div class="card-panel">
+        <p class="flow-text">
+          733 icons. <br>
+          Full documentation see in <a href="http://ionicons.com/">http://ionicons.com/</a>
+        </p>
+
+        <pre class="prettyprint linenums">
+&lt;i class="ion-fireball">&lt;/i></pre>
+      </div>
+
+      @@include('./parts/icons-ion.html')
+    </div>
+    <!-- /Ion Icons -->
+
+    <!-- Weather Icons -->
+    <div id="icons-wi" class="col s12">
+      <div class="card-panel">
+        <p class="flow-text">
+          189 icons. <br>
+          Full documentation see in <a href="http://erikflowers.github.io/weather-icons/">http://erikflowers.github.io/weather-icons/</a>
+        </p>
+
+        <pre class="prettyprint linenums">
+&lt;i class="wi wi-wind-default">&lt;/i></pre>
+      </div>
+
+      @@include('./parts/icons-wi.html')
+    </div>
+    <!-- /Weather Icons -->
+  </div>
+
+
+</section>
+<!-- /Main Content -->
+
+@@include('./parts/search-bar.html')
+
+@@include('./parts/chat.html')
+
+@@include('./parts/foot.html', {
+  "copyright": true
+})
+
+
+<style type="text/css">
+  .icon-preview {
+    position: relative;
+    text-align: center;
+    -webkit-transition: color 300ms ease-in-out;
+    transition: color 300ms ease-in-out;
+  }
+  .icon-preview:hover {
+    color: #42A5F5;
+  }
+  .icon-preview i {
+    font-size: 3em;
+  }
+  .icon-preview i + span {
+    display: block;
+  }
+  .card-panel + .card-panel {
+    margin-top: 1.3rem;
+  }
+
+  #icons-mdi .flow-text,
+  #icons-fa .flow-text,
+  #icons-ion .flow-text,
+  #icons-wi .flow-text {
+    margin: 0;
+  }
+</style>
+
+</body>
+</html>

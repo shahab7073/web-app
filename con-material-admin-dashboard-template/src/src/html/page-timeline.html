@@ -1,0 +1,243 @@
+@@include('./parts/head.html', {
+  "plugin_fa_icons": true,
+  "plugin_mdi_icons": true,
+  "plugin_ion_icons": true,
+  "plugin_wi_icons": true,
+
+  "plugin_rickshaw": false,
+  "plugin_nvd3": false,
+  "plugin_flot": false,
+  "plugin_sparkline": false,
+
+  "plugin_markitup": false,
+  "plugin_ckeditor": false,
+
+  "plugin_select2": false,
+  "plugin_dropzone": false,
+  "plugin_tagsinput": false,
+  "plugin_clockpicker": false,
+  "plugin_pikaday": false,
+  "plugin_spectrum": false,
+  "plugin_inputmask": false,
+  "plugin_parsley": false,
+
+  "plugin_gmaps": true,
+  "plugin_jvectormap": false,
+
+  "plugin_datatables": false,
+  "plugin_fullcalendar": false,
+  "plugin_simpleweather": false,
+  "plugin_prettify": true,
+  "plugin_animatecss": false,
+  "plugin_wowjs": false,
+  "plugin_photoswipe": false,
+  "plugin_isotope": false,
+  "plugin_videojs": false
+})
+
+<body>
+
+@@include('./parts/top-navbar.html')
+
+@@include('./parts/sidebar.html', {
+  "page": "page-timeline",
+  "classes": "yay-shrink yay-hide-to-small yay-gestures"
+})
+
+<!-- Main Content -->
+<section class="content-wrap">
+
+  @@include('./parts/title.html', {
+    "title": "Timeline",
+    "crumbs": "<li><a href='dashboard.html'>Dashboard</a> <i class='fa fa-angle-right'></i></li><li><a href='#'>Pages</a> <i class='fa fa-angle-right'></i></li><li><a href='page-timeline.html'>Timeline</a></li>"
+  })
+  
+  <!-- Timeline -->
+  <div class="timeline">
+    
+    <!-- Timeline Notification -->
+    <div class="timeline-block">
+      <!-- icon -->
+      <div class="timeline-icon red lighten-2 white-text">
+        <i class="ion ion-chatbubbles"></i>
+      </div>
+      <!-- /icon -->
+
+      <!-- content -->
+      <div class="timeline-content card-panel">
+        <h4>Notification</h4>
+        <p>We invite you to test-drive the new service <a href="#!">Lorem</a>. Confirm the invitation and we will send you notes and hints.</p>
+        <a href="#!" class="btn waves-effect">Confirm</a>
+        <a href="#!" class="btn-flat waves-effect">Cancel</a>
+        <span class="timeline-date">20 minutes ago</span>
+      </div>
+      <!-- content -->
+    </div>
+    <!-- /Timeline Notification -->
+
+    <!-- Timeline New Order -->
+    <div class="timeline-block">
+      <!-- icon -->
+      <div class="timeline-icon blue lighten-2 white-text">
+        <i class="mdi mdi-action-shopping-cart"></i>
+      </div>
+      <!-- /icon -->
+
+      <!-- content -->
+      <div class="timeline-content card-panel">
+        <h4>New Order <small class="right">#0004324</small></h4>
+        
+        <div class="row">
+          <div class="col s12 m5 l4">
+            <img width="100" src="assets/_con/images/user4.jpg" alt="Patsy Griffin" class="circle photo">
+          </div>
+          <div class="col s12 m7 l8">
+            <h4>Patsy Griffin</h4>
+        6008 Cotton Nook, Arminto,
+            <br>Montana, 59114-7319, US,
+            <br><i class="mdi-communication-phone"></i> (406) 500-7506
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col s6">
+            <a href="ecommerce-order-single.html" class="btn waves-effect">See</a>
+          </div>
+          <div class="col s6 right-align">
+            <h4>$2,100.00</h4>
+          </div>
+        </div>
+
+        <span class="timeline-date">4 hours ago</span>
+      </div>
+      <!-- /content -->
+    </div>
+    <!-- /Timeline New Order -->
+
+    <!-- Timeline Message -->
+    <div class="timeline-block">
+      <!-- icon -->
+      <div class="timeline-icon blue lighten-2 white-text">
+        <img src="assets/_con/images/user.jpg" alt="Joht Doe" title="John Doe">
+      </div>
+      <!-- /icon -->
+
+      <!-- content -->
+      <div class="timeline-content card-panel">
+        Received a <a href="main-inbox.html">message</a> from <strong>Max Brooks</strong>
+        <span class="timeline-date">Saturday, March 8, 2015</span>
+      </div>
+      <!-- /content -->
+    </div>
+    <!-- /Timeline Message -->
+
+    <!-- Timeline Video -->
+    <div class="timeline-block">
+      <!-- icon -->
+      <div class="timeline-icon teal lighten-2 white-text">
+        <i class="fa fa-youtube-play"></i>
+      </div>
+      <!-- /icon -->
+
+      <!-- content -->
+      <div class="timeline-content card-panel">
+        <div class="responsive-embed responsive-embed-16x9">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/aJNEbmFeFgg" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <h4>New Electro &amp; House</h4>
+        2015 Party Music Collab Mix
+        <span class="timeline-date">Published on Jan 10, 2015</span>
+      </div>
+      <!-- /content -->
+    </div>
+    <!-- /Timeline Video -->
+
+    <!-- Timeline Map -->
+    <div class="timeline-block">
+      <!-- icon -->
+      <div class="timeline-icon indigo lighten-2 white-text">
+        <i class="mdi mdi-maps-place"></i>
+      </div>
+      <!-- /icon -->
+
+      <!-- content -->
+      <div class="timeline-content card-panel">
+        <h4>My New Location</h4>
+
+        <div class="map" id="map1" style="height: 300px;"></div>
+
+        <span class="timeline-date">Jan 24</span>
+      </div>
+      <!-- /content -->
+    </div>
+    <!-- /Timeline Map -->
+
+    <!-- Timeline Images -->
+    <div class="timeline-block">
+      <!-- icon -->
+      <div class="timeline-icon deep-orange lighten-2 white-text">
+        <i class="fa fa-send"></i>
+      </div>
+      <!-- /icon -->
+
+      <!-- content -->
+      <div class="timeline-content card-panel">
+        <h4>Clickable Images</h4>
+        <div class="row">
+          <div class="col s12 l6">
+            <img class="materialboxed" width="100%" src="assets/_con/images/timeline-img-1.jpg" alt="Timeline Image">
+          </div>
+          <div class="col s12 l6">
+            <img class="materialboxed" width="100%" src="assets/_con/images/timeline-img-2.jpg" alt="Timeline Image">
+          </div>
+        </div>
+        <span class="timeline-date">Dec 26</span>
+      </div>
+      <!-- /content -->
+    </div>
+    <!-- /Timeline Images -->
+
+  </div>
+  <!-- /Timeline -->
+  
+</section>
+<!-- /Main Content -->
+
+@@include('./parts/search-bar.html')
+
+@@include('./parts/chat.html')
+
+@@include('./parts/foot.html', {
+  "copyright": true
+})
+ 
+<script>
+  /*
+   * MAP 1
+   */
+  (function($) {
+    "use strict";
+ 
+    // init map
+    var map = new GMaps({
+      div: '#map1',
+      lat: 40.645244,
+      lng: -73.9449975,
+      zoom: 10,
+      hideInfoWindows: true
+    });
+
+    // add Brooklyn marker
+    map.addMarker({
+      lat: 40.645244,
+      lng: -73.9449975,
+      title: 'Brooklyn',
+      infoWindow: {
+        content: '<b>Brooklyn</b> - my new home :)'
+      }
+    });
+  }(jQuery));
+</script>
+
+</body>
+</html>

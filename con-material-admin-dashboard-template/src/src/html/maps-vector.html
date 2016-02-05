@@ -1,0 +1,258 @@
+@@include('./parts/head.html', {
+  "plugin_fa_icons": true,
+  "plugin_mdi_icons": true,
+  "plugin_ion_icons": true,
+  "plugin_wi_icons": true,
+
+  "plugin_rickshaw": false,
+  "plugin_nvd3": false,
+  "plugin_flot": false,
+  "plugin_sparkline": false,
+
+  "plugin_markitup": false,
+  "plugin_ckeditor": false,
+
+  "plugin_select2": false,
+  "plugin_dropzone": false,
+  "plugin_tagsinput": false,
+  "plugin_clockpicker": false,
+  "plugin_pikaday": false,
+  "plugin_spectrum": false,
+  "plugin_inputmask": false,
+  "plugin_parsley": false,
+
+  "plugin_gmaps": false,
+  "plugin_jvectormap": true,
+
+  "plugin_datatables": false,
+  "plugin_fullcalendar": false,
+  "plugin_simpleweather": false,
+  "plugin_prettify": true,
+  "plugin_animatecss": false,
+  "plugin_wowjs": false,
+  "plugin_photoswipe": false,
+  "plugin_isotope": false,
+  "plugin_videojs": false
+})
+
+<body>
+
+@@include('./parts/top-navbar.html')
+
+@@include('./parts/sidebar.html', {
+  "page": "maps-vector",
+  "classes": "yay-shrink yay-hide-to-small yay-gestures"
+})
+
+<!-- Main Content -->
+<section class="content-wrap">
+
+  @@include('./parts/title.html', {
+    "title": "Vector Maps",
+    "crumbs": "<li><a href='dashboard.html'>Dashboard</a> <i class='fa fa-angle-right'></i></li><li><a href='#'>Maps</a> <i class='fa fa-angle-right'></i></li><li><a href='maps-vector.html'>Vector Maps</a></li>"
+  })
+
+  <div class="card-panel">
+    Con uses <strong>jVectorMap</strong> to show vector maps. See full documentation and examples here - <a href="http://jvectormap.com/">http://jvectormap.com/</a>.
+
+    <br>
+    Begin to use the plugin with this step:
+    <pre class="prettyprint linenums no-margin">
+&lt;link rel="stylesheet" type="text/css" href="assets/jquery-jvectormap/jquery-jvectormap.css" />
+&lt;script type="text/javascript" src="assets/jquery-jvectormap/jquery-jvectormap.min.js">&lt;/script>
+&lt;script type="text/javascript" src="assets/jquery-jvectormap/jquery-jvectormap-world-mill-en.js">&lt;/script>
+&lt;script type="text/javascript" src="assets/jquery-jvectormap/gdp-data.js">&lt;/script></pre>
+  </div>
+  
+  <!-- Basic -->
+  <div class="card-panel">
+    <h4>Basic</h4>
+    <div class="row">
+      <div class="col s12 l6">
+        <!-- map -->
+        <div id="map1" class="map"></div>
+        <!-- /map -->
+      </div>
+      <div class="col s12 l6">
+        <pre class="prettyprint linenums no-margin" style="max-height: 400px;">
+&lt;!-- map -->
+&lt;div id="map1" class="map">&lt;/div>
+&lt;!-- /map -->
+
+&lt;script>
+/*
+ * MAP 1
+ */
+jQuery(function() {
+  $('#map1').vectorMap({
+    map: 'world_mill_en',
+    series: {
+      regions: [{
+        values: gdpData,
+        scale: ['#C8EEFF', '#0071A4'],
+        normalizeFunction: 'polynomial'
+      }]
+    },
+    onRegionTipShow: function(e, el, code){
+      el.html(el.html()+' (GDP - '+gdpData[code]+')');
+    }
+  });
+})
+&lt;/script></pre>
+      </div>
+    </div>
+  </div>
+  <!-- /Basic -->
+  
+  <!-- Markers -->
+  <div class="card-panel">
+    <h4>Markers</h4>
+    <div class="row">
+      <div class="col s12 l6">
+        <!-- map -->
+        <div id="map2" class="map"></div>
+        <!-- /map -->
+      </div>
+      <div class="col s12 l6">
+        <pre class="prettyprint linenums no-margin" style="max-height: 400px;">
+&lt;!-- map -->
+&lt;div id="map2" class="map">&lt;/div>
+&lt;!-- /map -->
+
+&lt;script>
+/*
+ * MAP 2
+ */
+jQuery(function() {
+  $('#map2').vectorMap({
+    map: 'world_mill_en',
+    scaleColors: ['#C8EEFF', '#0071A4'],
+    normalizeFunction: 'polynomial',
+    hoverOpacity: 0.7,
+    hoverColor: false,
+    markerStyle: {
+      initial: {
+        fill: '#F8E23B',
+        stroke: '#383f47'
+      }
+    },
+    backgroundColor: '#383f47',
+    markers: [
+      {latLng: [41.90, 12.45], name: 'Vatican City'},
+      {latLng: [43.73, 7.41], name: 'Monaco'},
+      {latLng: [-0.52, 166.93], name: 'Nauru'},
+      {latLng: [-8.51, 179.21], name: 'Tuvalu'},
+      {latLng: [43.93, 12.46], name: 'San Marino'},
+      {latLng: [47.14, 9.52], name: 'Liechtenstein'},
+      {latLng: [7.11, 171.06], name: 'Marshall Islands'},
+      {latLng: [17.3, -62.73], name: 'Saint Kitts and Nevis'},
+      {latLng: [3.2, 73.22], name: 'Maldives'},
+      {latLng: [35.88, 14.5], name: 'Malta'},
+      {latLng: [12.05, -61.75], name: 'Grenada'},
+      {latLng: [13.16, -61.23], name: 'Saint Vincent and the Grenadines'},
+      {latLng: [13.16, -59.55], name: 'Barbados'},
+      {latLng: [17.11, -61.85], name: 'Antigua and Barbuda'},
+      {latLng: [-4.61, 55.45], name: 'Seychelles'},
+      {latLng: [7.35, 134.46], name: 'Palau'},
+      {latLng: [42.5, 1.51], name: 'Andorra'},
+      {latLng: [14.01, -60.98], name: 'Saint Lucia'},
+      {latLng: [6.91, 158.18], name: 'Federated States of Micronesia'},
+      {latLng: [1.3, 103.8], name: 'Singapore'},
+      {latLng: [1.46, 173.03], name: 'Kiribati'},
+      {latLng: [-21.13, -175.2], name: 'Tonga'},
+      {latLng: [15.3, -61.38], name: 'Dominica'},
+      {latLng: [-20.2, 57.5], name: 'Mauritius'},
+      {latLng: [26.02, 50.55], name: 'Bahrain'},
+      {latLng: [0.33, 6.73], name: 'São Tomé and Príncipe'}
+    ]
+  });
+})
+&lt;/script></pre>
+      </div>
+    </div>
+  </div>
+  <!-- /Markers -->
+
+</section>
+<!-- /Main Content -->
+
+@@include('./parts/search-bar.html')
+
+@@include('./parts/chat.html')
+
+@@include('./parts/foot.html', {
+  "copyright": true
+})
+
+<script>
+/*
+ * MAP 1
+ */
+(function($) {
+  $('#map1').vectorMap({
+    map: 'world_mill_en',
+    series: {
+      regions: [{
+        values: gdpData,
+        scale: ['#C8EEFF', '#0071A4'],
+        normalizeFunction: 'polynomial'
+      }]
+    },
+    onRegionTipShow: function(e, el, code){
+      el.html(el.html()+' (GDP - '+gdpData[code]+')');
+    }
+  });
+}(jQuery));
+
+
+/*
+ * MAP 2
+ */
+(function($) {
+  $('#map2').vectorMap({
+    map: 'world_mill_en',
+    scaleColors: ['#C8EEFF', '#0071A4'],
+    normalizeFunction: 'polynomial',
+    hoverOpacity: 0.7,
+    hoverColor: false,
+    markerStyle: {
+      initial: {
+        fill: '#F8E23B',
+        stroke: '#383f47'
+      }
+    },
+    backgroundColor: '#383f47',
+    markers: [
+      {latLng: [41.90, 12.45], name: 'Vatican City'},
+      {latLng: [43.73, 7.41], name: 'Monaco'},
+      {latLng: [-0.52, 166.93], name: 'Nauru'},
+      {latLng: [-8.51, 179.21], name: 'Tuvalu'},
+      {latLng: [43.93, 12.46], name: 'San Marino'},
+      {latLng: [47.14, 9.52], name: 'Liechtenstein'},
+      {latLng: [7.11, 171.06], name: 'Marshall Islands'},
+      {latLng: [17.3, -62.73], name: 'Saint Kitts and Nevis'},
+      {latLng: [3.2, 73.22], name: 'Maldives'},
+      {latLng: [35.88, 14.5], name: 'Malta'},
+      {latLng: [12.05, -61.75], name: 'Grenada'},
+      {latLng: [13.16, -61.23], name: 'Saint Vincent and the Grenadines'},
+      {latLng: [13.16, -59.55], name: 'Barbados'},
+      {latLng: [17.11, -61.85], name: 'Antigua and Barbuda'},
+      {latLng: [-4.61, 55.45], name: 'Seychelles'},
+      {latLng: [7.35, 134.46], name: 'Palau'},
+      {latLng: [42.5, 1.51], name: 'Andorra'},
+      {latLng: [14.01, -60.98], name: 'Saint Lucia'},
+      {latLng: [6.91, 158.18], name: 'Federated States of Micronesia'},
+      {latLng: [1.3, 103.8], name: 'Singapore'},
+      {latLng: [1.46, 173.03], name: 'Kiribati'},
+      {latLng: [-21.13, -175.2], name: 'Tonga'},
+      {latLng: [15.3, -61.38], name: 'Dominica'},
+      {latLng: [-20.2, 57.5], name: 'Mauritius'},
+      {latLng: [26.02, 50.55], name: 'Bahrain'},
+      {latLng: [0.33, 6.73], name: 'São Tomé and Príncipe'}
+    ]
+  });
+}(jQuery));
+</script>
+
+</body>
+</html>

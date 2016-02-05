@@ -1,0 +1,163 @@
+@@include('./parts/head.html', {
+  "plugin_fa_icons": true,
+  "plugin_mdi_icons": true,
+  "plugin_ion_icons": true,
+  "plugin_wi_icons": true,
+
+  "plugin_rickshaw": false,
+  "plugin_nvd3": false,
+  "plugin_flot": false,
+  "plugin_sparkline": false,
+
+  "plugin_markitup": false,
+  "plugin_ckeditor": false,
+
+  "plugin_select2": false,
+  "plugin_dropzone": false,
+  "plugin_tagsinput": false,
+  "plugin_clockpicker": false,
+  "plugin_pikaday": false,
+  "plugin_spectrum": false,
+  "plugin_inputmask": false,
+  "plugin_parsley": false,
+
+  "plugin_gmaps": false,
+  "plugin_jvectormap": false,
+
+  "plugin_datatables": false,
+  "plugin_fullcalendar": false,
+  "plugin_simpleweather": false,
+  "plugin_prettify": true,
+  "plugin_animatecss": false,
+  "plugin_wowjs": false,
+  "plugin_photoswipe": false,
+  "plugin_isotope": false,
+  "plugin_videojs": false
+})
+
+<body>
+
+@@include('./parts/top-navbar.html')
+
+@@include('./parts/sidebar.html', {
+  "page": "ui-dropdown",
+  "classes": "yay-shrink yay-hide-to-small yay-gestures"
+})
+
+<!-- Main Content -->
+<section class="content-wrap">
+
+  @@include('./parts/title.html', {
+    "title": "Dropdown",
+    "crumbs": "<li><a href='dashboard.html'>Dashboard</a> <i class='fa fa-angle-right'></i></li><li><a href='#'>UI</a> <i class='fa fa-angle-right'></i></li><li><a href='ui-dropdown.html'>Dropdown</a></li>"
+  })
+  
+  <div class="card-panel">
+    Add a dropdown list to any button. Make sure that the <code class="language-markup">data-activates</code> attribute matches the id in the <code class="language-markup">&lt;ul></code> tag.
+  </div>
+
+  <!-- Dropdown -->
+  <div class="card-panel">
+    <h4>Basic</h4>
+    <div class="row">
+      <div class="col l5 s12">
+        <p>You can add a divider with the <code class="language-markup">&lt;li class="divider">&lt;/li></code> tag.</p>
+        <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Press Me!</a>
+        <ul id='dropdown1' class='dropdown-content'>
+          <li><a href="#!">one</a></li>
+          <li><a href="#!">two</a></li>
+          <li class="divider"></li>
+          <li><a href="#!">three</a></li>
+        </ul>
+      </div>
+      <div class="col l7 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;!-- Dropdown Trigger -->
+&lt;a class='dropdown-button btn' href='#' data-activates='dropdown1'>Drop Me!&lt;/a>
+
+&lt;!-- Dropdown Structure -->
+&lt;ul id='dropdown1' class='dropdown-content'>
+  &lt;li>&lt;a href="#!">one&lt;/a>&lt;/li>
+  &lt;li>&lt;a href="#!">two&lt;/a>&lt;/li>
+  &lt;li class="divider">&lt;/li>
+  &lt;li>&lt;a href="#!">three&lt;/a>&lt;/li>
+&lt;/ul></pre>
+      </div>
+    </div>
+  </div>
+  <!-- /Dropdown -->
+
+
+  <!-- Button Group Dropdown -->
+  <div class="card-panel">
+    <h4>Button Group Dropdown</h4>
+    <div class="row">
+      <div class="col l5 s12">
+        <p>You can use button groups for drop-down.</p>
+        <div class="btn-group">
+          <a href="#!" class="waves-effect waves-light btn">Just Button</a>
+          <a href="#!" class="waves-effect waves-light btn dropdown-button" data-activates='dropdown2'><span class="mdi-navigation-expand-more"></span></a>
+        </div>
+        <ul id='dropdown2' class='dropdown-content'>
+          <li><a href="#!">one</a></li>
+          <li><a href="#!">two</a></li>
+          <li class="divider"></li>
+          <li><a href="#!">three</a></li>
+        </ul>
+      </div>
+      <div class="col l7 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;!-- Dropdown Trigger -->
+&lt;div class="div btn-group">
+  &lt;a href="#!" class="waves-effect waves-light btn">Just Button&lt;/a>
+  &lt;a href="#!" class="waves-effect waves-light btn dropdown-button" data-activates='dropdown2'>&lt;span class="mdi-navigation-expand-more">&lt;/span>&lt;/a>
+&lt;/div>
+
+&lt;!-- Dropdown Structure -->
+&lt;ul id='dropdown2' class='dropdown-content'>
+  &lt;li>&lt;a href="#!">one&lt;/a>&lt;/li>
+  &lt;li>&lt;a href="#!">two&lt;/a>&lt;/li>
+  &lt;li class="divider">&lt;/li>
+  &lt;li>&lt;a href="#!">three&lt;/a>&lt;/li>
+&lt;/ul></pre>
+      </div>
+    </div>
+  </div>
+  <!-- Button Group Dropdown -->
+
+  <!-- Options -->
+  <div class="card-panel">
+    <h4>Options</h4>
+    <div class="row">
+      <div class="col l5 s12">
+        <p>The default behavior of dropdown is to activate on click. To have it activate on a hover, you can pass that as an option in HTML as shown below.</p>
+
+        <a class='dropdown-button btn' href='#' data-constrainwidth="false" data-hover="true" data-induration="500" data-activates='dropdown2'>Hover Me!</a>
+        <ul id='dropdown2' class='dropdown-content'>
+          <li><a href="#!">one</a></li>
+          <li><a href="#!">two</a></li>
+          <li class="divider"></li>
+          <li><a href="#!">three</a></li>
+        </ul>
+      </div>
+      <div class="col l7 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;a class='dropdown-button btn' data-constrainwidth="false" data-hover="true" data-induration="500" data-outduration="300" href='#' data-activates='dropdown1'>Drop Me!&lt;/a></pre>
+      </div>
+    </div>
+  </div>
+  <!-- /Options -->
+
+</section>
+<!-- /Main Content -->
+
+@@include('./parts/search-bar.html')
+
+@@include('./parts/chat.html')
+
+@@include('./parts/foot.html', {
+  "copyright": true
+})
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+@@include('./parts/head.html', {
+  "plugin_fa_icons": true,
+  "plugin_mdi_icons": true,
+  "plugin_ion_icons": true,
+  "plugin_wi_icons": true,
+
+  "plugin_rickshaw": false,
+  "plugin_nvd3": false,
+  "plugin_flot": false,
+  "plugin_sparkline": false,
+
+  "plugin_markitup": false,
+  "plugin_ckeditor": false,
+
+  "plugin_select2": false,
+  "plugin_dropzone": false,
+  "plugin_tagsinput": false,
+  "plugin_clockpicker": false,
+  "plugin_pikaday": false,
+  "plugin_spectrum": false,
+  "plugin_inputmask": false,
+  "plugin_parsley": false,
+
+  "plugin_gmaps": false,
+  "plugin_jvectormap": false,
+
+  "plugin_datatables": false,
+  "plugin_fullcalendar": false,
+  "plugin_simpleweather": false,
+  "plugin_prettify": true,
+  "plugin_animatecss": false,
+  "plugin_wowjs": false,
+  "plugin_photoswipe": false,
+  "plugin_isotope": false,
+  "plugin_videojs": false
+})
+
+<body>
+
+@@include('./parts/top-navbar.html')
+
+@@include('./parts/sidebar.html', {
+  "page": "ui-tooltips",
+  "classes": "yay-shrink yay-hide-to-small yay-gestures"
+})
+
+<!-- Main Content -->
+<section class="content-wrap">
+
+  @@include('./parts/title.html', {
+    "title": "Tooltips",
+    "crumbs": "<li><a href='dashboard.html'>Dashboard</a> <i class='fa fa-angle-right'></i></li><li><a href='#'>UI</a> <i class='fa fa-angle-right'></i></li><li><a href='ui-tooltips.html'>Tooltips</a></li>"
+  })
+
+  <div class="card-panel">
+    Tooltips are small, interactive, textual hints for mainly graphical elements. When using icons for actions you can use a tooltip to give people clarification on its function.
+  </div>
+
+  <div class="card-panel">
+    <div class="row">
+      <div class="col s4 offset-s4 l2">
+        <a class="btn tooltipped" data-position="bottom" data-delay="0" data-tooltip="I am tooltip"> Bottom Tooltip</a>
+      </div>
+      <div class="col s4 offset-s4 l2 offset-l1">
+        <a class="btn tooltipped" data-position="top" data-delay="50" data-tooltip="I am tooltip"> Top Tooltip</a>
+      </div>
+      <div class="col s4 offset-s4 l2 offset-l1">
+        <a class="btn tooltipped" data-position="left" data-delay="50" data-tooltip="I am tooltip"> Left Tooltip</a>
+      </div>
+      <div class="col s4 offset-s4 l2 offset-l1">
+        <a class="btn tooltipped" data-position="right" data-delay="50" data-tooltip="I am tooltip"> Right Tooltip</a>
+      </div>
+    </div>
+
+    <div class="row"></div>
+    <p>Add the Tooltipped class to your element and add either top, bottom, left, right on data-tooltip to control the position.</p>
+
+    <pre class="prettyprint linenums">
+&lt;!-- data-position can be : bottom, top, left, or right -->
+&lt;!-- data-delay controls delay before tooltip shows (in milliseconds)-->
+&lt;a class="btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="I am tooltip">Hover me!&lt;/a></pre>
+  </div>
+
+</section>
+<!-- /Main Content -->
+
+@@include('./parts/search-bar.html')
+
+@@include('./parts/chat.html')
+
+@@include('./parts/foot.html', {
+  "copyright": true
+})
+
+</body>
+</html>

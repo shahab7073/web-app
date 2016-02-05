@@ -1,0 +1,357 @@
+@@include('./parts/head.html', {
+  "plugin_fa_icons": true,
+  "plugin_mdi_icons": true,
+  "plugin_ion_icons": true,
+  "plugin_wi_icons": true,
+
+  "plugin_rickshaw": false,
+  "plugin_nvd3": false,
+  "plugin_flot": false,
+  "plugin_sparkline": false,
+
+  "plugin_markitup": false,
+  "plugin_ckeditor": false,
+
+  "plugin_select2": false,
+  "plugin_dropzone": false,
+  "plugin_tagsinput": false,
+  "plugin_clockpicker": false,
+  "plugin_pikaday": false,
+  "plugin_spectrum": false,
+  "plugin_inputmask": false,
+  "plugin_parsley": false,
+
+  "plugin_gmaps": false,
+  "plugin_jvectormap": false,
+
+  "plugin_datatables": false,
+  "plugin_fullcalendar": false,
+  "plugin_simpleweather": false,
+  "plugin_prettify": true,
+  "plugin_animatecss": false,
+  "plugin_wowjs": false,
+  "plugin_photoswipe": false,
+  "plugin_isotope": false,
+  "plugin_videojs": false
+})
+
+<body>
+
+@@include('./parts/top-navbar.html')
+
+@@include('./parts/sidebar.html', {
+  "page": "ui-buttons",
+  "classes": "yay-shrink yay-hide-to-small yay-gestures"
+})
+
+<!-- Main Content -->
+<section class="content-wrap">
+
+  @@include('./parts/title.html', {
+    "title": "Buttons",
+    "crumbs": "<li><a href='dashboard.html'>Dashboard</a> <i class='fa fa-angle-right'></i></li><li><a href='#'>UI</a> <i class='fa fa-angle-right'></i></li><li><a href='ui-buttons.html'>Buttons</a></li>"
+  })
+
+  <div class="card-panel">
+  There are 3 main button types described in material design. The raised button is a standard button that signify actions and seek to give depth to a mostly flat page. The floating circular action button is meant for very important functions. Flat buttons are usually used within elements that already have depth like cards or modals.
+  </div>
+  
+  <!-- Raised -->
+  <div class="card-panel">
+    <h4>Raised</h4>
+    <div class="row">
+      <div class="col l6 s12">
+        <code>.btn</code><br>
+        <a class="waves-effect waves-light btn">button</a>
+        <a class="waves-effect waves-light btn"><i class="mdi-file-cloud left"></i>button</a>
+        <a class="waves-effect waves-light btn"><i class="mdi-file-cloud right"></i>button</a>
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;a class="btn">Stuff&lt;/a>
+&lt;a class="btn">&lt;i class="mdi-file-cloud left">&lt;/i>button&lt;/a>
+&lt;a class="btn">&lt;i class="mdi-file-cloud right">&lt;/i>button&lt;/a></pre>
+      </div>
+    </div>
+  </div>
+  <!-- /Raised -->
+
+  <!-- Floating -->
+  <div class="card-panel">
+    <h4>Floating</h4>
+    <div class="row">
+      <div class="col l6 s12">
+        <a class="btn-floating waves-effect waves-light btn-large red"><i class="mdi-content-add"></i></a>
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;a class="btn-floating btn-large red">&lt;i class="mdi-content-add">&lt;/i>&lt;/a></pre>
+      </div>
+    </div>
+  </div>
+  <!-- /Floating -->
+
+  <!-- Fixed Action Button -->
+  <div class="card-panel">
+    <h4>Fixed Action Button</h4>
+    <div class="row">
+      <div class="col l6 s12">
+        If you want a fixed floating action button, you can add multiple actions that will appear on hover. Our demo is in the bottom righthand corner of the page.
+
+        <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+          <a class="btn-floating btn-large red">
+            <i class="large mdi-editor-mode-edit"></i>
+          </a>
+          <ul>
+            <li><a class="btn-floating red"><i class="large mdi-editor-insert-chart"></i></a></li>
+            <li><a class="btn-floating yellow darken-1"><i class="large mdi-editor-format-quote"></i></a></li>
+            <li><a class="btn-floating green"><i class="large mdi-editor-publish"></i></a></li>
+            <li><a class="btn-floating blue"><i class="large mdi-editor-attach-file"></i></a></li>
+          </ul>
+        </div>
+        
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+  &lt;a class="btn-floating btn-large red">
+    &lt;i class="large mdi-editor-mode-edit">&lt;/i>
+  &lt;/a>
+  &lt;ul>
+    &lt;li>&lt;a class="btn-floating red">&lt;i class="large mdi-editor-insert-chart">&lt;/i>&lt;/a>&lt;/li>
+    &lt;li>&lt;a class="btn-floating yellow darken-1">&lt;i class="large mdi-editor-format-quote">&lt;/i>&lt;/a>&lt;/li>
+    &lt;li>&lt;a class="btn-floating green">&lt;i class="large mdi-editor-publish">&lt;/i>&lt;/a>&lt;/li>
+    &lt;li>&lt;a class="btn-floating blue">&lt;i class="large mdi-editor-attach-file">&lt;/i>&lt;/a>&lt;/li>
+  &lt;/ul>
+&lt;/div></pre>
+      </div>
+    </div>
+  </div>
+  <!-- /Fixed Action Button -->
+
+  <!-- Flat -->
+  <div class="card-panel">
+    <h4>Flat</h4>
+    <div class="row">
+      <div class="col l6 s12">
+        <code>.btn-flat</code><br>
+        <a class="waves-effect waves-blue btn-flat">Button</a>
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;a class="waves-effect waves-blue btn-flat">Button&lt;/a></pre>
+      </div>
+    </div>
+  </div>
+  <!-- /Flat -->
+
+  <!-- Submit -->
+  <div class="card-panel">
+    <h4>Submit Button</h4>
+    <div class="row">
+      <div class="col l6 s12">
+        <p>When you use a button to submit a form, instead of using a input tag, use a button tag with a type submit</p>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit<i class="mdi-content-send right"></i></button>
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;button class="btn" type="submit" name="action">
+  Submit &lt;i class="mdi-content-send right">&lt;/i>
+&lt;/button></pre>
+      </div>
+    </div>
+  </div>
+  <!-- /Submit -->
+
+  <!-- Different sizes -->
+  <div class="card-panel">
+
+    <h4>Different sizes</h4>
+    <div class="row">
+      <div class="col l6 s12">
+        <code>.btn-extra</code><br>
+        <a class="waves-effect waves-light btn btn-extra">Button</a>
+        <a class="waves-effect waves-light btn btn-extra"><i class="mdi-file-cloud left"></i>button</a>
+        <a class="waves-effect waves-light btn btn-extra"><i class="mdi-file-cloud right"></i>button</a>
+        <br>
+        <code>.btn-large</code><br>
+        <a class="waves-effect waves-light btn btn-large">Button</a>
+        <a class="waves-effect waves-light btn btn-large"><i class="mdi-file-cloud left"></i>button</a>
+        <a class="waves-effect waves-light btn btn-large"><i class="mdi-file-cloud right"></i>button</a>
+        <br>
+        <code>.btn</code><br>
+        <a class="waves-effect waves-light btn">Button</a>
+        <a class="waves-effect waves-light btn"><i class="mdi-file-cloud left"></i>button</a>
+        <a class="waves-effect waves-light btn"><i class="mdi-file-cloud right"></i>button</a>
+        <br>
+        <code>.btn-small</code><br>
+        <a class="waves-effect waves-light btn btn-small">Button</a>
+        <a class="waves-effect waves-light btn btn-small"><i class="mdi-file-cloud left"></i>button</a>
+        <a class="waves-effect waves-light btn btn-small"><i class="mdi-file-cloud right"></i>button</a>
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;a class="btn btn-extra">Extra&lt;/a>
+&lt;a class="btn btn-large">Large&lt;/a>
+&lt;a class="btn">Medium&lt;/a>
+&lt;a class="btn btn-small">Small&lt;/a></pre>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col l6 s12">
+        <code>.btn-extra</code><br>
+        <a class="btn-floating waves-effect waves-light btn-extra red"><i class="mdi-content-add"></i></a>
+        <br><code>.btn-large</code><br>
+        <a class="btn-floating waves-effect waves-light btn-large red"><i class="mdi-content-add"></i></a>
+        <br><code>.btn-floating</code><br>
+        <a class="btn-floating waves-effect waves-light red"><i class="mdi-content-add"></i></a>
+        <br><code>.btn-small</code><br>
+        <a class="btn-floating waves-effect waves-light btn-small red"><i class="mdi-content-add"></i></a>
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;a class="btn-floating btn-extra red">&lt;i class="mdi-content-add">&lt;/i>&lt;/a>
+&lt;a class="btn-floating btn-large red">&lt;i class="mdi-content-add">&lt;/i>&lt;/a>
+&lt;a class="btn-floating red">&lt;i class="mdi-content-add">&lt;/i>&lt;/a>
+&lt;a class="btn-floating btn-small red">&lt;i class="mdi-content-add">&lt;/i>&lt;/a></pre>
+      </div>
+    </div>
+
+  </div>
+  <!-- /Different sizes -->
+
+  <!-- Rounded -->
+  <div class="card-panel">
+    <h4>Rounded</h4>
+    <div class="row">
+      <div class="col l6 s12">
+        <p>All buttons except floating can be rounded. Use <code>.btn-rounded</code> classname</p>
+        <a class="waves-effect waves-light btn btn-extra btn-rounded">Extra</a>
+        <a class="waves-effect waves-light btn btn-large btn-rounded">Large</a>
+        <a class="waves-effect waves-light btn btn-rounded">Medium</a>
+        <a class="waves-effect waves-light btn btn-small btn-rounded">Small</a>
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;a class="btn btn-extra btn-rounded">Extra&lt;/a>
+&lt;a class="btn btn-large btn-rounded">Large&lt;/a>
+&lt;a class="btn btn-rounded">Medium&lt;/a>
+&lt;a class="btn btn-small btn-rounded">Small&lt;/a></pre>
+      </div>
+    </div>
+  </div>
+  <!-- /Rounded -->
+
+  <!-- Groups -->
+  <div class="card-panel">
+    <h4>Groups</h4>
+    <div class="row">
+      <div class="col l6 s12">
+        <p>Multiple .btn's can be wrapped in <code>.btn-group</code></p>
+        
+        <div class="btn-group">
+          <a class="waves-effect waves-light btn btn-extra">Extra</a>
+          <a class="waves-effect waves-light btn btn-extra">Extra</a>
+          <a class="waves-effect waves-light btn btn-extra">Extra</a>
+          <a class="waves-effect waves-light btn btn-extra">Extra</a>
+        </div>
+        <br><br>
+
+        <div class="btn-group">
+          <a class="waves-effect waves-light btn btn-small btn-rounded">Small</a>
+          <a class="waves-effect waves-light btn btn-small">Small</a>
+          <a class="waves-effect waves-light btn btn-small">Small</a>
+          <a class="waves-effect waves-light btn btn-small">Small</a>
+          <a class="waves-effect waves-light btn btn-small btn-rounded">Small</a>
+        </div>
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;div class="btn-group">
+  &lt;a class="btn btn-extra">Extra&lt;/a>
+  &lt;a class="btn btn-extra">Extra&lt;/a>
+  &lt;a class="btn btn-extra">Extra&lt;/a>
+&lt;/div>
+
+&lt;div class="btn-group">
+  &lt;a class="btn btn-small btn-rounded">Small&lt;/a>
+  &lt;a class="btn btn-small">Small&lt;/a>
+  &lt;a class="btn btn-small btn-rounded">Small&lt;/a>
+&lt;/div></pre>
+      </div>
+    </div>
+  </div>
+  <!-- /Groups -->
+
+
+  <!-- Disabled -->
+  <div class="card-panel">
+    <h4>Disabled</h4>
+    <div class="row">
+      <div class="col l6 s12">
+        <p>This style can be applied to all button types</p>
+
+        <div class="btn-group">
+          <a class="btn btn-extra disabled">Extra</a>
+          <a class="btn btn-extra disabled">Extra</a>
+        </div>
+        <a class="btn btn-extra btn-rounded disabled">Button</a>
+        <a class="btn disabled">Button</a>
+        <a class="btn-flat disabled">Button</a>
+        <a class="btn-floating disabled"><i class="mdi-content-add"></i></a>
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;div class="btn-group">
+  &lt;a class="btn btn-extra disabled">Extra&lt;/a>
+  &lt;a class="btn btn-extra disabled">Extra&lt;/a>
+&lt;/div>
+&lt;a class="btn-extra btn-rounded disabled">Button&lt;/a>
+&lt;a class="btn disabled">Button&lt;/a>
+&lt;a class="btn-flat disabled">Button&lt;/a>
+&lt;a class="btn-floating disabled">&lt;i class="mdi-content-add">&lt;/i>&lt;/a></pre>
+      </div>
+    </div>
+  </div>
+  <!-- /Disabled -->
+
+  <!-- Color Variations -->
+  <div class="card-panel">
+    <h4>Color Variations</h4>
+    <p>Full color list you can find in <a href="css-colors.html">this section</a>.</p>
+    <a class="waves-effect waves-dark btn red">red</a>
+    <a class="waves-effect waves-dark btn pink">pink</a>
+    <a class="waves-effect waves-dark btn purple">purple</a>
+    <a class="waves-effect waves-dark btn deep-purple">deep-purple</a>
+    <a class="waves-effect waves-dark btn indigo">indigo</a>
+    <a class="waves-effect waves-dark btn blue">blue</a>
+    <a class="waves-effect waves-dark btn light-blue">light-blue</a>
+    <a class="waves-effect waves-dark btn cyan">cyan</a>
+    <a class="waves-effect waves-dark btn teal">teal</a>
+    <a class="waves-effect waves-dark btn green">green</a>
+    <a class="waves-effect waves-dark btn light-green black-text">light-green</a>
+    <a class="waves-effect waves-dark btn lime black-text">lime</a>
+    <a class="waves-effect waves-dark btn yellow black-text">yellow</a>
+    <a class="waves-effect waves-dark btn amber black-text">amber</a>
+    <a class="waves-effect waves-dark btn orange">orange</a>
+    <a class="waves-effect waves-dark btn deep-orange">deep-orange</a>
+    <a class="waves-effect waves-dark btn brown">brown</a>
+    <a class="waves-effect waves-dark btn grey">grey</a>
+    <a class="waves-effect waves-dark btn blue-grey">blue-grey</a>
+  </div>
+  <!-- /Color Variations -->
+
+</section>
+<!-- /Main Content -->
+
+@@include('./parts/search-bar.html')
+
+@@include('./parts/chat.html')
+
+@@include('./parts/foot.html', {
+  "copyright": true
+})
+
+</body>
+</html>

@@ -1,0 +1,236 @@
+@@include('./parts/head.html', {
+  "plugin_fa_icons": true,
+  "plugin_mdi_icons": true,
+  "plugin_ion_icons": true,
+  "plugin_wi_icons": true,
+
+  "plugin_rickshaw": false,
+  "plugin_nvd3": false,
+  "plugin_flot": false,
+  "plugin_sparkline": false,
+
+  "plugin_markitup": false,
+  "plugin_ckeditor": false,
+
+  "plugin_select2": false,
+  "plugin_dropzone": false,
+  "plugin_tagsinput": false,
+  "plugin_clockpicker": false,
+  "plugin_pikaday": false,
+  "plugin_spectrum": false,
+  "plugin_inputmask": false,
+  "plugin_parsley": false,
+
+  "plugin_gmaps": false,
+  "plugin_jvectormap": false,
+
+  "plugin_datatables": false,
+  "plugin_fullcalendar": false,
+  "plugin_simpleweather": false,
+  "plugin_prettify": true,
+  "plugin_animatecss": false,
+  "plugin_wowjs": false,
+  "plugin_photoswipe": false,
+  "plugin_isotope": false,
+  "plugin_videojs": false
+})
+
+<body>
+
+@@include('./parts/top-navbar.html')
+
+@@include('./parts/sidebar.html', {
+  "page": "ui-modals",
+  "classes": "yay-shrink yay-hide-to-small yay-gestures"
+})
+
+<!-- Main Content -->
+<section class="content-wrap">
+
+  @@include('./parts/title.html', {
+    "title": "Modals",
+    "crumbs": "<li><a href='dashboard.html'>Dashboard</a> <i class='fa fa-angle-right'></i></li><li><a href='#'>UI</a> <i class='fa fa-angle-right'></i></li><li><a href='ui-modals.html'>Modals</a></li>"
+  })
+
+  <p>Use a modal for dialog boxes, confirmation messages, or other content that can be called up. In order for the modal to work you have to add the Modal ID to the link of the trigger. To add a close button, just add the class <code class="language-css">.modal-close</code> to your button.</p>
+
+  <!-- Modal -->
+  <div class="card-panel">
+    <h4>Basic</h4>
+    <div class="row">
+      <div class="col l6 s12">
+        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+        
+        <div id="modal1" class="modal">
+          <div class="modal-content">
+            <h4>Modal Header</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat ">Disagree</a>
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+          </div>
+        </div>
+
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;!-- Modal Trigger -->
+&lt;a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal&lt;/a>
+
+&lt;!-- Modal Structure -->
+&lt;div id="modal1" class="modal">
+  &lt;div class="modal-content">
+    &lt;h4>Modal Header&lt;/h4>
+    &lt;p>Text&lt;/p>
+  &lt;/div>
+  &lt;div class="modal-footer">
+    &lt;a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat ">Disagree&lt;/a>
+    &lt;a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree&lt;/a>
+  &lt;/div>
+&lt;/div></pre>
+      </div>
+    </div>
+
+  </div>
+  <!-- /Modal -->
+
+  <!-- With Fixed Footer -->
+  <div class="card-panel">
+    <h4>With Fixed Footer</h4>
+    <div class="row">
+      <div class="col l6 s12">
+        <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Modal</a>
+        
+        <div id="modal2" class="modal modal-fixed-footer">
+          <div class="modal-content flow-text">
+            <h4>Modal Header</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat ">Disagree</a>
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+          </div>
+        </div>
+
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;!-- Modal Trigger -->
+&lt;a class="waves-effect waves-light btn modal-trigger" href="#modal2">Modal&lt;/a>
+
+&lt;!-- Modal Structure -->
+&lt;div id="modal2" class="modal modal-fixed-footer">
+  &lt;div class="modal-content flow-text">
+    &lt;h4>Modal Header&lt;/h4>
+    &lt;p>Text&lt;/p>
+  &lt;/div>
+  &lt;div class="modal-footer">
+    &lt;a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat ">Disagree&lt;/a>
+    &lt;a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree&lt;/a>
+  &lt;/div>
+&lt;/div></pre>
+      </div>
+    </div>
+
+  </div>
+  <!-- /With Fixed Footer -->
+
+  <!-- Bottom Sheet -->
+  <div class="card-panel">
+    <h4>Bottom Sheet</h4>
+    <div class="row">
+      <div class="col l6 s12">
+        <a class="waves-effect waves-light btn modal-trigger" href="#modal3" data-dismissible="true">Modal</a>
+        
+        <div id="modal3" class="modal bottom-sheet">
+          <div class="modal-content">
+            <h4>Modal Header</h4>
+            <ul class="collection">
+              <li class="collection-item avatar">
+                <img src="assets/_con/images/user12.jpg" alt="" class="circle">
+                <span class="title">Title</span>
+                <p>First Line <br>
+                   Second Line
+                </p>
+                <a href="#!" class="secondary-content"><i class="mdi-action-grade"></i></a>
+              </li>
+              <li class="collection-item avatar">
+                <i class="mdi-file-folder circle"></i>
+                <span class="title">Title</span>
+                <p>First Line <br>
+                   Second Line
+                </p>
+                <a href="#!" class="secondary-content"><i class="mdi-action-grade"></i></a>
+              </li>
+              <li class="collection-item avatar">
+                <i class="mdi-action-assessment circle green"></i>
+                <span class="title">Title</span>
+                <p>First Line <br>
+                   Second Line
+                </p>
+                <a href="#!" class="secondary-content"><i class="mdi-action-grade"></i></a>
+              </li>
+              <li class="collection-item avatar">
+                <i class="mdi-av-play-arrow circle red"></i>
+                <span class="title">Title</span>
+                <p>First Line <br>
+                   Second Line
+                </p>
+                <a href="#!" class="secondary-content"><i class="mdi-action-grade"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;!-- Modal Trigger -->
+&lt;a class="waves-effect waves-light btn modal-trigger" href="#modal3" data-dismissible="true">Modal&lt;/a>
+
+&lt;!-- Modal Structure -->
+&lt;div id="modal3" class="modal bottom-sheet">
+  &lt;div class="modal-content">
+    &lt;h4>Modal Header&lt;/h4>
+    &lt;p>Text&lt;/p>
+  &lt;/div>
+&lt;/div></pre>
+      </div>
+    </div>
+
+  </div>
+  <!-- /Bottom Sheet -->
+
+  <!-- Options -->
+  <div class="card-panel">
+    <h4>Options</h4>
+    <div class="row">
+      <div class="col l6 s12">
+        <p>You can customize the behavior of each modal using these options. For example, you can change background opacity or/and show effect speed. To do this, just place in your trigger tag some options.</p>
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums">
+&lt;!-- Modal Trigger -->
+&lt;a class="btn modal-trigger" href="#modal1" data-dismissible="true" data-opacity="0.6" data-induration="400" data-outduration="300">Modal&lt;/a></pre>
+      </div>
+    </div>
+  </div>
+  <!-- /Options -->
+
+</section>
+<!-- /Main Content -->
+
+@@include('./parts/search-bar.html')
+
+@@include('./parts/chat.html')
+
+@@include('./parts/foot.html', {
+  "copyright": true
+})
+
+</body>
+</html>

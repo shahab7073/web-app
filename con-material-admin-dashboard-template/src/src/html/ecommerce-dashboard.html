@@ -1,0 +1,485 @@
+@@include('./parts/head.html', {
+  "plugin_fa_icons": true,
+  "plugin_mdi_icons": true,
+  "plugin_ion_icons": true,
+  "plugin_wi_icons": true,
+
+  "plugin_rickshaw": false,
+  "plugin_nvd3": false,
+  "plugin_flot": true,
+  "plugin_sparkline": false,
+
+  "plugin_markitup": false,
+  "plugin_ckeditor": false,
+
+  "plugin_select2": false,
+  "plugin_dropzone": false,
+  "plugin_tagsinput": false,
+  "plugin_clockpicker": false,
+  "plugin_pikaday": false,
+  "plugin_spectrum": false,
+  "plugin_inputmask": false,
+  "plugin_parsley": false,
+
+  "plugin_gmaps": false,
+  "plugin_jvectormap": false,
+
+  "plugin_datatables": false,
+  "plugin_fullcalendar": false,
+  "plugin_simpleweather": false,
+  "plugin_prettify": true,
+  "plugin_animatecss": false,
+  "plugin_wowjs": false,
+  "plugin_photoswipe": false,
+  "plugin_isotope": false,
+  "plugin_videojs": false
+})
+
+<body>
+
+@@include('./parts/top-navbar.html')
+
+@@include('./parts/sidebar.html', {
+  "page": "ecommerce-dashboard",
+  "classes": "yay-shrink yay-hide-to-small yay-gestures"
+})
+
+<!-- Main Content -->
+<section class="content-wrap ecommerce-dashboard">
+
+  @@include('./parts/ecommerce-title.html', {
+    "page": "ecommerce-dashboard"
+  })
+
+
+  <!-- Stats Panels -->
+  <div class="row sortable">
+    <div class="col l3 m6 s12">
+      <div class="card-panel stats-card purple lighten-2 white-text">
+        <i class="fa fa-line-chart"></i>
+        <span class="count">38</span>
+        <div class="name">Sales Today</div>
+      </div>
+    </div>
+    <div class="col l3 m6 s12">
+      <div class="card-panel stats-card indigo lighten-2 white-text">
+        <i class="fa fa-money"></i>
+        <span class="count">$13,547</span>
+        <div class="name">Earnings Today</div>
+      </div>
+    </div>
+    <div class="col l3 m6 s12">
+      <div class="card-panel stats-card teal lighten-2 white-text">
+        <i class="fa fa-trophy"></i>
+        <span class="count">25,345</span>
+        <div class="name">Total Sales</div>
+      </div>
+    </div>
+    <div class="col l3 m6 s12">
+      <div class="card-panel stats-card red lighten-2 white-text">
+        <i class="fa fa-bar-chart"></i>
+        <span class="count">$1,346,342</span>
+        <div class="name">Total Earnings</div>
+      </div>
+    </div>
+  </div>
+  <!-- /Stats Panels -->
+  
+
+  <!-- Revenue -->
+  <div class="row">
+    <div class="col s12">
+      <div class="card-panel">
+        <div class="col s12 l9">
+          <h5>Year Revenue</h5>
+          <div id="revenueLineChart" style="height: 250px"></div>
+        </div>
+        <div class="col s12 l3">
+          <h5>Today Revenue</h5>
+          <div id="revenueBarChart" style="height: 250px"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Revenue -->
+
+
+  <div class="row">
+    <div class="col s12 l9">
+      <div class="card">
+
+        <!-- Popular -->
+        <div class="title">
+          <h5>Popular</h5>
+        </div>
+        <div class="content">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Product Title</th>
+                <th>Stock</th>
+                <th class="right-align">Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th><img src="assets/_con/images/ecommerce-apple-iphone-30x30.jpg" alt="Apple iPhone 6"></th>
+                <td>
+                  <strong>Apple iPhone 6</strong>
+                  <div class="grey-text">2x1400 MHz, 64 Gb, 1024 Mb, 4.7", IPS, 1334x750, Cam 8 MP, 3G, 4G, BT, Wi-Fi, GPS, 1810 mAh</div>
+                </td>
+                <td>765</td>
+                <td class="right-align">$699.00</td>
+              </tr>
+              <tr>
+                <th><img src="assets/_con/images/ecommerce-apple-macbook-30x30.jpg" alt="Apple Macbook Air Mid 14"></th>
+                <td>
+                  <strong>Apple Macbook Air Mid 14</strong>
+                  <div class="grey-text">WXGA+, 1440x900, TN+film, Intel Core i5 4260U, 2x1400 MHz, RAM 4 Gb, SSD 512 Gb, Intel HD 5000, Wi-Fi, BT, Mac OS X</div>
+                </td>
+                <td>400</td>
+                <td class="right-align">$1,299.00</td>
+              </tr>
+              <tr>
+                <th><img src="assets/_con/images/ecommerce-apple-watch-30x30.jpg" alt="Apple Watch"></th>
+                <td>
+                  <strong>Apple Watch</strong>
+                  <div class="grey-text">No Description</div>
+                </td>
+                <td>1184</td>
+                <td class="right-align">$449.00</td>
+              </tr>
+              <tr>
+                <th><img src="assets/_con/images/ecommerce-apple-imac-30x30.jpg" alt="Apple iMac"></th>
+                <td>
+                  <strong>Apple iMac 27"</strong>
+                  <div class="grey-text">Intel Core i5 4670, 4x3400 MHz, IPS/2560х1440, 8 Gb, 1 Tb, NVIDIA GeForce GT 775M, Wi-Fi, Ethernet, Mac OS X</div>
+                </td>
+                <td>217</td>
+                <td class="right-align">$1,799.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- /Popular -->
+
+      </div>
+    </div>
+    <div class="col s12 l3">
+      <div class="card">
+        <!-- Top Geographic -->
+        <div class="title">
+          <h5>Top Geographic</h5>
+        </div>
+        <div class="content">
+          <table class="table table-hover">
+            <tbody>
+              <tr>
+                <td><img src="assets/flagIcons/in.png" alt="India">&ensp; India</td>
+                <td class="right-align">
+                  <strong>1,795</strong> <small>(11.57%)</small>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="assets/flagIcons/us.png" alt="Unated States">&ensp; Unated States</td>
+                <td class="right-align">
+                  <strong>1,773</strong> <small>(11.43%)</small>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="assets/flagIcons/br.png" alt="Brazil">&ensp; Brazil</td>
+                <td class="right-align">
+                  <strong>883</strong> <small>(5.69%)</small>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="assets/flagIcons/tr.png" alt="Turkey">&ensp; Turkey</td>
+                <td class="right-align">
+                  <strong>871</strong> <small>(5.61%)</small>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="assets/flagIcons/ru.png" alt="Russia">&ensp; Russia</td>
+                <td class="right-align">
+                  <strong>829</strong> <small>(5.34%)</small>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="assets/flagIcons/de.png" alt="Germany">&ensp; Germany</td>
+                <td class="right-align">
+                  <strong>485</strong> <small>(3.13%)</small>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="assets/flagIcons/fr.png" alt="France">&ensp; France</td>
+                <td class="right-align">
+                  <strong>473</strong> <small>(3.05%)</small>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="assets/flagIcons/it.png" alt="Italy">&ensp; Italy</td>
+                <td class="right-align">
+                  <strong>356</strong> <small>(2.29%)</small>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- /Top Geographic -->
+      </div>
+    </div>
+  </div>
+
+</section>
+<!-- /Main Content -->
+
+@@include('./parts/search-bar.html')
+
+@@include('./parts/chat.html')
+
+@@include('./parts/foot.html', {
+  "copyright": true
+})
+
+
+<script>
+
+/*
+ * Revenue Line Chart
+ */
+(function() {
+  var chart = $("#revenueLineChart");
+  var dataPhones = {
+    data: [[1,1396.49],[2,1223.26],[3,1185.82],[4,1203.58],[5,1028.26],[6,1260.74],[7,1169.33],[8,1068.55],[9,1267.51],[10,1331.9],[11,1065.97],[12,1162.62]],
+    idx: 0,
+    label: "Phones"
+  };
+  var dataTablets = {
+    data: [[1,1042.49],[2,1096.24],[3,868.09],[4,848.95],[5,1153.2],[6,822.75],[7,857.52],[8,755.9],[9,993.13],[10,1193.1],[11,790.67],[12,937.19]],
+    idx: 1,
+    label: "Tablets"
+  };
+  var dataWatches = {
+    data: [[1,631.99],[2,585.23],[3,731.48],[4,450.13],[5,592.13],[6,743.91],[7,616.52],[8,570.09],[9,722.23],[10,525.69],[11,563.85],[12,519.79]],
+    idx: 2,
+    label: "Watches"
+  };
+  var dataTVs = {
+    data: [[1,1131.78],[2,1305.13],[3,1392.68],[4,1055.79],[5,1432.01],[6,1098.6],[7,1280.68],[8,1010.23],[9,1267.37],[10,1447.23],[11,1447.43],[12,1073.42]],
+    idx: 3,
+    label: "TVs"
+  };
+  var options = {
+    series: {
+      lines: {
+        show: true,
+        lineWidth: 1,
+        fill: false
+      },
+      points: {
+        show: true, 
+        lineWidth: 2,
+        radius: 3
+      },
+      shadowSize: 0,
+      stack: true
+    },
+    grid: {
+      hoverable: true, 
+      clickable: true, 
+      tickColor: "#f9f9f9",
+      borderWidth: 0
+    },
+    legend: {
+      // show: false
+      backgroundOpacity: 0,
+      labelBoxBorderColor: "#fff",
+      labelFormatter: function(label, series){
+        return '<a href="#" onClick="togglePlot('+series.idx+'); return false;" style="color: inherit">'+label+'</a>';
+      }
+    },
+    colors: ["#ab47bc", "#5c6bc0", "#26a69a", "#ef5350"],
+    xaxis: {
+      ticks: [[1, "Jan"], [2, "Feb"], [3, "Mar"], [4,"Apr"], [5,"May"], [6,"Jun"], 
+                 [7,"Jul"], [8,"Aug"], [9,"Sep"], [10,"Oct"], [11,"Nov"], [12,"Dec"]],
+      font: {
+        family: "Roboto,sans-serif",
+        color: "#A5A5A5"
+      }
+    },
+    yaxis: {
+      ticks:7,
+      font: {color: "#A5A5A5"}
+    }
+  };
+  
+  var plot;
+  function initFlot() {
+    plot = $.plot(chart, [dataPhones, dataTablets, dataWatches, dataTVs], options);
+    chart.css({
+        marginTop: 25
+      })
+      .find('.legend table')
+        .css({
+          marginTop: -35,
+          width: 'auto'
+        })
+      .find('td').css({
+        padding: 5
+      })
+    chart.find('tr').css({
+      display: 'block',
+       'float': 'left'
+     });
+  }
+  initFlot();
+  $(window).on('resize', initFlot);
+
+
+  window.togglePlot = function(seriesIdx) {
+    var someData = plot.getData();
+    someData[seriesIdx].lines.show = !someData[seriesIdx].lines.show;
+    someData[seriesIdx].points.show = !someData[seriesIdx].points.show;
+    plot.setData(someData);
+    plot.draw();
+  }
+
+  function showTooltip(x, y, contents) {
+    var tooltip = $('<div id="tooltip">' + contents + '</div>').css( {
+      position: 'absolute',
+      display: 'none',
+      top: y - 60,
+      color: "#fff",
+      padding: '5px 10px',
+      marginLeft: '-10px',
+      'border-radius': '3px',
+      'background-color': 'rgba(0,0,0,0.6)'
+    }).appendTo("body");
+
+    tooltip.css({
+      left: x - tooltip.width() / 2
+    }).fadeIn(200);
+  }
+
+  var previousPoint = null;
+  chart.bind("plothover", function (event, pos, item) {
+    if (item) {
+      if (previousPoint != item.dataIndex) {
+        previousPoint = item.dataIndex;
+
+        $("#tooltip").remove();
+        var x = item.datapoint[0].toFixed(0),
+            y = item.datapoint[1].toFixed(0);
+
+        var month = item.series.xaxis.ticks[item.dataIndex].label;
+
+        showTooltip(item.pageX, item.pageY, month + "<br>" + item.series.label + " : $" + y);
+      }
+    }
+    else {
+      $("#tooltip").remove();
+      previousPoint = null;
+    }
+  });
+}());
+
+
+
+/*
+ * Revenue Bar Chart
+ */
+$(function() {
+  var chart = $("#revenueBarChart");
+  var data = [
+    {data: [["Phones", 1287]], color: "#ab47bc"},
+    {data: [["Tablets", 976]], color: "#5c6bc0"},
+    {data: [["Watches", 649]], color: "#26a69a"},
+    {data: [["TVs", 1389]], color: "#ef5350"}
+  ];
+  var options = {
+    series: {
+      bars: {
+        show: true,
+        barWidth: 0.5,
+        lineWidth: 0,
+        align: "center",
+        fill: 1
+      }
+    },
+    grid: {
+      hoverable: true,
+      tickColor: "#f9f9f9",
+      borderWidth: 0
+    },
+    xaxis: {
+      mode: "categories",
+      font: {
+        family: "Roboto,sans-serif",
+        color: "#A5A5A5"
+      }
+    },
+    yaxis: {
+      ticks:7,
+      font: {
+        family: "Roboto,sans-serif",
+        color: "#A5A5A5"
+      }
+    }
+  };
+  
+  var plot;
+  function initFlot() {
+    plot = $.plot(chart, data, options);
+    chart.css({
+      marginTop: 25
+    });
+  }
+  initFlot();
+  $(window).on('resize', initFlot);
+
+
+  function showTooltip(x, y, contents) {
+    var tooltip = $('<div id="tooltip">' + contents + '</div>').css( {
+      position: 'absolute',
+      display: 'none',
+      top: y - 40,
+      color: "#fff",
+      padding: '5px 10px',
+      marginLeft: '-10px',
+      'border-radius': '3px',
+      'background-color': 'rgba(0,0,0,0.6)'
+    }).appendTo("body");
+
+    tooltip.css({
+      left: x - tooltip.width() / 2
+    }).fadeIn(200);
+  }
+
+  var previousPoint = null;
+  chart.bind("plothover", function (event, pos, item) {
+    if (item) {
+      if (previousPoint != item.dataIndex) {
+        previousPoint = item.dataIndex;
+
+        $("#tooltip").remove();
+        var x = item.datapoint[0].toFixed(0),
+            y = item.datapoint[1].toFixed(0);
+
+        var month = item.series.xaxis.ticks[item.dataIndex].label;
+
+        showTooltip(item.pageX, item.pageY, item.series.data[0][0] + " : $" + y);
+      }
+    }
+    else {
+      $("#tooltip").remove();
+      previousPoint = null;
+    }
+  });
+});
+
+
+</script>
+
+</body>
+</html>

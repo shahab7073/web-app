@@ -1,0 +1,402 @@
+@@include('./parts/head.html', {
+  "plugin_fa_icons": true,
+  "plugin_mdi_icons": true,
+  "plugin_ion_icons": true,
+  "plugin_wi_icons": true,
+
+  "plugin_rickshaw": false,
+  "plugin_nvd3": false,
+  "plugin_flot": false,
+  "plugin_sparkline": false,
+
+  "plugin_markitup": false,
+  "plugin_ckeditor": false,
+
+  "plugin_select2": false,
+  "plugin_dropzone": false,
+  "plugin_tagsinput": false,
+  "plugin_clockpicker": false,
+  "plugin_pikaday": false,
+  "plugin_spectrum": false,
+  "plugin_inputmask": false,
+  "plugin_parsley": false,
+
+  "plugin_gmaps": false,
+  "plugin_jvectormap": false,
+
+  "plugin_datatables": false,
+  "plugin_fullcalendar": false,
+  "plugin_simpleweather": false,
+  "plugin_prettify": true,
+  "plugin_animatecss": false,
+  "plugin_wowjs": false,
+  "plugin_photoswipe": false,
+  "plugin_isotope": false,
+  "plugin_videojs": false
+})
+
+<body>
+
+@@include('./parts/top-navbar.html')
+
+@@include('./parts/sidebar.html', {
+  "page": "ui-cards",
+  "classes": "yay-shrink yay-hide-to-small yay-gestures"
+})
+
+<!-- Main Content -->
+<section class="content-wrap">
+
+  @@include('./parts/title.html', {
+    "title": "Cards",
+    "crumbs": "<li><a href='dashboard.html'>Dashboard</a> <i class='fa fa-angle-right'></i></li><li><a href='#'>UI</a> <i class='fa fa-angle-right'></i></li><li><a href='ui-cards.html'>Cards</a></li>"
+  })
+  
+  You can use cards for place your content.
+  
+  <!-- Base -->
+  <h4>Base</h4>
+  <div class="row">
+    <div class="col l6 s12">
+      <div class="card-panel">Card Panel</div>
+    </div>
+    <div class="col l6 s12">
+      <pre class="prettyprint linenums no-margin white">
+&lt;div class="card-panel">Card Panel&lt;/div></pre>
+    </div>
+  </div>
+  <!-- /Base -->
+
+  <!-- Colored -->
+  <h4>Colored</h4>
+  <div class="row">
+    <div class="col l6 s12">
+      <div class="card-panel blue white-text">Blue Card Panel</div>
+      <br>
+      <div class="card-panel red white-text">Red Card Panel</div>
+      <br>
+      <div class="card-panel teal white-text">Teal Card Panel</div>
+    </div>
+    <div class="col l6 s12">
+      <pre class="prettyprint linenums no-margin white">
+&lt;div class="card-panel blue white-text">Blue Card Panel&lt;/div>
+&lt;br>
+&lt;div class="card-panel red white-text">Red Card Panel&lt;/div>
+&lt;br>
+&lt;div class="card-panel teal white-text">Teal Card Panel&lt;/div></pre>
+    </div>
+  </div>
+  <!-- /Colored -->
+
+  <!-- With Title -->
+  <h4>With Title</h4>
+  <div class="row">
+    <div class="col l6 s12">
+      <div class="card">
+        <div class="title">
+          <h5>Title</h5>
+        </div>
+        <div class="content">Content</div>
+      </div>
+    </div>
+    <div class="col l6 s12">
+      <pre class="prettyprint linenums no-margin white">
+&lt;div class="card">
+  &lt;div class="title">
+    &lt;h5>Title&lt;/h5>
+  &lt;/div>
+  &lt;div class="content">Content&lt;/div>
+&lt;/div></pre>
+    </div>
+  </div>
+  <!-- /With Title -->
+
+  <!-- With Minimize Button -->
+  <h4>With Minimize Button</h4>
+  <div class="row">
+    <div class="col l6 s12">
+      <div class="card">
+        <div class="title">
+          <h5>Title</h5>
+          <a class="minimize" href="#">
+            <i class="mdi-navigation-expand-less"></i>
+          </a>
+        </div>
+        <div class="content">Content</div>
+      </div>
+    </div>
+    <div class="col l6 s12">
+      <pre class="prettyprint linenums no-margin white">
+&lt;div class="card">
+  &lt;div class="title">
+    &lt;h5>Title&lt;/h5>
+    &lt;a class="minimize" href="#">
+      &lt;i class="mdi-navigation-expand-less">&lt;/i>
+    &lt;/a>
+  &lt;/div>
+  &lt;div class="content">Content&lt;/div>
+&lt;/div></pre>
+    </div>
+  </div>
+  <!-- /With Minimize Button -->
+
+  <!-- With Close Button -->
+  <h4>With Close Button</h4>
+  <div class="row">
+    <div class="col l6 s12">
+      <div class="card">
+        <div class="title">
+          <h5>Title</h5>
+          <a class="close" href="#">
+            <i class="mdi-content-clear"></i>
+          </a>
+        </div>
+        <div class="content">Content</div>
+      </div>
+    </div>
+    <div class="col l6 s12">
+      <pre class="prettyprint linenums no-margin white">
+&lt;div class="card">
+  &lt;div class="title">
+    &lt;h5>Title&lt;/h5>
+    &lt;a class="close" href="#">
+      &lt;i class="mdi-content-clear">&lt;/i>
+    &lt;/a>
+  &lt;/div>
+  &lt;div class="content">Content&lt;/div>
+&lt;/div></pre>
+    </div>
+  </div>
+  <!-- /With Close Button -->
+
+  <!-- Full -->
+  <h4>Full</h4>
+  <div class="row">
+    <div class="col l6 s12">
+      <div class="card">
+        <div class="title">
+          <h5>Title</h5>
+          <a class="close" href="#">
+            <i class="mdi-content-clear"></i>
+          </a>
+          <a class="minimize" href="#">
+            <i class="mdi-navigation-expand-less"></i>
+          </a>
+        </div>
+        <div class="content">Content</div>
+      </div>
+    </div>
+    <div class="col l6 s12">
+      <pre class="prettyprint linenums no-margin white">
+&lt;div class="card">
+  &lt;div class="title">
+    &lt;h5>Title&lt;/h5>
+    &lt;a class="close" href="#">
+      &lt;i class="mdi-content-clear">&lt;/i>
+    &lt;/a>
+    &lt;a class="minimize" href="#">
+      &lt;i class="mdi-navigation-expand-less">&lt;/i>
+    &lt;/a>
+  &lt;/div>
+  &lt;div class="content">Content&lt;/div>
+&lt;/div></pre>
+    </div>
+  </div>
+  <!-- /Full -->
+
+  <!-- Image Card -->
+  <h4>Image Card</h4>
+  <div class="row">
+    <div class="col l6 s12">
+      <div class="card">
+        <div class="card-image">
+          <img src="assets/_con/images/image-2.jpeg">
+          <span class="card-title">Card Title</span>
+        </div>
+        <div class="content">
+          I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.
+        </div>
+        <div class="card-action">
+          <a href="#!">This is a link</a>
+        </div>
+      </div>
+    </div>
+    <div class="col l6 s12">
+      <pre class="prettyprint linenums no-margin white">
+&lt;div class="card">
+  &lt;div class="card-image">
+    &lt;img src="assets/_con/images/image-2.jpeg">
+    &lt;span class="card-title">Card Title&lt;/span>
+  &lt;/div>
+  &lt;div class="content">
+    I am a very simple card. I am good at containing small bits of information.
+    I am convenient because I require little markup to use effectively.
+  &lt;/div>
+  &lt;div class="card-action">
+    &lt;a href="#!">This is a link&lt;/a>
+  &lt;/div>
+&lt;/div></pre>
+    </div>
+  </div>
+  <!-- /Image Card -->
+
+  <!-- Card Reveal -->
+  <h4>Card Reveal</h4>
+  <div class="row">
+    <div class="col l6 s12">
+      <div class="card of-h">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="assets/_con/images/image-1.jpg">
+        </div>
+        <div class="content">
+          <span class="card-title activator grey-text text-darken-4">Card Title<i class="mdi-navigation-more-vert right"></i></span>
+          <p><a href="#">This is a link</a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">Card Title <i class="mdi-content-clear right"></i></span>
+          <p>Here is some more information about this product that is only revealed once clicked on.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col l6 s12">
+      <pre class="prettyprint linenums no-margin white">
+&lt;div class="card of-h">
+  &lt;div class="card-image waves-effect waves-block waves-light">
+    &lt;img class="activator" src="assets/_con/images/image-1.jpg">
+  &lt;/div>
+  &lt;div class="content">
+    &lt;span class="card-title activator grey-text text-darken-4">Card Title&lt;i class="mdi-navigation-more-vert right">&lt;/i>&lt;/span>
+    &lt;p>&lt;a href="#">This is a link&lt;/a>&lt;/p>
+  &lt;/div>
+  &lt;div class="card-reveal">
+    &lt;span class="card-title grey-text text-darken-4">Card Title &lt;i class="mdi-content-clear right">&lt;/i>&lt;/span>
+    &lt;p>Here is some more information about this product that is only revealed once clicked on.&lt;/p>
+  &lt;/div>
+&lt;/div></pre>
+    </div>
+  </div>
+  <!-- /Card Reveal -->
+
+  <!-- Card Sizes -->
+  <h4>Card Sizes</h4>
+  <div class="row">
+    <div class="col l4 s12">
+      <h4>Small</h4>
+      <div class="card small">
+        <div class="card-image">
+          <img src="assets/_con/images/image-3.jpg">
+          <span class="card-title">Card Title</span>
+        </div>
+        <div class="content">
+          I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.
+        </div>
+        <div class="card-action">
+          <a href="#!">This is a link</a>
+        </div>
+      </div>
+    </div>
+    <div class="col l4 s12">
+      <h4>Medium</h4>
+      <div class="card medium">
+        <div class="card-image">
+          <img src="assets/_con/images/image-3.jpg">
+          <span class="card-title">Card Title</span>
+        </div>
+        <div class="content">
+          I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.
+        </div>
+        <div class="card-action">
+          <a href="#!">This is a link</a>
+        </div>
+      </div>
+    </div>
+    <div class="col l4 s12">
+      <h4>Large</h4>
+      <div class="card large">
+        <div class="card-image">
+          <img src="assets/_con/images/image-3.jpg">
+          <span class="card-title">Card Title</span>
+        </div>
+        <div class="content">
+          I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.
+        </div>
+        <div class="card-action">
+          <a href="#!">This is a link</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Card Sizes -->
+
+
+  <!-- Sortable -->
+  <h4>Sortable</h4>
+  Use <code>sortable</code> classname for enable Sortable plugin on card.
+  
+  <div class="row sortable">
+    <div class="col l2 m6 s12">
+      <div class="card-panel blue white-text">
+        Card 1
+      </div>
+    </div>
+    <div class="col l2 m6 s12">
+      <div class="card-panel blue white-text">
+        Card 2
+      </div>
+    </div>
+    <div class="col l2 m6 s12">
+      <div class="card-panel blue white-text">
+        Card 3
+      </div>
+    </div>
+    <div class="col l2 m6 s12">
+      <div class="card-panel blue white-text">
+        Card 4
+      </div>
+    </div>
+    <div class="col l2 m6 s12">
+      <div class="card-panel blue white-text">
+        Card 5
+      </div>
+    </div>
+    <div class="col l2 m6 s12">
+      <div class="card-panel blue white-text">
+        Card 6
+      </div>
+    </div>
+  </div>
+  <pre class="prettyprint linenums white">
+&lt;div class="row sortable">
+
+  &lt;div class="col l2 m6 s12">
+    &lt;div class="card-panel">
+      Card 1
+    &lt;/div>
+  &lt;/div>
+  
+  &lt;div class="col l2 m6 s12">
+    &lt;div class="card-panel">
+      Card 2
+    &lt;/div>
+  &lt;/div>
+  ...
+&lt;/div></pre>
+  <!-- /Sortable -->
+  
+</section>
+<!-- /Main Content -->
+
+@@include('./parts/search-bar.html')
+
+@@include('./parts/chat.html')
+
+@@include('./parts/foot.html', {
+  "copyright": true
+})
+
+</body>
+</html>

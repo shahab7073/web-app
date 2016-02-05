@@ -1,0 +1,80 @@
+@@include('./parts/head.html', {
+  "plugin_fa_icons": true,
+  "plugin_mdi_icons": true,
+  "plugin_ion_icons": true,
+  "plugin_wi_icons": true,
+
+  "plugin_rickshaw": false,
+  "plugin_nvd3": false,
+  "plugin_flot": false,
+  "plugin_sparkline": false,
+
+  "plugin_markitup": false,
+  "plugin_ckeditor": false,
+
+  "plugin_select2": false,
+  "plugin_dropzone": false,
+  "plugin_tagsinput": false,
+  "plugin_clockpicker": false,
+  "plugin_pikaday": false,
+  "plugin_spectrum": false,
+  "plugin_inputmask": false,
+  "plugin_parsley": false,
+
+  "plugin_gmaps": false,
+  "plugin_jvectormap": false,
+
+  "plugin_datatables": false,
+  "plugin_fullcalendar": false,
+  "plugin_simpleweather": false,
+  "plugin_prettify": false,
+  "plugin_animatecss": false,
+  "plugin_wowjs": false,
+  "plugin_photoswipe": false,
+  "plugin_isotope": false,
+  "plugin_videojs": false
+})
+
+<body>
+
+<section id="lock">
+
+  <!-- Background Bubbles -->
+  <canvas id="bubble-canvas"></canvas>
+  <!-- /Background Bubbles -->
+
+  <!-- Lock Form -->
+  <form action="dashboard.html">
+    <div class="logo">
+      <img src="assets/_con/images/logo-white.png" alt="">
+    </div>
+
+    <div class="card-panel">
+
+      <div class="row">
+        <div class="col m4 s12">
+          <img src="assets/_con/images/user.jpg" alt="">
+        </div>
+        <div class="col m8 s12">
+          <h4>John Doe</h4>
+          <div class="input-field">
+            <i class="fa fa-unlock-alt prefix"></i>
+            <input id="input_password" type="password">
+            <label for="input_password">Password</label>
+          </div>
+          <button class="waves-effect waves-light btn-large z-depth-0 z-depth-1-hover">Unlock</button>
+        </div>
+      </div>    
+
+    </div>
+  </form>
+  <!-- /Lock Form -->
+
+</section>
+
+@@include('./parts/foot.html', {
+  "copyright": false
+})
+
+</body>
+</html>

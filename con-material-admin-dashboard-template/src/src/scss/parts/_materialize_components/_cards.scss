@@ -1,0 +1,225 @@
+
+
+.card-panel {
+  // position: relative;
+  // margin: $element-top-margin 0 $element-bottom-margin 0;
+  border-radius: 2px;
+  background-color: $card-bg-color;
+  padding: $card-padding;
+  // overflow: hidden;
+
+  @include shadow(1);
+
+  + .card-panel,
+  + .card {
+    margin-top: $card-padding;
+  }
+
+  &:after, &:before {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+.sortable .card > .title,
+.sortable-ghost {
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAABwSURBVEjH7ZJBEsAgCAMT/v/n9NCOSqe2oD2yNx1JggB4BCEFWyFASP2KMQE7ywWhe/tTRGCGogLk02tFctiW/SUgaMyQG4PdPzDn31rQbMb8FiAXgvsEJNax1yVlVGAjA93apP3HFhZTGIqiKH7iADB6HxPlHdNVAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE0LTA3LTA3VDEzOjQ5OjEwKzAyOjAwm7WiFAAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxNC0wNy0wN1QxMzo0OToxMCswMjowMOroGqgAAAAASUVORK5CYII="), move;
+}
+
+.card {
+  position: relative;
+  // overflow: hidden;
+  // margin: $element-top-margin 0 $element-bottom-margin 0;
+  background-color: $card-bg-color;
+  border-radius: 2px;
+  @include shadow(1);
+
+  + .card-panel,
+  + .card {
+    margin-top: $card-padding;
+  }
+
+  .content {
+    padding: $card-padding;
+    overflow: hidden;
+    box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .title {
+    width: 100%;
+    padding: 10px $card-padding;
+    border-radius: 2px 2px 0 0;
+
+    &:after, &:before {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    h5 {
+      float: left;
+      font-size: 1.2rem;
+      line-height: 2rem;
+      margin: 0;
+
+      i {
+        margin-right: .3rem;
+      }
+    }
+
+    .minimize, .close {
+      float: right;
+      width: 20px;
+      text-align: center;
+      color: inherit;
+
+      transition: transform 300ms ease-in-out;
+
+      > i {
+        font-size: 1.2rem;
+        line-height: 2rem;
+      }
+    }
+  }
+
+  &.minimized {
+    .content {
+      display: none;
+    }
+    .minimize {
+      transform: rotate(-180deg);
+    }
+  }
+
+  .card-title {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 300;
+    &.activator {
+      cursor: pointer;
+    }
+  }
+
+  // a {
+  //   color: color("orange", "accent-2");
+  //   margin-right: $card-padding;
+  //   transition: color .3s ease;
+  //   text-transform: uppercase;
+
+  //   &:hover { color: lighten(color("orange", "accent-2"), 20%); }
+  // }
+
+
+  // Card Sizes
+  &.small, &.medium, &.large {
+    position: relative;
+
+    .card-image {
+      overflow: hidden;
+    }
+    .card-content {
+      overflow: hidden;
+    }
+  }
+
+  &.small {
+    font-size: 100%; // fix small classname
+
+    .card-image {
+      height: 150px;
+    }
+    .card-content {
+      height: 150px;
+    }
+
+  }
+
+  &.medium {
+    .card-image {
+      height: 250px;
+    }
+    .card-content {
+      height: 150px;
+    }
+  }
+
+  &.large {
+    .card-image {
+      height: 330px;
+    }
+    .card-content {
+      height: 170px;
+    }
+  }
+
+
+  .card-image {
+    position: relative;
+
+    // Image background for content
+    img {
+      border-radius: 2px 2px 0 0;
+      position: relative;
+      display: block;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .card-title {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: $card-padding;
+    }
+
+  }
+
+  .card-content {
+    padding: $card-padding;
+    border-radius: 0 0 2px 2px;
+
+    p {
+      margin: 0;
+      color: inherit;
+    }
+    .card-title {
+      line-height: 48px;
+    }
+  }
+
+  .card-action {
+    border-top: 1px solid rgba(160,160,160,.2);
+    padding: $card-padding;
+
+    a {
+      color: $card-link-color;
+      margin-right: $card-padding;
+      transition: color .3s ease;
+      text-transform: uppercase;
+
+      &:hover { color: $card-link-color-light; }
+    }
+  }
+
+  .card-reveal {
+    padding: $card-padding;
+    position: absolute;
+    background-color: $card-bg-color;
+    width: 100%;
+    overflow-y: auto;
+    top: 100%;
+    height: 100%;
+    z-index: 1;
+
+    .card-title {
+      cursor: pointer;
+      display: block;
+    }
+  }
+}

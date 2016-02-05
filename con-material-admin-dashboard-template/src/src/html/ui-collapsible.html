@@ -1,0 +1,214 @@
+@@include('./parts/head.html', {
+  "plugin_fa_icons": true,
+  "plugin_mdi_icons": true,
+  "plugin_ion_icons": true,
+  "plugin_wi_icons": true,
+
+  "plugin_rickshaw": false,
+  "plugin_nvd3": false,
+  "plugin_flot": false,
+  "plugin_sparkline": false,
+
+  "plugin_markitup": false,
+  "plugin_ckeditor": false,
+
+  "plugin_select2": false,
+  "plugin_dropzone": false,
+  "plugin_tagsinput": false,
+  "plugin_clockpicker": false,
+  "plugin_pikaday": false,
+  "plugin_spectrum": false,
+  "plugin_inputmask": false,
+  "plugin_parsley": false,
+
+  "plugin_gmaps": false,
+  "plugin_jvectormap": false,
+
+  "plugin_datatables": false,
+  "plugin_fullcalendar": false,
+  "plugin_simpleweather": false,
+  "plugin_prettify": true,
+  "plugin_animatecss": false,
+  "plugin_wowjs": false,
+  "plugin_photoswipe": false,
+  "plugin_isotope": false,
+  "plugin_videojs": false
+})
+
+<body>
+
+@@include('./parts/top-navbar.html')
+
+@@include('./parts/sidebar.html', {
+  "page": "ui-collapsible",
+  "classes": "yay-shrink yay-hide-to-small yay-gestures"
+})
+
+<!-- Main Content -->
+<section class="content-wrap">
+
+  @@include('./parts/title.html', {
+    "title": "Collapsible",
+    "crumbs": "<li><a href='dashboard.html'>Dashboard</a> <i class='fa fa-angle-right'></i></li><li><a href='#'>UI</a> <i class='fa fa-angle-right'></i></li><li><a href='ui-collapsible.html'>Collapsible</a></li>"
+  })
+
+
+  <!-- Collapsible -->
+  <div class="card-panel">
+    Collapsibles are accordion elements that expand when clicked on. They allow you to hide content that is not immediately relevant to the user.
+  </div>
+
+  <div class="card-panel">
+    <h4>Base</h4>
+    <div class="row">
+      <div class="col l5 s12">
+        <ul class="collapsible" data-collapsible="accordion">
+          <li>
+            <div class="collapsible-header"><i class="mdi-image-filter-drama"></i>First</div>
+            <div class="collapsible-body"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="mdi-maps-place"></i>Second</div>
+            <div class="collapsible-body"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="mdi-social-whatshot"></i>Third</div>
+            <div class="collapsible-body"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
+          </li>
+        </ul>
+      </div>
+      <div class="col l7 s12">
+        <pre class="prettyprint linenums">
+&lt;ul class="collapsible" data-collapsible="accordion">
+  &lt;li>
+    &lt;div class="collapsible-header">&lt;i class="mdi-image-filter-drama">&lt;/i>First&lt;/div>
+    &lt;div class="collapsible-body">&lt;p>Lorem ipsum dolor sit amet.&lt;/p>&lt;/div>
+  &lt;/li>
+  &lt;li>
+    &lt;div class="collapsible-header">&lt;i class="mdi-maps-place">&lt;/i>Second&lt;/div>
+    &lt;div class="collapsible-body">&lt;p>Lorem ipsum dolor sit amet.&lt;/p>&lt;/div>
+  &lt;/li>
+  &lt;li>
+    &lt;div class="collapsible-header">&lt;i class="mdi-social-whatshot">&lt;/i>Third&lt;/div>
+    &lt;div class="collapsible-body">&lt;p>Lorem ipsum dolor sit amet.&lt;/p>&lt;/div>
+  &lt;/li>
+&lt;/ul></pre>
+      </div>
+    </div>
+  </div>
+  <!-- /Collapsible -->
+
+  <!-- Popout -->
+  <div class="card-panel">
+    <h4>Popout</h4>
+    <div class="row">
+      <div class="col l5 s12">
+        <ul class="collapsible popout" data-collapsible="accordion">
+          <li>
+            <div class="collapsible-header"><i class="mdi-image-filter-drama"></i>First</div>
+            <div class="collapsible-body"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
+          </li>
+          <li>
+            <div class="collapsible-header active"><i class="mdi-maps-place"></i>Second</div>
+            <div class="collapsible-body"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="mdi-social-whatshot"></i>Third</div>
+            <div class="collapsible-body"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
+          </li>
+        </ul>
+      </div>
+      <div class="col l7 s12">
+        <pre class="prettyprint linenums">
+&lt;ul class="collapsible" data-collapsible="accordion">
+  &lt;li>
+    &lt;div class="collapsible-header">&lt;i class="mdi-image-filter-drama">&lt;/i>First&lt;/div>
+    &lt;div class="collapsible-body">&lt;p>Lorem ipsum dolor sit amet.&lt;/p>&lt;/div>
+  &lt;/li>
+  &lt;li>
+    &lt;div class="collapsible-header">&lt;i class="mdi-maps-place">&lt;/i>Second&lt;/div>
+    &lt;div class="collapsible-body">&lt;p>Lorem ipsum dolor sit amet.&lt;/p>&lt;/div>
+  &lt;/li>
+  &lt;li>
+    &lt;div class="collapsible-header">&lt;i class="mdi-social-whatshot">&lt;/i>Third&lt;/div>
+    &lt;div class="collapsible-body">&lt;p>Lorem ipsum dolor sit amet.&lt;/p>&lt;/div>
+  &lt;/li>
+&lt;/ul></pre>
+      </div>
+    </div>
+  </div>
+  <!-- /Popout -->
+
+    
+  <!-- Options -->
+  <div class="card-panel">
+    <h4>Options</h4>
+    <p>There are two ways a collapsible can behave. It can either allow multiple sections to stay open, or it can only allow one section to stay open at a time, which is called an accordion. See below for a demo of each type</p>
+
+    <div class="row">
+      <div class="col s12 m3"><h5 class="light">Accordion</h5></div>
+      <div class="col s12 m9">
+        <ul class="collapsible" data-collapsible="accordion">
+          <li>
+            <div class="collapsible-header"><i class="mdi-image-filter-drama"></i>First</div>
+            <div class="collapsible-body"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="mdi-maps-place"></i>Second</div>
+            <div class="collapsible-body"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="mdi-social-whatshot"></i>Third</div>
+            <div class="collapsible-body"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
+          </li>
+        </ul>
+      </div>
+      <div class="col s12 m9 offset-m3">
+        This is default behavior, but you can explicitly set it by setting the <code class="language-markup">data-collapsible</code> attribute in HTML.
+        <pre class="prettyprint linenums">
+&lt;ul class="collapsible" data-collapsible="accordion"></pre>
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <div class="col s12 m3"><h5 class="light">Expandable</h5></div>
+      <div class="col s12 m9">
+        <ul class="collapsible" data-collapsible="expandable">
+          <li>
+            <div class="collapsible-header"><i class="mdi-image-filter-drama"></i>First</div>
+            <div class="collapsible-body"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="mdi-maps-place"></i>Second</div>
+            <div class="collapsible-body"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="mdi-social-whatshot"></i>Third</div>
+            <div class="collapsible-body"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
+          </li>
+        </ul>
+      </div>
+      <div class="col s12 m9 offset-m3">
+        <pre class="prettyprint linenums">
+&lt;ul class="collapsible" data-collapsible="expandable"></pre>
+      </div>
+    </div>
+  </div>
+  <!-- /Options -->
+
+
+</section>
+<!-- /Main Content -->
+
+@@include('./parts/search-bar.html')
+
+@@include('./parts/chat.html')
+
+@@include('./parts/foot.html', {
+  "copyright": true
+})
+
+</body>
+</html>

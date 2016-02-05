@@ -1,0 +1,12 @@
+/.sass-cache/*
+/composer.lock
+/config/app.php
+/config/asset_compress.local.ini
+/config/hybridauth.php
+/logs/*
+/mailoutput/*
+/node_modules/*
+/tmp/*
+/vendor/*
+/webroot/.sass-cache/*
+/webroot/assets/components/*

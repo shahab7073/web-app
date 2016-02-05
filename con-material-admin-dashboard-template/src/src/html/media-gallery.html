@@ -1,0 +1,125 @@
+@@include('./parts/head.html', {
+  "plugin_fa_icons": true,
+  "plugin_mdi_icons": true,
+  "plugin_ion_icons": true,
+  "plugin_wi_icons": true,
+
+  "plugin_rickshaw": false,
+  "plugin_nvd3": false,
+  "plugin_flot": false,
+  "plugin_sparkline": false,
+
+  "plugin_markitup": false,
+  "plugin_ckeditor": false,
+
+  "plugin_select2": false,
+  "plugin_dropzone": false,
+  "plugin_tagsinput": false,
+  "plugin_clockpicker": false,
+  "plugin_pikaday": false,
+  "plugin_spectrum": false,
+  "plugin_inputmask": false,
+  "plugin_parsley": false,
+
+  "plugin_gmaps": false,
+  "plugin_jvectormap": false,
+
+  "plugin_datatables": false,
+  "plugin_fullcalendar": false,
+  "plugin_simpleweather": false,
+  "plugin_prettify": true,
+  "plugin_animatecss": false,
+  "plugin_wowjs": false,
+  "plugin_photoswipe": true,
+  "plugin_isotope": true,
+  "plugin_videojs": false
+})
+
+<body>
+
+@@include('./parts/top-navbar.html')
+
+@@include('./parts/sidebar.html', {
+  "page": "media-gallery",
+  "classes": "yay-shrink yay-hide-to-small yay-gestures"
+})
+
+<!-- Main Content -->
+<section class="content-wrap">
+
+  @@include('./parts/title.html', {
+    "title": "Gallery",
+    "crumbs": "<li><a href='dashboard.html'>Dashboard</a> <i class='fa fa-angle-right'></i></li><li><a href='#'>Media</a> <i class='fa fa-angle-right'></i></li><li><a href='media-gallery.html'>Gallery</a></li>"
+  })
+
+  <div class="card-panel">
+    PhotoSwipe is JavaScript gallery, no dependencies - <a href="http://photoswipe.com/">http://photoswipe.com/</a>
+  </div>
+
+  <div class="card-panel of-h">
+    <div class="row photoswipe-gallery isotope mt-0">
+      <a class="col s12 m6 l3 item" href="assets/_con/images/gallery-1.jpg" data-size="2880x1800" data-med="assets/_con/images/gallery-1-med.jpg" data-med-size="1440x900" data-author="John Doe">
+        <img src="assets/_con/images/gallery-1-small.jpg" alt="" />
+        <figure>Magna tollit mei te</figure>
+      </a>
+
+      <a class="col s12 m6 l3 item" href="assets/_con/images/gallery-2.jpg" data-size="2880x1800" data-med="assets/_con/images/gallery-2-med.jpg" data-med-size="1440x900" data-author="Felicia Castro">
+        <img src="assets/_con/images/gallery-2-small.jpg" alt="" />
+        <figure>Ex graeco deserunt posidonium pri, mei oblique bonorum recusabo te. Id mea diceret constituto, numquam persequeris per te. Eam no veri verear quaerendum, eam graecis adolescens dissentiunt eu, summo quaeque corpora ex eam. Libris molestiae an vix.</figure>
+      </a>
+      
+      <a class="col s12 m6 l3 item" href="assets/_con/images/gallery-7.jpg" data-size="2880x1800" data-med="assets/_con/images/gallery-7-med.jpg" data-med-size="1440x900" data-author="Max Brooks">
+        <img src="assets/_con/images/gallery-7-small.jpg" alt="" />
+        <figure>Pri quem blandit intellegebat</figure>
+      </a>
+      
+      <a class="col s12 m6 l3 item" href="assets/_con/images/gallery-4.jpg" data-size="2880x1800" data-med="assets/_con/images/gallery-4-med.jpg" data-med-size="1440x900" data-author="Patsy Griffin">
+        <img src="assets/_con/images/gallery-4-small.jpg" alt="" />
+        <figure>Vim ut eirmod minimum placerat</figure>
+      </a>
+      
+      <a class="col s12 l9 item" href="assets/_con/images/gallery-9.jpg" data-size="5184x1034" data-med="assets/_con/images/gallery-9-med.jpg" data-med-size="4512x900" data-author="Chloe Morgan">
+        <img src="assets/_con/images/gallery-9-small.jpg" alt="" />
+        <figure>Te eos velit graece</figure>
+      </a>
+      
+      <a class="col s12 m6 l3 item" href="assets/_con/images/gallery-5.jpg" data-size="2880x1800" data-med="assets/_con/images/gallery-5-med.jpg" data-med-size="1440x900" data-author="Vernon Garrett">
+        <img src="assets/_con/images/gallery-5-small.jpg" alt="" />
+        <figure>His ullum fastidii ea</figure>
+      </a>
+      
+      <a class="col s12 m6 l3 item" href="assets/_con/images/gallery-6.jpg" data-size="2880x1800" data-med="assets/_con/images/gallery-6-med.jpg" data-med-size="1440x900" data-author="Greg Mcdonalid">
+        <img src="assets/_con/images/gallery-6-small.jpg" alt="" />
+        <figure>Te solum viris vix</figure>
+      </a>
+      
+      <a class="col s12 m6 l3 item" href="assets/_con/images/gallery-8.jpg" data-size="2880x1800" data-med="assets/_con/images/gallery-8-med.jpg" data-med-size="1440x900" data-author="Christian Jackson">
+        <img src="assets/_con/images/gallery-8-small.jpg" alt="" />
+        <figure>Simul voluptua salutandi in pri</figure>
+      </a>
+      
+      <a class="col s12 m6 l3 item" href="assets/_con/images/gallery-10.jpg" data-size="2880x1800" data-med="assets/_con/images/gallery-10-med.jpg" data-med-size="1440x900" data-author="Willie Kelly">
+        <img src="assets/_con/images/gallery-10-small.jpg" alt="" />
+        <figure>An mea inani essent</figure>
+      </a>
+      
+      <a class="col s12 m6 l3 item" href="assets/_con/images/gallery-3.jpg" data-size="2880x1800" data-med="assets/_con/images/gallery-3-med.jpg" data-med-size="1440x900" data-author="Jenny Phillips">
+        <img src="assets/_con/images/gallery-3-small.jpg" alt="" />
+        <figure>Nam nisl diam graeci ex</figure>
+      </a>
+    </div>
+  </div>
+
+</section>
+<!-- /Main Content -->
+
+@@include('./parts/search-bar.html')
+
+@@include('./parts/chat.html')
+
+@@include('./parts/foot.html', {
+  "copyright": true
+})
+
+</body>
+</html>

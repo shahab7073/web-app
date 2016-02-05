@@ -1,0 +1,496 @@
+@@include('./parts/head.html', {
+  "plugin_fa_icons": true,
+  "plugin_mdi_icons": true,
+  "plugin_ion_icons": true,
+  "plugin_wi_icons": true,
+
+  "plugin_rickshaw": false,
+  "plugin_nvd3": false,
+  "plugin_flot": false,
+  "plugin_sparkline": false,
+
+  "plugin_markitup": false,
+  "plugin_ckeditor": false,
+
+  "plugin_select2": false,
+  "plugin_dropzone": false,
+  "plugin_tagsinput": false,
+  "plugin_clockpicker": false,
+  "plugin_pikaday": false,
+  "plugin_spectrum": false,
+  "plugin_inputmask": false,
+  "plugin_parsley": false,
+
+  "plugin_gmaps": false,
+  "plugin_jvectormap": false,
+
+  "plugin_datatables": false,
+  "plugin_fullcalendar": false,
+  "plugin_simpleweather": false,
+  "plugin_prettify": true,
+  "plugin_animatecss": false,
+  "plugin_wowjs": false,
+  "plugin_photoswipe": false,
+  "plugin_isotope": false,
+  "plugin_videojs": false
+})
+
+<body>
+
+@@include('./parts/top-navbar.html')
+
+@@include('./parts/sidebar.html', {
+  "page": "ui-progress-bars",
+  "classes": "yay-shrink yay-hide-to-small yay-gestures"
+})
+
+<!-- Main Content -->
+<section class="content-wrap">
+
+  @@include('./parts/title.html', {
+    "title": "Progress Bars",
+    "crumbs": "<li><a href='dashboard.html'>Dashboard</a> <i class='fa fa-angle-right'></i></li><li><a href='#'>UI</a> <i class='fa fa-angle-right'></i></li><li><a href='ui-progress-bars.html'>Progress Bars</a></li>"
+  })
+  
+  <div class="card-panel">
+    Con uses bootstrap-like progress bars.
+  </div>
+
+  <!-- Basic -->
+  <div class="card-panel">
+    <h4>Basic</h4>
+    <div class="row">
+      <div class="col l6 s12">
+        <div class="progress">
+          <div class="white-text" style="width: 40%"></div>
+        </div>
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums">
+&lt;div class="progress">
+  &lt;div class="white-text" style="width: 40%">&lt;/div>
+&lt;/div></pre>
+      </div>
+    </div>
+  </div>
+  <!-- /Basic -->
+
+  <!-- With Label -->
+  <div class="card-panel">
+    <h4>With label</h4>
+    <div class="row">
+      <div class="col l6 s12">
+        Just add your text inside inner div.
+        <div class="progress">
+          <div class="white-text" style="width: 40%">40%</div>
+        </div>
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;div class="progress">
+  &lt;div class="white-text" style="width: 40%">40%&lt;/div>
+&lt;/div></pre>
+      </div>
+    </div>
+  </div>
+  <!-- /With Label -->
+
+  <!-- Sizes -->
+  <div class="card-panel">
+    <h4>Sizes</h4>
+    <div class="row">
+      <div class="col l6 s12">
+        <div class="progress tiny">
+          <div class="white-text" style="width: 40%"></div>
+        </div>
+        <div class="progress small">
+          <div class="white-text" style="width: 40%"></div>
+        </div>
+        <div class="progress">
+          <div class="white-text" style="width: 40%">Mid</div>
+        </div>
+        <div class="progress big">
+          <div class="white-text" style="width: 40%">Big</div>
+        </div>
+        <div class="progress extra">
+          <div class="white-text" style="width: 40%">Extra</div>
+        </div>
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums">
+&lt;div class="progress tiny">
+  &lt;div class="white-text" style="width: 40%">&lt;/div>
+&lt;/div>
+&lt;div class="progress small">
+  &lt;div class="white-text" style="width: 40%">&lt;/div>
+&lt;/div>
+&lt;div class="progress">
+  &lt;div class="white-text" style="width: 40%">Mid&lt;/div>
+&lt;/div>
+&lt;div class="progress big">
+  &lt;div class="white-text" style="width: 40%">Big&lt;/div>
+&lt;/div>
+&lt;div class="progress extra">
+  &lt;div class="white-text" style="width: 40%">Extra&lt;/div>
+&lt;/div></pre>
+      </div>
+    </div>
+  </div>
+  <!-- /Sizes -->
+
+  <!-- Striped -->
+  <div class="card-panel">
+    <h4>Striped</h4>
+    <div class="row">
+      <div class="col l6 s12">
+        Uses a gradient to create a striped effect. Not available in IE8. To change colors, use this page <a href="css-colors.html">css-colors.html</a>
+        <div class="progress">
+          <div class="striped" style="width: 40%">
+            40%
+          </div>
+        </div>
+        <div class="progress">
+          <div class="striped red" style="width: 20%">
+            20%
+          </div>
+        </div>
+        <div class="progress">
+          <div class="striped purple" style="width: 70%">
+            70%
+          </div>
+        </div>
+        <div class="progress cyan lighten-4">
+          <div class="striped cyan" style="width: 55%">
+            55%
+          </div>
+        </div>
+        <div class="progress green lighten-4">
+          <div class="striped green" style="width: 90%">
+            90%
+          </div>
+        </div>
+        <div class="progress amber lighten-4">
+          <div class="striped amber" style="width: 10%">
+            10%
+          </div>
+        </div>
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;div class="progress">
+  &lt;div class="striped" style="width: 40%">
+    40%
+  &lt;/div>
+&lt;/div>
+&lt;div class="progress">
+  &lt;div class="striped red" style="width: 20%">
+    20%
+  &lt;/div>
+&lt;/div>
+&lt;div class="progress">
+  &lt;div class="striped purple" style="width: 70%">
+    70%
+  &lt;/div>
+&lt;/div>
+&lt;div class="progress cyan lighten-4">
+  &lt;div class="striped cyan" style="width: 55%">
+    55%
+  &lt;/div>
+&lt;/div>
+&lt;div class="progress green lighten-4">
+  &lt;div class="striped green" style="width: 90%">
+    90%
+  &lt;/div>
+&lt;/div>
+&lt;div class="progress amber lighten-4">
+  &lt;div class="striped amber" style="width: 10%">
+    10%
+  &lt;/div>
+&lt;/div></pre>
+      </div>
+    </div>
+  </div>
+  <!-- /Striped -->
+
+  <!-- Animated -->
+  <div class="card-panel">
+    <h4>Animated</h4>
+    <div class="row">
+      <div class="col l6 s12">
+        To use animated version - add <code>.active</code> class on child container.
+        <div class="progress">
+          <div class="active striped orange" style="width: 40%">
+            40%
+          </div>
+        </div>
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;div class="progress">
+  &lt;div class="active striped orange" style="width: 40%">
+    40%
+  &lt;/div>
+&lt;/div></pre>
+      </div>
+    </div>
+  </div>
+  <!-- /Animated -->
+
+  <!-- Stacked -->
+  <div class="card-panel">
+    <h4>Stacked</h4>
+    <div class="row">
+      <div class="col l6 s12">
+        Place multiple bars into the same <code>.progress</code> to stack them.
+        <div class="progress grey lighten-2">
+          <div class="green" style="width: 35%"></div>
+          <div class="purple striped" style="width: 20%"></div>
+          <div class="red" style="width: 10%"></div>
+        </div>
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;div class="progress grey lighten-2">
+  &lt;div class="green" style="width: 35%">&lt;/div>
+  &lt;div class="purple striped" style="width: 20%">&lt;/div>
+  &lt;div class="red" style="width: 10%">&lt;/div>
+&lt;/div></pre>
+      </div>
+    </div>
+  </div>
+  <!-- /Stacked -->
+
+  <!-- Indeterminate -->
+  <div class="card-panel">
+    <h4>Indeterminate</h4>
+    <div class="row">
+      <div class="col l6 s12">
+        <div class="progress big teal lighten-5">
+          <div class="indeterminate teal"></div>
+        </div>
+
+        <div class="progress">
+          <div class="indeterminate"></div>
+        </div>
+
+        <div class="progress small red lighten-5">
+          <div class="indeterminate red"></div>
+        </div>
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums">
+&lt;div class="progress">
+  &lt;div class="indeterminate">&lt;/div>
+&lt;/div></pre>
+      </div>
+    </div>
+  </div>
+  <!-- /Indeterminate -->
+
+  <!-- Circular -->
+  <div class="card-panel">
+    <h4>Circular</h4>
+    <div class="row">
+      <div class="col l6 s12">
+
+        <div class="row center-align">
+          <div class="col s4">
+            <!-- Circular big -->
+            <div class="preloader-wrapper big active">
+              <div class="spinner-layer spinner-blue">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div><div class="gap-patch">
+                  <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                  <div class="circle"></div>
+                </div>
+              </div>
+
+              <div class="spinner-layer spinner-red">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div><div class="gap-patch">
+                  <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                  <div class="circle"></div>
+                </div>
+              </div>
+
+              <div class="spinner-layer spinner-yellow">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div><div class="gap-patch">
+                  <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                  <div class="circle"></div>
+                </div>
+              </div>
+
+              <div class="spinner-layer spinner-green">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div><div class="gap-patch">
+                  <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                  <div class="circle"></div>
+                </div>
+              </div>
+            </div>
+            <!-- /Circular big -->
+          </div>
+          <div class="col s4">
+            <!-- Circular mid -->
+            <div class="preloader-wrapper mid active">
+              <div class="spinner-layer spinner-blue">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div><div class="gap-patch">
+                  <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                  <div class="circle"></div>
+                </div>
+              </div>
+
+              <div class="spinner-layer spinner-red">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div><div class="gap-patch">
+                  <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                  <div class="circle"></div>
+                </div>
+              </div>
+
+              <div class="spinner-layer spinner-yellow">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div><div class="gap-patch">
+                  <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                  <div class="circle"></div>
+                </div>
+              </div>
+
+              <div class="spinner-layer spinner-green">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div><div class="gap-patch">
+                  <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                  <div class="circle"></div>
+                </div>
+              </div>
+            </div>
+            <!-- /Circular mid -->
+          </div>
+          <div class="col s4">
+            <!-- Circular small -->
+            <div class="preloader-wrapper small active">
+              <div class="spinner-layer spinner-blue">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div><div class="gap-patch">
+                  <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                  <div class="circle"></div>
+                </div>
+              </div>
+
+              <div class="spinner-layer spinner-red">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div><div class="gap-patch">
+                  <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                  <div class="circle"></div>
+                </div>
+              </div>
+
+              <div class="spinner-layer spinner-yellow">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div><div class="gap-patch">
+                  <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                  <div class="circle"></div>
+                </div>
+              </div>
+
+              <div class="spinner-layer spinner-green">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div><div class="gap-patch">
+                  <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                  <div class="circle"></div>
+                </div>
+              </div>
+            </div>
+            <!-- /Circular small -->
+          </div>
+        </div>
+
+      </div>
+      <div class="col l6 s12">
+        <pre class="prettyprint linenums">
+&lt;div class="preloader-wrapper big active">
+  &lt;div class="spinner-layer spinner-blue">
+    &lt;div class="circle-clipper left">
+      &lt;div class="circle">&lt;/div>
+    &lt;/div>&lt;div class="gap-patch">
+      &lt;div class="circle">&lt;/div>
+    &lt;/div>&lt;div class="circle-clipper right">
+      &lt;div class="circle">&lt;/div>
+    &lt;/div>
+  &lt;/div>
+
+  &lt;div class="spinner-layer spinner-red">
+    &lt;div class="circle-clipper left">
+      &lt;div class="circle">&lt;/div>
+    &lt;/div>&lt;div class="gap-patch">
+      &lt;div class="circle">&lt;/div>
+    &lt;/div>&lt;div class="circle-clipper right">
+      &lt;div class="circle">&lt;/div>
+    &lt;/div>
+  &lt;/div>
+
+  &lt;div class="spinner-layer spinner-yellow">
+    &lt;div class="circle-clipper left">
+      &lt;div class="circle">&lt;/div>
+    &lt;/div>&lt;div class="gap-patch">
+      &lt;div class="circle">&lt;/div>
+    &lt;/div>&lt;div class="circle-clipper right">
+      &lt;div class="circle">&lt;/div>
+    &lt;/div>
+  &lt;/div>
+
+  &lt;div class="spinner-layer spinner-green">
+    &lt;div class="circle-clipper left">
+      &lt;div class="circle">&lt;/div>
+    &lt;/div>&lt;div class="gap-patch">
+      &lt;div class="circle">&lt;/div>
+    &lt;/div>&lt;div class="circle-clipper right">
+      &lt;div class="circle">&lt;/div>
+    &lt;/div>
+  &lt;/div>
+&lt;/div></pre>
+      </div>
+    </div>
+    
+  </div>
+  <!-- /Circular -->
+
+</section>
+<!-- /Main Content -->
+
+@@include('./parts/search-bar.html')
+
+@@include('./parts/chat.html')
+
+@@include('./parts/foot.html', {
+  "copyright": true
+})
+
+</body>
+</html>
