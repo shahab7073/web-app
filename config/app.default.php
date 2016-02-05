@@ -46,8 +46,8 @@ return [
         'fullBaseUrl' => false,
         'imageBaseUrl' => 'img/',
         // Since we're using AssetCompress plugin, `cssBaseUrl` and `jsBaseUrl` are meaningless here.
-        // 'cssBaseUrl' => 'css/',
-        // 'jsBaseUrl' => 'js/',
+        'cssBaseUrl' => 'css/',
+        'jsBaseUrl' => 'js/',
         'paths' => [
             'plugins' => [ROOT . DS . 'plugins' . DS],
             'templates' => [APP . 'Template' . DS],
