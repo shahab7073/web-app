@@ -40,6 +40,7 @@ class UsersTable extends Table
             ]
         ]);
 
+        $this->belongsTo('Roles');
     }
 
     /**
@@ -105,10 +106,18 @@ class UsersTable extends Table
         $pp = $providerProfile;
         $user = $this->newEntity();
 
+        $roles = $this->Roles
+            ->find('list', [
+                'keyField' => 'alias',
+                'valueField' => 'id',
+            ])
+            ->toArray();
+
         $fields = [
             'password' => '',
             'provider' => $provider,
             'provider_uid' => $pp->identifier,
+            'role_id' => $roles['user'],
         ];
 
         if ($provider === 'Twitter') {
