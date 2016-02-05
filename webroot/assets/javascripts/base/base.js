@@ -80,6 +80,12 @@
 
 		$.fn.nanoScroller && $('.nano').nanoScroller();
 
+		// Relocate .error-message for .file-field
+		$('.file-field').each(function () {
+			var $this = $(this);
+			$('input[type="file"] ~ .error-message', $this).appendTo($this);
+		});
+
 	});
 
 });

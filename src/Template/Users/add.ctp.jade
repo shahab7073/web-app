@@ -1,6 +1,6 @@
 - $view->layout = 'full_screen';
 
-!= $view->Form->create($user, ['data-parsley-validate' => true])
+!= $view->Form->create($user, ['data-parsley-validate' => true, 'enctype' => 'multipart/form-data'])
 
 != $view->Flash->render()
 .row.links
@@ -46,6 +46,14 @@
 	.input-field
 		i.fa.fa-unlock-alt.prefix
 		!= $view->Form->input('password')
+
+	//- Avatar
+	.input-field.file-field
+		.btn
+			span= __('Avatar')
+			!= $view->Form->input('avatar', ['type' => 'file', 'label' => false])
+		.file-path-wrapper
+			input.file-path(type=text readonly)
 
 	//- Agree to the TOS
 	p

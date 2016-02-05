@@ -1,7 +1,7 @@
 <?php
 use Migrations\AbstractMigration;
 
-class AddRole extends AbstractMigration
+class AddAvatarToUsers extends AbstractMigration
 {
     public function up()
     {
@@ -89,6 +89,16 @@ class AddRole extends AbstractMigration
             ->addColumn('role_id', 'integer', [
                 'default' => null,
                 'limit' => 11,
+                'null' => true,
+            ])
+            ->addColumn('avatar', 'string', [
+                'default' => null,
+                'limit' => 255,
+                'null' => true,
+            ])
+            ->addColumn('avatar_dir', 'string', [
+                'default' => null,
+                'limit' => 255,
                 'null' => true,
             ])
             ->addIndex(

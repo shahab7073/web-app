@@ -19,6 +19,8 @@ use Cake\Auth\DefaultPasswordHasher;
  * @property \Cake\I18n\Time $modified
  * @property \Cake\I18n\Time $last_login
  * @property int $role_id
+ * @property string $avatar
+ * @property string $avatar_dir
  */
 class User extends Entity
 {
@@ -65,5 +67,41 @@ class User extends Entity
     protected function _getFullName()
     {
         return $this->_properties['first_name'] . ' ' . $this->_properties['last_name'];
+    }
+
+    /**
+     * Get avatar_url_tiny
+     *
+     * @return string
+     */
+    protected function _getAvatarUrlTiny()
+    {
+        return empty($this->_properties['avatar']) ? 
+                'tiny_default_avatar.jpg'
+                : '../upload/users/avatar/' . $this->_properties['avatar_dir'] . '/tiny_' . $this->_properties['avatar'];
+    }
+
+    /**
+     * Get avatar_url_small
+     *
+     * @return string
+     */
+    protected function _getAvatarUrlSmall()
+    {
+        return empty($this->_properties['avatar']) ? 
+                'small_default_avatar.jpg'
+                : '../upload/users/avatar/' . $this->_properties['avatar_dir'] . '/small_' . $this->_properties['avatar'];
+    }
+
+    /**
+     * Get avatar_url_medium
+     *
+     * @return string
+     */
+    protected function _getAvatarUrlMedium()
+    {
+        return empty($this->_properties['avatar']) ? 
+                'medium_default_avatar.jpg'
+                : '../upload/users/avatar/' . $this->_properties['avatar_dir'] . '/medium_' . $this->_properties['avatar'];
     }
 }

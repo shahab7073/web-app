@@ -40,6 +40,36 @@ class UsersTable extends Table
             ]
         ]);
 
+        $this->addBehavior('Proffer.Proffer', [
+            'avatar' => [
+                'root' => WWW_ROOT . 'upload',
+                'dir' => 'avatar_dir',
+                'thumbnailSizes' => [
+                    'tiny' => [
+                        'w' => 42,
+                        'h' => 42,
+                        'crop' => false,
+                        'jpeg_quality' => 100,
+                        'png_compression_level' => 9
+                    ],
+                    'small' => [
+                        'w' => 80,
+                        'h' => 80,
+                        'crop' => false,
+                        'jpeg_quality' => 100,
+                        'png_compression_level' => 9
+                    ],
+                    'medium' => [
+                        'w' => 150,
+                        'h' => 150,
+                        'crop' => false,
+                        'jpeg_quality' => 100,
+                        'png_compression_level' => 9
+                    ]
+                ]
+            ]
+        ]);
+
         $this->belongsTo('Roles');
     }
 
@@ -51,6 +81,8 @@ class UsersTable extends Table
      */
     public function validationDefault(Validator $validator)
     {
+        $validator->provider('proffer', 'Proffer\Model\Validation\ProfferRules');
+
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('id', 'create');
@@ -77,6 +109,17 @@ class UsersTable extends Table
         $validator
             ->requirePresence('last_name', 'create')
             ->notEmpty('last_name');
+
+        $validator
+            ->add('avatar', 'proffer', [
+                'rule' => ['dimensions', [
+                    'min' => ['w' => 32, 'h' => 32],
+                    'max' => ['w' => 1024, 'h' => 1024]
+                ]],
+                'message' => 'Avatar image is not in correct dimensions.',
+                'provider' => 'proffer'
+            ])
+            ->allowEmpty('avatar');
 
         return $validator;
     }

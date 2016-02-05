@@ -15,7 +15,8 @@
         "admad/cakephp-hybridauth": "~3.0",
         "fzaninotto/faker": "*",
         "xety/cake3-cookieauth": "1.*",
-        "dereuromark/cakephp-tinyauth": "1.*"
+        "dereuromark/cakephp-tinyauth": "1.*",
+        "davidyell/proffer": "*"
     },
     "require-dev": {
         "psy/psysh": "@stable",

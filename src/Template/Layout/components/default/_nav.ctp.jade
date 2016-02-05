@@ -20,7 +20,7 @@ nav.navbar-top
 			li: a.search-bar-toggle(href='#!'): i.mdi-action-search
 			li.user
 				a.dropdown-button(href='#!' data-activates='user-dropdown')
-					!= $view->Html->image('user.jpg', ['class' => 'circle', 'alt' => 'John Doe'])
+					!= $view->Html->image($user->avatar_url_tiny, ['class' => 'circle', 'alt' => $user->full_name])
 					| #{$user->full_name}
 					i.mdi-navigation-expand-more.right
 				ul.dropdown-content#user-dropdown
