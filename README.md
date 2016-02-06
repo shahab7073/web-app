@@ -1,8 +1,10 @@
-# CoolOps Web Application Skeleton based on CakePHP 3
+# CoolOps Web Application Skeleton based on CakePHP 3 and [MaterializeCSS](http://materializecss.com)
 
 A skeleton for creating coolops web applications with [CakePHP](http://cakephp.org) 3.x.
 
 The framework source code can be found here: [cakephp/cakephp](https://github.com/cakephp/cakephp).
+
+![CoolOps Material UI Admin Template](http://s18.postimg.org/57ofiw7ah/material_ui_admin_screenshot.jpg)
 
 ## Installation
 

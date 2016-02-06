@@ -1,6 +1,6 @@
 {
     "name": "coolops/web-app",
-    "description": "CoolOps web application skeleton (based on CakePHP 3)",
+    "description": "CoolOps web application skeleton (based on CakePHP 3 & MaterializeCSS)",
     "homepage": "http://github.com/coolops/web-app",
     "type": "project",
     "license": "MIT",
@@ -27,6 +27,19 @@
         "phpunit/phpunit": "Allows automated tests to be run without system-wide install.",
         "cakephp/cakephp-codesniffer": "Allows to check the code against the coding standards used in CakePHP."
     },
+    "keywords": {
+        "cakephp",
+        "cakephp3",
+        "skeleton",
+        "materialize",
+        "materializecss",
+        "materialize ui",
+        "material design",
+        "material theme",
+        "admin template",
+        "app",
+        "coolops"
+    }
     "autoload": {
         "psr-4": {
             "App\\": "src"
