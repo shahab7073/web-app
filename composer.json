@@ -27,7 +27,7 @@
         "phpunit/phpunit": "Allows automated tests to be run without system-wide install.",
         "cakephp/cakephp-codesniffer": "Allows to check the code against the coding standards used in CakePHP."
     },
-    "keywords": {
+    "keywords": [
         "cakephp",
         "cakephp3",
         "skeleton",
@@ -39,7 +39,7 @@
         "admin template",
         "app",
         "coolops"
-    }
+    ],
     "autoload": {
         "psr-4": {
             "App\\": "src"
