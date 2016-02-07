@@ -36,3 +36,4 @@
 *.phar binary
 *.ttf binary
 *.eot binary
+*.mp3 binary
